@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\.net\\plp-renewed-reports-system\\plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\.net\\plp-renewed-reports-system\\plp-renewed-reports-system\\entrancepage.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\entrancepage.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\.net\\plp-renewed-reports-system\\plp-renewed-reports-system\\settheme.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\settheme.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\.net\\plp-renewed-reports-system\\plp-renewed-reports-system\\my project\\application.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\my project\\application.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\.net\\plp-renewed-reports-system\\plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Application.Designer.vb",
+              "DocumentMoniker": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\My Project\\Application.Designer.vb",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\My Project\\Application.Designer.vb",
+              "ToolTip": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\My Project\\Application.Designer.vb",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\My Project\\Application.Designer.vb",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAlwBYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-04T09:58:02.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SetTheme.vb",
+              "DocumentMoniker": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\SetTheme.vb",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\SetTheme.vb",
+              "ToolTip": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\SetTheme.vb",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\SetTheme.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-04T09:55:01.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EntrancePage.Designer.vb",
+              "DocumentMoniker": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\EntrancePage.Designer.vb",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\EntrancePage.Designer.vb",
+              "ToolTip": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\EntrancePage.Designer.vb",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\EntrancePage.Designer.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-04T09:49:13.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EntrancePage.vb",
+              "DocumentMoniker": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\EntrancePage.vb",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\EntrancePage.vb",
+              "ToolTip": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\EntrancePage.vb",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\EntrancePage.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-04T09:49:02.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EntrancePage.vb [Design]",
+              "DocumentMoniker": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\EntrancePage.vb",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\EntrancePage.vb",
+              "ToolTip": "D:\\Program\\.NET\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System\\EntrancePage.vb [Design]",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\EntrancePage.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-04T09:47:39.966Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
