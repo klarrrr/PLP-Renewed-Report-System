@@ -4,6 +4,9 @@
     <Compile Update="EntrancePage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ProfessorDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="StudentDashboard.vb">
       <SubType>Form</SubType>
     </Compile>

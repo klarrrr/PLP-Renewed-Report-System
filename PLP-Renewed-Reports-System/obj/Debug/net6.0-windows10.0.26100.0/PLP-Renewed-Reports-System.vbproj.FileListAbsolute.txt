@@ -22,3 +22,4 @@ D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-Sys
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows10.0.26100.0\PLP-Renewed-Reports-System.pdb
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows10.0.26100.0\PLP-Renewed-Reports-System.genruntimeconfig.cache
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows10.0.26100.0\ref\PLP-Renewed-Reports-System.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows10.0.26100.0\PLP_Renewed_Reports_System.ProfessorDashboard.resources
