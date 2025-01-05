@@ -38,3 +38,4 @@ D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-Sys
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows\PLP-Renewed-Reports-System.pdb
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows\PLP-Renewed-Reports-System.genruntimeconfig.cache
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows\ref\PLP-Renewed-Reports-System.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows\PLP_Renewed_Reports_System.StudentDashboard.resources

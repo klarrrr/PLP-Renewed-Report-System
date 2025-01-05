@@ -172,8 +172,6 @@ Partial Class EntrancePage
         ' MaterialCard1
         ' 
         MaterialCard1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard1.Controls.Add(MaterialCard12)
-        MaterialCard1.Controls.Add(MaterialCard6)
         MaterialCard1.Controls.Add(MaterialCard9)
         MaterialCard1.Controls.Add(MaterialCard5)
         MaterialCard1.Controls.Add(MaterialCard2)
@@ -181,6 +179,8 @@ Partial Class EntrancePage
         MaterialCard1.Controls.Add(MaterialCard8)
         MaterialCard1.Controls.Add(MaterialCard11)
         MaterialCard1.Controls.Add(MaterialCard7)
+        MaterialCard1.Controls.Add(MaterialCard12)
+        MaterialCard1.Controls.Add(MaterialCard6)
         MaterialCard1.Depth = 0
         MaterialCard1.Dock = DockStyle.Fill
         MaterialCard1.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
