@@ -9,6 +9,7 @@
       "PLP-Renewed-Reports-System/1.0.0": {
         "dependencies": {
           "MaterialSkin.2": "2.3.1",
+          "MySql.Data": "9.0.0.0",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.26100.52"
         },
         "runtime": {
@@ -34,6 +35,14 @@
             "fileVersion": "2.3.1.0"
           }
         }
+      },
+      "MySql.Data/9.0.0.0": {
+        "runtime": {
+          "MySql.Data.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        }
       }
     }
   },
@@ -54,6 +63,11 @@
       "sha512": "sha512-w2vFxLNk4InCDU7pXDfBqPfv55HhBtuu8HRfEqQpeS3sNTS1pUzDs/hS0b5JW2/tKvt+P1of9OINP8a9omWDBg==",
       "path": "materialskin.2/2.3.1",
       "hashPath": "materialskin.2.2.3.1.nupkg.sha512"
+    },
+    "MySql.Data/9.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

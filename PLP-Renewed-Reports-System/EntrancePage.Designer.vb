@@ -24,6 +24,59 @@ Partial Class EntrancePage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EntrancePage))
         MaterialCard1 = New MaterialSkin.Controls.MaterialCard()
+        StuRegCard = New MaterialSkin.Controls.MaterialCard()
+        MaterialLabel65 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel64 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegStatusBox = New MaterialSkin.Controls.MaterialComboBox()
+        MaterialLabel63 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegYearLvlBox = New MaterialSkin.Controls.MaterialComboBox()
+        MaterialLabel62 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegSectionBox = New MaterialSkin.Controls.MaterialComboBox()
+        MaterialLabel61 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegEmailBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel60 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegSuffixBox = New MaterialSkin.Controls.MaterialComboBox()
+        MaterialLabel48 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegMiddleInitialBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel54 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegFirstNameBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel55 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegStuLastNameBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel56 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegBackBtn = New MaterialSkin.Controls.MaterialButton()
+        MaterialLabel57 = New MaterialSkin.Controls.MaterialLabel()
+        StuRegSignUpBox = New MaterialSkin.Controls.MaterialButton()
+        StuRegStuNumBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel58 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel59 = New MaterialSkin.Controls.MaterialLabel()
+        ProfRegCard = New MaterialSkin.Controls.MaterialCard()
+        MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel17 = New MaterialSkin.Controls.MaterialLabel()
+        ProfRegPasswordBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel27 = New MaterialSkin.Controls.MaterialLabel()
+        ProfRegUsernameBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel20 = New MaterialSkin.Controls.MaterialLabel()
+        ProfRegEmailBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel26 = New MaterialSkin.Controls.MaterialLabel()
+        ProfRegBackBtn = New MaterialSkin.Controls.MaterialButton()
+        MaterialLabel21 = New MaterialSkin.Controls.MaterialLabel()
+        ProfRegSignUpBtn = New MaterialSkin.Controls.MaterialButton()
+        ProfRegFullNameBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel23 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel25 = New MaterialSkin.Controls.MaterialLabel()
+        StudentLoginCard = New MaterialSkin.Controls.MaterialCard()
+        StuLogQRCode = New MaterialSkin.Controls.MaterialLabel()
+        StuLogBackBtn = New MaterialSkin.Controls.MaterialButton()
+        StuLogForgPass = New MaterialSkin.Controls.MaterialLabel()
+        StuLogCreateACc = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel39 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel40 = New MaterialSkin.Controls.MaterialLabel()
+        StuLogSignInBtn = New MaterialSkin.Controls.MaterialButton()
+        StuLogStudIdTxtBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel41 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel42 = New MaterialSkin.Controls.MaterialLabel()
+        PictureBox7 = New PictureBox()
+        MaterialLabel43 = New MaterialSkin.Controls.MaterialLabel()
         ProfLogCard = New MaterialSkin.Controls.MaterialCard()
         ProfLogQRCode = New MaterialSkin.Controls.MaterialLabel()
         ProfLogBackBtn = New MaterialSkin.Controls.MaterialButton()
@@ -73,6 +126,7 @@ Partial Class EntrancePage
         MaterialLabel34 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel35 = New MaterialSkin.Controls.MaterialLabel()
         StuForgPassCard = New MaterialSkin.Controls.MaterialCard()
+        MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel49 = New MaterialSkin.Controls.MaterialLabel()
         StuForgPassEmailBox = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel50 = New MaterialSkin.Controls.MaterialLabel()
@@ -83,6 +137,7 @@ Partial Class EntrancePage
         MaterialLabel52 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel53 = New MaterialSkin.Controls.MaterialLabel()
         ProfForgPassCard = New MaterialSkin.Controls.MaterialCard()
+        MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel19 = New MaterialSkin.Controls.MaterialLabel()
         ProfForgPassUsernameBox = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel22 = New MaterialSkin.Controls.MaterialLabel()
@@ -94,59 +149,11 @@ Partial Class EntrancePage
         ProfForgPassFullNameBox = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel29 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel30 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegCard = New MaterialSkin.Controls.MaterialCard()
-        MaterialLabel65 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel64 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegStatusBox = New MaterialSkin.Controls.MaterialComboBox()
-        MaterialLabel63 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegYearLvlBox = New MaterialSkin.Controls.MaterialComboBox()
-        MaterialLabel62 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegSectionBox = New MaterialSkin.Controls.MaterialComboBox()
-        MaterialLabel61 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegEmailBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel60 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegSuffixBox = New MaterialSkin.Controls.MaterialComboBox()
-        MaterialLabel48 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegMiddleInitialBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel54 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegFirstNameBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel55 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegStuLastNameBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel56 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegBackBtn = New MaterialSkin.Controls.MaterialButton()
-        MaterialLabel57 = New MaterialSkin.Controls.MaterialLabel()
-        StuRegSignUpBox = New MaterialSkin.Controls.MaterialButton()
-        StuRegStuNumBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel58 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel59 = New MaterialSkin.Controls.MaterialLabel()
-        ProfRegCard = New MaterialSkin.Controls.MaterialCard()
-        MaterialLabel17 = New MaterialSkin.Controls.MaterialLabel()
-        ProfRegPasswordBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel27 = New MaterialSkin.Controls.MaterialLabel()
-        ProfRegUsernameBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel20 = New MaterialSkin.Controls.MaterialLabel()
-        ProfRegEmailBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel26 = New MaterialSkin.Controls.MaterialLabel()
-        ProfRegBackBtn = New MaterialSkin.Controls.MaterialButton()
-        MaterialLabel21 = New MaterialSkin.Controls.MaterialLabel()
-        ProfRegSignUpBtn = New MaterialSkin.Controls.MaterialButton()
-        ProfRegFullNameBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel23 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel25 = New MaterialSkin.Controls.MaterialLabel()
-        StudentLoginCard = New MaterialSkin.Controls.MaterialCard()
-        StuLogQRCode = New MaterialSkin.Controls.MaterialLabel()
-        StuLogBackBtn = New MaterialSkin.Controls.MaterialButton()
-        StuLogForgPass = New MaterialSkin.Controls.MaterialLabel()
-        StuLogCreateACc = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel39 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel40 = New MaterialSkin.Controls.MaterialLabel()
-        StuLogSignInBtn = New MaterialSkin.Controls.MaterialButton()
-        StuLogStudIdTxtBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel41 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel42 = New MaterialSkin.Controls.MaterialLabel()
-        PictureBox7 = New PictureBox()
-        MaterialLabel43 = New MaterialSkin.Controls.MaterialLabel()
         MaterialCard1.SuspendLayout()
+        StuRegCard.SuspendLayout()
+        ProfRegCard.SuspendLayout()
+        StudentLoginCard.SuspendLayout()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         ProfLogCard.SuspendLayout()
         CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
         ChooseUserCard.SuspendLayout()
@@ -163,15 +170,12 @@ Partial Class EntrancePage
         CType(ProfQRPicBox, ComponentModel.ISupportInitialize).BeginInit()
         StuForgPassCard.SuspendLayout()
         ProfForgPassCard.SuspendLayout()
-        StuRegCard.SuspendLayout()
-        ProfRegCard.SuspendLayout()
-        StudentLoginCard.SuspendLayout()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MaterialCard1
         ' 
         MaterialCard1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard1.Controls.Add(StudentLoginCard)
         MaterialCard1.Controls.Add(ProfLogCard)
         MaterialCard1.Controls.Add(ChooseUserCard)
         MaterialCard1.Controls.Add(StuQRCard)
@@ -180,7 +184,6 @@ Partial Class EntrancePage
         MaterialCard1.Controls.Add(ProfForgPassCard)
         MaterialCard1.Controls.Add(StuRegCard)
         MaterialCard1.Controls.Add(ProfRegCard)
-        MaterialCard1.Controls.Add(StudentLoginCard)
         MaterialCard1.Depth = 0
         MaterialCard1.Dock = DockStyle.Fill
         MaterialCard1.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
@@ -191,6 +194,899 @@ Partial Class EntrancePage
         MaterialCard1.Padding = New Padding(14)
         MaterialCard1.Size = New Size(1917, 1056)
         MaterialCard1.TabIndex = 0
+        ' 
+        ' StuRegCard
+        ' 
+        StuRegCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuRegCard.Controls.Add(MaterialLabel65)
+        StuRegCard.Controls.Add(MaterialLabel64)
+        StuRegCard.Controls.Add(StuRegStatusBox)
+        StuRegCard.Controls.Add(MaterialLabel63)
+        StuRegCard.Controls.Add(StuRegYearLvlBox)
+        StuRegCard.Controls.Add(MaterialLabel62)
+        StuRegCard.Controls.Add(StuRegSectionBox)
+        StuRegCard.Controls.Add(MaterialLabel61)
+        StuRegCard.Controls.Add(StuRegEmailBox)
+        StuRegCard.Controls.Add(MaterialLabel60)
+        StuRegCard.Controls.Add(StuRegSuffixBox)
+        StuRegCard.Controls.Add(MaterialLabel48)
+        StuRegCard.Controls.Add(StuRegMiddleInitialBox)
+        StuRegCard.Controls.Add(MaterialLabel54)
+        StuRegCard.Controls.Add(StuRegFirstNameBox)
+        StuRegCard.Controls.Add(MaterialLabel55)
+        StuRegCard.Controls.Add(StuRegStuLastNameBox)
+        StuRegCard.Controls.Add(MaterialLabel56)
+        StuRegCard.Controls.Add(StuRegBackBtn)
+        StuRegCard.Controls.Add(MaterialLabel57)
+        StuRegCard.Controls.Add(StuRegSignUpBox)
+        StuRegCard.Controls.Add(StuRegStuNumBox)
+        StuRegCard.Controls.Add(MaterialLabel58)
+        StuRegCard.Controls.Add(MaterialLabel59)
+        StuRegCard.Depth = 0
+        StuRegCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StuRegCard.Location = New Point(448, 110)
+        StuRegCard.Margin = New Padding(14)
+        StuRegCard.MouseState = MaterialSkin.MouseState.HOVER
+        StuRegCard.Name = "StuRegCard"
+        StuRegCard.Padding = New Padding(14)
+        StuRegCard.Size = New Size(1021, 836)
+        StuRegCard.TabIndex = 10
+        StuRegCard.Visible = False
+        ' 
+        ' MaterialLabel65
+        ' 
+        MaterialLabel65.AutoSize = True
+        MaterialLabel65.Depth = 0
+        MaterialLabel65.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel65.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        MaterialLabel65.Location = New Point(313, 640)
+        MaterialLabel65.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel65.Name = "MaterialLabel65"
+        MaterialLabel65.Size = New Size(395, 17)
+        MaterialLabel65.TabIndex = 35
+        MaterialLabel65.Text = "Double check and make sure every important details are filled in."
+        MaterialLabel65.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel64
+        ' 
+        MaterialLabel64.AutoSize = True
+        MaterialLabel64.Depth = 0
+        MaterialLabel64.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel64.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel64.Location = New Point(619, 529)
+        MaterialLabel64.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel64.Name = "MaterialLabel64"
+        MaterialLabel64.Size = New Size(59, 24)
+        MaterialLabel64.TabIndex = 34
+        MaterialLabel64.Text = "Status"
+        ' 
+        ' StuRegStatusBox
+        ' 
+        StuRegStatusBox.AutoResize = False
+        StuRegStatusBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuRegStatusBox.Depth = 0
+        StuRegStatusBox.DrawMode = DrawMode.OwnerDrawVariable
+        StuRegStatusBox.DropDownHeight = 174
+        StuRegStatusBox.DropDownStyle = ComboBoxStyle.DropDownList
+        StuRegStatusBox.DropDownWidth = 121
+        StuRegStatusBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        StuRegStatusBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StuRegStatusBox.FormattingEnabled = True
+        StuRegStatusBox.IntegralHeight = False
+        StuRegStatusBox.ItemHeight = 43
+        StuRegStatusBox.Location = New Point(619, 563)
+        StuRegStatusBox.MaxDropDownItems = 4
+        StuRegStatusBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegStatusBox.Name = "StuRegStatusBox"
+        StuRegStatusBox.Size = New Size(208, 49)
+        StuRegStatusBox.StartIndex = 0
+        StuRegStatusBox.TabIndex = 33
+        ' 
+        ' MaterialLabel63
+        ' 
+        MaterialLabel63.AutoSize = True
+        MaterialLabel63.Depth = 0
+        MaterialLabel63.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel63.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel63.Location = New Point(400, 529)
+        MaterialLabel63.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel63.Name = "MaterialLabel63"
+        MaterialLabel63.Size = New Size(89, 24)
+        MaterialLabel63.TabIndex = 32
+        MaterialLabel63.Text = "Year level"
+        ' 
+        ' StuRegYearLvlBox
+        ' 
+        StuRegYearLvlBox.AutoResize = False
+        StuRegYearLvlBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuRegYearLvlBox.Depth = 0
+        StuRegYearLvlBox.DrawMode = DrawMode.OwnerDrawVariable
+        StuRegYearLvlBox.DropDownHeight = 174
+        StuRegYearLvlBox.DropDownStyle = ComboBoxStyle.DropDownList
+        StuRegYearLvlBox.DropDownWidth = 121
+        StuRegYearLvlBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        StuRegYearLvlBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StuRegYearLvlBox.FormattingEnabled = True
+        StuRegYearLvlBox.IntegralHeight = False
+        StuRegYearLvlBox.ItemHeight = 43
+        StuRegYearLvlBox.Location = New Point(400, 563)
+        StuRegYearLvlBox.MaxDropDownItems = 4
+        StuRegYearLvlBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegYearLvlBox.Name = "StuRegYearLvlBox"
+        StuRegYearLvlBox.Size = New Size(213, 49)
+        StuRegYearLvlBox.StartIndex = 0
+        StuRegYearLvlBox.TabIndex = 31
+        ' 
+        ' MaterialLabel62
+        ' 
+        MaterialLabel62.AutoSize = True
+        MaterialLabel62.Depth = 0
+        MaterialLabel62.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel62.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel62.Location = New Point(193, 529)
+        MaterialLabel62.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel62.Name = "MaterialLabel62"
+        MaterialLabel62.Size = New Size(68, 24)
+        MaterialLabel62.TabIndex = 30
+        MaterialLabel62.Text = "Section"
+        ' 
+        ' StuRegSectionBox
+        ' 
+        StuRegSectionBox.AutoResize = False
+        StuRegSectionBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuRegSectionBox.Depth = 0
+        StuRegSectionBox.DrawMode = DrawMode.OwnerDrawVariable
+        StuRegSectionBox.DropDownHeight = 174
+        StuRegSectionBox.DropDownStyle = ComboBoxStyle.DropDownList
+        StuRegSectionBox.DropDownWidth = 121
+        StuRegSectionBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        StuRegSectionBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StuRegSectionBox.FormattingEnabled = True
+        StuRegSectionBox.IntegralHeight = False
+        StuRegSectionBox.ItemHeight = 43
+        StuRegSectionBox.Location = New Point(193, 563)
+        StuRegSectionBox.MaxDropDownItems = 4
+        StuRegSectionBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegSectionBox.Name = "StuRegSectionBox"
+        StuRegSectionBox.Size = New Size(201, 49)
+        StuRegSectionBox.StartIndex = 0
+        StuRegSectionBox.TabIndex = 29
+        ' 
+        ' MaterialLabel61
+        ' 
+        MaterialLabel61.AutoSize = True
+        MaterialLabel61.Depth = 0
+        MaterialLabel61.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel61.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel61.Location = New Point(350, 417)
+        MaterialLabel61.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel61.Name = "MaterialLabel61"
+        MaterialLabel61.Size = New Size(126, 24)
+        MaterialLabel61.TabIndex = 28
+        MaterialLabel61.Text = "Email address"
+        ' 
+        ' StuRegEmailBox
+        ' 
+        StuRegEmailBox.AnimateReadOnly = False
+        StuRegEmailBox.BorderStyle = BorderStyle.None
+        StuRegEmailBox.Depth = 0
+        StuRegEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuRegEmailBox.Hint = "Enter your email address"
+        StuRegEmailBox.LeadingIcon = Nothing
+        StuRegEmailBox.Location = New Point(350, 454)
+        StuRegEmailBox.MaxLength = 50
+        StuRegEmailBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegEmailBox.Multiline = False
+        StuRegEmailBox.Name = "StuRegEmailBox"
+        StuRegEmailBox.Size = New Size(477, 50)
+        StuRegEmailBox.TabIndex = 27
+        StuRegEmailBox.Text = ""
+        StuRegEmailBox.TrailingIcon = Nothing
+        StuRegEmailBox.UseAccent = False
+        ' 
+        ' MaterialLabel60
+        ' 
+        MaterialLabel60.AutoSize = True
+        MaterialLabel60.Depth = 0
+        MaterialLabel60.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel60.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel60.Location = New Point(193, 421)
+        MaterialLabel60.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel60.Name = "MaterialLabel60"
+        MaterialLabel60.Size = New Size(53, 24)
+        MaterialLabel60.TabIndex = 26
+        MaterialLabel60.Text = "Suffix"
+        ' 
+        ' StuRegSuffixBox
+        ' 
+        StuRegSuffixBox.AutoResize = False
+        StuRegSuffixBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuRegSuffixBox.Depth = 0
+        StuRegSuffixBox.DrawMode = DrawMode.OwnerDrawVariable
+        StuRegSuffixBox.DropDownHeight = 174
+        StuRegSuffixBox.DropDownStyle = ComboBoxStyle.DropDownList
+        StuRegSuffixBox.DropDownWidth = 121
+        StuRegSuffixBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        StuRegSuffixBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StuRegSuffixBox.FormattingEnabled = True
+        StuRegSuffixBox.IntegralHeight = False
+        StuRegSuffixBox.ItemHeight = 43
+        StuRegSuffixBox.Items.AddRange(New Object() {"", "JR.", "SR.", "II", "III", "IV"})
+        StuRegSuffixBox.Location = New Point(193, 455)
+        StuRegSuffixBox.MaxDropDownItems = 4
+        StuRegSuffixBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegSuffixBox.Name = "StuRegSuffixBox"
+        StuRegSuffixBox.Size = New Size(151, 49)
+        StuRegSuffixBox.StartIndex = 0
+        StuRegSuffixBox.TabIndex = 25
+        ' 
+        ' MaterialLabel48
+        ' 
+        MaterialLabel48.AutoSize = True
+        MaterialLabel48.Depth = 0
+        MaterialLabel48.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel48.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel48.Location = New Point(662, 311)
+        MaterialLabel48.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel48.Name = "MaterialLabel48"
+        MaterialLabel48.Size = New Size(116, 24)
+        MaterialLabel48.TabIndex = 24
+        MaterialLabel48.Text = "Middle initial"
+        ' 
+        ' StuRegMiddleInitialBox
+        ' 
+        StuRegMiddleInitialBox.AnimateReadOnly = False
+        StuRegMiddleInitialBox.BorderStyle = BorderStyle.None
+        StuRegMiddleInitialBox.Depth = 0
+        StuRegMiddleInitialBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuRegMiddleInitialBox.Hint = "Enter middle initial"
+        StuRegMiddleInitialBox.LeadingIcon = Nothing
+        StuRegMiddleInitialBox.Location = New Point(662, 348)
+        StuRegMiddleInitialBox.MaxLength = 50
+        StuRegMiddleInitialBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegMiddleInitialBox.Multiline = False
+        StuRegMiddleInitialBox.Name = "StuRegMiddleInitialBox"
+        StuRegMiddleInitialBox.Size = New Size(165, 50)
+        StuRegMiddleInitialBox.TabIndex = 23
+        StuRegMiddleInitialBox.Text = ""
+        StuRegMiddleInitialBox.TrailingIcon = Nothing
+        StuRegMiddleInitialBox.UseAccent = False
+        ' 
+        ' MaterialLabel54
+        ' 
+        MaterialLabel54.AutoSize = True
+        MaterialLabel54.Depth = 0
+        MaterialLabel54.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel54.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel54.Location = New Point(193, 311)
+        MaterialLabel54.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel54.Name = "MaterialLabel54"
+        MaterialLabel54.Size = New Size(96, 24)
+        MaterialLabel54.TabIndex = 22
+        MaterialLabel54.Text = "First name"
+        ' 
+        ' StuRegFirstNameBox
+        ' 
+        StuRegFirstNameBox.AnimateReadOnly = False
+        StuRegFirstNameBox.BorderStyle = BorderStyle.None
+        StuRegFirstNameBox.Depth = 0
+        StuRegFirstNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuRegFirstNameBox.Hint = "Enter your first name"
+        StuRegFirstNameBox.LeadingIcon = Nothing
+        StuRegFirstNameBox.Location = New Point(193, 348)
+        StuRegFirstNameBox.MaxLength = 50
+        StuRegFirstNameBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegFirstNameBox.Multiline = False
+        StuRegFirstNameBox.Name = "StuRegFirstNameBox"
+        StuRegFirstNameBox.Size = New Size(463, 50)
+        StuRegFirstNameBox.TabIndex = 21
+        StuRegFirstNameBox.Text = ""
+        StuRegFirstNameBox.TrailingIcon = Nothing
+        StuRegFirstNameBox.UseAccent = False
+        ' 
+        ' MaterialLabel55
+        ' 
+        MaterialLabel55.AutoSize = True
+        MaterialLabel55.Depth = 0
+        MaterialLabel55.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel55.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel55.Location = New Point(433, 203)
+        MaterialLabel55.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel55.Name = "MaterialLabel55"
+        MaterialLabel55.Size = New Size(95, 24)
+        MaterialLabel55.TabIndex = 20
+        MaterialLabel55.Text = "Last name"
+        ' 
+        ' StuRegStuLastNameBox
+        ' 
+        StuRegStuLastNameBox.AnimateReadOnly = False
+        StuRegStuLastNameBox.BorderStyle = BorderStyle.None
+        StuRegStuLastNameBox.Depth = 0
+        StuRegStuLastNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuRegStuLastNameBox.Hint = "Enter your last name"
+        StuRegStuLastNameBox.LeadingIcon = Nothing
+        StuRegStuLastNameBox.Location = New Point(433, 240)
+        StuRegStuLastNameBox.MaxLength = 50
+        StuRegStuLastNameBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegStuLastNameBox.Multiline = False
+        StuRegStuLastNameBox.Name = "StuRegStuLastNameBox"
+        StuRegStuLastNameBox.Size = New Size(394, 50)
+        StuRegStuLastNameBox.TabIndex = 19
+        StuRegStuLastNameBox.Text = ""
+        StuRegStuLastNameBox.TrailingIcon = Nothing
+        StuRegStuLastNameBox.UseAccent = False
+        ' 
+        ' MaterialLabel56
+        ' 
+        MaterialLabel56.AutoSize = True
+        MaterialLabel56.Depth = 0
+        MaterialLabel56.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel56.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
+        MaterialLabel56.Location = New Point(406, 133)
+        MaterialLabel56.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel56.Name = "MaterialLabel56"
+        MaterialLabel56.RightToLeft = RightToLeft.No
+        MaterialLabel56.Size = New Size(196, 17)
+        MaterialLabel56.TabIndex = 18
+        MaterialLabel56.Text = "Enter the following credentials"
+        ' 
+        ' StuRegBackBtn
+        ' 
+        StuRegBackBtn.AutoSize = False
+        StuRegBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StuRegBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StuRegBackBtn.Depth = 0
+        StuRegBackBtn.DrawShadows = False
+        StuRegBackBtn.HighEmphasis = True
+        StuRegBackBtn.Icon = My.Resources.Resources.back__1_
+        StuRegBackBtn.Location = New Point(18, 20)
+        StuRegBackBtn.Margin = New Padding(4, 6, 4, 6)
+        StuRegBackBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StuRegBackBtn.Name = "StuRegBackBtn"
+        StuRegBackBtn.NoAccentTextColor = Color.Empty
+        StuRegBackBtn.Size = New Size(42, 36)
+        StuRegBackBtn.TabIndex = 16
+        StuRegBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
+        StuRegBackBtn.UseAccentColor = False
+        StuRegBackBtn.UseVisualStyleBackColor = True
+        ' 
+        ' MaterialLabel57
+        ' 
+        MaterialLabel57.AutoSize = True
+        MaterialLabel57.Depth = 0
+        MaterialLabel57.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel57.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel57.Location = New Point(193, 203)
+        MaterialLabel57.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel57.Name = "MaterialLabel57"
+        MaterialLabel57.Size = New Size(144, 24)
+        MaterialLabel57.TabIndex = 12
+        MaterialLabel57.Text = "Student number"
+        ' 
+        ' StuRegSignUpBox
+        ' 
+        StuRegSignUpBox.AutoSize = False
+        StuRegSignUpBox.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StuRegSignUpBox.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StuRegSignUpBox.Depth = 0
+        StuRegSignUpBox.HighEmphasis = True
+        StuRegSignUpBox.Icon = Nothing
+        StuRegSignUpBox.Location = New Point(193, 684)
+        StuRegSignUpBox.Margin = New Padding(4, 6, 4, 6)
+        StuRegSignUpBox.MouseState = MaterialSkin.MouseState.HOVER
+        StuRegSignUpBox.Name = "StuRegSignUpBox"
+        StuRegSignUpBox.NoAccentTextColor = Color.Empty
+        StuRegSignUpBox.Size = New Size(634, 45)
+        StuRegSignUpBox.TabIndex = 10
+        StuRegSignUpBox.Text = "SIGN UP"
+        StuRegSignUpBox.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StuRegSignUpBox.UseAccentColor = False
+        StuRegSignUpBox.UseVisualStyleBackColor = True
+        ' 
+        ' StuRegStuNumBox
+        ' 
+        StuRegStuNumBox.AnimateReadOnly = False
+        StuRegStuNumBox.BorderStyle = BorderStyle.None
+        StuRegStuNumBox.Depth = 0
+        StuRegStuNumBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuRegStuNumBox.Hint = "Enter your student number"
+        StuRegStuNumBox.LeadingIcon = Nothing
+        StuRegStuNumBox.Location = New Point(193, 240)
+        StuRegStuNumBox.MaxLength = 50
+        StuRegStuNumBox.MouseState = MaterialSkin.MouseState.OUT
+        StuRegStuNumBox.Multiline = False
+        StuRegStuNumBox.Name = "StuRegStuNumBox"
+        StuRegStuNumBox.Size = New Size(233, 50)
+        StuRegStuNumBox.TabIndex = 8
+        StuRegStuNumBox.Text = ""
+        StuRegStuNumBox.TrailingIcon = Nothing
+        StuRegStuNumBox.UseAccent = False
+        ' 
+        ' MaterialLabel58
+        ' 
+        MaterialLabel58.AutoSize = True
+        MaterialLabel58.Depth = 0
+        MaterialLabel58.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel58.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
+        MaterialLabel58.Location = New Point(400, 761)
+        MaterialLabel58.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel58.Name = "MaterialLabel58"
+        MaterialLabel58.Size = New Size(221, 14)
+        MaterialLabel58.TabIndex = 7
+        MaterialLabel58.Text = "Powered by College of Computer Studies"
+        MaterialLabel58.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel59
+        ' 
+        MaterialLabel59.AutoSize = True
+        MaterialLabel59.Depth = 0
+        MaterialLabel59.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel59.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
+        MaterialLabel59.Location = New Point(293, 59)
+        MaterialLabel59.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel59.Name = "MaterialLabel59"
+        MaterialLabel59.Size = New Size(435, 58)
+        MaterialLabel59.TabIndex = 0
+        MaterialLabel59.Text = "Student Registration"
+        ' 
+        ' ProfRegCard
+        ' 
+        ProfRegCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ProfRegCard.Controls.Add(MaterialLabel6)
+        ProfRegCard.Controls.Add(MaterialLabel17)
+        ProfRegCard.Controls.Add(ProfRegPasswordBox)
+        ProfRegCard.Controls.Add(MaterialLabel27)
+        ProfRegCard.Controls.Add(ProfRegUsernameBox)
+        ProfRegCard.Controls.Add(MaterialLabel20)
+        ProfRegCard.Controls.Add(ProfRegEmailBox)
+        ProfRegCard.Controls.Add(MaterialLabel26)
+        ProfRegCard.Controls.Add(ProfRegBackBtn)
+        ProfRegCard.Controls.Add(MaterialLabel21)
+        ProfRegCard.Controls.Add(ProfRegSignUpBtn)
+        ProfRegCard.Controls.Add(ProfRegFullNameBox)
+        ProfRegCard.Controls.Add(MaterialLabel23)
+        ProfRegCard.Controls.Add(MaterialLabel25)
+        ProfRegCard.Depth = 0
+        ProfRegCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        ProfRegCard.Location = New Point(448, 110)
+        ProfRegCard.Margin = New Padding(14)
+        ProfRegCard.MouseState = MaterialSkin.MouseState.HOVER
+        ProfRegCard.Name = "ProfRegCard"
+        ProfRegCard.Padding = New Padding(14)
+        ProfRegCard.Size = New Size(1021, 836)
+        ProfRegCard.TabIndex = 4
+        ProfRegCard.Visible = False
+        ' 
+        ' MaterialLabel6
+        ' 
+        MaterialLabel6.AutoSize = True
+        MaterialLabel6.Depth = 0
+        MaterialLabel6.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel6.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        MaterialLabel6.Location = New Point(313, 639)
+        MaterialLabel6.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel6.Name = "MaterialLabel6"
+        MaterialLabel6.Size = New Size(395, 17)
+        MaterialLabel6.TabIndex = 36
+        MaterialLabel6.Text = "Double check and make sure every important details are filled in."
+        MaterialLabel6.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel17
+        ' 
+        MaterialLabel17.AutoSize = True
+        MaterialLabel17.Depth = 0
+        MaterialLabel17.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel17.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel17.Location = New Point(193, 529)
+        MaterialLabel17.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel17.Name = "MaterialLabel17"
+        MaterialLabel17.Size = New Size(89, 24)
+        MaterialLabel17.TabIndex = 24
+        MaterialLabel17.Text = "Password"
+        ' 
+        ' ProfRegPasswordBox
+        ' 
+        ProfRegPasswordBox.AnimateReadOnly = False
+        ProfRegPasswordBox.BorderStyle = BorderStyle.None
+        ProfRegPasswordBox.Depth = 0
+        ProfRegPasswordBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfRegPasswordBox.Hint = "Enter password"
+        ProfRegPasswordBox.LeadingIcon = Nothing
+        ProfRegPasswordBox.Location = New Point(193, 566)
+        ProfRegPasswordBox.MaxLength = 50
+        ProfRegPasswordBox.MouseState = MaterialSkin.MouseState.OUT
+        ProfRegPasswordBox.Multiline = False
+        ProfRegPasswordBox.Name = "ProfRegPasswordBox"
+        ProfRegPasswordBox.Password = True
+        ProfRegPasswordBox.Size = New Size(634, 50)
+        ProfRegPasswordBox.TabIndex = 23
+        ProfRegPasswordBox.Text = ""
+        ProfRegPasswordBox.TrailingIcon = Nothing
+        ProfRegPasswordBox.UseAccent = False
+        ' 
+        ' MaterialLabel27
+        ' 
+        MaterialLabel27.AutoSize = True
+        MaterialLabel27.Depth = 0
+        MaterialLabel27.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel27.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel27.Location = New Point(193, 413)
+        MaterialLabel27.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel27.Name = "MaterialLabel27"
+        MaterialLabel27.Size = New Size(92, 24)
+        MaterialLabel27.TabIndex = 22
+        MaterialLabel27.Text = "Username"
+        ' 
+        ' ProfRegUsernameBox
+        ' 
+        ProfRegUsernameBox.AnimateReadOnly = False
+        ProfRegUsernameBox.BorderStyle = BorderStyle.None
+        ProfRegUsernameBox.Depth = 0
+        ProfRegUsernameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfRegUsernameBox.Hint = "Enter username"
+        ProfRegUsernameBox.LeadingIcon = Nothing
+        ProfRegUsernameBox.Location = New Point(193, 450)
+        ProfRegUsernameBox.MaxLength = 50
+        ProfRegUsernameBox.MouseState = MaterialSkin.MouseState.OUT
+        ProfRegUsernameBox.Multiline = False
+        ProfRegUsernameBox.Name = "ProfRegUsernameBox"
+        ProfRegUsernameBox.Size = New Size(634, 50)
+        ProfRegUsernameBox.TabIndex = 21
+        ProfRegUsernameBox.Text = ""
+        ProfRegUsernameBox.TrailingIcon = Nothing
+        ProfRegUsernameBox.UseAccent = False
+        ' 
+        ' MaterialLabel20
+        ' 
+        MaterialLabel20.AutoSize = True
+        MaterialLabel20.Depth = 0
+        MaterialLabel20.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel20.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel20.Location = New Point(193, 297)
+        MaterialLabel20.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel20.Name = "MaterialLabel20"
+        MaterialLabel20.Size = New Size(126, 24)
+        MaterialLabel20.TabIndex = 20
+        MaterialLabel20.Text = "Email address"
+        ' 
+        ' ProfRegEmailBox
+        ' 
+        ProfRegEmailBox.AnimateReadOnly = False
+        ProfRegEmailBox.BorderStyle = BorderStyle.None
+        ProfRegEmailBox.Depth = 0
+        ProfRegEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfRegEmailBox.Hint = "Enter valid email - Eg. delacruz_juan@plpasig.edu.ph"
+        ProfRegEmailBox.LeadingIcon = Nothing
+        ProfRegEmailBox.Location = New Point(193, 334)
+        ProfRegEmailBox.MaxLength = 50
+        ProfRegEmailBox.MouseState = MaterialSkin.MouseState.OUT
+        ProfRegEmailBox.Multiline = False
+        ProfRegEmailBox.Name = "ProfRegEmailBox"
+        ProfRegEmailBox.Size = New Size(634, 50)
+        ProfRegEmailBox.TabIndex = 19
+        ProfRegEmailBox.Text = ""
+        ProfRegEmailBox.TrailingIcon = Nothing
+        ProfRegEmailBox.UseAccent = False
+        ' 
+        ' MaterialLabel26
+        ' 
+        MaterialLabel26.AutoSize = True
+        MaterialLabel26.Depth = 0
+        MaterialLabel26.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel26.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
+        MaterialLabel26.Location = New Point(406, 133)
+        MaterialLabel26.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel26.Name = "MaterialLabel26"
+        MaterialLabel26.RightToLeft = RightToLeft.No
+        MaterialLabel26.Size = New Size(196, 17)
+        MaterialLabel26.TabIndex = 18
+        MaterialLabel26.Text = "Enter the following credentials"
+        ' 
+        ' ProfRegBackBtn
+        ' 
+        ProfRegBackBtn.AutoSize = False
+        ProfRegBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfRegBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfRegBackBtn.Depth = 0
+        ProfRegBackBtn.DrawShadows = False
+        ProfRegBackBtn.HighEmphasis = True
+        ProfRegBackBtn.Icon = My.Resources.Resources.back__1_
+        ProfRegBackBtn.Location = New Point(18, 20)
+        ProfRegBackBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfRegBackBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfRegBackBtn.Name = "ProfRegBackBtn"
+        ProfRegBackBtn.NoAccentTextColor = Color.Empty
+        ProfRegBackBtn.Size = New Size(42, 36)
+        ProfRegBackBtn.TabIndex = 16
+        ProfRegBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
+        ProfRegBackBtn.UseAccentColor = False
+        ProfRegBackBtn.UseVisualStyleBackColor = True
+        ' 
+        ' MaterialLabel21
+        ' 
+        MaterialLabel21.AutoSize = True
+        MaterialLabel21.Depth = 0
+        MaterialLabel21.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel21.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel21.Location = New Point(193, 181)
+        MaterialLabel21.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel21.Name = "MaterialLabel21"
+        MaterialLabel21.Size = New Size(88, 24)
+        MaterialLabel21.TabIndex = 12
+        MaterialLabel21.Text = "Full name"
+        ' 
+        ' ProfRegSignUpBtn
+        ' 
+        ProfRegSignUpBtn.AutoSize = False
+        ProfRegSignUpBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfRegSignUpBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfRegSignUpBtn.Depth = 0
+        ProfRegSignUpBtn.HighEmphasis = True
+        ProfRegSignUpBtn.Icon = Nothing
+        ProfRegSignUpBtn.Location = New Point(193, 684)
+        ProfRegSignUpBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfRegSignUpBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfRegSignUpBtn.Name = "ProfRegSignUpBtn"
+        ProfRegSignUpBtn.NoAccentTextColor = Color.Empty
+        ProfRegSignUpBtn.Size = New Size(634, 45)
+        ProfRegSignUpBtn.TabIndex = 10
+        ProfRegSignUpBtn.Text = "SIGN UP"
+        ProfRegSignUpBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ProfRegSignUpBtn.UseAccentColor = False
+        ProfRegSignUpBtn.UseVisualStyleBackColor = True
+        ' 
+        ' ProfRegFullNameBox
+        ' 
+        ProfRegFullNameBox.AnimateReadOnly = False
+        ProfRegFullNameBox.BorderStyle = BorderStyle.None
+        ProfRegFullNameBox.Depth = 0
+        ProfRegFullNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfRegFullNameBox.Hint = "Enter full name - Eg. Juan B. Dela Cruz"
+        ProfRegFullNameBox.LeadingIcon = Nothing
+        ProfRegFullNameBox.Location = New Point(193, 218)
+        ProfRegFullNameBox.MaxLength = 50
+        ProfRegFullNameBox.MouseState = MaterialSkin.MouseState.OUT
+        ProfRegFullNameBox.Multiline = False
+        ProfRegFullNameBox.Name = "ProfRegFullNameBox"
+        ProfRegFullNameBox.Size = New Size(634, 50)
+        ProfRegFullNameBox.TabIndex = 8
+        ProfRegFullNameBox.Text = ""
+        ProfRegFullNameBox.TrailingIcon = Nothing
+        ProfRegFullNameBox.UseAccent = False
+        ' 
+        ' MaterialLabel23
+        ' 
+        MaterialLabel23.AutoSize = True
+        MaterialLabel23.Depth = 0
+        MaterialLabel23.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel23.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
+        MaterialLabel23.Location = New Point(400, 761)
+        MaterialLabel23.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel23.Name = "MaterialLabel23"
+        MaterialLabel23.Size = New Size(221, 14)
+        MaterialLabel23.TabIndex = 7
+        MaterialLabel23.Text = "Powered by College of Computer Studies"
+        MaterialLabel23.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel25
+        ' 
+        MaterialLabel25.AutoSize = True
+        MaterialLabel25.Depth = 0
+        MaterialLabel25.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel25.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
+        MaterialLabel25.Location = New Point(271, 59)
+        MaterialLabel25.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel25.Name = "MaterialLabel25"
+        MaterialLabel25.Size = New Size(479, 58)
+        MaterialLabel25.TabIndex = 0
+        MaterialLabel25.Text = "Professor Registration"
+        ' 
+        ' StudentLoginCard
+        ' 
+        StudentLoginCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StudentLoginCard.Controls.Add(StuLogQRCode)
+        StudentLoginCard.Controls.Add(StuLogBackBtn)
+        StudentLoginCard.Controls.Add(StuLogForgPass)
+        StudentLoginCard.Controls.Add(StuLogCreateACc)
+        StudentLoginCard.Controls.Add(MaterialLabel39)
+        StudentLoginCard.Controls.Add(MaterialLabel40)
+        StudentLoginCard.Controls.Add(StuLogSignInBtn)
+        StudentLoginCard.Controls.Add(StuLogStudIdTxtBox)
+        StudentLoginCard.Controls.Add(MaterialLabel41)
+        StudentLoginCard.Controls.Add(MaterialLabel42)
+        StudentLoginCard.Controls.Add(PictureBox7)
+        StudentLoginCard.Controls.Add(MaterialLabel43)
+        StudentLoginCard.Depth = 0
+        StudentLoginCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StudentLoginCard.Location = New Point(448, 110)
+        StudentLoginCard.Margin = New Padding(14)
+        StudentLoginCard.MouseState = MaterialSkin.MouseState.HOVER
+        StudentLoginCard.Name = "StudentLoginCard"
+        StudentLoginCard.Padding = New Padding(14)
+        StudentLoginCard.Size = New Size(1021, 836)
+        StudentLoginCard.TabIndex = 7
+        StudentLoginCard.Visible = False
+        ' 
+        ' StuLogQRCode
+        ' 
+        StuLogQRCode.AutoSize = True
+        StuLogQRCode.Cursor = Cursors.Hand
+        StuLogQRCode.Depth = 0
+        StuLogQRCode.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuLogQRCode.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        StuLogQRCode.HighEmphasis = True
+        StuLogQRCode.Location = New Point(193, 508)
+        StuLogQRCode.MouseState = MaterialSkin.MouseState.HOVER
+        StuLogQRCode.Name = "StuLogQRCode"
+        StuLogQRCode.Size = New Size(119, 17)
+        StuLogQRCode.TabIndex = 17
+        StuLogQRCode.Text = "Scan with QR Code"
+        ' 
+        ' StuLogBackBtn
+        ' 
+        StuLogBackBtn.AutoSize = False
+        StuLogBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StuLogBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StuLogBackBtn.Depth = 0
+        StuLogBackBtn.DrawShadows = False
+        StuLogBackBtn.HighEmphasis = True
+        StuLogBackBtn.Icon = My.Resources.Resources.back__1_
+        StuLogBackBtn.Location = New Point(18, 20)
+        StuLogBackBtn.Margin = New Padding(4, 6, 4, 6)
+        StuLogBackBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StuLogBackBtn.Name = "StuLogBackBtn"
+        StuLogBackBtn.NoAccentTextColor = Color.Empty
+        StuLogBackBtn.Size = New Size(42, 36)
+        StuLogBackBtn.TabIndex = 16
+        StuLogBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
+        StuLogBackBtn.UseAccentColor = False
+        StuLogBackBtn.UseVisualStyleBackColor = True
+        ' 
+        ' StuLogForgPass
+        ' 
+        StuLogForgPass.AutoSize = True
+        StuLogForgPass.Cursor = Cursors.Hand
+        StuLogForgPass.Depth = 0
+        StuLogForgPass.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuLogForgPass.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        StuLogForgPass.HighEmphasis = True
+        StuLogForgPass.Location = New Point(711, 508)
+        StuLogForgPass.MouseState = MaterialSkin.MouseState.HOVER
+        StuLogForgPass.Name = "StuLogForgPass"
+        StuLogForgPass.Size = New Size(116, 17)
+        StuLogForgPass.TabIndex = 15
+        StuLogForgPass.Text = "Forgot Password?"
+        ' 
+        ' StuLogCreateACc
+        ' 
+        StuLogCreateACc.AutoSize = True
+        StuLogCreateACc.Cursor = Cursors.Hand
+        StuLogCreateACc.Depth = 0
+        StuLogCreateACc.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuLogCreateACc.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        StuLogCreateACc.HighEmphasis = True
+        StuLogCreateACc.Location = New Point(519, 661)
+        StuLogCreateACc.MouseState = MaterialSkin.MouseState.HOVER
+        StuLogCreateACc.Name = "StuLogCreateACc"
+        StuLogCreateACc.Size = New Size(68, 17)
+        StuLogCreateACc.TabIndex = 14
+        StuLogCreateACc.Text = "Create one"
+        ' 
+        ' MaterialLabel39
+        ' 
+        MaterialLabel39.AutoSize = True
+        MaterialLabel39.Depth = 0
+        MaterialLabel39.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel39.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel39.Location = New Point(193, 412)
+        MaterialLabel39.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel39.Name = "MaterialLabel39"
+        MaterialLabel39.Size = New Size(144, 24)
+        MaterialLabel39.TabIndex = 12
+        MaterialLabel39.Text = "Student number"
+        ' 
+        ' MaterialLabel40
+        ' 
+        MaterialLabel40.AutoSize = True
+        MaterialLabel40.Depth = 0
+        MaterialLabel40.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel40.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        MaterialLabel40.Location = New Point(433, 661)
+        MaterialLabel40.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel40.Name = "MaterialLabel40"
+        MaterialLabel40.Size = New Size(80, 17)
+        MaterialLabel40.TabIndex = 11
+        MaterialLabel40.Text = "No account?"
+        ' 
+        ' StuLogSignInBtn
+        ' 
+        StuLogSignInBtn.AutoSize = False
+        StuLogSignInBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StuLogSignInBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StuLogSignInBtn.Depth = 0
+        StuLogSignInBtn.HighEmphasis = True
+        StuLogSignInBtn.Icon = Nothing
+        StuLogSignInBtn.Location = New Point(193, 588)
+        StuLogSignInBtn.Margin = New Padding(4, 6, 4, 6)
+        StuLogSignInBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StuLogSignInBtn.Name = "StuLogSignInBtn"
+        StuLogSignInBtn.NoAccentTextColor = Color.Empty
+        StuLogSignInBtn.Size = New Size(634, 45)
+        StuLogSignInBtn.TabIndex = 10
+        StuLogSignInBtn.Text = "Sign In"
+        StuLogSignInBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StuLogSignInBtn.UseAccentColor = False
+        StuLogSignInBtn.UseVisualStyleBackColor = True
+        ' 
+        ' StuLogStudIdTxtBox
+        ' 
+        StuLogStudIdTxtBox.AnimateReadOnly = False
+        StuLogStudIdTxtBox.BorderStyle = BorderStyle.None
+        StuLogStudIdTxtBox.Depth = 0
+        StuLogStudIdTxtBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuLogStudIdTxtBox.Hint = "Enter your student id number"
+        StuLogStudIdTxtBox.LeadingIcon = My.Resources.Resources.user
+        StuLogStudIdTxtBox.Location = New Point(193, 445)
+        StuLogStudIdTxtBox.MaxLength = 50
+        StuLogStudIdTxtBox.MouseState = MaterialSkin.MouseState.OUT
+        StuLogStudIdTxtBox.Multiline = False
+        StuLogStudIdTxtBox.Name = "StuLogStudIdTxtBox"
+        StuLogStudIdTxtBox.Size = New Size(634, 50)
+        StuLogStudIdTxtBox.TabIndex = 8
+        StuLogStudIdTxtBox.Text = ""
+        StuLogStudIdTxtBox.TrailingIcon = Nothing
+        StuLogStudIdTxtBox.UseAccent = False
+        ' 
+        ' MaterialLabel41
+        ' 
+        MaterialLabel41.AutoSize = True
+        MaterialLabel41.Depth = 0
+        MaterialLabel41.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel41.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
+        MaterialLabel41.Location = New Point(400, 761)
+        MaterialLabel41.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel41.Name = "MaterialLabel41"
+        MaterialLabel41.Size = New Size(221, 14)
+        MaterialLabel41.TabIndex = 7
+        MaterialLabel41.Text = "Powered by College of Computer Studies"
+        MaterialLabel41.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel42
+        ' 
+        MaterialLabel42.AutoSize = True
+        MaterialLabel42.Depth = 0
+        MaterialLabel42.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel42.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
+        MaterialLabel42.Location = New Point(388, 326)
+        MaterialLabel42.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel42.Name = "MaterialLabel42"
+        MaterialLabel42.RightToLeft = RightToLeft.No
+        MaterialLabel42.Size = New Size(245, 17)
+        MaterialLabel42.TabIndex = 4
+        MaterialLabel42.Text = "Please login with your student number"
+        ' 
+        ' PictureBox7
+        ' 
+        PictureBox7.BackgroundImage = My.Resources.Resources.PLP_logo1
+        PictureBox7.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox7.Location = New Point(428, 75)
+        PictureBox7.Name = "PictureBox7"
+        PictureBox7.Size = New Size(164, 144)
+        PictureBox7.TabIndex = 1
+        PictureBox7.TabStop = False
+        ' 
+        ' MaterialLabel43
+        ' 
+        MaterialLabel43.AutoSize = True
+        MaterialLabel43.Depth = 0
+        MaterialLabel43.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel43.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
+        MaterialLabel43.Location = New Point(207, 245)
+        MaterialLabel43.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel43.Name = "MaterialLabel43"
+        MaterialLabel43.Size = New Size(606, 58)
+        MaterialLabel43.TabIndex = 0
+        MaterialLabel43.Text = "Student Registration System"
         ' 
         ' ProfLogCard
         ' 
@@ -476,6 +1372,7 @@ Partial Class EntrancePage
         ChooseStudentCard.Controls.Add(SmolStudentLbl2)
         ChooseStudentCard.Controls.Add(EnterStudentBtn)
         ChooseStudentCard.Controls.Add(StudentPicturebox)
+        ChooseStudentCard.Cursor = Cursors.Hand
         ChooseStudentCard.Depth = 0
         ChooseStudentCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         ChooseStudentCard.Location = New Point(524, 397)
@@ -516,6 +1413,7 @@ Partial Class EntrancePage
         ' 
         EnterStudentBtn.AutoSize = False
         EnterStudentBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        EnterStudentBtn.Cursor = Cursors.Hand
         EnterStudentBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
         EnterStudentBtn.Depth = 0
         EnterStudentBtn.HighEmphasis = True
@@ -550,6 +1448,7 @@ Partial Class EntrancePage
         ChooseAdminCard.Controls.Add(SmolAdminLbl2)
         ChooseAdminCard.Controls.Add(EnterAdminBtn)
         ChooseAdminCard.Controls.Add(AdminPictureBox)
+        ChooseAdminCard.Cursor = Cursors.Hand
         ChooseAdminCard.Depth = 0
         ChooseAdminCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         ChooseAdminCard.Location = New Point(148, 397)
@@ -611,6 +1510,7 @@ Partial Class EntrancePage
         ' 
         AdminPictureBox.BackgroundImage = My.Resources.Resources.manager
         AdminPictureBox.BackgroundImageLayout = ImageLayout.Zoom
+        AdminPictureBox.Cursor = Cursors.Hand
         AdminPictureBox.Location = New Point(70, 26)
         AdminPictureBox.Name = "AdminPictureBox"
         AdminPictureBox.Size = New Size(208, 158)
@@ -913,6 +1813,7 @@ Partial Class EntrancePage
         ' StuForgPassCard
         ' 
         StuForgPassCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuForgPassCard.Controls.Add(MaterialLabel4)
         StuForgPassCard.Controls.Add(MaterialLabel49)
         StuForgPassCard.Controls.Add(StuForgPassEmailBox)
         StuForgPassCard.Controls.Add(MaterialLabel50)
@@ -932,6 +1833,18 @@ Partial Class EntrancePage
         StuForgPassCard.Size = New Size(1021, 836)
         StuForgPassCard.TabIndex = 9
         StuForgPassCard.Visible = False
+        ' 
+        ' MaterialLabel4
+        ' 
+        MaterialLabel4.Depth = 0
+        MaterialLabel4.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        MaterialLabel4.Location = New Point(193, 547)
+        MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel4.Name = "MaterialLabel4"
+        MaterialLabel4.Size = New Size(634, 38)
+        MaterialLabel4.TabIndex = 21
+        MaterialLabel4.Text = "A QR Code will be sent to your provided valid school email, you can use it to login or scan the QR Code from your device to reveal your old password."
         ' 
         ' MaterialLabel49
         ' 
@@ -1081,6 +1994,7 @@ Partial Class EntrancePage
         ' ProfForgPassCard
         ' 
         ProfForgPassCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ProfForgPassCard.Controls.Add(MaterialLabel5)
         ProfForgPassCard.Controls.Add(MaterialLabel19)
         ProfForgPassCard.Controls.Add(ProfForgPassUsernameBox)
         ProfForgPassCard.Controls.Add(MaterialLabel22)
@@ -1103,13 +2017,25 @@ Partial Class EntrancePage
         ProfForgPassCard.TabIndex = 5
         ProfForgPassCard.Visible = False
         ' 
+        ' MaterialLabel5
+        ' 
+        MaterialLabel5.Depth = 0
+        MaterialLabel5.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        MaterialLabel5.Location = New Point(193, 588)
+        MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel5.Name = "MaterialLabel5"
+        MaterialLabel5.Size = New Size(634, 38)
+        MaterialLabel5.TabIndex = 23
+        MaterialLabel5.Text = "A QR Code will be sent to your provided valid school email, you can use it to login or scan the QR Code from your device to reveal your old password."
+        ' 
         ' MaterialLabel19
         ' 
         MaterialLabel19.AutoSize = True
         MaterialLabel19.Depth = 0
         MaterialLabel19.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
         MaterialLabel19.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel19.Location = New Point(193, 474)
+        MaterialLabel19.Location = New Point(193, 446)
         MaterialLabel19.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel19.Name = "MaterialLabel19"
         MaterialLabel19.Size = New Size(92, 24)
@@ -1124,7 +2050,7 @@ Partial Class EntrancePage
         ProfForgPassUsernameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
         ProfForgPassUsernameBox.Hint = "Enter username"
         ProfForgPassUsernameBox.LeadingIcon = Nothing
-        ProfForgPassUsernameBox.Location = New Point(193, 511)
+        ProfForgPassUsernameBox.Location = New Point(193, 483)
         ProfForgPassUsernameBox.MaxLength = 50
         ProfForgPassUsernameBox.MouseState = MaterialSkin.MouseState.OUT
         ProfForgPassUsernameBox.Multiline = False
@@ -1141,7 +2067,7 @@ Partial Class EntrancePage
         MaterialLabel22.Depth = 0
         MaterialLabel22.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
         MaterialLabel22.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel22.Location = New Point(193, 358)
+        MaterialLabel22.Location = New Point(193, 330)
         MaterialLabel22.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel22.Name = "MaterialLabel22"
         MaterialLabel22.Size = New Size(126, 24)
@@ -1156,7 +2082,7 @@ Partial Class EntrancePage
         ProfForgPassEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
         ProfForgPassEmailBox.Hint = "Enter valid email - Eg. delacruz_juan@plpasig.edu.ph"
         ProfForgPassEmailBox.LeadingIcon = Nothing
-        ProfForgPassEmailBox.Location = New Point(193, 395)
+        ProfForgPassEmailBox.Location = New Point(193, 367)
         ProfForgPassEmailBox.MaxLength = 50
         ProfForgPassEmailBox.MouseState = MaterialSkin.MouseState.OUT
         ProfForgPassEmailBox.Multiline = False
@@ -1207,7 +2133,7 @@ Partial Class EntrancePage
         MaterialLabel28.Depth = 0
         MaterialLabel28.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
         MaterialLabel28.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel28.Location = New Point(193, 242)
+        MaterialLabel28.Location = New Point(193, 214)
         MaterialLabel28.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel28.Name = "MaterialLabel28"
         MaterialLabel28.Size = New Size(88, 24)
@@ -1242,7 +2168,7 @@ Partial Class EntrancePage
         ProfForgPassFullNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
         ProfForgPassFullNameBox.Hint = "Enter full name - Eg. Juan B. Dela Cruz"
         ProfForgPassFullNameBox.LeadingIcon = Nothing
-        ProfForgPassFullNameBox.Location = New Point(193, 279)
+        ProfForgPassFullNameBox.Location = New Point(193, 251)
         ProfForgPassFullNameBox.MaxLength = 50
         ProfForgPassFullNameBox.MouseState = MaterialSkin.MouseState.OUT
         ProfForgPassFullNameBox.Multiline = False
@@ -1280,883 +2206,6 @@ Partial Class EntrancePage
         MaterialLabel30.TabIndex = 0
         MaterialLabel30.Text = "Professor Forgot Password"
         ' 
-        ' StuRegCard
-        ' 
-        StuRegCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StuRegCard.Controls.Add(MaterialLabel65)
-        StuRegCard.Controls.Add(MaterialLabel64)
-        StuRegCard.Controls.Add(StuRegStatusBox)
-        StuRegCard.Controls.Add(MaterialLabel63)
-        StuRegCard.Controls.Add(StuRegYearLvlBox)
-        StuRegCard.Controls.Add(MaterialLabel62)
-        StuRegCard.Controls.Add(StuRegSectionBox)
-        StuRegCard.Controls.Add(MaterialLabel61)
-        StuRegCard.Controls.Add(StuRegEmailBox)
-        StuRegCard.Controls.Add(MaterialLabel60)
-        StuRegCard.Controls.Add(StuRegSuffixBox)
-        StuRegCard.Controls.Add(MaterialLabel48)
-        StuRegCard.Controls.Add(StuRegMiddleInitialBox)
-        StuRegCard.Controls.Add(MaterialLabel54)
-        StuRegCard.Controls.Add(StuRegFirstNameBox)
-        StuRegCard.Controls.Add(MaterialLabel55)
-        StuRegCard.Controls.Add(StuRegStuLastNameBox)
-        StuRegCard.Controls.Add(MaterialLabel56)
-        StuRegCard.Controls.Add(StuRegBackBtn)
-        StuRegCard.Controls.Add(MaterialLabel57)
-        StuRegCard.Controls.Add(StuRegSignUpBox)
-        StuRegCard.Controls.Add(StuRegStuNumBox)
-        StuRegCard.Controls.Add(MaterialLabel58)
-        StuRegCard.Controls.Add(MaterialLabel59)
-        StuRegCard.Depth = 0
-        StuRegCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StuRegCard.Location = New Point(448, 110)
-        StuRegCard.Margin = New Padding(14)
-        StuRegCard.MouseState = MaterialSkin.MouseState.HOVER
-        StuRegCard.Name = "StuRegCard"
-        StuRegCard.Padding = New Padding(14)
-        StuRegCard.Size = New Size(1021, 836)
-        StuRegCard.TabIndex = 10
-        StuRegCard.Visible = False
-        ' 
-        ' MaterialLabel65
-        ' 
-        MaterialLabel65.AutoSize = True
-        MaterialLabel65.Depth = 0
-        MaterialLabel65.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel65.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        MaterialLabel65.Location = New Point(313, 640)
-        MaterialLabel65.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel65.Name = "MaterialLabel65"
-        MaterialLabel65.Size = New Size(395, 17)
-        MaterialLabel65.TabIndex = 35
-        MaterialLabel65.Text = "Double check and make sure every important details are filled in."
-        MaterialLabel65.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel64
-        ' 
-        MaterialLabel64.AutoSize = True
-        MaterialLabel64.Depth = 0
-        MaterialLabel64.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel64.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel64.Location = New Point(619, 529)
-        MaterialLabel64.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel64.Name = "MaterialLabel64"
-        MaterialLabel64.Size = New Size(59, 24)
-        MaterialLabel64.TabIndex = 34
-        MaterialLabel64.Text = "Status"
-        ' 
-        ' StuRegStatusBox
-        ' 
-        StuRegStatusBox.AutoResize = False
-        StuRegStatusBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StuRegStatusBox.Depth = 0
-        StuRegStatusBox.DrawMode = DrawMode.OwnerDrawVariable
-        StuRegStatusBox.DropDownHeight = 174
-        StuRegStatusBox.DropDownStyle = ComboBoxStyle.DropDownList
-        StuRegStatusBox.DropDownWidth = 121
-        StuRegStatusBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        StuRegStatusBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StuRegStatusBox.FormattingEnabled = True
-        StuRegStatusBox.IntegralHeight = False
-        StuRegStatusBox.ItemHeight = 43
-        StuRegStatusBox.Location = New Point(619, 563)
-        StuRegStatusBox.MaxDropDownItems = 4
-        StuRegStatusBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegStatusBox.Name = "StuRegStatusBox"
-        StuRegStatusBox.Size = New Size(208, 49)
-        StuRegStatusBox.StartIndex = 0
-        StuRegStatusBox.TabIndex = 33
-        ' 
-        ' MaterialLabel63
-        ' 
-        MaterialLabel63.AutoSize = True
-        MaterialLabel63.Depth = 0
-        MaterialLabel63.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel63.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel63.Location = New Point(400, 529)
-        MaterialLabel63.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel63.Name = "MaterialLabel63"
-        MaterialLabel63.Size = New Size(89, 24)
-        MaterialLabel63.TabIndex = 32
-        MaterialLabel63.Text = "Year level"
-        ' 
-        ' StuRegYearLvlBox
-        ' 
-        StuRegYearLvlBox.AutoResize = False
-        StuRegYearLvlBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StuRegYearLvlBox.Depth = 0
-        StuRegYearLvlBox.DrawMode = DrawMode.OwnerDrawVariable
-        StuRegYearLvlBox.DropDownHeight = 174
-        StuRegYearLvlBox.DropDownStyle = ComboBoxStyle.DropDownList
-        StuRegYearLvlBox.DropDownWidth = 121
-        StuRegYearLvlBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        StuRegYearLvlBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StuRegYearLvlBox.FormattingEnabled = True
-        StuRegYearLvlBox.IntegralHeight = False
-        StuRegYearLvlBox.ItemHeight = 43
-        StuRegYearLvlBox.Location = New Point(400, 563)
-        StuRegYearLvlBox.MaxDropDownItems = 4
-        StuRegYearLvlBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegYearLvlBox.Name = "StuRegYearLvlBox"
-        StuRegYearLvlBox.Size = New Size(213, 49)
-        StuRegYearLvlBox.StartIndex = 0
-        StuRegYearLvlBox.TabIndex = 31
-        ' 
-        ' MaterialLabel62
-        ' 
-        MaterialLabel62.AutoSize = True
-        MaterialLabel62.Depth = 0
-        MaterialLabel62.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel62.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel62.Location = New Point(193, 529)
-        MaterialLabel62.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel62.Name = "MaterialLabel62"
-        MaterialLabel62.Size = New Size(68, 24)
-        MaterialLabel62.TabIndex = 30
-        MaterialLabel62.Text = "Section"
-        ' 
-        ' StuRegSectionBox
-        ' 
-        StuRegSectionBox.AutoResize = False
-        StuRegSectionBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StuRegSectionBox.Depth = 0
-        StuRegSectionBox.DrawMode = DrawMode.OwnerDrawVariable
-        StuRegSectionBox.DropDownHeight = 174
-        StuRegSectionBox.DropDownStyle = ComboBoxStyle.DropDownList
-        StuRegSectionBox.DropDownWidth = 121
-        StuRegSectionBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        StuRegSectionBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StuRegSectionBox.FormattingEnabled = True
-        StuRegSectionBox.IntegralHeight = False
-        StuRegSectionBox.ItemHeight = 43
-        StuRegSectionBox.Location = New Point(193, 563)
-        StuRegSectionBox.MaxDropDownItems = 4
-        StuRegSectionBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegSectionBox.Name = "StuRegSectionBox"
-        StuRegSectionBox.Size = New Size(201, 49)
-        StuRegSectionBox.StartIndex = 0
-        StuRegSectionBox.TabIndex = 29
-        ' 
-        ' MaterialLabel61
-        ' 
-        MaterialLabel61.AutoSize = True
-        MaterialLabel61.Depth = 0
-        MaterialLabel61.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel61.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel61.Location = New Point(350, 417)
-        MaterialLabel61.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel61.Name = "MaterialLabel61"
-        MaterialLabel61.Size = New Size(126, 24)
-        MaterialLabel61.TabIndex = 28
-        MaterialLabel61.Text = "Email address"
-        ' 
-        ' StuRegEmailBox
-        ' 
-        StuRegEmailBox.AnimateReadOnly = False
-        StuRegEmailBox.BorderStyle = BorderStyle.None
-        StuRegEmailBox.Depth = 0
-        StuRegEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuRegEmailBox.Hint = "Enter your email address"
-        StuRegEmailBox.LeadingIcon = Nothing
-        StuRegEmailBox.Location = New Point(350, 454)
-        StuRegEmailBox.MaxLength = 50
-        StuRegEmailBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegEmailBox.Multiline = False
-        StuRegEmailBox.Name = "StuRegEmailBox"
-        StuRegEmailBox.Size = New Size(477, 50)
-        StuRegEmailBox.TabIndex = 27
-        StuRegEmailBox.Text = ""
-        StuRegEmailBox.TrailingIcon = Nothing
-        StuRegEmailBox.UseAccent = False
-        ' 
-        ' MaterialLabel60
-        ' 
-        MaterialLabel60.AutoSize = True
-        MaterialLabel60.Depth = 0
-        MaterialLabel60.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel60.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel60.Location = New Point(193, 421)
-        MaterialLabel60.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel60.Name = "MaterialLabel60"
-        MaterialLabel60.Size = New Size(53, 24)
-        MaterialLabel60.TabIndex = 26
-        MaterialLabel60.Text = "Suffix"
-        ' 
-        ' StuRegSuffixBox
-        ' 
-        StuRegSuffixBox.AutoResize = False
-        StuRegSuffixBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StuRegSuffixBox.Depth = 0
-        StuRegSuffixBox.DrawMode = DrawMode.OwnerDrawVariable
-        StuRegSuffixBox.DropDownHeight = 174
-        StuRegSuffixBox.DropDownStyle = ComboBoxStyle.DropDownList
-        StuRegSuffixBox.DropDownWidth = 121
-        StuRegSuffixBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        StuRegSuffixBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StuRegSuffixBox.FormattingEnabled = True
-        StuRegSuffixBox.IntegralHeight = False
-        StuRegSuffixBox.ItemHeight = 43
-        StuRegSuffixBox.Location = New Point(193, 455)
-        StuRegSuffixBox.MaxDropDownItems = 4
-        StuRegSuffixBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegSuffixBox.Name = "StuRegSuffixBox"
-        StuRegSuffixBox.Size = New Size(151, 49)
-        StuRegSuffixBox.StartIndex = 0
-        StuRegSuffixBox.TabIndex = 25
-        ' 
-        ' MaterialLabel48
-        ' 
-        MaterialLabel48.AutoSize = True
-        MaterialLabel48.Depth = 0
-        MaterialLabel48.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel48.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel48.Location = New Point(662, 311)
-        MaterialLabel48.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel48.Name = "MaterialLabel48"
-        MaterialLabel48.Size = New Size(116, 24)
-        MaterialLabel48.TabIndex = 24
-        MaterialLabel48.Text = "Middle initial"
-        ' 
-        ' StuRegMiddleInitialBox
-        ' 
-        StuRegMiddleInitialBox.AnimateReadOnly = False
-        StuRegMiddleInitialBox.BorderStyle = BorderStyle.None
-        StuRegMiddleInitialBox.Depth = 0
-        StuRegMiddleInitialBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuRegMiddleInitialBox.Hint = "Enter middle initial"
-        StuRegMiddleInitialBox.LeadingIcon = Nothing
-        StuRegMiddleInitialBox.Location = New Point(662, 348)
-        StuRegMiddleInitialBox.MaxLength = 50
-        StuRegMiddleInitialBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegMiddleInitialBox.Multiline = False
-        StuRegMiddleInitialBox.Name = "StuRegMiddleInitialBox"
-        StuRegMiddleInitialBox.Size = New Size(165, 50)
-        StuRegMiddleInitialBox.TabIndex = 23
-        StuRegMiddleInitialBox.Text = ""
-        StuRegMiddleInitialBox.TrailingIcon = Nothing
-        StuRegMiddleInitialBox.UseAccent = False
-        ' 
-        ' MaterialLabel54
-        ' 
-        MaterialLabel54.AutoSize = True
-        MaterialLabel54.Depth = 0
-        MaterialLabel54.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel54.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel54.Location = New Point(193, 311)
-        MaterialLabel54.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel54.Name = "MaterialLabel54"
-        MaterialLabel54.Size = New Size(96, 24)
-        MaterialLabel54.TabIndex = 22
-        MaterialLabel54.Text = "First name"
-        ' 
-        ' StuRegFirstNameBox
-        ' 
-        StuRegFirstNameBox.AnimateReadOnly = False
-        StuRegFirstNameBox.BorderStyle = BorderStyle.None
-        StuRegFirstNameBox.Depth = 0
-        StuRegFirstNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuRegFirstNameBox.Hint = "Enter your first name"
-        StuRegFirstNameBox.LeadingIcon = Nothing
-        StuRegFirstNameBox.Location = New Point(193, 348)
-        StuRegFirstNameBox.MaxLength = 50
-        StuRegFirstNameBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegFirstNameBox.Multiline = False
-        StuRegFirstNameBox.Name = "StuRegFirstNameBox"
-        StuRegFirstNameBox.Size = New Size(463, 50)
-        StuRegFirstNameBox.TabIndex = 21
-        StuRegFirstNameBox.Text = ""
-        StuRegFirstNameBox.TrailingIcon = Nothing
-        StuRegFirstNameBox.UseAccent = False
-        ' 
-        ' MaterialLabel55
-        ' 
-        MaterialLabel55.AutoSize = True
-        MaterialLabel55.Depth = 0
-        MaterialLabel55.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel55.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel55.Location = New Point(433, 203)
-        MaterialLabel55.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel55.Name = "MaterialLabel55"
-        MaterialLabel55.Size = New Size(95, 24)
-        MaterialLabel55.TabIndex = 20
-        MaterialLabel55.Text = "Last name"
-        ' 
-        ' StuRegStuLastNameBox
-        ' 
-        StuRegStuLastNameBox.AnimateReadOnly = False
-        StuRegStuLastNameBox.BorderStyle = BorderStyle.None
-        StuRegStuLastNameBox.Depth = 0
-        StuRegStuLastNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuRegStuLastNameBox.Hint = "Enter your last name"
-        StuRegStuLastNameBox.LeadingIcon = Nothing
-        StuRegStuLastNameBox.Location = New Point(433, 240)
-        StuRegStuLastNameBox.MaxLength = 50
-        StuRegStuLastNameBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegStuLastNameBox.Multiline = False
-        StuRegStuLastNameBox.Name = "StuRegStuLastNameBox"
-        StuRegStuLastNameBox.Size = New Size(394, 50)
-        StuRegStuLastNameBox.TabIndex = 19
-        StuRegStuLastNameBox.Text = ""
-        StuRegStuLastNameBox.TrailingIcon = Nothing
-        StuRegStuLastNameBox.UseAccent = False
-        ' 
-        ' MaterialLabel56
-        ' 
-        MaterialLabel56.AutoSize = True
-        MaterialLabel56.Depth = 0
-        MaterialLabel56.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel56.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
-        MaterialLabel56.Location = New Point(406, 133)
-        MaterialLabel56.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel56.Name = "MaterialLabel56"
-        MaterialLabel56.RightToLeft = RightToLeft.No
-        MaterialLabel56.Size = New Size(196, 17)
-        MaterialLabel56.TabIndex = 18
-        MaterialLabel56.Text = "Enter the following credentials"
-        ' 
-        ' StuRegBackBtn
-        ' 
-        StuRegBackBtn.AutoSize = False
-        StuRegBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        StuRegBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        StuRegBackBtn.Depth = 0
-        StuRegBackBtn.DrawShadows = False
-        StuRegBackBtn.HighEmphasis = True
-        StuRegBackBtn.Icon = My.Resources.Resources.back__1_
-        StuRegBackBtn.Location = New Point(18, 20)
-        StuRegBackBtn.Margin = New Padding(4, 6, 4, 6)
-        StuRegBackBtn.MouseState = MaterialSkin.MouseState.HOVER
-        StuRegBackBtn.Name = "StuRegBackBtn"
-        StuRegBackBtn.NoAccentTextColor = Color.Empty
-        StuRegBackBtn.Size = New Size(42, 36)
-        StuRegBackBtn.TabIndex = 16
-        StuRegBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
-        StuRegBackBtn.UseAccentColor = False
-        StuRegBackBtn.UseVisualStyleBackColor = True
-        ' 
-        ' MaterialLabel57
-        ' 
-        MaterialLabel57.AutoSize = True
-        MaterialLabel57.Depth = 0
-        MaterialLabel57.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel57.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel57.Location = New Point(193, 203)
-        MaterialLabel57.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel57.Name = "MaterialLabel57"
-        MaterialLabel57.Size = New Size(144, 24)
-        MaterialLabel57.TabIndex = 12
-        MaterialLabel57.Text = "Student number"
-        ' 
-        ' StuRegSignUpBox
-        ' 
-        StuRegSignUpBox.AutoSize = False
-        StuRegSignUpBox.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        StuRegSignUpBox.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        StuRegSignUpBox.Depth = 0
-        StuRegSignUpBox.HighEmphasis = True
-        StuRegSignUpBox.Icon = Nothing
-        StuRegSignUpBox.Location = New Point(193, 684)
-        StuRegSignUpBox.Margin = New Padding(4, 6, 4, 6)
-        StuRegSignUpBox.MouseState = MaterialSkin.MouseState.HOVER
-        StuRegSignUpBox.Name = "StuRegSignUpBox"
-        StuRegSignUpBox.NoAccentTextColor = Color.Empty
-        StuRegSignUpBox.Size = New Size(634, 45)
-        StuRegSignUpBox.TabIndex = 10
-        StuRegSignUpBox.Text = "SIGN UP"
-        StuRegSignUpBox.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        StuRegSignUpBox.UseAccentColor = False
-        StuRegSignUpBox.UseVisualStyleBackColor = True
-        ' 
-        ' StuRegStuNumBox
-        ' 
-        StuRegStuNumBox.AnimateReadOnly = False
-        StuRegStuNumBox.BorderStyle = BorderStyle.None
-        StuRegStuNumBox.Depth = 0
-        StuRegStuNumBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuRegStuNumBox.Hint = "Enter your student number"
-        StuRegStuNumBox.LeadingIcon = Nothing
-        StuRegStuNumBox.Location = New Point(193, 240)
-        StuRegStuNumBox.MaxLength = 50
-        StuRegStuNumBox.MouseState = MaterialSkin.MouseState.OUT
-        StuRegStuNumBox.Multiline = False
-        StuRegStuNumBox.Name = "StuRegStuNumBox"
-        StuRegStuNumBox.Size = New Size(233, 50)
-        StuRegStuNumBox.TabIndex = 8
-        StuRegStuNumBox.Text = ""
-        StuRegStuNumBox.TrailingIcon = Nothing
-        StuRegStuNumBox.UseAccent = False
-        ' 
-        ' MaterialLabel58
-        ' 
-        MaterialLabel58.AutoSize = True
-        MaterialLabel58.Depth = 0
-        MaterialLabel58.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel58.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel58.Location = New Point(400, 761)
-        MaterialLabel58.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel58.Name = "MaterialLabel58"
-        MaterialLabel58.Size = New Size(221, 14)
-        MaterialLabel58.TabIndex = 7
-        MaterialLabel58.Text = "Powered by College of Computer Studies"
-        MaterialLabel58.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel59
-        ' 
-        MaterialLabel59.AutoSize = True
-        MaterialLabel59.Depth = 0
-        MaterialLabel59.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel59.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
-        MaterialLabel59.Location = New Point(293, 59)
-        MaterialLabel59.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel59.Name = "MaterialLabel59"
-        MaterialLabel59.Size = New Size(435, 58)
-        MaterialLabel59.TabIndex = 0
-        MaterialLabel59.Text = "Student Registration"
-        ' 
-        ' ProfRegCard
-        ' 
-        ProfRegCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        ProfRegCard.Controls.Add(MaterialLabel17)
-        ProfRegCard.Controls.Add(ProfRegPasswordBox)
-        ProfRegCard.Controls.Add(MaterialLabel27)
-        ProfRegCard.Controls.Add(ProfRegUsernameBox)
-        ProfRegCard.Controls.Add(MaterialLabel20)
-        ProfRegCard.Controls.Add(ProfRegEmailBox)
-        ProfRegCard.Controls.Add(MaterialLabel26)
-        ProfRegCard.Controls.Add(ProfRegBackBtn)
-        ProfRegCard.Controls.Add(MaterialLabel21)
-        ProfRegCard.Controls.Add(ProfRegSignUpBtn)
-        ProfRegCard.Controls.Add(ProfRegFullNameBox)
-        ProfRegCard.Controls.Add(MaterialLabel23)
-        ProfRegCard.Controls.Add(MaterialLabel25)
-        ProfRegCard.Depth = 0
-        ProfRegCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        ProfRegCard.Location = New Point(448, 110)
-        ProfRegCard.Margin = New Padding(14)
-        ProfRegCard.MouseState = MaterialSkin.MouseState.HOVER
-        ProfRegCard.Name = "ProfRegCard"
-        ProfRegCard.Padding = New Padding(14)
-        ProfRegCard.Size = New Size(1021, 836)
-        ProfRegCard.TabIndex = 4
-        ProfRegCard.Visible = False
-        ' 
-        ' MaterialLabel17
-        ' 
-        MaterialLabel17.AutoSize = True
-        MaterialLabel17.Depth = 0
-        MaterialLabel17.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel17.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel17.Location = New Point(193, 546)
-        MaterialLabel17.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel17.Name = "MaterialLabel17"
-        MaterialLabel17.Size = New Size(89, 24)
-        MaterialLabel17.TabIndex = 24
-        MaterialLabel17.Text = "Password"
-        ' 
-        ' ProfRegPasswordBox
-        ' 
-        ProfRegPasswordBox.AnimateReadOnly = False
-        ProfRegPasswordBox.BorderStyle = BorderStyle.None
-        ProfRegPasswordBox.Depth = 0
-        ProfRegPasswordBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        ProfRegPasswordBox.Hint = "Enter password"
-        ProfRegPasswordBox.LeadingIcon = Nothing
-        ProfRegPasswordBox.Location = New Point(193, 583)
-        ProfRegPasswordBox.MaxLength = 50
-        ProfRegPasswordBox.MouseState = MaterialSkin.MouseState.OUT
-        ProfRegPasswordBox.Multiline = False
-        ProfRegPasswordBox.Name = "ProfRegPasswordBox"
-        ProfRegPasswordBox.Password = True
-        ProfRegPasswordBox.Size = New Size(634, 50)
-        ProfRegPasswordBox.TabIndex = 23
-        ProfRegPasswordBox.Text = ""
-        ProfRegPasswordBox.TrailingIcon = Nothing
-        ProfRegPasswordBox.UseAccent = False
-        ' 
-        ' MaterialLabel27
-        ' 
-        MaterialLabel27.AutoSize = True
-        MaterialLabel27.Depth = 0
-        MaterialLabel27.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel27.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel27.Location = New Point(193, 430)
-        MaterialLabel27.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel27.Name = "MaterialLabel27"
-        MaterialLabel27.Size = New Size(92, 24)
-        MaterialLabel27.TabIndex = 22
-        MaterialLabel27.Text = "Username"
-        ' 
-        ' ProfRegUsernameBox
-        ' 
-        ProfRegUsernameBox.AnimateReadOnly = False
-        ProfRegUsernameBox.BorderStyle = BorderStyle.None
-        ProfRegUsernameBox.Depth = 0
-        ProfRegUsernameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        ProfRegUsernameBox.Hint = "Enter username"
-        ProfRegUsernameBox.LeadingIcon = Nothing
-        ProfRegUsernameBox.Location = New Point(193, 467)
-        ProfRegUsernameBox.MaxLength = 50
-        ProfRegUsernameBox.MouseState = MaterialSkin.MouseState.OUT
-        ProfRegUsernameBox.Multiline = False
-        ProfRegUsernameBox.Name = "ProfRegUsernameBox"
-        ProfRegUsernameBox.Size = New Size(634, 50)
-        ProfRegUsernameBox.TabIndex = 21
-        ProfRegUsernameBox.Text = ""
-        ProfRegUsernameBox.TrailingIcon = Nothing
-        ProfRegUsernameBox.UseAccent = False
-        ' 
-        ' MaterialLabel20
-        ' 
-        MaterialLabel20.AutoSize = True
-        MaterialLabel20.Depth = 0
-        MaterialLabel20.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel20.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel20.Location = New Point(193, 314)
-        MaterialLabel20.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel20.Name = "MaterialLabel20"
-        MaterialLabel20.Size = New Size(126, 24)
-        MaterialLabel20.TabIndex = 20
-        MaterialLabel20.Text = "Email address"
-        ' 
-        ' ProfRegEmailBox
-        ' 
-        ProfRegEmailBox.AnimateReadOnly = False
-        ProfRegEmailBox.BorderStyle = BorderStyle.None
-        ProfRegEmailBox.Depth = 0
-        ProfRegEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        ProfRegEmailBox.Hint = "Enter valid email - Eg. delacruz_juan@plpasig.edu.ph"
-        ProfRegEmailBox.LeadingIcon = Nothing
-        ProfRegEmailBox.Location = New Point(193, 351)
-        ProfRegEmailBox.MaxLength = 50
-        ProfRegEmailBox.MouseState = MaterialSkin.MouseState.OUT
-        ProfRegEmailBox.Multiline = False
-        ProfRegEmailBox.Name = "ProfRegEmailBox"
-        ProfRegEmailBox.Size = New Size(634, 50)
-        ProfRegEmailBox.TabIndex = 19
-        ProfRegEmailBox.Text = ""
-        ProfRegEmailBox.TrailingIcon = Nothing
-        ProfRegEmailBox.UseAccent = False
-        ' 
-        ' MaterialLabel26
-        ' 
-        MaterialLabel26.AutoSize = True
-        MaterialLabel26.Depth = 0
-        MaterialLabel26.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel26.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
-        MaterialLabel26.Location = New Point(406, 133)
-        MaterialLabel26.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel26.Name = "MaterialLabel26"
-        MaterialLabel26.RightToLeft = RightToLeft.No
-        MaterialLabel26.Size = New Size(196, 17)
-        MaterialLabel26.TabIndex = 18
-        MaterialLabel26.Text = "Enter the following credentials"
-        ' 
-        ' ProfRegBackBtn
-        ' 
-        ProfRegBackBtn.AutoSize = False
-        ProfRegBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ProfRegBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        ProfRegBackBtn.Depth = 0
-        ProfRegBackBtn.DrawShadows = False
-        ProfRegBackBtn.HighEmphasis = True
-        ProfRegBackBtn.Icon = My.Resources.Resources.back__1_
-        ProfRegBackBtn.Location = New Point(18, 20)
-        ProfRegBackBtn.Margin = New Padding(4, 6, 4, 6)
-        ProfRegBackBtn.MouseState = MaterialSkin.MouseState.HOVER
-        ProfRegBackBtn.Name = "ProfRegBackBtn"
-        ProfRegBackBtn.NoAccentTextColor = Color.Empty
-        ProfRegBackBtn.Size = New Size(42, 36)
-        ProfRegBackBtn.TabIndex = 16
-        ProfRegBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
-        ProfRegBackBtn.UseAccentColor = False
-        ProfRegBackBtn.UseVisualStyleBackColor = True
-        ' 
-        ' MaterialLabel21
-        ' 
-        MaterialLabel21.AutoSize = True
-        MaterialLabel21.Depth = 0
-        MaterialLabel21.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel21.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel21.Location = New Point(193, 198)
-        MaterialLabel21.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel21.Name = "MaterialLabel21"
-        MaterialLabel21.Size = New Size(88, 24)
-        MaterialLabel21.TabIndex = 12
-        MaterialLabel21.Text = "Full name"
-        ' 
-        ' ProfRegSignUpBtn
-        ' 
-        ProfRegSignUpBtn.AutoSize = False
-        ProfRegSignUpBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ProfRegSignUpBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        ProfRegSignUpBtn.Depth = 0
-        ProfRegSignUpBtn.HighEmphasis = True
-        ProfRegSignUpBtn.Icon = Nothing
-        ProfRegSignUpBtn.Location = New Point(193, 684)
-        ProfRegSignUpBtn.Margin = New Padding(4, 6, 4, 6)
-        ProfRegSignUpBtn.MouseState = MaterialSkin.MouseState.HOVER
-        ProfRegSignUpBtn.Name = "ProfRegSignUpBtn"
-        ProfRegSignUpBtn.NoAccentTextColor = Color.Empty
-        ProfRegSignUpBtn.Size = New Size(634, 45)
-        ProfRegSignUpBtn.TabIndex = 10
-        ProfRegSignUpBtn.Text = "SIGN UP"
-        ProfRegSignUpBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        ProfRegSignUpBtn.UseAccentColor = False
-        ProfRegSignUpBtn.UseVisualStyleBackColor = True
-        ' 
-        ' ProfRegFullNameBox
-        ' 
-        ProfRegFullNameBox.AnimateReadOnly = False
-        ProfRegFullNameBox.BorderStyle = BorderStyle.None
-        ProfRegFullNameBox.Depth = 0
-        ProfRegFullNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        ProfRegFullNameBox.Hint = "Enter full name - Eg. Juan B. Dela Cruz"
-        ProfRegFullNameBox.LeadingIcon = Nothing
-        ProfRegFullNameBox.Location = New Point(193, 235)
-        ProfRegFullNameBox.MaxLength = 50
-        ProfRegFullNameBox.MouseState = MaterialSkin.MouseState.OUT
-        ProfRegFullNameBox.Multiline = False
-        ProfRegFullNameBox.Name = "ProfRegFullNameBox"
-        ProfRegFullNameBox.Size = New Size(634, 50)
-        ProfRegFullNameBox.TabIndex = 8
-        ProfRegFullNameBox.Text = ""
-        ProfRegFullNameBox.TrailingIcon = Nothing
-        ProfRegFullNameBox.UseAccent = False
-        ' 
-        ' MaterialLabel23
-        ' 
-        MaterialLabel23.AutoSize = True
-        MaterialLabel23.Depth = 0
-        MaterialLabel23.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel23.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel23.Location = New Point(400, 761)
-        MaterialLabel23.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel23.Name = "MaterialLabel23"
-        MaterialLabel23.Size = New Size(221, 14)
-        MaterialLabel23.TabIndex = 7
-        MaterialLabel23.Text = "Powered by College of Computer Studies"
-        MaterialLabel23.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel25
-        ' 
-        MaterialLabel25.AutoSize = True
-        MaterialLabel25.Depth = 0
-        MaterialLabel25.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel25.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
-        MaterialLabel25.Location = New Point(271, 59)
-        MaterialLabel25.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel25.Name = "MaterialLabel25"
-        MaterialLabel25.Size = New Size(479, 58)
-        MaterialLabel25.TabIndex = 0
-        MaterialLabel25.Text = "Professor Registration"
-        ' 
-        ' StudentLoginCard
-        ' 
-        StudentLoginCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StudentLoginCard.Controls.Add(StuLogQRCode)
-        StudentLoginCard.Controls.Add(StuLogBackBtn)
-        StudentLoginCard.Controls.Add(StuLogForgPass)
-        StudentLoginCard.Controls.Add(StuLogCreateACc)
-        StudentLoginCard.Controls.Add(MaterialLabel39)
-        StudentLoginCard.Controls.Add(MaterialLabel40)
-        StudentLoginCard.Controls.Add(StuLogSignInBtn)
-        StudentLoginCard.Controls.Add(StuLogStudIdTxtBox)
-        StudentLoginCard.Controls.Add(MaterialLabel41)
-        StudentLoginCard.Controls.Add(MaterialLabel42)
-        StudentLoginCard.Controls.Add(PictureBox7)
-        StudentLoginCard.Controls.Add(MaterialLabel43)
-        StudentLoginCard.Depth = 0
-        StudentLoginCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StudentLoginCard.Location = New Point(448, 110)
-        StudentLoginCard.Margin = New Padding(14)
-        StudentLoginCard.MouseState = MaterialSkin.MouseState.HOVER
-        StudentLoginCard.Name = "StudentLoginCard"
-        StudentLoginCard.Padding = New Padding(14)
-        StudentLoginCard.Size = New Size(1021, 836)
-        StudentLoginCard.TabIndex = 7
-        StudentLoginCard.Visible = False
-        ' 
-        ' StuLogQRCode
-        ' 
-        StuLogQRCode.AutoSize = True
-        StuLogQRCode.Cursor = Cursors.Hand
-        StuLogQRCode.Depth = 0
-        StuLogQRCode.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuLogQRCode.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        StuLogQRCode.HighEmphasis = True
-        StuLogQRCode.Location = New Point(193, 508)
-        StuLogQRCode.MouseState = MaterialSkin.MouseState.HOVER
-        StuLogQRCode.Name = "StuLogQRCode"
-        StuLogQRCode.Size = New Size(119, 17)
-        StuLogQRCode.TabIndex = 17
-        StuLogQRCode.Text = "Scan with QR Code"
-        ' 
-        ' StuLogBackBtn
-        ' 
-        StuLogBackBtn.AutoSize = False
-        StuLogBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        StuLogBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        StuLogBackBtn.Depth = 0
-        StuLogBackBtn.DrawShadows = False
-        StuLogBackBtn.HighEmphasis = True
-        StuLogBackBtn.Icon = My.Resources.Resources.back__1_
-        StuLogBackBtn.Location = New Point(18, 20)
-        StuLogBackBtn.Margin = New Padding(4, 6, 4, 6)
-        StuLogBackBtn.MouseState = MaterialSkin.MouseState.HOVER
-        StuLogBackBtn.Name = "StuLogBackBtn"
-        StuLogBackBtn.NoAccentTextColor = Color.Empty
-        StuLogBackBtn.Size = New Size(42, 36)
-        StuLogBackBtn.TabIndex = 16
-        StuLogBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
-        StuLogBackBtn.UseAccentColor = False
-        StuLogBackBtn.UseVisualStyleBackColor = True
-        ' 
-        ' StuLogForgPass
-        ' 
-        StuLogForgPass.AutoSize = True
-        StuLogForgPass.Cursor = Cursors.Hand
-        StuLogForgPass.Depth = 0
-        StuLogForgPass.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuLogForgPass.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        StuLogForgPass.HighEmphasis = True
-        StuLogForgPass.Location = New Point(711, 508)
-        StuLogForgPass.MouseState = MaterialSkin.MouseState.HOVER
-        StuLogForgPass.Name = "StuLogForgPass"
-        StuLogForgPass.Size = New Size(116, 17)
-        StuLogForgPass.TabIndex = 15
-        StuLogForgPass.Text = "Forgot Password?"
-        ' 
-        ' StuLogCreateACc
-        ' 
-        StuLogCreateACc.AutoSize = True
-        StuLogCreateACc.Cursor = Cursors.Hand
-        StuLogCreateACc.Depth = 0
-        StuLogCreateACc.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuLogCreateACc.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        StuLogCreateACc.HighEmphasis = True
-        StuLogCreateACc.Location = New Point(519, 661)
-        StuLogCreateACc.MouseState = MaterialSkin.MouseState.HOVER
-        StuLogCreateACc.Name = "StuLogCreateACc"
-        StuLogCreateACc.Size = New Size(68, 17)
-        StuLogCreateACc.TabIndex = 14
-        StuLogCreateACc.Text = "Create one"
-        ' 
-        ' MaterialLabel39
-        ' 
-        MaterialLabel39.AutoSize = True
-        MaterialLabel39.Depth = 0
-        MaterialLabel39.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel39.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel39.Location = New Point(193, 412)
-        MaterialLabel39.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel39.Name = "MaterialLabel39"
-        MaterialLabel39.Size = New Size(144, 24)
-        MaterialLabel39.TabIndex = 12
-        MaterialLabel39.Text = "Student number"
-        ' 
-        ' MaterialLabel40
-        ' 
-        MaterialLabel40.AutoSize = True
-        MaterialLabel40.Depth = 0
-        MaterialLabel40.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel40.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        MaterialLabel40.Location = New Point(433, 661)
-        MaterialLabel40.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel40.Name = "MaterialLabel40"
-        MaterialLabel40.Size = New Size(80, 17)
-        MaterialLabel40.TabIndex = 11
-        MaterialLabel40.Text = "No account?"
-        ' 
-        ' StuLogSignInBtn
-        ' 
-        StuLogSignInBtn.AutoSize = False
-        StuLogSignInBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        StuLogSignInBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        StuLogSignInBtn.Depth = 0
-        StuLogSignInBtn.HighEmphasis = True
-        StuLogSignInBtn.Icon = Nothing
-        StuLogSignInBtn.Location = New Point(193, 588)
-        StuLogSignInBtn.Margin = New Padding(4, 6, 4, 6)
-        StuLogSignInBtn.MouseState = MaterialSkin.MouseState.HOVER
-        StuLogSignInBtn.Name = "StuLogSignInBtn"
-        StuLogSignInBtn.NoAccentTextColor = Color.Empty
-        StuLogSignInBtn.Size = New Size(634, 45)
-        StuLogSignInBtn.TabIndex = 10
-        StuLogSignInBtn.Text = "Sign In"
-        StuLogSignInBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        StuLogSignInBtn.UseAccentColor = False
-        StuLogSignInBtn.UseVisualStyleBackColor = True
-        ' 
-        ' StuLogStudIdTxtBox
-        ' 
-        StuLogStudIdTxtBox.AnimateReadOnly = False
-        StuLogStudIdTxtBox.BorderStyle = BorderStyle.None
-        StuLogStudIdTxtBox.Depth = 0
-        StuLogStudIdTxtBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuLogStudIdTxtBox.Hint = "Enter your student id number"
-        StuLogStudIdTxtBox.LeadingIcon = My.Resources.Resources.user
-        StuLogStudIdTxtBox.Location = New Point(193, 445)
-        StuLogStudIdTxtBox.MaxLength = 50
-        StuLogStudIdTxtBox.MouseState = MaterialSkin.MouseState.OUT
-        StuLogStudIdTxtBox.Multiline = False
-        StuLogStudIdTxtBox.Name = "StuLogStudIdTxtBox"
-        StuLogStudIdTxtBox.Size = New Size(634, 50)
-        StuLogStudIdTxtBox.TabIndex = 8
-        StuLogStudIdTxtBox.Text = ""
-        StuLogStudIdTxtBox.TrailingIcon = Nothing
-        StuLogStudIdTxtBox.UseAccent = False
-        ' 
-        ' MaterialLabel41
-        ' 
-        MaterialLabel41.AutoSize = True
-        MaterialLabel41.Depth = 0
-        MaterialLabel41.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel41.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel41.Location = New Point(400, 761)
-        MaterialLabel41.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel41.Name = "MaterialLabel41"
-        MaterialLabel41.Size = New Size(221, 14)
-        MaterialLabel41.TabIndex = 7
-        MaterialLabel41.Text = "Powered by College of Computer Studies"
-        MaterialLabel41.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel42
-        ' 
-        MaterialLabel42.AutoSize = True
-        MaterialLabel42.Depth = 0
-        MaterialLabel42.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel42.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
-        MaterialLabel42.Location = New Point(388, 326)
-        MaterialLabel42.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel42.Name = "MaterialLabel42"
-        MaterialLabel42.RightToLeft = RightToLeft.No
-        MaterialLabel42.Size = New Size(245, 17)
-        MaterialLabel42.TabIndex = 4
-        MaterialLabel42.Text = "Please login with your student number"
-        ' 
-        ' PictureBox7
-        ' 
-        PictureBox7.BackgroundImage = My.Resources.Resources.PLP_logo1
-        PictureBox7.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox7.Location = New Point(428, 75)
-        PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(164, 144)
-        PictureBox7.TabIndex = 1
-        PictureBox7.TabStop = False
-        ' 
-        ' MaterialLabel43
-        ' 
-        MaterialLabel43.AutoSize = True
-        MaterialLabel43.Depth = 0
-        MaterialLabel43.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel43.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
-        MaterialLabel43.Location = New Point(207, 245)
-        MaterialLabel43.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel43.Name = "MaterialLabel43"
-        MaterialLabel43.Size = New Size(606, 58)
-        MaterialLabel43.TabIndex = 0
-        MaterialLabel43.Text = "Student Registration System"
-        ' 
         ' EntrancePage
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -2174,6 +2223,13 @@ Partial Class EntrancePage
         Text = "Pamantasan ng Lungsod ng Pasig"
         WindowState = FormWindowState.Maximized
         MaterialCard1.ResumeLayout(False)
+        StuRegCard.ResumeLayout(False)
+        StuRegCard.PerformLayout()
+        ProfRegCard.ResumeLayout(False)
+        ProfRegCard.PerformLayout()
+        StudentLoginCard.ResumeLayout(False)
+        StudentLoginCard.PerformLayout()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         ProfLogCard.ResumeLayout(False)
         ProfLogCard.PerformLayout()
         CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
@@ -2198,13 +2254,6 @@ Partial Class EntrancePage
         StuForgPassCard.PerformLayout()
         ProfForgPassCard.ResumeLayout(False)
         ProfForgPassCard.PerformLayout()
-        StuRegCard.ResumeLayout(False)
-        StuRegCard.PerformLayout()
-        ProfRegCard.ResumeLayout(False)
-        ProfRegCard.PerformLayout()
-        StudentLoginCard.ResumeLayout(False)
-        StudentLoginCard.PerformLayout()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -2331,5 +2380,8 @@ Partial Class EntrancePage
     Friend WithEvents StuRegYearLvlBox As MaterialSkin.Controls.MaterialComboBox
     Friend WithEvents MaterialLabel62 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents StuRegSectionBox As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents MaterialLabel4 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents MaterialLabel5 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents MaterialLabel6 As MaterialSkin.Controls.MaterialLabel
 
 End Class

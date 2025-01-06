@@ -1,14 +1,28 @@
-﻿Public Class EntrancePage
+﻿Imports MySql.Data.MySqlClient
+
+Public Class EntrancePage
+    Dim conn As New MySqlConnection("server=localhost;username=root;password=;database=plpportal_db")
     Private Sub EntrancePage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetFormThemeLight(Me)
+        conn.Open()
+        Dim cmd As New MySqlCommand("SELECT section FROM sections", conn)
+        Dim reader = cmd.ExecuteReader()
+        While reader.Read
+            Dim prof = reader.GetString("section")
+            StuRegSectionBox.Items.Add(prof)
+        End While
+        conn.Close()
     End Sub
 
     Private Sub ChooseAdmin(sender As Object, e As EventArgs) Handles EnterAdminBtn.Click, ChooseAdminCard.Click, AdminPictureBox.Click, BigAdminLbl1.Click, SmolAdminLbl2.Click
-
+        ProfLogCard.Show()
+        ChooseUserCard.Hide()
     End Sub
 
     Private Sub ChooseStudent(sender As Object, e As EventArgs) Handles EnterStudentBtn.Click, ChooseStudentCard.Click, StudentPicturebox.Click, BigStudentLbl1.Click, SmolStudentLbl2.Click
-
+        StudentLoginCard.Show()
+        ChooseUserCard.Hide()
+        StuLogStudIdTxtBox.Focus()
     End Sub
 
     Private Sub StuQRBackBtn_Click(sender As Object, e As EventArgs) Handles StuQRBackBtn.Click
@@ -88,7 +102,25 @@
     End Sub
 
     Private Sub StuLogSignInBtn_Click(sender As Object, e As EventArgs) Handles StuLogSignInBtn.Click
+        conn.Open()
 
+        Dim cmd As New MySqlCommand("SELECT * FROM studentinfo where studentnum = '" & StuLogStudIdTxtBox.Text & "'", conn)
+        cmd.ExecuteNonQuery()
+        conn.Close()
+
+        Dim da As New MySqlDataAdapter(cmd)
+        Dim dt As New DataTable
+
+        da.Fill(dt)
+
+        If dt.Rows.Count <= 0 Then
+            MessageBox.Show("Student does not exist!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim StudentForm As New StudentDashboard(StuLogStudIdTxtBox.Text)
+            StudentForm.Show()
+            StuLogStudIdTxtBox.Clear()
+            Hide()
+        End If
     End Sub
 
     Private Sub ProfLogBackBtn_Click(sender As Object, e As EventArgs) Handles ProfLogBackBtn.Click
@@ -113,5 +145,28 @@
 
     Private Sub ProfLogSignInBtn_Click(sender As Object, e As EventArgs) Handles ProfLogSignInBtn.Click
 
+    End Sub
+
+    Private Sub StuLogStudIdTxtBox_TextChanged(sender As Object, e As EventArgs) Handles StuLogStudIdTxtBox.TextChanged
+        Dim textWithoutSpaces = StuLogStudIdTxtBox.Text.Replace(" ", "")
+        ' Check if the text contains more than 2 digits
+        If textWithoutSpaces.Length >= 2 Then
+            ' Insert a space after every 2 digits
+            StuLogStudIdTxtBox.Text = textWithoutSpaces.Insert(2, " ")
+            StuLogStudIdTxtBox.SelectionStart = StuLogStudIdTxtBox.TextLength ' Move the cursor to the end
+        End If
+        ' Limit the total length to 7 digits (including spaces)
+        If StuLogStudIdTxtBox.TextLength > 8 Then
+            StuLogStudIdTxtBox.Text = StuLogStudIdTxtBox.Text.Substring(0, 8)
+            StuLogStudIdTxtBox.SelectionStart = StuLogStudIdTxtBox.TextLength ' Move the cursor to the end
+        End If
+    End Sub
+
+    Private Sub StuLogStudIdTxtBox_KeyDown(sender As Object, e As KeyEventArgs) Handles StuLogStudIdTxtBox.KeyDown
+        If e.KeyCode = Keys.Back AndAlso StuLogStudIdTxtBox.TextLength = 3 Then
+            StuLogStudIdTxtBox.Text = ""
+        ElseIf e.KeyCode = Keys.Enter Then
+            StuLogSignInBtn.PerformClick()
+        End If
     End Sub
 End Class
