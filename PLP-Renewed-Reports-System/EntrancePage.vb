@@ -1,9 +1,18 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Drawing.Imaging
+Imports System.IO
+Imports System.Net.Mail
+Imports MySql.Data.MySqlClient
+Imports QRCoder
 
 Public Class EntrancePage
     Dim conn As New MySqlConnection("server=localhost;username=root;password=;database=plpportal_db")
     Private Sub EntrancePage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetFormThemeLight(Me)
+        LoadSectionBoxOnRegisterStudents()
+    End Sub
+
+    ' Also call this after adding a section in professor side
+    Private Sub LoadSectionBoxOnRegisterStudents()
         conn.Open()
         Dim cmd As New MySqlCommand("SELECT section FROM sections", conn)
         Dim reader = cmd.ExecuteReader()
@@ -48,10 +57,121 @@ Public Class EntrancePage
     Private Sub StuForgPassBackBtn_Click(sender As Object, e As EventArgs) Handles StuForgPassBackBtn.Click
         StudentLoginCard.Show()
         StuForgPassCard.Hide()
+        StuForgPassStuNumBox.Clear()
+        StuForgPassEmailBox.Clear()
     End Sub
 
     Private Sub StuForgPassRecovBtn_Click(sender As Object, e As EventArgs) Handles StuForgPassRecovBtn.Click
+        If StuForgPassStuNumBox.Text = "" Or StuForgPassEmailBox.Text = "" Then
+            MessageBox.Show("Please fill up all of the fields first!", "Please Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        ElseIf Not StuForgPassEmailBox.Text.EndsWith("@plpasig.edu.ph") Then
+            MessageBox.Show("Invalid email address. Please use an email address from @plpasig.edu.ph.", "Please Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Try
+                conn.Open()
 
+                Dim cmd As New MySqlCommand("SELECT * FROM studentinfo where studentnum = '" & StuForgPassStuNumBox.Text & "' and email = '" & StuForgPassEmailBox.Text & "'", conn)
+                cmd.ExecuteNonQuery()
+                conn.Close()
+
+                Dim da As New MySqlDataAdapter(cmd)
+                Dim dt As New DataTable
+
+                da.Fill(dt)
+
+                If dt.Rows.Count <= 0 Then
+                    MessageBox.Show("Account is invalid! Please check your inputs.", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Else
+
+                    Dim lastname As String
+                    Dim firstname As String
+                    Dim middleinit As String
+
+                    lastname = ""
+                    firstname = ""
+                    middleinit = ""
+
+                    conn.Open()
+                    Dim pcmd As New MySqlCommand("SELECT last_name FROM studentinfo where studentnum = '" & StuForgPassStuNumBox.Text & "'", conn)
+                    pcmd.ExecuteNonQuery()
+                    Dim pdr As MySqlDataReader
+
+                    pdr = pcmd.ExecuteReader
+                    If pdr.Read Then
+                        lastname = pdr("last_name")
+
+                    End If
+
+                    conn.Close()
+
+                    conn.Open()
+                    Dim fcmd As New MySqlCommand("SELECT first_name FROM studentinfo where studentnum = '" & StuForgPassStuNumBox.Text & "'", conn)
+                    fcmd.ExecuteNonQuery()
+                    Dim fdr As MySqlDataReader
+
+                    fdr = fcmd.ExecuteReader
+                    If fdr.Read Then
+                        firstname = fdr("first_name")
+
+                    End If
+
+                    conn.Close()
+
+                    conn.Open()
+                    Dim mcmd As New MySqlCommand("SELECT middle_initial FROM studentinfo where studentnum = '" & StuForgPassStuNumBox.Text & "'", conn)
+                    mcmd.ExecuteNonQuery()
+                    Dim mdr As MySqlDataReader
+
+                    mdr = mcmd.ExecuteReader
+                    If mdr.Read Then
+                        middleinit = mdr("middle_initial")
+
+                    End If
+
+                    conn.Close()
+
+                    Dim qrGenerator As New QRCodeGenerator
+                    Dim qrCodeData = qrGenerator.CreateQrCode(StuForgPassStuNumBox.Text, QRCodeGenerator.ECCLevel.L)
+                    Dim qrCode As New QRCode(qrCodeData)
+
+                    Dim codeimage = qrCode.GetGraphic(20)
+
+                    Dim stream As New MemoryStream
+                    codeimage.Save(stream, ImageFormat.Jpeg)
+                    stream.Position = 0
+
+                    Dim attachment As New Attachment(stream, "QRCode.png")
+
+                    Dim smtp As New SmtpClient
+                    Dim mail As New MailMessage
+                    smtp.UseDefaultCredentials = False
+                    smtp.Credentials = New Net.NetworkCredential("alvarez_juanito@plpasig.edu.ph", "eauz vtwn tjty jpna")
+                    smtp.Port = 587
+                    smtp.EnableSsl = True
+                    smtp.Host = "smtp.gmail.com"
+
+                    mail.From = New MailAddress("alvarez_juanito@plpasig.edu.ph")
+                    mail.To.Add(StuForgPassEmailBox.Text)
+                    mail.Subject = "PLP STUDENT PORTAL ACCOUNT RETRIEVE"
+                    mail.IsBodyHtml = True
+                    mail.Body = "Hello " & firstname & " " & middleinit & " " & lastname & ", you can use this QR Code to Log in to PLP Student Portal."
+                    mail.Attachments.Add(attachment)
+                    smtp.Send(mail)
+                    MessageBox.Show("Account Successfully Retrieved! Please Check your gmail account.", "Student Portal", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    codeimage.Dispose()
+                    stream.Dispose()
+                    attachment.Dispose()
+
+                    StudentLoginCard.Show()
+                    StuForgPassCard.Hide()
+                    StuForgPassStuNumBox.Clear()
+                    StuForgPassEmailBox.Clear()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub ProfForgPassBackBtn_Click(sender As Object, e As EventArgs) Handles ProfForgPassBackBtn.Click
@@ -66,10 +186,88 @@ Public Class EntrancePage
     Private Sub StuRegBackBtn_Click(sender As Object, e As EventArgs) Handles StuRegBackBtn.Click
         StudentLoginCard.Show()
         StuRegCard.Hide()
+        ClearAllBoxesInStuReg()
     End Sub
 
     Private Sub StuRegSignUpBox_Click(sender As Object, e As EventArgs) Handles StuRegSignUpBox.Click
+        If StuRegStuNumBox.Text = "" Or StuRegStuLastNameBox.Text = "" Or StuRegFirstNameBox.Text = "" Or StuRegEmailBox.Text = "" Or StuRegSectionBox.SelectedIndex = -1 Or StuRegYearLvlBox.SelectedIndex = -1 Or StuRegStatusBox.SelectedIndex = -1 Then
+            MessageBox.Show("One or more field is empty!", "Please Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        ElseIf Not StuRegEmailBox.Text.EndsWith("@plpasig.edu.ph") Then
+            MessageBox.Show("Invalid email address. Please use an email address from @plpasig.edu.ph.", "Please Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Try
+                conn.Open()
+                Dim cmd As New MySqlCommand("INSERT INTO studentinfo VALUES ('" & StuRegStuNumBox.Text & "', '" & StuRegStuLastNameBox.Text & "', '" & StuRegFirstNameBox.Text & "', '" & StuRegMiddleInitialBox.Text & "', '" & StuRegSuffixBox.Text & "', '" & StuRegEmailBox.Text & "', '" & StuRegSectionBox.SelectedItem & "', '" & StuRegYearLvlBox.SelectedItem & "', '" & StuRegStatusBox.SelectedItem & "')", conn)
+                cmd.ExecuteNonQuery()
 
+                Dim qrGenerator As New QRCodeGenerator
+                Dim qrCodeData As QRCodeData = qrGenerator.CreateQrCode(StuRegStuNumBox.Text, QRCodeGenerator.ECCLevel.L)
+                Dim qrCode As New QRCode(qrCodeData)
+
+                Dim codeimage As Bitmap = qrCode.GetGraphic(10)
+
+                Dim stream As New MemoryStream()
+                codeimage.Save(stream, ImageFormat.Png)
+                stream.Position = 0
+
+                Dim attachment As New Attachment(stream, "QRCode.png")
+
+                Dim smtp As New SmtpClient
+                Dim mail As New MailMessage
+                smtp.UseDefaultCredentials = False
+                smtp.Credentials = New Net.NetworkCredential("alvarez_juanito@plpasig.edu.ph", "eauz vtwn tjty jpna")
+                smtp.Port = 587
+                smtp.EnableSsl = True
+                smtp.Host = "smtp.gmail.com"
+
+                mail.From = New MailAddress("alvarez_juanito@plpasig.edu.ph")
+                mail.To.Add(StuRegEmailBox.Text)
+                mail.Subject = "QR CODE"
+                mail.IsBodyHtml = True
+                mail.Body = "Hello " & StuRegFirstNameBox.Text & " " & StuRegMiddleInitialBox.Text & ". " & StuRegStuLastNameBox.Text & ", you can use this QR Code to Log in to PLP Student Portal."
+                mail.Attachments.Add(attachment)
+                smtp.Send(mail)
+
+                codeimage.Dispose()
+                stream.Dispose()
+                attachment.Dispose()
+                MessageBox.Show("Account Successfully Saved!", "Student Portal", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ClearAllBoxesInStuReg()
+
+                StuRegBackBtn.PerformClick()
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                conn.Close()
+            End Try
+        End If
+    End Sub
+
+    Private Sub ClearAllBoxesInStuReg()
+        StuRegStuNumBox.Clear()
+        StuRegStuLastNameBox.Clear()
+        StuRegFirstNameBox.Clear()
+        StuRegMiddleInitialBox.Clear()
+
+        StuRegSuffixBox.Text = ""
+        StuRegSuffixBox.SelectedIndex = -1
+        StuRegSuffixBox.Refresh()
+
+        StuRegEmailBox.Clear()
+
+        StuRegSectionBox.Text = ""
+        StuRegSectionBox.SelectedIndex = -1
+        StuRegSectionBox.Refresh()
+
+        StuRegYearLvlBox.Text = ""
+        StuRegYearLvlBox.SelectedIndex = -1
+        StuRegYearLvlBox.Refresh()
+
+        StuRegStatusBox.Text = ""
+        StuRegStatusBox.SelectedIndex = -1
+        StuRegStatusBox.Refresh()
     End Sub
 
     Private Sub ProfRegBackBtn_Click(sender As Object, e As EventArgs) Handles ProfRegBackBtn.Click
@@ -167,6 +365,93 @@ Public Class EntrancePage
             StuLogStudIdTxtBox.Text = ""
         ElseIf e.KeyCode = Keys.Enter Then
             StuLogSignInBtn.PerformClick()
+        End If
+    End Sub
+
+    ' FORGOT PASS STUDENT
+
+    Private Sub StuForgPassStuNumBox_TextChanged(sender As Object, e As EventArgs) Handles StuForgPassStuNumBox.TextChanged
+        Dim textWithoutSpaces = StuForgPassStuNumBox.Text.Replace(" ", "")
+        ' Check if the text contains more than 2 digits
+        If textWithoutSpaces.Length >= 2 Then
+            ' Insert a space after every 2 digits
+            StuForgPassStuNumBox.Text = textWithoutSpaces.Insert(2, " ")
+            StuForgPassStuNumBox.SelectionStart = StuForgPassStuNumBox.TextLength ' Move the cursor to the end
+        End If
+        ' Limit the total length to 7 digits (including spaces)
+        If StuForgPassStuNumBox.TextLength > 8 Then
+            StuForgPassStuNumBox.Text = StuForgPassStuNumBox.Text.Substring(0, 8)
+            StuForgPassStuNumBox.SelectionStart = StuForgPassStuNumBox.TextLength ' Move the cursor to the end
+        End If
+    End Sub
+
+    Private Sub StuForgPassStuNumBox_KeyDown(sender As Object, e As KeyEventArgs) Handles StuForgPassStuNumBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            StuForgPassEmailBox.Focus()
+        End If
+        If e.KeyCode = Keys.Back AndAlso StuForgPassStuNumBox.TextLength = 3 Then
+            StuForgPassStuNumBox.Text = ""
+        End If
+    End Sub
+
+    Private Sub StuForgPassEmailBox_KeyDown(sender As Object, e As KeyEventArgs) Handles StuForgPassEmailBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            StuForgPassRecovBtn.PerformClick()
+        End If
+        If e.KeyCode = Keys.Space Then
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    ' REGISTER STUDENTS
+    Private Sub StuRegStuNumBox_TextChanged(sender As Object, e As EventArgs) Handles StuRegStuNumBox.TextChanged
+        Dim textWithoutSpaces As String = StuRegStuNumBox.Text.Replace(" ", "")
+
+        ' Check if the text contains more than 2 digits
+        If textWithoutSpaces.Length >= 2 Then
+            ' Insert a space after every 2 digits
+            StuRegStuNumBox.Text = textWithoutSpaces.Insert(2, " ")
+            StuRegStuNumBox.SelectionStart = StuRegStuNumBox.TextLength ' Move the cursor to the end
+        End If
+
+        ' Limit the total length to 7 digits (including spaces)
+        If StuRegStuNumBox.TextLength > 8 Then
+            StuRegStuNumBox.Text = StuRegStuNumBox.Text.Substring(0, 8)
+            StuRegStuNumBox.SelectionStart = StuRegStuNumBox.TextLength ' Move the cursor to the end
+        End If
+    End Sub
+
+    Private Sub StuRegStuNumBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles StuRegStuNumBox.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub StuRegStuLastNameBox_TextChanged(sender As Object, e As EventArgs) Handles StuRegStuLastNameBox.TextChanged
+        Dim currentText As String = StuRegStuLastNameBox.Text
+        Dim upperCaseText As String = currentText.ToUpper()
+        StuRegStuLastNameBox.Text = upperCaseText
+        StuRegStuLastNameBox.SelectionStart = StuRegStuLastNameBox.Text.Length
+    End Sub
+
+    Private Sub StuRegFirstNameBox_TextChanged(sender As Object, e As EventArgs) Handles StuRegFirstNameBox.TextChanged
+        Dim currentText As String = StuRegFirstNameBox.Text
+        Dim upperCaseText As String = currentText.ToUpper()
+
+        StuRegFirstNameBox.Text = upperCaseText
+        StuRegFirstNameBox.SelectionStart = StuRegFirstNameBox.Text.Length
+    End Sub
+
+    Private Sub StuRegMiddleInitialBox_TextChanged(sender As Object, e As EventArgs) Handles StuRegMiddleInitialBox.TextChanged
+        Dim currentText As String = StuRegMiddleInitialBox.Text
+        Dim upperCaseText As String = currentText.ToUpper()
+
+        StuRegMiddleInitialBox.Text = upperCaseText
+        StuRegMiddleInitialBox.SelectionStart = StuRegMiddleInitialBox.Text.Length
+
+        If StuRegMiddleInitialBox.TextLength > 2 Then
+            StuRegMiddleInitialBox.Text = StuRegMiddleInitialBox.Text.Substring(0, 2)
+            StuRegMiddleInitialBox.SelectionStart = StuRegMiddleInitialBox.TextLength
         End If
     End Sub
 End Class

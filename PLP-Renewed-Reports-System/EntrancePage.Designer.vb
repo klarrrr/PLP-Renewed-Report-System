@@ -175,6 +175,8 @@ Partial Class EntrancePage
         ' MaterialCard1
         ' 
         MaterialCard1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard1.Controls.Add(StuRegCard)
+        MaterialCard1.Controls.Add(ProfRegCard)
         MaterialCard1.Controls.Add(StudentLoginCard)
         MaterialCard1.Controls.Add(ProfLogCard)
         MaterialCard1.Controls.Add(ChooseUserCard)
@@ -182,8 +184,6 @@ Partial Class EntrancePage
         MaterialCard1.Controls.Add(ProfQRCard)
         MaterialCard1.Controls.Add(StuForgPassCard)
         MaterialCard1.Controls.Add(ProfForgPassCard)
-        MaterialCard1.Controls.Add(StuRegCard)
-        MaterialCard1.Controls.Add(ProfRegCard)
         MaterialCard1.Depth = 0
         MaterialCard1.Dock = DockStyle.Fill
         MaterialCard1.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
@@ -274,6 +274,7 @@ Partial Class EntrancePage
         StuRegStatusBox.FormattingEnabled = True
         StuRegStatusBox.IntegralHeight = False
         StuRegStatusBox.ItemHeight = 43
+        StuRegStatusBox.Items.AddRange(New Object() {"Regular", "Irregular"})
         StuRegStatusBox.Location = New Point(619, 563)
         StuRegStatusBox.MaxDropDownItems = 4
         StuRegStatusBox.MouseState = MaterialSkin.MouseState.OUT
@@ -281,6 +282,7 @@ Partial Class EntrancePage
         StuRegStatusBox.Size = New Size(208, 49)
         StuRegStatusBox.StartIndex = 0
         StuRegStatusBox.TabIndex = 33
+        StuRegStatusBox.UseAccent = False
         ' 
         ' MaterialLabel63
         ' 
@@ -309,6 +311,7 @@ Partial Class EntrancePage
         StuRegYearLvlBox.FormattingEnabled = True
         StuRegYearLvlBox.IntegralHeight = False
         StuRegYearLvlBox.ItemHeight = 43
+        StuRegYearLvlBox.Items.AddRange(New Object() {"1", "2", "3", "4"})
         StuRegYearLvlBox.Location = New Point(400, 563)
         StuRegYearLvlBox.MaxDropDownItems = 4
         StuRegYearLvlBox.MouseState = MaterialSkin.MouseState.OUT
@@ -316,6 +319,7 @@ Partial Class EntrancePage
         StuRegYearLvlBox.Size = New Size(213, 49)
         StuRegYearLvlBox.StartIndex = 0
         StuRegYearLvlBox.TabIndex = 31
+        StuRegYearLvlBox.UseAccent = False
         ' 
         ' MaterialLabel62
         ' 
@@ -351,6 +355,7 @@ Partial Class EntrancePage
         StuRegSectionBox.Size = New Size(201, 49)
         StuRegSectionBox.StartIndex = 0
         StuRegSectionBox.TabIndex = 29
+        StuRegSectionBox.UseAccent = False
         ' 
         ' MaterialLabel61
         ' 
@@ -419,6 +424,7 @@ Partial Class EntrancePage
         StuRegSuffixBox.Size = New Size(151, 49)
         StuRegSuffixBox.StartIndex = 0
         StuRegSuffixBox.TabIndex = 25
+        StuRegSuffixBox.UseAccent = False
         ' 
         ' MaterialLabel48
         ' 

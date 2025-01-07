@@ -212,7 +212,7 @@ Partial Class StudentDashboard
         MaterialLabel41.Depth = 0
         MaterialLabel41.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
         MaterialLabel41.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel41.Location = New Point(1396, 1002)
+        MaterialLabel41.Location = New Point(847, 1002)
         MaterialLabel41.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel41.Name = "MaterialLabel41"
         MaterialLabel41.Size = New Size(221, 14)

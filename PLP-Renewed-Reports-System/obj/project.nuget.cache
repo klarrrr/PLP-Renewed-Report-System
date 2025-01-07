@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "I2RRilJIZ10=",
+  "dgSpecHash": "gbWsR2j6Y54=",
   "success": true,
   "projectFilePath": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj",
   "expectedPackageFiles": [
     "C:\\Users\\PLPASIG\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
+    "C:\\Users\\PLPASIG\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\PLPASIG\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
+    "C:\\Users\\PLPASIG\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\PLPASIG\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.26100.52\\microsoft.windows.sdk.net.ref.10.0.26100.52.nupkg.sha512"
   ],
   "logs": []
