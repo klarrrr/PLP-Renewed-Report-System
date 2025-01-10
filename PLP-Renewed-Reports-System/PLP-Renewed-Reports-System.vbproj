@@ -7,6 +7,7 @@
     <StartupObject>PLP_Renewed_Reports_System.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
+    <UseWPF>True</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,8 +19,11 @@
   <ItemGroup>
     <PackageReference Include="AForge.Video" Version="2.2.5" />
     <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
+    <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
     <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
     <PackageReference Include="MessagingToolkit.QRCode" Version="1.3.0" />
+    <PackageReference Include="OxyPlot.WindowsForms" Version="2.2.0" />
     <PackageReference Include="QRCoder" Version="1.6.0" />
   </ItemGroup>
 

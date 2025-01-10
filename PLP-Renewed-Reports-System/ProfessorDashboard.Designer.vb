@@ -23,141 +23,152 @@ Partial Class ProfessorDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfessorDashboard))
         MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
+        ProfNameLbl = New MaterialSkin.Controls.MaterialLabel()
         MaterialTabControl1 = New MaterialSkin.Controls.MaterialTabControl()
         Dashboard = New TabPage()
         MaterialCard2 = New MaterialSkin.Controls.MaterialCard()
-        MaterialCard3 = New MaterialSkin.Controls.MaterialCard()
-        MaterialCard4 = New MaterialSkin.Controls.MaterialCard()
-        MaterialCard5 = New MaterialSkin.Controls.MaterialCard()
+        YourConsultCountCard = New MaterialSkin.Controls.MaterialCard()
+        YourConsultCountPanel = New Panel()
+        MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
+        ReportCountCard = New MaterialSkin.Controls.MaterialCard()
+        ReportCountPanel = New Panel()
+        MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
+        ConsultCategCard = New MaterialSkin.Controls.MaterialCard()
+        ConsultCategPanel = New Panel()
+        MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
         MaterialCard7 = New MaterialSkin.Controls.MaterialCard()
         PictureBox3 = New PictureBox()
         MaterialLabel13 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel14 = New MaterialSkin.Controls.MaterialLabel()
+        NumOfRep = New MaterialSkin.Controls.MaterialLabel()
         MaterialCard8 = New MaterialSkin.Controls.MaterialCard()
         PictureBox1 = New PictureBox()
         MaterialLabel10 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel9 = New MaterialSkin.Controls.MaterialLabel()
+        NumOfProf = New MaterialSkin.Controls.MaterialLabel()
         MaterialCard6 = New MaterialSkin.Controls.MaterialCard()
         PictureBox2 = New PictureBox()
         MaterialLabel11 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel12 = New MaterialSkin.Controls.MaterialLabel()
+        NumOfStud = New MaterialSkin.Controls.MaterialLabel()
         Professors = New TabPage()
         MaterialCard9 = New MaterialSkin.Controls.MaterialCard()
-        MaterialButton4 = New MaterialSkin.Controls.MaterialButton()
+        ProfClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel17 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialButton3 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton2 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton1 = New MaterialSkin.Controls.MaterialButton()
+        ProfAddBtn = New MaterialSkin.Controls.MaterialButton()
+        ProfUpdBtn = New MaterialSkin.Controls.MaterialButton()
+        ProfDelBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel16 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox5 = New MaterialSkin.Controls.MaterialTextBox()
+        ProfPass = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel15 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox4 = New MaterialSkin.Controls.MaterialTextBox()
+        ProfUsername = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel8 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox3 = New MaterialSkin.Controls.MaterialTextBox()
+        ProfEmail = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox2 = New MaterialSkin.Controls.MaterialTextBox()
+        ProfProfName = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
-        DataGridView1 = New DataGridView()
         MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox1 = New MaterialSkin.Controls.MaterialTextBox()
+        ProfSearchProf = New MaterialSkin.Controls.MaterialTextBox()
+        ProfDataGrid = New DataGridView()
         Students = New TabPage()
         MaterialCard13 = New MaterialSkin.Controls.MaterialCard()
-        MaterialButton9 = New MaterialSkin.Controls.MaterialButton()
+        StudSaveDate = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel30 = New MaterialSkin.Controls.MaterialLabel()
-        DateTimePicker1 = New DateTimePicker()
+        StudDateOfGrad = New DateTimePicker()
         MaterialLabel29 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialComboBox4 = New MaterialSkin.Controls.MaterialComboBox()
+        StudStatus = New MaterialSkin.Controls.MaterialComboBox()
         MaterialLabel28 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialComboBox3 = New MaterialSkin.Controls.MaterialComboBox()
+        StudYear = New MaterialSkin.Controls.MaterialComboBox()
         MaterialLabel27 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialComboBox2 = New MaterialSkin.Controls.MaterialComboBox()
-        MaterialTextBox11 = New MaterialSkin.Controls.MaterialTextBox()
+        StudSection = New MaterialSkin.Controls.MaterialComboBox()
+        StudEmail = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel26 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel25 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialComboBox1 = New MaterialSkin.Controls.MaterialComboBox()
-        MaterialTextBox6 = New MaterialSkin.Controls.MaterialTextBox()
+        StudSuffix = New MaterialSkin.Controls.MaterialComboBox()
+        StudMiddleInitial = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel20 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialButton5 = New MaterialSkin.Controls.MaterialButton()
+        StudClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel18 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialButton6 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton7 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton8 = New MaterialSkin.Controls.MaterialButton()
+        StudAddBtn = New MaterialSkin.Controls.MaterialButton()
+        StudUpdBtn = New MaterialSkin.Controls.MaterialButton()
+        StudDelBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel19 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox7 = New MaterialSkin.Controls.MaterialTextBox()
+        StudFirstName = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel21 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox8 = New MaterialSkin.Controls.MaterialTextBox()
+        StudLastName = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel22 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox9 = New MaterialSkin.Controls.MaterialTextBox()
+        StudNum = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel23 = New MaterialSkin.Controls.MaterialLabel()
-        DataGridView2 = New DataGridView()
+        StudDataGrid = New DataGridView()
         MaterialLabel24 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox10 = New MaterialSkin.Controls.MaterialTextBox()
+        StudSearchStud = New MaterialSkin.Controls.MaterialTextBox()
         Reports = New TabPage()
         MaterialCard17 = New MaterialSkin.Controls.MaterialCard()
-        MaterialCard18 = New MaterialSkin.Controls.MaterialCard()
+        RepYearlyRepCard = New MaterialSkin.Controls.MaterialCard()
         MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
-        DataGridView3 = New DataGridView()
+        RepDataGrid = New DataGridView()
         MaterialLabel37 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox16 = New MaterialSkin.Controls.MaterialTextBox()
+        RepSearchBox = New MaterialSkin.Controls.MaterialTextBox()
         Reasons = New TabPage()
         MaterialCard10 = New MaterialSkin.Controls.MaterialCard()
-        MaterialComboBox5 = New MaterialSkin.Controls.MaterialComboBox()
-        MaterialButton10 = New MaterialSkin.Controls.MaterialButton()
+        ReaSpecialEvent = New MaterialSkin.Controls.MaterialComboBox()
+        ReaClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel31 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialButton11 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton12 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton13 = New MaterialSkin.Controls.MaterialButton()
+        ReaAddBtn = New MaterialSkin.Controls.MaterialButton()
+        ReaUpdBtn = New MaterialSkin.Controls.MaterialButton()
+        ReaDelBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel33 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel35 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox14 = New MaterialSkin.Controls.MaterialTextBox()
+        ReaReasonName = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel36 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox15 = New MaterialSkin.Controls.MaterialTextBox()
+        ReaReasonID = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel38 = New MaterialSkin.Controls.MaterialLabel()
-        DataGridView4 = New DataGridView()
+        ReaDataGrid = New DataGridView()
         MaterialLabel39 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox17 = New MaterialSkin.Controls.MaterialTextBox()
+        ReaSearchReason = New MaterialSkin.Controls.MaterialTextBox()
         SectionsTab = New TabPage()
         MaterialCard11 = New MaterialSkin.Controls.MaterialCard()
-        MaterialButton14 = New MaterialSkin.Controls.MaterialButton()
+        SectClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel34 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialButton15 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton16 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton17 = New MaterialSkin.Controls.MaterialButton()
+        SectAddBtn = New MaterialSkin.Controls.MaterialButton()
+        SectUpdBtn = New MaterialSkin.Controls.MaterialButton()
+        SectDelBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel40 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox12 = New MaterialSkin.Controls.MaterialTextBox()
+        SectName = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel42 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox13 = New MaterialSkin.Controls.MaterialTextBox()
+        SectSectID = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel43 = New MaterialSkin.Controls.MaterialLabel()
-        DataGridView5 = New DataGridView()
+        SectDataGrid = New DataGridView()
         MaterialLabel44 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox18 = New MaterialSkin.Controls.MaterialTextBox()
+        SectSearchSect = New MaterialSkin.Controls.MaterialTextBox()
         ArchiveTab = New TabPage()
         MaterialCard12 = New MaterialSkin.Controls.MaterialCard()
         MaterialLabel46 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialComboBox7 = New MaterialSkin.Controls.MaterialComboBox()
+        ArchFilByYear = New MaterialSkin.Controls.MaterialComboBox()
         MaterialLabel41 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialComboBox6 = New MaterialSkin.Controls.MaterialComboBox()
-        MaterialButton18 = New MaterialSkin.Controls.MaterialButton()
+        ArchFilBySect = New MaterialSkin.Controls.MaterialComboBox()
+        ArchClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
-        DataGridView6 = New DataGridView()
+        ArchDataGrid = New DataGridView()
         MaterialLabel48 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialTextBox21 = New MaterialSkin.Controls.MaterialTextBox()
+        ArchSearchBox = New MaterialSkin.Controls.MaterialTextBox()
         SignOutTab = New TabPage()
         MaterialCard16 = New MaterialSkin.Controls.MaterialCard()
-        MaterialCard14 = New MaterialSkin.Controls.MaterialCard()
-        MaterialButton20 = New MaterialSkin.Controls.MaterialButton()
-        MaterialButton19 = New MaterialSkin.Controls.MaterialButton()
+        SignOutCard = New MaterialSkin.Controls.MaterialCard()
+        SignOutYes = New MaterialSkin.Controls.MaterialButton()
+        SignOutCancel = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel47 = New MaterialSkin.Controls.MaterialLabel()
         ImageList1 = New ImageList(components)
         MaterialCard1 = New MaterialSkin.Controls.MaterialCard()
-        MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
+        DateLbl = New MaterialSkin.Controls.MaterialLabel()
+        TimeLbl = New MaterialSkin.Controls.MaterialLabel()
+        Timer1 = New Timer(components)
         MaterialTabControl1.SuspendLayout()
         Dashboard.SuspendLayout()
         MaterialCard2.SuspendLayout()
+        YourConsultCountCard.SuspendLayout()
+        ReportCountCard.SuspendLayout()
+        ConsultCategCard.SuspendLayout()
         MaterialCard7.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         MaterialCard8.SuspendLayout()
@@ -166,25 +177,25 @@ Partial Class ProfessorDashboard
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Professors.SuspendLayout()
         MaterialCard9.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ProfDataGrid, ComponentModel.ISupportInitialize).BeginInit()
         Students.SuspendLayout()
         MaterialCard13.SuspendLayout()
-        CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(StudDataGrid, ComponentModel.ISupportInitialize).BeginInit()
         Reports.SuspendLayout()
         MaterialCard17.SuspendLayout()
-        CType(DataGridView3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(RepDataGrid, ComponentModel.ISupportInitialize).BeginInit()
         Reasons.SuspendLayout()
         MaterialCard10.SuspendLayout()
-        CType(DataGridView4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ReaDataGrid, ComponentModel.ISupportInitialize).BeginInit()
         SectionsTab.SuspendLayout()
         MaterialCard11.SuspendLayout()
-        CType(DataGridView5, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SectDataGrid, ComponentModel.ISupportInitialize).BeginInit()
         ArchiveTab.SuspendLayout()
         MaterialCard12.SuspendLayout()
-        CType(DataGridView6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ArchDataGrid, ComponentModel.ISupportInitialize).BeginInit()
         SignOutTab.SuspendLayout()
         MaterialCard16.SuspendLayout()
-        MaterialCard14.SuspendLayout()
+        SignOutCard.SuspendLayout()
         MaterialCard1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -200,18 +211,18 @@ Partial Class ProfessorDashboard
         MaterialLabel1.TabIndex = 9
         MaterialLabel1.Text = "Welcome to Online Registration System"
         ' 
-        ' MaterialLabel2
+        ' ProfNameLbl
         ' 
-        MaterialLabel2.AutoSize = True
-        MaterialLabel2.Depth = 0
-        MaterialLabel2.Font = New Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H4
-        MaterialLabel2.Location = New Point(71, 50)
-        MaterialLabel2.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel2.Name = "MaterialLabel2"
-        MaterialLabel2.Size = New Size(378, 41)
-        MaterialLabel2.TabIndex = 10
-        MaterialLabel2.Text = "NAME OF T. PROFESSOR"
+        ProfNameLbl.AutoSize = True
+        ProfNameLbl.Depth = 0
+        ProfNameLbl.Font = New Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel)
+        ProfNameLbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H4
+        ProfNameLbl.Location = New Point(71, 50)
+        ProfNameLbl.MouseState = MaterialSkin.MouseState.HOVER
+        ProfNameLbl.Name = "ProfNameLbl"
+        ProfNameLbl.Size = New Size(378, 41)
+        ProfNameLbl.TabIndex = 10
+        ProfNameLbl.Text = "NAME OF T. PROFESSOR"
         ' 
         ' MaterialTabControl1
         ' 
@@ -249,9 +260,9 @@ Partial Class ProfessorDashboard
         ' MaterialCard2
         ' 
         MaterialCard2.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard2.Controls.Add(MaterialCard3)
-        MaterialCard2.Controls.Add(MaterialCard4)
-        MaterialCard2.Controls.Add(MaterialCard5)
+        MaterialCard2.Controls.Add(YourConsultCountCard)
+        MaterialCard2.Controls.Add(ReportCountCard)
+        MaterialCard2.Controls.Add(ConsultCategCard)
         MaterialCard2.Controls.Add(MaterialCard7)
         MaterialCard2.Controls.Add(MaterialCard8)
         MaterialCard2.Controls.Add(MaterialCard6)
@@ -265,51 +276,120 @@ Partial Class ProfessorDashboard
         MaterialCard2.Size = New Size(1841, 900)
         MaterialCard2.TabIndex = 0
         ' 
-        ' MaterialCard3
+        ' YourConsultCountCard
         ' 
-        MaterialCard3.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard3.Depth = 0
-        MaterialCard3.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialCard3.Location = New Point(1238, 215)
-        MaterialCard3.Margin = New Padding(14)
-        MaterialCard3.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialCard3.Name = "MaterialCard3"
-        MaterialCard3.Padding = New Padding(14)
-        MaterialCard3.Size = New Size(523, 671)
-        MaterialCard3.TabIndex = 27
+        YourConsultCountCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        YourConsultCountCard.Controls.Add(YourConsultCountPanel)
+        YourConsultCountCard.Controls.Add(MaterialLabel4)
+        YourConsultCountCard.Depth = 0
+        YourConsultCountCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        YourConsultCountCard.Location = New Point(1238, 463)
+        YourConsultCountCard.Margin = New Padding(14)
+        YourConsultCountCard.MouseState = MaterialSkin.MouseState.HOVER
+        YourConsultCountCard.Name = "YourConsultCountCard"
+        YourConsultCountCard.Padding = New Padding(14, 30, 14, 14)
+        YourConsultCountCard.Size = New Size(523, 423)
+        YourConsultCountCard.TabIndex = 27
         ' 
-        ' MaterialCard4
+        ' YourConsultCountPanel
         ' 
-        MaterialCard4.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard4.Depth = 0
-        MaterialCard4.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialCard4.Location = New Point(34, 463)
-        MaterialCard4.Margin = New Padding(14)
-        MaterialCard4.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialCard4.Name = "MaterialCard4"
-        MaterialCard4.Padding = New Padding(14)
-        MaterialCard4.Size = New Size(1173, 423)
-        MaterialCard4.TabIndex = 26
+        YourConsultCountPanel.Dock = DockStyle.Bottom
+        YourConsultCountPanel.Location = New Point(14, 57)
+        YourConsultCountPanel.Name = "YourConsultCountPanel"
+        YourConsultCountPanel.Size = New Size(495, 352)
+        YourConsultCountPanel.TabIndex = 3
         ' 
-        ' MaterialCard5
+        ' MaterialLabel4
         ' 
-        MaterialCard5.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard5.Depth = 0
-        MaterialCard5.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialCard5.Location = New Point(34, 215)
-        MaterialCard5.Margin = New Padding(14)
-        MaterialCard5.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialCard5.Name = "MaterialCard5"
-        MaterialCard5.Padding = New Padding(14)
-        MaterialCard5.Size = New Size(1173, 220)
-        MaterialCard5.TabIndex = 25
+        MaterialLabel4.AutoSize = True
+        MaterialLabel4.Depth = 0
+        MaterialLabel4.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel4.Location = New Point(175, 30)
+        MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel4.Name = "MaterialLabel4"
+        MaterialLabel4.Size = New Size(172, 24)
+        MaterialLabel4.TabIndex = 2
+        MaterialLabel4.Text = "Consultation Count"
+        ' 
+        ' ReportCountCard
+        ' 
+        ReportCountCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ReportCountCard.Controls.Add(ReportCountPanel)
+        ReportCountCard.Controls.Add(MaterialLabel3)
+        ReportCountCard.Depth = 0
+        ReportCountCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        ReportCountCard.Location = New Point(34, 463)
+        ReportCountCard.Margin = New Padding(14)
+        ReportCountCard.MouseState = MaterialSkin.MouseState.HOVER
+        ReportCountCard.Name = "ReportCountCard"
+        ReportCountCard.Padding = New Padding(14, 30, 14, 14)
+        ReportCountCard.Size = New Size(1173, 423)
+        ReportCountCard.TabIndex = 26
+        ' 
+        ' ReportCountPanel
+        ' 
+        ReportCountPanel.Dock = DockStyle.Bottom
+        ReportCountPanel.Location = New Point(14, 57)
+        ReportCountPanel.Name = "ReportCountPanel"
+        ReportCountPanel.Size = New Size(1145, 352)
+        ReportCountPanel.TabIndex = 2
+        ' 
+        ' MaterialLabel3
+        ' 
+        MaterialLabel3.AutoSize = True
+        MaterialLabel3.Depth = 0
+        MaterialLabel3.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel3.Location = New Point(471, 30)
+        MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel3.Name = "MaterialLabel3"
+        MaterialLabel3.Size = New Size(231, 24)
+        MaterialLabel3.TabIndex = 1
+        MaterialLabel3.Text = "Report count by professor"
+        ' 
+        ' ConsultCategCard
+        ' 
+        ConsultCategCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ConsultCategCard.Controls.Add(ConsultCategPanel)
+        ConsultCategCard.Controls.Add(MaterialLabel2)
+        ConsultCategCard.Depth = 0
+        ConsultCategCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        ConsultCategCard.Location = New Point(34, 215)
+        ConsultCategCard.Margin = New Padding(14)
+        ConsultCategCard.MouseState = MaterialSkin.MouseState.HOVER
+        ConsultCategCard.Name = "ConsultCategCard"
+        ConsultCategCard.Padding = New Padding(14, 30, 14, 14)
+        ConsultCategCard.Size = New Size(1727, 220)
+        ConsultCategCard.TabIndex = 25
+        ' 
+        ' ConsultCategPanel
+        ' 
+        ConsultCategPanel.Dock = DockStyle.Bottom
+        ConsultCategPanel.Location = New Point(14, 57)
+        ConsultCategPanel.Name = "ConsultCategPanel"
+        ConsultCategPanel.Size = New Size(1699, 149)
+        ConsultCategPanel.TabIndex = 1
+        ' 
+        ' MaterialLabel2
+        ' 
+        MaterialLabel2.AutoSize = True
+        MaterialLabel2.Depth = 0
+        MaterialLabel2.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel2.Location = New Point(755, 30)
+        MaterialLabel2.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel2.Name = "MaterialLabel2"
+        MaterialLabel2.Size = New Size(216, 24)
+        MaterialLabel2.TabIndex = 0
+        MaterialLabel2.Text = "Consultation Categories"
         ' 
         ' MaterialCard7
         ' 
         MaterialCard7.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
         MaterialCard7.Controls.Add(PictureBox3)
         MaterialCard7.Controls.Add(MaterialLabel13)
-        MaterialCard7.Controls.Add(MaterialLabel14)
+        MaterialCard7.Controls.Add(NumOfRep)
         MaterialCard7.Depth = 0
         MaterialCard7.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard7.Location = New Point(1238, 43)
@@ -342,25 +422,25 @@ Partial Class ProfessorDashboard
         MaterialLabel13.TabIndex = 6
         MaterialLabel13.Text = "Total of reports"
         ' 
-        ' MaterialLabel14
+        ' NumOfRep
         ' 
-        MaterialLabel14.AutoSize = True
-        MaterialLabel14.Depth = 0
-        MaterialLabel14.Font = New Font("Roboto Light", 60F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel14.FontType = MaterialSkin.MaterialSkinManager.fontType.H2
-        MaterialLabel14.Location = New Point(33, 49)
-        MaterialLabel14.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel14.Name = "MaterialLabel14"
-        MaterialLabel14.Size = New Size(34, 72)
-        MaterialLabel14.TabIndex = 5
-        MaterialLabel14.Text = "0"
+        NumOfRep.AutoSize = True
+        NumOfRep.Depth = 0
+        NumOfRep.Font = New Font("Roboto Light", 60F, FontStyle.Regular, GraphicsUnit.Pixel)
+        NumOfRep.FontType = MaterialSkin.MaterialSkinManager.fontType.H2
+        NumOfRep.Location = New Point(33, 49)
+        NumOfRep.MouseState = MaterialSkin.MouseState.HOVER
+        NumOfRep.Name = "NumOfRep"
+        NumOfRep.Size = New Size(34, 72)
+        NumOfRep.TabIndex = 5
+        NumOfRep.Text = "0"
         ' 
         ' MaterialCard8
         ' 
         MaterialCard8.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
         MaterialCard8.Controls.Add(PictureBox1)
         MaterialCard8.Controls.Add(MaterialLabel10)
-        MaterialCard8.Controls.Add(MaterialLabel9)
+        MaterialCard8.Controls.Add(NumOfProf)
         MaterialCard8.Depth = 0
         MaterialCard8.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard8.Location = New Point(34, 40)
@@ -393,25 +473,25 @@ Partial Class ProfessorDashboard
         MaterialLabel10.TabIndex = 3
         MaterialLabel10.Text = "Total of professors"
         ' 
-        ' MaterialLabel9
+        ' NumOfProf
         ' 
-        MaterialLabel9.AutoSize = True
-        MaterialLabel9.Depth = 0
-        MaterialLabel9.Font = New Font("Roboto Light", 60F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel9.FontType = MaterialSkin.MaterialSkinManager.fontType.H2
-        MaterialLabel9.Location = New Point(33, 49)
-        MaterialLabel9.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel9.Name = "MaterialLabel9"
-        MaterialLabel9.Size = New Size(67, 72)
-        MaterialLabel9.TabIndex = 2
-        MaterialLabel9.Text = "27"
+        NumOfProf.AutoSize = True
+        NumOfProf.Depth = 0
+        NumOfProf.Font = New Font("Roboto Light", 60F, FontStyle.Regular, GraphicsUnit.Pixel)
+        NumOfProf.FontType = MaterialSkin.MaterialSkinManager.fontType.H2
+        NumOfProf.Location = New Point(33, 49)
+        NumOfProf.MouseState = MaterialSkin.MouseState.HOVER
+        NumOfProf.Name = "NumOfProf"
+        NumOfProf.Size = New Size(67, 72)
+        NumOfProf.TabIndex = 2
+        NumOfProf.Text = "27"
         ' 
         ' MaterialCard6
         ' 
         MaterialCard6.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
         MaterialCard6.Controls.Add(PictureBox2)
         MaterialCard6.Controls.Add(MaterialLabel11)
-        MaterialCard6.Controls.Add(MaterialLabel12)
+        MaterialCard6.Controls.Add(NumOfStud)
         MaterialCard6.Depth = 0
         MaterialCard6.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard6.Location = New Point(636, 40)
@@ -444,18 +524,18 @@ Partial Class ProfessorDashboard
         MaterialLabel11.TabIndex = 6
         MaterialLabel11.Text = "Total of students"
         ' 
-        ' MaterialLabel12
+        ' NumOfStud
         ' 
-        MaterialLabel12.AutoSize = True
-        MaterialLabel12.Depth = 0
-        MaterialLabel12.Font = New Font("Roboto Light", 60F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel12.FontType = MaterialSkin.MaterialSkinManager.fontType.H2
-        MaterialLabel12.Location = New Point(33, 49)
-        MaterialLabel12.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel12.Name = "MaterialLabel12"
-        MaterialLabel12.Size = New Size(100, 72)
-        MaterialLabel12.TabIndex = 5
-        MaterialLabel12.Text = "217"
+        NumOfStud.AutoSize = True
+        NumOfStud.Depth = 0
+        NumOfStud.Font = New Font("Roboto Light", 60F, FontStyle.Regular, GraphicsUnit.Pixel)
+        NumOfStud.FontType = MaterialSkin.MaterialSkinManager.fontType.H2
+        NumOfStud.Location = New Point(33, 49)
+        NumOfStud.MouseState = MaterialSkin.MouseState.HOVER
+        NumOfStud.Name = "NumOfStud"
+        NumOfStud.Size = New Size(100, 72)
+        NumOfStud.TabIndex = 5
+        NumOfStud.Text = "217"
         ' 
         ' Professors
         ' 
@@ -472,23 +552,23 @@ Partial Class ProfessorDashboard
         ' MaterialCard9
         ' 
         MaterialCard9.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard9.Controls.Add(MaterialButton4)
+        MaterialCard9.Controls.Add(ProfDataGrid)
+        MaterialCard9.Controls.Add(ProfClrBtn)
         MaterialCard9.Controls.Add(MaterialLabel17)
-        MaterialCard9.Controls.Add(MaterialButton3)
-        MaterialCard9.Controls.Add(MaterialButton2)
-        MaterialCard9.Controls.Add(MaterialButton1)
+        MaterialCard9.Controls.Add(ProfAddBtn)
+        MaterialCard9.Controls.Add(ProfUpdBtn)
+        MaterialCard9.Controls.Add(ProfDelBtn)
         MaterialCard9.Controls.Add(MaterialLabel16)
-        MaterialCard9.Controls.Add(MaterialTextBox5)
+        MaterialCard9.Controls.Add(ProfPass)
         MaterialCard9.Controls.Add(MaterialLabel15)
-        MaterialCard9.Controls.Add(MaterialTextBox4)
+        MaterialCard9.Controls.Add(ProfUsername)
         MaterialCard9.Controls.Add(MaterialLabel8)
-        MaterialCard9.Controls.Add(MaterialTextBox3)
+        MaterialCard9.Controls.Add(ProfEmail)
         MaterialCard9.Controls.Add(MaterialLabel7)
-        MaterialCard9.Controls.Add(MaterialTextBox2)
+        MaterialCard9.Controls.Add(ProfProfName)
         MaterialCard9.Controls.Add(MaterialLabel6)
-        MaterialCard9.Controls.Add(DataGridView1)
         MaterialCard9.Controls.Add(MaterialLabel5)
-        MaterialCard9.Controls.Add(MaterialTextBox1)
+        MaterialCard9.Controls.Add(ProfSearchProf)
         MaterialCard9.Depth = 0
         MaterialCard9.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard9.Location = New Point(-16, -22)
@@ -499,24 +579,24 @@ Partial Class ProfessorDashboard
         MaterialCard9.Size = New Size(1841, 902)
         MaterialCard9.TabIndex = 1
         ' 
-        ' MaterialButton4
+        ' ProfClrBtn
         ' 
-        MaterialButton4.AutoSize = False
-        MaterialButton4.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton4.Depth = 0
-        MaterialButton4.HighEmphasis = True
-        MaterialButton4.Icon = My.Resources.Resources.clean
-        MaterialButton4.Location = New Point(1720, 35)
-        MaterialButton4.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton4.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton4.Name = "MaterialButton4"
-        MaterialButton4.NoAccentTextColor = Color.Empty
-        MaterialButton4.Size = New Size(40, 45)
-        MaterialButton4.TabIndex = 18
-        MaterialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton4.UseAccentColor = False
-        MaterialButton4.UseVisualStyleBackColor = True
+        ProfClrBtn.AutoSize = False
+        ProfClrBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfClrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfClrBtn.Depth = 0
+        ProfClrBtn.HighEmphasis = True
+        ProfClrBtn.Icon = My.Resources.Resources.clean
+        ProfClrBtn.Location = New Point(1720, 35)
+        ProfClrBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfClrBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfClrBtn.Name = "ProfClrBtn"
+        ProfClrBtn.NoAccentTextColor = Color.Empty
+        ProfClrBtn.Size = New Size(40, 45)
+        ProfClrBtn.TabIndex = 18
+        ProfClrBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ProfClrBtn.UseAccentColor = False
+        ProfClrBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel17
         ' 
@@ -531,65 +611,65 @@ Partial Class ProfessorDashboard
         MaterialLabel17.TabIndex = 17
         MaterialLabel17.Text = "Warning, be mindful of modifying data."
         ' 
-        ' MaterialButton3
+        ' ProfAddBtn
         ' 
-        MaterialButton3.AutoSize = False
-        MaterialButton3.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton3.Depth = 0
-        MaterialButton3.HighEmphasis = True
-        MaterialButton3.Icon = Nothing
-        MaterialButton3.Location = New Point(1640, 794)
-        MaterialButton3.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton3.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton3.Name = "MaterialButton3"
-        MaterialButton3.NoAccentTextColor = Color.Empty
-        MaterialButton3.Size = New Size(120, 45)
-        MaterialButton3.TabIndex = 16
-        MaterialButton3.Text = "Add"
-        MaterialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton3.UseAccentColor = False
-        MaterialButton3.UseVisualStyleBackColor = True
+        ProfAddBtn.AutoSize = False
+        ProfAddBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfAddBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfAddBtn.Depth = 0
+        ProfAddBtn.HighEmphasis = True
+        ProfAddBtn.Icon = Nothing
+        ProfAddBtn.Location = New Point(1640, 794)
+        ProfAddBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfAddBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfAddBtn.Name = "ProfAddBtn"
+        ProfAddBtn.NoAccentTextColor = Color.Empty
+        ProfAddBtn.Size = New Size(120, 45)
+        ProfAddBtn.TabIndex = 16
+        ProfAddBtn.Text = "Add"
+        ProfAddBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ProfAddBtn.UseAccentColor = False
+        ProfAddBtn.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton2
+        ' ProfUpdBtn
         ' 
-        MaterialButton2.AutoSize = False
-        MaterialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton2.Depth = 0
-        MaterialButton2.HighEmphasis = True
-        MaterialButton2.Icon = Nothing
-        MaterialButton2.Location = New Point(1493, 794)
-        MaterialButton2.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton2.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton2.Name = "MaterialButton2"
-        MaterialButton2.NoAccentTextColor = Color.Empty
-        MaterialButton2.Size = New Size(120, 45)
-        MaterialButton2.TabIndex = 15
-        MaterialButton2.Text = "Update"
-        MaterialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton2.UseAccentColor = False
-        MaterialButton2.UseVisualStyleBackColor = True
+        ProfUpdBtn.AutoSize = False
+        ProfUpdBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfUpdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfUpdBtn.Depth = 0
+        ProfUpdBtn.HighEmphasis = True
+        ProfUpdBtn.Icon = Nothing
+        ProfUpdBtn.Location = New Point(1493, 794)
+        ProfUpdBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfUpdBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfUpdBtn.Name = "ProfUpdBtn"
+        ProfUpdBtn.NoAccentTextColor = Color.Empty
+        ProfUpdBtn.Size = New Size(120, 45)
+        ProfUpdBtn.TabIndex = 15
+        ProfUpdBtn.Text = "Update"
+        ProfUpdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ProfUpdBtn.UseAccentColor = False
+        ProfUpdBtn.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton1
+        ' ProfDelBtn
         ' 
-        MaterialButton1.AutoSize = False
-        MaterialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton1.Depth = 0
-        MaterialButton1.HighEmphasis = True
-        MaterialButton1.Icon = Nothing
-        MaterialButton1.Location = New Point(1343, 794)
-        MaterialButton1.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton1.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton1.Name = "MaterialButton1"
-        MaterialButton1.NoAccentTextColor = Color.Empty
-        MaterialButton1.Size = New Size(120, 45)
-        MaterialButton1.TabIndex = 14
-        MaterialButton1.Text = "Delete"
-        MaterialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton1.UseAccentColor = True
-        MaterialButton1.UseVisualStyleBackColor = True
+        ProfDelBtn.AutoSize = False
+        ProfDelBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfDelBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfDelBtn.Depth = 0
+        ProfDelBtn.HighEmphasis = True
+        ProfDelBtn.Icon = Nothing
+        ProfDelBtn.Location = New Point(1343, 794)
+        ProfDelBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfDelBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfDelBtn.Name = "ProfDelBtn"
+        ProfDelBtn.NoAccentTextColor = Color.Empty
+        ProfDelBtn.Size = New Size(120, 45)
+        ProfDelBtn.TabIndex = 14
+        ProfDelBtn.Text = "Delete"
+        ProfDelBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ProfDelBtn.UseAccentColor = True
+        ProfDelBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel16
         ' 
@@ -604,25 +684,25 @@ Partial Class ProfessorDashboard
         MaterialLabel16.TabIndex = 13
         MaterialLabel16.Text = "Add, update and delete"
         ' 
-        ' MaterialTextBox5
+        ' ProfPass
         ' 
-        MaterialTextBox5.AnimateReadOnly = False
-        MaterialTextBox5.BorderStyle = BorderStyle.None
-        MaterialTextBox5.Depth = 0
-        MaterialTextBox5.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox5.Hint = "Enter the password"
-        MaterialTextBox5.LeadingIcon = Nothing
-        MaterialTextBox5.Location = New Point(1343, 564)
-        MaterialTextBox5.MaxLength = 50
-        MaterialTextBox5.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox5.Multiline = False
-        MaterialTextBox5.Name = "MaterialTextBox5"
-        MaterialTextBox5.Password = True
-        MaterialTextBox5.Size = New Size(417, 50)
-        MaterialTextBox5.TabIndex = 12
-        MaterialTextBox5.Text = ""
-        MaterialTextBox5.TrailingIcon = Nothing
-        MaterialTextBox5.UseAccent = False
+        ProfPass.AnimateReadOnly = False
+        ProfPass.BorderStyle = BorderStyle.None
+        ProfPass.Depth = 0
+        ProfPass.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfPass.Hint = "Enter the password"
+        ProfPass.LeadingIcon = Nothing
+        ProfPass.Location = New Point(1343, 564)
+        ProfPass.MaxLength = 50
+        ProfPass.MouseState = MaterialSkin.MouseState.OUT
+        ProfPass.Multiline = False
+        ProfPass.Name = "ProfPass"
+        ProfPass.Password = True
+        ProfPass.Size = New Size(417, 50)
+        ProfPass.TabIndex = 12
+        ProfPass.Text = ""
+        ProfPass.TrailingIcon = Nothing
+        ProfPass.UseAccent = False
         ' 
         ' MaterialLabel15
         ' 
@@ -637,24 +717,24 @@ Partial Class ProfessorDashboard
         MaterialLabel15.TabIndex = 11
         MaterialLabel15.Text = "Password"
         ' 
-        ' MaterialTextBox4
+        ' ProfUsername
         ' 
-        MaterialTextBox4.AnimateReadOnly = False
-        MaterialTextBox4.BorderStyle = BorderStyle.None
-        MaterialTextBox4.Depth = 0
-        MaterialTextBox4.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox4.Hint = "Enter the username"
-        MaterialTextBox4.LeadingIcon = Nothing
-        MaterialTextBox4.Location = New Point(1343, 438)
-        MaterialTextBox4.MaxLength = 50
-        MaterialTextBox4.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox4.Multiline = False
-        MaterialTextBox4.Name = "MaterialTextBox4"
-        MaterialTextBox4.Size = New Size(417, 50)
-        MaterialTextBox4.TabIndex = 10
-        MaterialTextBox4.Text = ""
-        MaterialTextBox4.TrailingIcon = Nothing
-        MaterialTextBox4.UseAccent = False
+        ProfUsername.AnimateReadOnly = False
+        ProfUsername.BorderStyle = BorderStyle.None
+        ProfUsername.Depth = 0
+        ProfUsername.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfUsername.Hint = "Enter the username"
+        ProfUsername.LeadingIcon = Nothing
+        ProfUsername.Location = New Point(1343, 438)
+        ProfUsername.MaxLength = 50
+        ProfUsername.MouseState = MaterialSkin.MouseState.OUT
+        ProfUsername.Multiline = False
+        ProfUsername.Name = "ProfUsername"
+        ProfUsername.Size = New Size(417, 50)
+        ProfUsername.TabIndex = 10
+        ProfUsername.Text = ""
+        ProfUsername.TrailingIcon = Nothing
+        ProfUsername.UseAccent = False
         ' 
         ' MaterialLabel8
         ' 
@@ -669,24 +749,24 @@ Partial Class ProfessorDashboard
         MaterialLabel8.TabIndex = 9
         MaterialLabel8.Text = "Username"
         ' 
-        ' MaterialTextBox3
+        ' ProfEmail
         ' 
-        MaterialTextBox3.AnimateReadOnly = False
-        MaterialTextBox3.BorderStyle = BorderStyle.None
-        MaterialTextBox3.Depth = 0
-        MaterialTextBox3.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox3.Hint = "Enter valid school email address"
-        MaterialTextBox3.LeadingIcon = Nothing
-        MaterialTextBox3.Location = New Point(1343, 312)
-        MaterialTextBox3.MaxLength = 50
-        MaterialTextBox3.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox3.Multiline = False
-        MaterialTextBox3.Name = "MaterialTextBox3"
-        MaterialTextBox3.Size = New Size(417, 50)
-        MaterialTextBox3.TabIndex = 8
-        MaterialTextBox3.Text = ""
-        MaterialTextBox3.TrailingIcon = Nothing
-        MaterialTextBox3.UseAccent = False
+        ProfEmail.AnimateReadOnly = False
+        ProfEmail.BorderStyle = BorderStyle.None
+        ProfEmail.Depth = 0
+        ProfEmail.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfEmail.Hint = "Enter valid school email address"
+        ProfEmail.LeadingIcon = Nothing
+        ProfEmail.Location = New Point(1343, 312)
+        ProfEmail.MaxLength = 50
+        ProfEmail.MouseState = MaterialSkin.MouseState.OUT
+        ProfEmail.Multiline = False
+        ProfEmail.Name = "ProfEmail"
+        ProfEmail.Size = New Size(417, 50)
+        ProfEmail.TabIndex = 8
+        ProfEmail.Text = ""
+        ProfEmail.TrailingIcon = Nothing
+        ProfEmail.UseAccent = False
         ' 
         ' MaterialLabel7
         ' 
@@ -701,24 +781,24 @@ Partial Class ProfessorDashboard
         MaterialLabel7.TabIndex = 7
         MaterialLabel7.Text = "Email address"
         ' 
-        ' MaterialTextBox2
+        ' ProfProfName
         ' 
-        MaterialTextBox2.AnimateReadOnly = False
-        MaterialTextBox2.BorderStyle = BorderStyle.None
-        MaterialTextBox2.Depth = 0
-        MaterialTextBox2.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox2.Hint = "Enter full name of professor"
-        MaterialTextBox2.LeadingIcon = Nothing
-        MaterialTextBox2.Location = New Point(1343, 186)
-        MaterialTextBox2.MaxLength = 50
-        MaterialTextBox2.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox2.Multiline = False
-        MaterialTextBox2.Name = "MaterialTextBox2"
-        MaterialTextBox2.Size = New Size(417, 50)
-        MaterialTextBox2.TabIndex = 6
-        MaterialTextBox2.Text = ""
-        MaterialTextBox2.TrailingIcon = Nothing
-        MaterialTextBox2.UseAccent = False
+        ProfProfName.AnimateReadOnly = False
+        ProfProfName.BorderStyle = BorderStyle.None
+        ProfProfName.Depth = 0
+        ProfProfName.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfProfName.Hint = "Enter full name of professor"
+        ProfProfName.LeadingIcon = Nothing
+        ProfProfName.Location = New Point(1343, 186)
+        ProfProfName.MaxLength = 50
+        ProfProfName.MouseState = MaterialSkin.MouseState.OUT
+        ProfProfName.Multiline = False
+        ProfProfName.Name = "ProfProfName"
+        ProfProfName.Size = New Size(417, 50)
+        ProfProfName.TabIndex = 6
+        ProfProfName.Text = ""
+        ProfProfName.TrailingIcon = Nothing
+        ProfProfName.UseAccent = False
         ' 
         ' MaterialLabel6
         ' 
@@ -733,18 +813,6 @@ Partial Class ProfessorDashboard
         MaterialLabel6.TabIndex = 5
         MaterialLabel6.Text = "Professor name"
         ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.BackgroundColor = Color.White
-        DataGridView1.BorderStyle = BorderStyle.Fixed3D
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(33, 96)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(1252, 756)
-        DataGridView1.TabIndex = 4
-        ' 
         ' MaterialLabel5
         ' 
         MaterialLabel5.AutoSize = True
@@ -754,28 +822,50 @@ Partial Class ProfessorDashboard
         MaterialLabel5.Location = New Point(1343, 40)
         MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel5.Name = "MaterialLabel5"
-        MaterialLabel5.Size = New Size(229, 29)
+        MaterialLabel5.Size = New Size(183, 29)
         MaterialLabel5.TabIndex = 3
-        MaterialLabel5.Text = "Edit professor details"
+        MaterialLabel5.Text = "Professor details"
         ' 
-        ' MaterialTextBox1
+        ' ProfSearchProf
         ' 
-        MaterialTextBox1.AnimateReadOnly = False
-        MaterialTextBox1.BorderStyle = BorderStyle.None
-        MaterialTextBox1.Depth = 0
-        MaterialTextBox1.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox1.Hint = "Search for a professor"
-        MaterialTextBox1.LeadingIcon = My.Resources.Resources.magnifying_glass
-        MaterialTextBox1.Location = New Point(34, 40)
-        MaterialTextBox1.MaxLength = 50
-        MaterialTextBox1.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox1.Multiline = False
-        MaterialTextBox1.Name = "MaterialTextBox1"
-        MaterialTextBox1.Size = New Size(1252, 50)
-        MaterialTextBox1.TabIndex = 0
-        MaterialTextBox1.Text = ""
-        MaterialTextBox1.TrailingIcon = Nothing
-        MaterialTextBox1.UseAccent = False
+        ProfSearchProf.AnimateReadOnly = False
+        ProfSearchProf.BorderStyle = BorderStyle.None
+        ProfSearchProf.Depth = 0
+        ProfSearchProf.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfSearchProf.Hint = "Search for a professor"
+        ProfSearchProf.LeadingIcon = My.Resources.Resources.magnifying_glass
+        ProfSearchProf.Location = New Point(34, 40)
+        ProfSearchProf.MaxLength = 50
+        ProfSearchProf.MouseState = MaterialSkin.MouseState.OUT
+        ProfSearchProf.Multiline = False
+        ProfSearchProf.Name = "ProfSearchProf"
+        ProfSearchProf.Size = New Size(1252, 50)
+        ProfSearchProf.TabIndex = 0
+        ProfSearchProf.Text = ""
+        ProfSearchProf.TrailingIcon = Nothing
+        ProfSearchProf.UseAccent = False
+        ' 
+        ' ProfDataGrid
+        ' 
+        ProfDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        ProfDataGrid.BackgroundColor = Color.White
+        ProfDataGrid.BorderStyle = BorderStyle.Fixed3D
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.Padding = New Padding(15)
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        ProfDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        ProfDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        ProfDataGrid.Location = New Point(33, 96)
+        ProfDataGrid.Name = "ProfDataGrid"
+        ProfDataGrid.RowHeadersWidth = 51
+        ProfDataGrid.RowTemplate.Height = 29
+        ProfDataGrid.Size = New Size(1252, 756)
+        ProfDataGrid.TabIndex = 4
         ' 
         ' Students
         ' 
@@ -791,36 +881,36 @@ Partial Class ProfessorDashboard
         ' MaterialCard13
         ' 
         MaterialCard13.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard13.Controls.Add(MaterialButton9)
+        MaterialCard13.Controls.Add(StudSaveDate)
         MaterialCard13.Controls.Add(MaterialLabel30)
-        MaterialCard13.Controls.Add(DateTimePicker1)
+        MaterialCard13.Controls.Add(StudDateOfGrad)
         MaterialCard13.Controls.Add(MaterialLabel29)
-        MaterialCard13.Controls.Add(MaterialComboBox4)
+        MaterialCard13.Controls.Add(StudStatus)
         MaterialCard13.Controls.Add(MaterialLabel28)
-        MaterialCard13.Controls.Add(MaterialComboBox3)
+        MaterialCard13.Controls.Add(StudYear)
         MaterialCard13.Controls.Add(MaterialLabel27)
-        MaterialCard13.Controls.Add(MaterialComboBox2)
-        MaterialCard13.Controls.Add(MaterialTextBox11)
+        MaterialCard13.Controls.Add(StudSection)
+        MaterialCard13.Controls.Add(StudEmail)
         MaterialCard13.Controls.Add(MaterialLabel26)
         MaterialCard13.Controls.Add(MaterialLabel25)
-        MaterialCard13.Controls.Add(MaterialComboBox1)
-        MaterialCard13.Controls.Add(MaterialTextBox6)
+        MaterialCard13.Controls.Add(StudSuffix)
+        MaterialCard13.Controls.Add(StudMiddleInitial)
         MaterialCard13.Controls.Add(MaterialLabel20)
-        MaterialCard13.Controls.Add(MaterialButton5)
+        MaterialCard13.Controls.Add(StudClrBtn)
         MaterialCard13.Controls.Add(MaterialLabel18)
-        MaterialCard13.Controls.Add(MaterialButton6)
-        MaterialCard13.Controls.Add(MaterialButton7)
-        MaterialCard13.Controls.Add(MaterialButton8)
+        MaterialCard13.Controls.Add(StudAddBtn)
+        MaterialCard13.Controls.Add(StudUpdBtn)
+        MaterialCard13.Controls.Add(StudDelBtn)
         MaterialCard13.Controls.Add(MaterialLabel19)
-        MaterialCard13.Controls.Add(MaterialTextBox7)
+        MaterialCard13.Controls.Add(StudFirstName)
         MaterialCard13.Controls.Add(MaterialLabel21)
-        MaterialCard13.Controls.Add(MaterialTextBox8)
+        MaterialCard13.Controls.Add(StudLastName)
         MaterialCard13.Controls.Add(MaterialLabel22)
-        MaterialCard13.Controls.Add(MaterialTextBox9)
+        MaterialCard13.Controls.Add(StudNum)
         MaterialCard13.Controls.Add(MaterialLabel23)
-        MaterialCard13.Controls.Add(DataGridView2)
+        MaterialCard13.Controls.Add(StudDataGrid)
         MaterialCard13.Controls.Add(MaterialLabel24)
-        MaterialCard13.Controls.Add(MaterialTextBox10)
+        MaterialCard13.Controls.Add(StudSearchStud)
         MaterialCard13.Depth = 0
         MaterialCard13.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard13.Location = New Point(-16, -22)
@@ -831,25 +921,25 @@ Partial Class ProfessorDashboard
         MaterialCard13.Size = New Size(1841, 902)
         MaterialCard13.TabIndex = 3
         ' 
-        ' MaterialButton9
+        ' StudSaveDate
         ' 
-        MaterialButton9.AutoSize = False
-        MaterialButton9.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton9.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton9.Depth = 0
-        MaterialButton9.HighEmphasis = True
-        MaterialButton9.Icon = Nothing
-        MaterialButton9.Location = New Point(1640, 722)
-        MaterialButton9.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton9.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton9.Name = "MaterialButton9"
-        MaterialButton9.NoAccentTextColor = Color.Empty
-        MaterialButton9.Size = New Size(120, 27)
-        MaterialButton9.TabIndex = 33
-        MaterialButton9.Text = "Save date"
-        MaterialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton9.UseAccentColor = False
-        MaterialButton9.UseVisualStyleBackColor = True
+        StudSaveDate.AutoSize = False
+        StudSaveDate.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StudSaveDate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StudSaveDate.Depth = 0
+        StudSaveDate.HighEmphasis = True
+        StudSaveDate.Icon = Nothing
+        StudSaveDate.Location = New Point(1640, 722)
+        StudSaveDate.Margin = New Padding(4, 6, 4, 6)
+        StudSaveDate.MouseState = MaterialSkin.MouseState.HOVER
+        StudSaveDate.Name = "StudSaveDate"
+        StudSaveDate.NoAccentTextColor = Color.Empty
+        StudSaveDate.Size = New Size(120, 27)
+        StudSaveDate.TabIndex = 33
+        StudSaveDate.Text = "Save date"
+        StudSaveDate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StudSaveDate.UseAccentColor = False
+        StudSaveDate.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel30
         ' 
@@ -864,12 +954,12 @@ Partial Class ProfessorDashboard
         MaterialLabel30.TabIndex = 32
         MaterialLabel30.Text = "Date of graduation"
         ' 
-        ' DateTimePicker1
+        ' StudDateOfGrad
         ' 
-        DateTimePicker1.Location = New Point(1343, 722)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(250, 27)
-        DateTimePicker1.TabIndex = 31
+        StudDateOfGrad.Location = New Point(1343, 722)
+        StudDateOfGrad.Name = "StudDateOfGrad"
+        StudDateOfGrad.Size = New Size(250, 27)
+        StudDateOfGrad.TabIndex = 31
         ' 
         ' MaterialLabel29
         ' 
@@ -884,28 +974,28 @@ Partial Class ProfessorDashboard
         MaterialLabel29.TabIndex = 30
         MaterialLabel29.Text = "Status"
         ' 
-        ' MaterialComboBox4
+        ' StudStatus
         ' 
-        MaterialComboBox4.AutoResize = False
-        MaterialComboBox4.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialComboBox4.Depth = 0
-        MaterialComboBox4.DrawMode = DrawMode.OwnerDrawVariable
-        MaterialComboBox4.DropDownHeight = 174
-        MaterialComboBox4.DropDownStyle = ComboBoxStyle.DropDownList
-        MaterialComboBox4.DropDownWidth = 121
-        MaterialComboBox4.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialComboBox4.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialComboBox4.FormattingEnabled = True
-        MaterialComboBox4.IntegralHeight = False
-        MaterialComboBox4.ItemHeight = 43
-        MaterialComboBox4.Location = New Point(1596, 607)
-        MaterialComboBox4.MaxDropDownItems = 4
-        MaterialComboBox4.MouseState = MaterialSkin.MouseState.OUT
-        MaterialComboBox4.Name = "MaterialComboBox4"
-        MaterialComboBox4.Size = New Size(164, 49)
-        MaterialComboBox4.StartIndex = 0
-        MaterialComboBox4.TabIndex = 29
-        MaterialComboBox4.UseAccent = False
+        StudStatus.AutoResize = False
+        StudStatus.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StudStatus.Depth = 0
+        StudStatus.DrawMode = DrawMode.OwnerDrawVariable
+        StudStatus.DropDownHeight = 174
+        StudStatus.DropDownStyle = ComboBoxStyle.DropDownList
+        StudStatus.DropDownWidth = 121
+        StudStatus.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        StudStatus.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StudStatus.FormattingEnabled = True
+        StudStatus.IntegralHeight = False
+        StudStatus.ItemHeight = 43
+        StudStatus.Location = New Point(1596, 607)
+        StudStatus.MaxDropDownItems = 4
+        StudStatus.MouseState = MaterialSkin.MouseState.OUT
+        StudStatus.Name = "StudStatus"
+        StudStatus.Size = New Size(164, 49)
+        StudStatus.StartIndex = 0
+        StudStatus.TabIndex = 29
+        StudStatus.UseAccent = False
         ' 
         ' MaterialLabel28
         ' 
@@ -920,28 +1010,28 @@ Partial Class ProfessorDashboard
         MaterialLabel28.TabIndex = 28
         MaterialLabel28.Text = "Year"
         ' 
-        ' MaterialComboBox3
+        ' StudYear
         ' 
-        MaterialComboBox3.AutoResize = False
-        MaterialComboBox3.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialComboBox3.Depth = 0
-        MaterialComboBox3.DrawMode = DrawMode.OwnerDrawVariable
-        MaterialComboBox3.DropDownHeight = 174
-        MaterialComboBox3.DropDownStyle = ComboBoxStyle.DropDownList
-        MaterialComboBox3.DropDownWidth = 121
-        MaterialComboBox3.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialComboBox3.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialComboBox3.FormattingEnabled = True
-        MaterialComboBox3.IntegralHeight = False
-        MaterialComboBox3.ItemHeight = 43
-        MaterialComboBox3.Location = New Point(1469, 607)
-        MaterialComboBox3.MaxDropDownItems = 4
-        MaterialComboBox3.MouseState = MaterialSkin.MouseState.OUT
-        MaterialComboBox3.Name = "MaterialComboBox3"
-        MaterialComboBox3.Size = New Size(121, 49)
-        MaterialComboBox3.StartIndex = 0
-        MaterialComboBox3.TabIndex = 27
-        MaterialComboBox3.UseAccent = False
+        StudYear.AutoResize = False
+        StudYear.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StudYear.Depth = 0
+        StudYear.DrawMode = DrawMode.OwnerDrawVariable
+        StudYear.DropDownHeight = 174
+        StudYear.DropDownStyle = ComboBoxStyle.DropDownList
+        StudYear.DropDownWidth = 121
+        StudYear.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        StudYear.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StudYear.FormattingEnabled = True
+        StudYear.IntegralHeight = False
+        StudYear.ItemHeight = 43
+        StudYear.Location = New Point(1469, 607)
+        StudYear.MaxDropDownItems = 4
+        StudYear.MouseState = MaterialSkin.MouseState.OUT
+        StudYear.Name = "StudYear"
+        StudYear.Size = New Size(121, 49)
+        StudYear.StartIndex = 0
+        StudYear.TabIndex = 27
+        StudYear.UseAccent = False
         ' 
         ' MaterialLabel27
         ' 
@@ -956,47 +1046,47 @@ Partial Class ProfessorDashboard
         MaterialLabel27.TabIndex = 26
         MaterialLabel27.Text = "Section"
         ' 
-        ' MaterialComboBox2
+        ' StudSection
         ' 
-        MaterialComboBox2.AutoResize = False
-        MaterialComboBox2.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialComboBox2.Depth = 0
-        MaterialComboBox2.DrawMode = DrawMode.OwnerDrawVariable
-        MaterialComboBox2.DropDownHeight = 174
-        MaterialComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
-        MaterialComboBox2.DropDownWidth = 121
-        MaterialComboBox2.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialComboBox2.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialComboBox2.FormattingEnabled = True
-        MaterialComboBox2.IntegralHeight = False
-        MaterialComboBox2.ItemHeight = 43
-        MaterialComboBox2.Location = New Point(1342, 607)
-        MaterialComboBox2.MaxDropDownItems = 4
-        MaterialComboBox2.MouseState = MaterialSkin.MouseState.OUT
-        MaterialComboBox2.Name = "MaterialComboBox2"
-        MaterialComboBox2.Size = New Size(121, 49)
-        MaterialComboBox2.StartIndex = 0
-        MaterialComboBox2.TabIndex = 25
-        MaterialComboBox2.UseAccent = False
+        StudSection.AutoResize = False
+        StudSection.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StudSection.Depth = 0
+        StudSection.DrawMode = DrawMode.OwnerDrawVariable
+        StudSection.DropDownHeight = 174
+        StudSection.DropDownStyle = ComboBoxStyle.DropDownList
+        StudSection.DropDownWidth = 121
+        StudSection.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        StudSection.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StudSection.FormattingEnabled = True
+        StudSection.IntegralHeight = False
+        StudSection.ItemHeight = 43
+        StudSection.Location = New Point(1342, 607)
+        StudSection.MaxDropDownItems = 4
+        StudSection.MouseState = MaterialSkin.MouseState.OUT
+        StudSection.Name = "StudSection"
+        StudSection.Size = New Size(121, 49)
+        StudSection.StartIndex = 0
+        StudSection.TabIndex = 25
+        StudSection.UseAccent = False
         ' 
-        ' MaterialTextBox11
+        ' StudEmail
         ' 
-        MaterialTextBox11.AnimateReadOnly = False
-        MaterialTextBox11.BorderStyle = BorderStyle.None
-        MaterialTextBox11.Depth = 0
-        MaterialTextBox11.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox11.Hint = "Enter email address"
-        MaterialTextBox11.LeadingIcon = Nothing
-        MaterialTextBox11.Location = New Point(1342, 519)
-        MaterialTextBox11.MaxLength = 50
-        MaterialTextBox11.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox11.Multiline = False
-        MaterialTextBox11.Name = "MaterialTextBox11"
-        MaterialTextBox11.Size = New Size(417, 50)
-        MaterialTextBox11.TabIndex = 24
-        MaterialTextBox11.Text = ""
-        MaterialTextBox11.TrailingIcon = Nothing
-        MaterialTextBox11.UseAccent = False
+        StudEmail.AnimateReadOnly = False
+        StudEmail.BorderStyle = BorderStyle.None
+        StudEmail.Depth = 0
+        StudEmail.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StudEmail.Hint = "Enter email address"
+        StudEmail.LeadingIcon = Nothing
+        StudEmail.Location = New Point(1342, 519)
+        StudEmail.MaxLength = 50
+        StudEmail.MouseState = MaterialSkin.MouseState.OUT
+        StudEmail.Multiline = False
+        StudEmail.Name = "StudEmail"
+        StudEmail.Size = New Size(417, 50)
+        StudEmail.TabIndex = 24
+        StudEmail.Text = ""
+        StudEmail.TrailingIcon = Nothing
+        StudEmail.UseAccent = False
         ' 
         ' MaterialLabel26
         ' 
@@ -1024,47 +1114,47 @@ Partial Class ProfessorDashboard
         MaterialLabel25.TabIndex = 22
         MaterialLabel25.Text = "Suffix"
         ' 
-        ' MaterialComboBox1
+        ' StudSuffix
         ' 
-        MaterialComboBox1.AutoResize = False
-        MaterialComboBox1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialComboBox1.Depth = 0
-        MaterialComboBox1.DrawMode = DrawMode.OwnerDrawVariable
-        MaterialComboBox1.DropDownHeight = 174
-        MaterialComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
-        MaterialComboBox1.DropDownWidth = 121
-        MaterialComboBox1.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialComboBox1.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialComboBox1.FormattingEnabled = True
-        MaterialComboBox1.IntegralHeight = False
-        MaterialComboBox1.ItemHeight = 43
-        MaterialComboBox1.Location = New Point(1557, 429)
-        MaterialComboBox1.MaxDropDownItems = 4
-        MaterialComboBox1.MouseState = MaterialSkin.MouseState.OUT
-        MaterialComboBox1.Name = "MaterialComboBox1"
-        MaterialComboBox1.Size = New Size(203, 49)
-        MaterialComboBox1.StartIndex = 0
-        MaterialComboBox1.TabIndex = 21
-        MaterialComboBox1.UseAccent = False
+        StudSuffix.AutoResize = False
+        StudSuffix.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StudSuffix.Depth = 0
+        StudSuffix.DrawMode = DrawMode.OwnerDrawVariable
+        StudSuffix.DropDownHeight = 174
+        StudSuffix.DropDownStyle = ComboBoxStyle.DropDownList
+        StudSuffix.DropDownWidth = 121
+        StudSuffix.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        StudSuffix.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StudSuffix.FormattingEnabled = True
+        StudSuffix.IntegralHeight = False
+        StudSuffix.ItemHeight = 43
+        StudSuffix.Location = New Point(1557, 429)
+        StudSuffix.MaxDropDownItems = 4
+        StudSuffix.MouseState = MaterialSkin.MouseState.OUT
+        StudSuffix.Name = "StudSuffix"
+        StudSuffix.Size = New Size(203, 49)
+        StudSuffix.StartIndex = 0
+        StudSuffix.TabIndex = 21
+        StudSuffix.UseAccent = False
         ' 
-        ' MaterialTextBox6
+        ' StudMiddleInitial
         ' 
-        MaterialTextBox6.AnimateReadOnly = False
-        MaterialTextBox6.BorderStyle = BorderStyle.None
-        MaterialTextBox6.Depth = 0
-        MaterialTextBox6.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox6.Hint = "Enter middle initial"
-        MaterialTextBox6.LeadingIcon = Nothing
-        MaterialTextBox6.Location = New Point(1342, 428)
-        MaterialTextBox6.MaxLength = 50
-        MaterialTextBox6.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox6.Multiline = False
-        MaterialTextBox6.Name = "MaterialTextBox6"
-        MaterialTextBox6.Size = New Size(209, 50)
-        MaterialTextBox6.TabIndex = 20
-        MaterialTextBox6.Text = ""
-        MaterialTextBox6.TrailingIcon = Nothing
-        MaterialTextBox6.UseAccent = False
+        StudMiddleInitial.AnimateReadOnly = False
+        StudMiddleInitial.BorderStyle = BorderStyle.None
+        StudMiddleInitial.Depth = 0
+        StudMiddleInitial.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StudMiddleInitial.Hint = "Enter middle initial"
+        StudMiddleInitial.LeadingIcon = Nothing
+        StudMiddleInitial.Location = New Point(1342, 428)
+        StudMiddleInitial.MaxLength = 50
+        StudMiddleInitial.MouseState = MaterialSkin.MouseState.OUT
+        StudMiddleInitial.Multiline = False
+        StudMiddleInitial.Name = "StudMiddleInitial"
+        StudMiddleInitial.Size = New Size(209, 50)
+        StudMiddleInitial.TabIndex = 20
+        StudMiddleInitial.Text = ""
+        StudMiddleInitial.TrailingIcon = Nothing
+        StudMiddleInitial.UseAccent = False
         ' 
         ' MaterialLabel20
         ' 
@@ -1079,24 +1169,24 @@ Partial Class ProfessorDashboard
         MaterialLabel20.TabIndex = 19
         MaterialLabel20.Text = "Middle initial"
         ' 
-        ' MaterialButton5
+        ' StudClrBtn
         ' 
-        MaterialButton5.AutoSize = False
-        MaterialButton5.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton5.Depth = 0
-        MaterialButton5.HighEmphasis = True
-        MaterialButton5.Icon = My.Resources.Resources.clean
-        MaterialButton5.Location = New Point(1720, 35)
-        MaterialButton5.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton5.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton5.Name = "MaterialButton5"
-        MaterialButton5.NoAccentTextColor = Color.Empty
-        MaterialButton5.Size = New Size(40, 45)
-        MaterialButton5.TabIndex = 18
-        MaterialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton5.UseAccentColor = False
-        MaterialButton5.UseVisualStyleBackColor = True
+        StudClrBtn.AutoSize = False
+        StudClrBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StudClrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StudClrBtn.Depth = 0
+        StudClrBtn.HighEmphasis = True
+        StudClrBtn.Icon = My.Resources.Resources.clean
+        StudClrBtn.Location = New Point(1720, 35)
+        StudClrBtn.Margin = New Padding(4, 6, 4, 6)
+        StudClrBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StudClrBtn.Name = "StudClrBtn"
+        StudClrBtn.NoAccentTextColor = Color.Empty
+        StudClrBtn.Size = New Size(40, 45)
+        StudClrBtn.TabIndex = 18
+        StudClrBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StudClrBtn.UseAccentColor = False
+        StudClrBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel18
         ' 
@@ -1111,65 +1201,65 @@ Partial Class ProfessorDashboard
         MaterialLabel18.TabIndex = 17
         MaterialLabel18.Text = "Warning, be mindful of modifying data."
         ' 
-        ' MaterialButton6
+        ' StudAddBtn
         ' 
-        MaterialButton6.AutoSize = False
-        MaterialButton6.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton6.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton6.Depth = 0
-        MaterialButton6.HighEmphasis = True
-        MaterialButton6.Icon = Nothing
-        MaterialButton6.Location = New Point(1640, 794)
-        MaterialButton6.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton6.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton6.Name = "MaterialButton6"
-        MaterialButton6.NoAccentTextColor = Color.Empty
-        MaterialButton6.Size = New Size(120, 45)
-        MaterialButton6.TabIndex = 16
-        MaterialButton6.Text = "Add"
-        MaterialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton6.UseAccentColor = False
-        MaterialButton6.UseVisualStyleBackColor = True
+        StudAddBtn.AutoSize = False
+        StudAddBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StudAddBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StudAddBtn.Depth = 0
+        StudAddBtn.HighEmphasis = True
+        StudAddBtn.Icon = Nothing
+        StudAddBtn.Location = New Point(1640, 794)
+        StudAddBtn.Margin = New Padding(4, 6, 4, 6)
+        StudAddBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StudAddBtn.Name = "StudAddBtn"
+        StudAddBtn.NoAccentTextColor = Color.Empty
+        StudAddBtn.Size = New Size(120, 45)
+        StudAddBtn.TabIndex = 16
+        StudAddBtn.Text = "Add"
+        StudAddBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StudAddBtn.UseAccentColor = False
+        StudAddBtn.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton7
+        ' StudUpdBtn
         ' 
-        MaterialButton7.AutoSize = False
-        MaterialButton7.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton7.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton7.Depth = 0
-        MaterialButton7.HighEmphasis = True
-        MaterialButton7.Icon = Nothing
-        MaterialButton7.Location = New Point(1493, 794)
-        MaterialButton7.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton7.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton7.Name = "MaterialButton7"
-        MaterialButton7.NoAccentTextColor = Color.Empty
-        MaterialButton7.Size = New Size(120, 45)
-        MaterialButton7.TabIndex = 15
-        MaterialButton7.Text = "Update"
-        MaterialButton7.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton7.UseAccentColor = False
-        MaterialButton7.UseVisualStyleBackColor = True
+        StudUpdBtn.AutoSize = False
+        StudUpdBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StudUpdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StudUpdBtn.Depth = 0
+        StudUpdBtn.HighEmphasis = True
+        StudUpdBtn.Icon = Nothing
+        StudUpdBtn.Location = New Point(1493, 794)
+        StudUpdBtn.Margin = New Padding(4, 6, 4, 6)
+        StudUpdBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StudUpdBtn.Name = "StudUpdBtn"
+        StudUpdBtn.NoAccentTextColor = Color.Empty
+        StudUpdBtn.Size = New Size(120, 45)
+        StudUpdBtn.TabIndex = 15
+        StudUpdBtn.Text = "Update"
+        StudUpdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StudUpdBtn.UseAccentColor = False
+        StudUpdBtn.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton8
+        ' StudDelBtn
         ' 
-        MaterialButton8.AutoSize = False
-        MaterialButton8.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton8.Depth = 0
-        MaterialButton8.HighEmphasis = True
-        MaterialButton8.Icon = Nothing
-        MaterialButton8.Location = New Point(1343, 794)
-        MaterialButton8.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton8.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton8.Name = "MaterialButton8"
-        MaterialButton8.NoAccentTextColor = Color.Empty
-        MaterialButton8.Size = New Size(120, 45)
-        MaterialButton8.TabIndex = 14
-        MaterialButton8.Text = "Delete"
-        MaterialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton8.UseAccentColor = True
-        MaterialButton8.UseVisualStyleBackColor = True
+        StudDelBtn.AutoSize = False
+        StudDelBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StudDelBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StudDelBtn.Depth = 0
+        StudDelBtn.HighEmphasis = True
+        StudDelBtn.Icon = Nothing
+        StudDelBtn.Location = New Point(1343, 794)
+        StudDelBtn.Margin = New Padding(4, 6, 4, 6)
+        StudDelBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StudDelBtn.Name = "StudDelBtn"
+        StudDelBtn.NoAccentTextColor = Color.Empty
+        StudDelBtn.Size = New Size(120, 45)
+        StudDelBtn.TabIndex = 14
+        StudDelBtn.Text = "Delete"
+        StudDelBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StudDelBtn.UseAccentColor = True
+        StudDelBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel19
         ' 
@@ -1184,24 +1274,24 @@ Partial Class ProfessorDashboard
         MaterialLabel19.TabIndex = 13
         MaterialLabel19.Text = "Add, update and delete"
         ' 
-        ' MaterialTextBox7
+        ' StudFirstName
         ' 
-        MaterialTextBox7.AnimateReadOnly = False
-        MaterialTextBox7.BorderStyle = BorderStyle.None
-        MaterialTextBox7.Depth = 0
-        MaterialTextBox7.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox7.Hint = "Enter first name"
-        MaterialTextBox7.LeadingIcon = Nothing
-        MaterialTextBox7.Location = New Point(1343, 336)
-        MaterialTextBox7.MaxLength = 50
-        MaterialTextBox7.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox7.Multiline = False
-        MaterialTextBox7.Name = "MaterialTextBox7"
-        MaterialTextBox7.Size = New Size(417, 50)
-        MaterialTextBox7.TabIndex = 10
-        MaterialTextBox7.Text = ""
-        MaterialTextBox7.TrailingIcon = Nothing
-        MaterialTextBox7.UseAccent = False
+        StudFirstName.AnimateReadOnly = False
+        StudFirstName.BorderStyle = BorderStyle.None
+        StudFirstName.Depth = 0
+        StudFirstName.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StudFirstName.Hint = "Enter first name"
+        StudFirstName.LeadingIcon = Nothing
+        StudFirstName.Location = New Point(1343, 336)
+        StudFirstName.MaxLength = 50
+        StudFirstName.MouseState = MaterialSkin.MouseState.OUT
+        StudFirstName.Multiline = False
+        StudFirstName.Name = "StudFirstName"
+        StudFirstName.Size = New Size(417, 50)
+        StudFirstName.TabIndex = 10
+        StudFirstName.Text = ""
+        StudFirstName.TrailingIcon = Nothing
+        StudFirstName.UseAccent = False
         ' 
         ' MaterialLabel21
         ' 
@@ -1216,24 +1306,24 @@ Partial Class ProfessorDashboard
         MaterialLabel21.TabIndex = 9
         MaterialLabel21.Text = "First name"
         ' 
-        ' MaterialTextBox8
+        ' StudLastName
         ' 
-        MaterialTextBox8.AnimateReadOnly = False
-        MaterialTextBox8.BorderStyle = BorderStyle.None
-        MaterialTextBox8.Depth = 0
-        MaterialTextBox8.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox8.Hint = "Enter last name"
-        MaterialTextBox8.LeadingIcon = Nothing
-        MaterialTextBox8.Location = New Point(1343, 242)
-        MaterialTextBox8.MaxLength = 50
-        MaterialTextBox8.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox8.Multiline = False
-        MaterialTextBox8.Name = "MaterialTextBox8"
-        MaterialTextBox8.Size = New Size(417, 50)
-        MaterialTextBox8.TabIndex = 8
-        MaterialTextBox8.Text = ""
-        MaterialTextBox8.TrailingIcon = Nothing
-        MaterialTextBox8.UseAccent = False
+        StudLastName.AnimateReadOnly = False
+        StudLastName.BorderStyle = BorderStyle.None
+        StudLastName.Depth = 0
+        StudLastName.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StudLastName.Hint = "Enter last name"
+        StudLastName.LeadingIcon = Nothing
+        StudLastName.Location = New Point(1343, 242)
+        StudLastName.MaxLength = 50
+        StudLastName.MouseState = MaterialSkin.MouseState.OUT
+        StudLastName.Multiline = False
+        StudLastName.Name = "StudLastName"
+        StudLastName.Size = New Size(417, 50)
+        StudLastName.TabIndex = 8
+        StudLastName.Text = ""
+        StudLastName.TrailingIcon = Nothing
+        StudLastName.UseAccent = False
         ' 
         ' MaterialLabel22
         ' 
@@ -1248,24 +1338,24 @@ Partial Class ProfessorDashboard
         MaterialLabel22.TabIndex = 7
         MaterialLabel22.Text = "Last name"
         ' 
-        ' MaterialTextBox9
+        ' StudNum
         ' 
-        MaterialTextBox9.AnimateReadOnly = False
-        MaterialTextBox9.BorderStyle = BorderStyle.None
-        MaterialTextBox9.Depth = 0
-        MaterialTextBox9.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox9.Hint = "Enter student number"
-        MaterialTextBox9.LeadingIcon = Nothing
-        MaterialTextBox9.Location = New Point(1343, 148)
-        MaterialTextBox9.MaxLength = 50
-        MaterialTextBox9.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox9.Multiline = False
-        MaterialTextBox9.Name = "MaterialTextBox9"
-        MaterialTextBox9.Size = New Size(417, 50)
-        MaterialTextBox9.TabIndex = 6
-        MaterialTextBox9.Text = ""
-        MaterialTextBox9.TrailingIcon = Nothing
-        MaterialTextBox9.UseAccent = False
+        StudNum.AnimateReadOnly = False
+        StudNum.BorderStyle = BorderStyle.None
+        StudNum.Depth = 0
+        StudNum.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StudNum.Hint = "Enter student number"
+        StudNum.LeadingIcon = Nothing
+        StudNum.Location = New Point(1343, 148)
+        StudNum.MaxLength = 50
+        StudNum.MouseState = MaterialSkin.MouseState.OUT
+        StudNum.Multiline = False
+        StudNum.Name = "StudNum"
+        StudNum.Size = New Size(417, 50)
+        StudNum.TabIndex = 6
+        StudNum.Text = ""
+        StudNum.TrailingIcon = Nothing
+        StudNum.UseAccent = False
         ' 
         ' MaterialLabel23
         ' 
@@ -1280,17 +1370,17 @@ Partial Class ProfessorDashboard
         MaterialLabel23.TabIndex = 5
         MaterialLabel23.Text = "Student number"
         ' 
-        ' DataGridView2
+        ' StudDataGrid
         ' 
-        DataGridView2.BackgroundColor = Color.White
-        DataGridView2.BorderStyle = BorderStyle.Fixed3D
-        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Location = New Point(33, 96)
-        DataGridView2.Name = "DataGridView2"
-        DataGridView2.RowHeadersWidth = 51
-        DataGridView2.RowTemplate.Height = 29
-        DataGridView2.Size = New Size(1252, 756)
-        DataGridView2.TabIndex = 4
+        StudDataGrid.BackgroundColor = Color.White
+        StudDataGrid.BorderStyle = BorderStyle.Fixed3D
+        StudDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        StudDataGrid.Location = New Point(33, 96)
+        StudDataGrid.Name = "StudDataGrid"
+        StudDataGrid.RowHeadersWidth = 51
+        StudDataGrid.RowTemplate.Height = 29
+        StudDataGrid.Size = New Size(1252, 756)
+        StudDataGrid.TabIndex = 4
         ' 
         ' MaterialLabel24
         ' 
@@ -1301,28 +1391,28 @@ Partial Class ProfessorDashboard
         MaterialLabel24.Location = New Point(1343, 40)
         MaterialLabel24.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel24.Name = "MaterialLabel24"
-        MaterialLabel24.Size = New Size(208, 29)
+        MaterialLabel24.Size = New Size(162, 29)
         MaterialLabel24.TabIndex = 3
-        MaterialLabel24.Text = "Edit student details"
+        MaterialLabel24.Text = "Student details"
         ' 
-        ' MaterialTextBox10
+        ' StudSearchStud
         ' 
-        MaterialTextBox10.AnimateReadOnly = False
-        MaterialTextBox10.BorderStyle = BorderStyle.None
-        MaterialTextBox10.Depth = 0
-        MaterialTextBox10.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox10.Hint = "Search for students"
-        MaterialTextBox10.LeadingIcon = My.Resources.Resources.magnifying_glass
-        MaterialTextBox10.Location = New Point(34, 40)
-        MaterialTextBox10.MaxLength = 50
-        MaterialTextBox10.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox10.Multiline = False
-        MaterialTextBox10.Name = "MaterialTextBox10"
-        MaterialTextBox10.Size = New Size(1252, 50)
-        MaterialTextBox10.TabIndex = 0
-        MaterialTextBox10.Text = ""
-        MaterialTextBox10.TrailingIcon = Nothing
-        MaterialTextBox10.UseAccent = False
+        StudSearchStud.AnimateReadOnly = False
+        StudSearchStud.BorderStyle = BorderStyle.None
+        StudSearchStud.Depth = 0
+        StudSearchStud.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StudSearchStud.Hint = "Search for students"
+        StudSearchStud.LeadingIcon = My.Resources.Resources.magnifying_glass
+        StudSearchStud.Location = New Point(34, 40)
+        StudSearchStud.MaxLength = 50
+        StudSearchStud.MouseState = MaterialSkin.MouseState.OUT
+        StudSearchStud.Multiline = False
+        StudSearchStud.Name = "StudSearchStud"
+        StudSearchStud.Size = New Size(1252, 50)
+        StudSearchStud.TabIndex = 0
+        StudSearchStud.Text = ""
+        StudSearchStud.TrailingIcon = Nothing
+        StudSearchStud.UseAccent = False
         ' 
         ' Reports
         ' 
@@ -1338,11 +1428,11 @@ Partial Class ProfessorDashboard
         ' MaterialCard17
         ' 
         MaterialCard17.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard17.Controls.Add(MaterialCard18)
+        MaterialCard17.Controls.Add(RepYearlyRepCard)
         MaterialCard17.Controls.Add(MaterialLabel32)
-        MaterialCard17.Controls.Add(DataGridView3)
+        MaterialCard17.Controls.Add(RepDataGrid)
         MaterialCard17.Controls.Add(MaterialLabel37)
-        MaterialCard17.Controls.Add(MaterialTextBox16)
+        MaterialCard17.Controls.Add(RepSearchBox)
         MaterialCard17.Depth = 0
         MaterialCard17.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard17.Location = New Point(-16, -22)
@@ -1353,18 +1443,18 @@ Partial Class ProfessorDashboard
         MaterialCard17.Size = New Size(1841, 902)
         MaterialCard17.TabIndex = 3
         ' 
-        ' MaterialCard18
+        ' RepYearlyRepCard
         ' 
-        MaterialCard18.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard18.Depth = 0
-        MaterialCard18.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialCard18.Location = New Point(33, 40)
-        MaterialCard18.Margin = New Padding(14)
-        MaterialCard18.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialCard18.Name = "MaterialCard18"
-        MaterialCard18.Padding = New Padding(14)
-        MaterialCard18.Size = New Size(1719, 255)
-        MaterialCard18.TabIndex = 19
+        RepYearlyRepCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepYearlyRepCard.Depth = 0
+        RepYearlyRepCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepYearlyRepCard.Location = New Point(33, 40)
+        RepYearlyRepCard.Margin = New Padding(14)
+        RepYearlyRepCard.MouseState = MaterialSkin.MouseState.HOVER
+        RepYearlyRepCard.Name = "RepYearlyRepCard"
+        RepYearlyRepCard.Padding = New Padding(14)
+        RepYearlyRepCard.Size = New Size(1719, 255)
+        RepYearlyRepCard.TabIndex = 19
         ' 
         ' MaterialLabel32
         ' 
@@ -1379,17 +1469,17 @@ Partial Class ProfessorDashboard
         MaterialLabel32.TabIndex = 13
         MaterialLabel32.Text = "Listed reports"
         ' 
-        ' DataGridView3
+        ' RepDataGrid
         ' 
-        DataGridView3.BackgroundColor = Color.White
-        DataGridView3.BorderStyle = BorderStyle.Fixed3D
-        DataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView3.Location = New Point(33, 312)
-        DataGridView3.Name = "DataGridView3"
-        DataGridView3.RowHeadersWidth = 51
-        DataGridView3.RowTemplate.Height = 29
-        DataGridView3.Size = New Size(1252, 540)
-        DataGridView3.TabIndex = 4
+        RepDataGrid.BackgroundColor = Color.White
+        RepDataGrid.BorderStyle = BorderStyle.Fixed3D
+        RepDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        RepDataGrid.Location = New Point(33, 312)
+        RepDataGrid.Name = "RepDataGrid"
+        RepDataGrid.RowHeadersWidth = 51
+        RepDataGrid.RowTemplate.Height = 29
+        RepDataGrid.Size = New Size(1252, 540)
+        RepDataGrid.TabIndex = 4
         ' 
         ' MaterialLabel37
         ' 
@@ -1404,24 +1494,24 @@ Partial Class ProfessorDashboard
         MaterialLabel37.TabIndex = 3
         MaterialLabel37.Text = "View reports"
         ' 
-        ' MaterialTextBox16
+        ' RepSearchBox
         ' 
-        MaterialTextBox16.AnimateReadOnly = False
-        MaterialTextBox16.BorderStyle = BorderStyle.None
-        MaterialTextBox16.Depth = 0
-        MaterialTextBox16.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox16.Hint = "Search for a professor"
-        MaterialTextBox16.LeadingIcon = My.Resources.Resources.magnifying_glass
-        MaterialTextBox16.Location = New Point(1343, 312)
-        MaterialTextBox16.MaxLength = 50
-        MaterialTextBox16.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox16.Multiline = False
-        MaterialTextBox16.Name = "MaterialTextBox16"
-        MaterialTextBox16.Size = New Size(409, 50)
-        MaterialTextBox16.TabIndex = 0
-        MaterialTextBox16.Text = ""
-        MaterialTextBox16.TrailingIcon = Nothing
-        MaterialTextBox16.UseAccent = False
+        RepSearchBox.AnimateReadOnly = False
+        RepSearchBox.BorderStyle = BorderStyle.None
+        RepSearchBox.Depth = 0
+        RepSearchBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        RepSearchBox.Hint = "Search something"
+        RepSearchBox.LeadingIcon = My.Resources.Resources.magnifying_glass
+        RepSearchBox.Location = New Point(1343, 312)
+        RepSearchBox.MaxLength = 50
+        RepSearchBox.MouseState = MaterialSkin.MouseState.OUT
+        RepSearchBox.Multiline = False
+        RepSearchBox.Name = "RepSearchBox"
+        RepSearchBox.Size = New Size(409, 50)
+        RepSearchBox.TabIndex = 0
+        RepSearchBox.Text = ""
+        RepSearchBox.TrailingIcon = Nothing
+        RepSearchBox.UseAccent = False
         ' 
         ' Reasons
         ' 
@@ -1437,21 +1527,21 @@ Partial Class ProfessorDashboard
         ' MaterialCard10
         ' 
         MaterialCard10.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard10.Controls.Add(MaterialComboBox5)
-        MaterialCard10.Controls.Add(MaterialButton10)
+        MaterialCard10.Controls.Add(ReaSpecialEvent)
+        MaterialCard10.Controls.Add(ReaClrBtn)
         MaterialCard10.Controls.Add(MaterialLabel31)
-        MaterialCard10.Controls.Add(MaterialButton11)
-        MaterialCard10.Controls.Add(MaterialButton12)
-        MaterialCard10.Controls.Add(MaterialButton13)
+        MaterialCard10.Controls.Add(ReaAddBtn)
+        MaterialCard10.Controls.Add(ReaUpdBtn)
+        MaterialCard10.Controls.Add(ReaDelBtn)
         MaterialCard10.Controls.Add(MaterialLabel33)
         MaterialCard10.Controls.Add(MaterialLabel35)
-        MaterialCard10.Controls.Add(MaterialTextBox14)
+        MaterialCard10.Controls.Add(ReaReasonName)
         MaterialCard10.Controls.Add(MaterialLabel36)
-        MaterialCard10.Controls.Add(MaterialTextBox15)
+        MaterialCard10.Controls.Add(ReaReasonID)
         MaterialCard10.Controls.Add(MaterialLabel38)
-        MaterialCard10.Controls.Add(DataGridView4)
+        MaterialCard10.Controls.Add(ReaDataGrid)
         MaterialCard10.Controls.Add(MaterialLabel39)
-        MaterialCard10.Controls.Add(MaterialTextBox17)
+        MaterialCard10.Controls.Add(ReaSearchReason)
         MaterialCard10.Depth = 0
         MaterialCard10.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard10.Location = New Point(-16, -22)
@@ -1462,47 +1552,47 @@ Partial Class ProfessorDashboard
         MaterialCard10.Size = New Size(1841, 902)
         MaterialCard10.TabIndex = 2
         ' 
-        ' MaterialComboBox5
+        ' ReaSpecialEvent
         ' 
-        MaterialComboBox5.AutoResize = False
-        MaterialComboBox5.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialComboBox5.Depth = 0
-        MaterialComboBox5.DrawMode = DrawMode.OwnerDrawVariable
-        MaterialComboBox5.DropDownHeight = 174
-        MaterialComboBox5.DropDownStyle = ComboBoxStyle.DropDownList
-        MaterialComboBox5.DropDownWidth = 121
-        MaterialComboBox5.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialComboBox5.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialComboBox5.FormattingEnabled = True
-        MaterialComboBox5.IntegralHeight = False
-        MaterialComboBox5.ItemHeight = 43
-        MaterialComboBox5.Location = New Point(1344, 442)
-        MaterialComboBox5.MaxDropDownItems = 4
-        MaterialComboBox5.MouseState = MaterialSkin.MouseState.OUT
-        MaterialComboBox5.Name = "MaterialComboBox5"
-        MaterialComboBox5.Size = New Size(416, 49)
-        MaterialComboBox5.StartIndex = 0
-        MaterialComboBox5.TabIndex = 26
-        MaterialComboBox5.UseAccent = False
+        ReaSpecialEvent.AutoResize = False
+        ReaSpecialEvent.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ReaSpecialEvent.Depth = 0
+        ReaSpecialEvent.DrawMode = DrawMode.OwnerDrawVariable
+        ReaSpecialEvent.DropDownHeight = 174
+        ReaSpecialEvent.DropDownStyle = ComboBoxStyle.DropDownList
+        ReaSpecialEvent.DropDownWidth = 121
+        ReaSpecialEvent.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        ReaSpecialEvent.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        ReaSpecialEvent.FormattingEnabled = True
+        ReaSpecialEvent.IntegralHeight = False
+        ReaSpecialEvent.ItemHeight = 43
+        ReaSpecialEvent.Location = New Point(1344, 442)
+        ReaSpecialEvent.MaxDropDownItems = 4
+        ReaSpecialEvent.MouseState = MaterialSkin.MouseState.OUT
+        ReaSpecialEvent.Name = "ReaSpecialEvent"
+        ReaSpecialEvent.Size = New Size(416, 49)
+        ReaSpecialEvent.StartIndex = 0
+        ReaSpecialEvent.TabIndex = 26
+        ReaSpecialEvent.UseAccent = False
         ' 
-        ' MaterialButton10
+        ' ReaClrBtn
         ' 
-        MaterialButton10.AutoSize = False
-        MaterialButton10.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton10.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton10.Depth = 0
-        MaterialButton10.HighEmphasis = True
-        MaterialButton10.Icon = My.Resources.Resources.clean
-        MaterialButton10.Location = New Point(1720, 35)
-        MaterialButton10.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton10.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton10.Name = "MaterialButton10"
-        MaterialButton10.NoAccentTextColor = Color.Empty
-        MaterialButton10.Size = New Size(40, 45)
-        MaterialButton10.TabIndex = 18
-        MaterialButton10.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton10.UseAccentColor = False
-        MaterialButton10.UseVisualStyleBackColor = True
+        ReaClrBtn.AutoSize = False
+        ReaClrBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ReaClrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ReaClrBtn.Depth = 0
+        ReaClrBtn.HighEmphasis = True
+        ReaClrBtn.Icon = My.Resources.Resources.clean
+        ReaClrBtn.Location = New Point(1720, 35)
+        ReaClrBtn.Margin = New Padding(4, 6, 4, 6)
+        ReaClrBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ReaClrBtn.Name = "ReaClrBtn"
+        ReaClrBtn.NoAccentTextColor = Color.Empty
+        ReaClrBtn.Size = New Size(40, 45)
+        ReaClrBtn.TabIndex = 18
+        ReaClrBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ReaClrBtn.UseAccentColor = False
+        ReaClrBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel31
         ' 
@@ -1517,65 +1607,65 @@ Partial Class ProfessorDashboard
         MaterialLabel31.TabIndex = 17
         MaterialLabel31.Text = "Warning, be mindful of modifying data."
         ' 
-        ' MaterialButton11
+        ' ReaAddBtn
         ' 
-        MaterialButton11.AutoSize = False
-        MaterialButton11.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton11.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton11.Depth = 0
-        MaterialButton11.HighEmphasis = True
-        MaterialButton11.Icon = Nothing
-        MaterialButton11.Location = New Point(1640, 794)
-        MaterialButton11.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton11.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton11.Name = "MaterialButton11"
-        MaterialButton11.NoAccentTextColor = Color.Empty
-        MaterialButton11.Size = New Size(120, 45)
-        MaterialButton11.TabIndex = 16
-        MaterialButton11.Text = "Add"
-        MaterialButton11.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton11.UseAccentColor = False
-        MaterialButton11.UseVisualStyleBackColor = True
+        ReaAddBtn.AutoSize = False
+        ReaAddBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ReaAddBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ReaAddBtn.Depth = 0
+        ReaAddBtn.HighEmphasis = True
+        ReaAddBtn.Icon = Nothing
+        ReaAddBtn.Location = New Point(1640, 794)
+        ReaAddBtn.Margin = New Padding(4, 6, 4, 6)
+        ReaAddBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ReaAddBtn.Name = "ReaAddBtn"
+        ReaAddBtn.NoAccentTextColor = Color.Empty
+        ReaAddBtn.Size = New Size(120, 45)
+        ReaAddBtn.TabIndex = 16
+        ReaAddBtn.Text = "Add"
+        ReaAddBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ReaAddBtn.UseAccentColor = False
+        ReaAddBtn.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton12
+        ' ReaUpdBtn
         ' 
-        MaterialButton12.AutoSize = False
-        MaterialButton12.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton12.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton12.Depth = 0
-        MaterialButton12.HighEmphasis = True
-        MaterialButton12.Icon = Nothing
-        MaterialButton12.Location = New Point(1493, 794)
-        MaterialButton12.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton12.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton12.Name = "MaterialButton12"
-        MaterialButton12.NoAccentTextColor = Color.Empty
-        MaterialButton12.Size = New Size(120, 45)
-        MaterialButton12.TabIndex = 15
-        MaterialButton12.Text = "Update"
-        MaterialButton12.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton12.UseAccentColor = False
-        MaterialButton12.UseVisualStyleBackColor = True
+        ReaUpdBtn.AutoSize = False
+        ReaUpdBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ReaUpdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ReaUpdBtn.Depth = 0
+        ReaUpdBtn.HighEmphasis = True
+        ReaUpdBtn.Icon = Nothing
+        ReaUpdBtn.Location = New Point(1493, 794)
+        ReaUpdBtn.Margin = New Padding(4, 6, 4, 6)
+        ReaUpdBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ReaUpdBtn.Name = "ReaUpdBtn"
+        ReaUpdBtn.NoAccentTextColor = Color.Empty
+        ReaUpdBtn.Size = New Size(120, 45)
+        ReaUpdBtn.TabIndex = 15
+        ReaUpdBtn.Text = "Update"
+        ReaUpdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ReaUpdBtn.UseAccentColor = False
+        ReaUpdBtn.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton13
+        ' ReaDelBtn
         ' 
-        MaterialButton13.AutoSize = False
-        MaterialButton13.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton13.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton13.Depth = 0
-        MaterialButton13.HighEmphasis = True
-        MaterialButton13.Icon = Nothing
-        MaterialButton13.Location = New Point(1343, 794)
-        MaterialButton13.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton13.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton13.Name = "MaterialButton13"
-        MaterialButton13.NoAccentTextColor = Color.Empty
-        MaterialButton13.Size = New Size(120, 45)
-        MaterialButton13.TabIndex = 14
-        MaterialButton13.Text = "Delete"
-        MaterialButton13.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton13.UseAccentColor = True
-        MaterialButton13.UseVisualStyleBackColor = True
+        ReaDelBtn.AutoSize = False
+        ReaDelBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ReaDelBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ReaDelBtn.Depth = 0
+        ReaDelBtn.HighEmphasis = True
+        ReaDelBtn.Icon = Nothing
+        ReaDelBtn.Location = New Point(1343, 794)
+        ReaDelBtn.Margin = New Padding(4, 6, 4, 6)
+        ReaDelBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ReaDelBtn.Name = "ReaDelBtn"
+        ReaDelBtn.NoAccentTextColor = Color.Empty
+        ReaDelBtn.Size = New Size(120, 45)
+        ReaDelBtn.TabIndex = 14
+        ReaDelBtn.Text = "Delete"
+        ReaDelBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ReaDelBtn.UseAccentColor = True
+        ReaDelBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel33
         ' 
@@ -1603,24 +1693,24 @@ Partial Class ProfessorDashboard
         MaterialLabel35.TabIndex = 9
         MaterialLabel35.Text = "Special event"
         ' 
-        ' MaterialTextBox14
+        ' ReaReasonName
         ' 
-        MaterialTextBox14.AnimateReadOnly = False
-        MaterialTextBox14.BorderStyle = BorderStyle.None
-        MaterialTextBox14.Depth = 0
-        MaterialTextBox14.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox14.Hint = "Enter reason name"
-        MaterialTextBox14.LeadingIcon = Nothing
-        MaterialTextBox14.Location = New Point(1343, 312)
-        MaterialTextBox14.MaxLength = 50
-        MaterialTextBox14.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox14.Multiline = False
-        MaterialTextBox14.Name = "MaterialTextBox14"
-        MaterialTextBox14.Size = New Size(417, 50)
-        MaterialTextBox14.TabIndex = 8
-        MaterialTextBox14.Text = ""
-        MaterialTextBox14.TrailingIcon = Nothing
-        MaterialTextBox14.UseAccent = False
+        ReaReasonName.AnimateReadOnly = False
+        ReaReasonName.BorderStyle = BorderStyle.None
+        ReaReasonName.Depth = 0
+        ReaReasonName.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ReaReasonName.Hint = "Enter reason name"
+        ReaReasonName.LeadingIcon = Nothing
+        ReaReasonName.Location = New Point(1343, 312)
+        ReaReasonName.MaxLength = 50
+        ReaReasonName.MouseState = MaterialSkin.MouseState.OUT
+        ReaReasonName.Multiline = False
+        ReaReasonName.Name = "ReaReasonName"
+        ReaReasonName.Size = New Size(417, 50)
+        ReaReasonName.TabIndex = 8
+        ReaReasonName.Text = ""
+        ReaReasonName.TrailingIcon = Nothing
+        ReaReasonName.UseAccent = False
         ' 
         ' MaterialLabel36
         ' 
@@ -1635,24 +1725,24 @@ Partial Class ProfessorDashboard
         MaterialLabel36.TabIndex = 7
         MaterialLabel36.Text = "Reason name"
         ' 
-        ' MaterialTextBox15
+        ' ReaReasonID
         ' 
-        MaterialTextBox15.AnimateReadOnly = False
-        MaterialTextBox15.BorderStyle = BorderStyle.None
-        MaterialTextBox15.Depth = 0
-        MaterialTextBox15.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox15.Hint = "Enter reason id number"
-        MaterialTextBox15.LeadingIcon = Nothing
-        MaterialTextBox15.Location = New Point(1343, 186)
-        MaterialTextBox15.MaxLength = 50
-        MaterialTextBox15.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox15.Multiline = False
-        MaterialTextBox15.Name = "MaterialTextBox15"
-        MaterialTextBox15.Size = New Size(417, 50)
-        MaterialTextBox15.TabIndex = 6
-        MaterialTextBox15.Text = ""
-        MaterialTextBox15.TrailingIcon = Nothing
-        MaterialTextBox15.UseAccent = False
+        ReaReasonID.AnimateReadOnly = False
+        ReaReasonID.BorderStyle = BorderStyle.None
+        ReaReasonID.Depth = 0
+        ReaReasonID.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ReaReasonID.Hint = "Enter reason id number"
+        ReaReasonID.LeadingIcon = Nothing
+        ReaReasonID.Location = New Point(1343, 186)
+        ReaReasonID.MaxLength = 50
+        ReaReasonID.MouseState = MaterialSkin.MouseState.OUT
+        ReaReasonID.Multiline = False
+        ReaReasonID.Name = "ReaReasonID"
+        ReaReasonID.Size = New Size(417, 50)
+        ReaReasonID.TabIndex = 6
+        ReaReasonID.Text = ""
+        ReaReasonID.TrailingIcon = Nothing
+        ReaReasonID.UseAccent = False
         ' 
         ' MaterialLabel38
         ' 
@@ -1667,17 +1757,17 @@ Partial Class ProfessorDashboard
         MaterialLabel38.TabIndex = 5
         MaterialLabel38.Text = "Reason ID"
         ' 
-        ' DataGridView4
+        ' ReaDataGrid
         ' 
-        DataGridView4.BackgroundColor = Color.White
-        DataGridView4.BorderStyle = BorderStyle.Fixed3D
-        DataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView4.Location = New Point(33, 96)
-        DataGridView4.Name = "DataGridView4"
-        DataGridView4.RowHeadersWidth = 51
-        DataGridView4.RowTemplate.Height = 29
-        DataGridView4.Size = New Size(1252, 756)
-        DataGridView4.TabIndex = 4
+        ReaDataGrid.BackgroundColor = Color.White
+        ReaDataGrid.BorderStyle = BorderStyle.Fixed3D
+        ReaDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        ReaDataGrid.Location = New Point(33, 96)
+        ReaDataGrid.Name = "ReaDataGrid"
+        ReaDataGrid.RowHeadersWidth = 51
+        ReaDataGrid.RowTemplate.Height = 29
+        ReaDataGrid.Size = New Size(1252, 756)
+        ReaDataGrid.TabIndex = 4
         ' 
         ' MaterialLabel39
         ' 
@@ -1688,28 +1778,28 @@ Partial Class ProfessorDashboard
         MaterialLabel39.Location = New Point(1343, 40)
         MaterialLabel39.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel39.Name = "MaterialLabel39"
-        MaterialLabel39.Size = New Size(188, 29)
+        MaterialLabel39.Size = New Size(171, 29)
         MaterialLabel39.TabIndex = 3
-        MaterialLabel39.Text = "Edit reasons data"
+        MaterialLabel39.Text = "Reasons details"
         ' 
-        ' MaterialTextBox17
+        ' ReaSearchReason
         ' 
-        MaterialTextBox17.AnimateReadOnly = False
-        MaterialTextBox17.BorderStyle = BorderStyle.None
-        MaterialTextBox17.Depth = 0
-        MaterialTextBox17.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox17.Hint = "Search for reason"
-        MaterialTextBox17.LeadingIcon = My.Resources.Resources.magnifying_glass
-        MaterialTextBox17.Location = New Point(34, 40)
-        MaterialTextBox17.MaxLength = 50
-        MaterialTextBox17.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox17.Multiline = False
-        MaterialTextBox17.Name = "MaterialTextBox17"
-        MaterialTextBox17.Size = New Size(1252, 50)
-        MaterialTextBox17.TabIndex = 0
-        MaterialTextBox17.Text = ""
-        MaterialTextBox17.TrailingIcon = Nothing
-        MaterialTextBox17.UseAccent = False
+        ReaSearchReason.AnimateReadOnly = False
+        ReaSearchReason.BorderStyle = BorderStyle.None
+        ReaSearchReason.Depth = 0
+        ReaSearchReason.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ReaSearchReason.Hint = "Search for reason"
+        ReaSearchReason.LeadingIcon = My.Resources.Resources.magnifying_glass
+        ReaSearchReason.Location = New Point(34, 40)
+        ReaSearchReason.MaxLength = 50
+        ReaSearchReason.MouseState = MaterialSkin.MouseState.OUT
+        ReaSearchReason.Multiline = False
+        ReaSearchReason.Name = "ReaSearchReason"
+        ReaSearchReason.Size = New Size(1252, 50)
+        ReaSearchReason.TabIndex = 0
+        ReaSearchReason.Text = ""
+        ReaSearchReason.TrailingIcon = Nothing
+        ReaSearchReason.UseAccent = False
         ' 
         ' SectionsTab
         ' 
@@ -1725,19 +1815,19 @@ Partial Class ProfessorDashboard
         ' MaterialCard11
         ' 
         MaterialCard11.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard11.Controls.Add(MaterialButton14)
+        MaterialCard11.Controls.Add(SectClrBtn)
         MaterialCard11.Controls.Add(MaterialLabel34)
-        MaterialCard11.Controls.Add(MaterialButton15)
-        MaterialCard11.Controls.Add(MaterialButton16)
-        MaterialCard11.Controls.Add(MaterialButton17)
+        MaterialCard11.Controls.Add(SectAddBtn)
+        MaterialCard11.Controls.Add(SectUpdBtn)
+        MaterialCard11.Controls.Add(SectDelBtn)
         MaterialCard11.Controls.Add(MaterialLabel40)
-        MaterialCard11.Controls.Add(MaterialTextBox12)
+        MaterialCard11.Controls.Add(SectName)
         MaterialCard11.Controls.Add(MaterialLabel42)
-        MaterialCard11.Controls.Add(MaterialTextBox13)
+        MaterialCard11.Controls.Add(SectSectID)
         MaterialCard11.Controls.Add(MaterialLabel43)
-        MaterialCard11.Controls.Add(DataGridView5)
+        MaterialCard11.Controls.Add(SectDataGrid)
         MaterialCard11.Controls.Add(MaterialLabel44)
-        MaterialCard11.Controls.Add(MaterialTextBox18)
+        MaterialCard11.Controls.Add(SectSearchSect)
         MaterialCard11.Depth = 0
         MaterialCard11.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard11.Location = New Point(-16, -22)
@@ -1748,24 +1838,24 @@ Partial Class ProfessorDashboard
         MaterialCard11.Size = New Size(1841, 902)
         MaterialCard11.TabIndex = 3
         ' 
-        ' MaterialButton14
+        ' SectClrBtn
         ' 
-        MaterialButton14.AutoSize = False
-        MaterialButton14.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton14.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton14.Depth = 0
-        MaterialButton14.HighEmphasis = True
-        MaterialButton14.Icon = My.Resources.Resources.clean
-        MaterialButton14.Location = New Point(1720, 35)
-        MaterialButton14.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton14.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton14.Name = "MaterialButton14"
-        MaterialButton14.NoAccentTextColor = Color.Empty
-        MaterialButton14.Size = New Size(40, 45)
-        MaterialButton14.TabIndex = 18
-        MaterialButton14.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton14.UseAccentColor = False
-        MaterialButton14.UseVisualStyleBackColor = True
+        SectClrBtn.AutoSize = False
+        SectClrBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        SectClrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        SectClrBtn.Depth = 0
+        SectClrBtn.HighEmphasis = True
+        SectClrBtn.Icon = My.Resources.Resources.clean
+        SectClrBtn.Location = New Point(1720, 35)
+        SectClrBtn.Margin = New Padding(4, 6, 4, 6)
+        SectClrBtn.MouseState = MaterialSkin.MouseState.HOVER
+        SectClrBtn.Name = "SectClrBtn"
+        SectClrBtn.NoAccentTextColor = Color.Empty
+        SectClrBtn.Size = New Size(40, 45)
+        SectClrBtn.TabIndex = 18
+        SectClrBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        SectClrBtn.UseAccentColor = False
+        SectClrBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel34
         ' 
@@ -1780,65 +1870,65 @@ Partial Class ProfessorDashboard
         MaterialLabel34.TabIndex = 17
         MaterialLabel34.Text = "Warning, be mindful of modifying data."
         ' 
-        ' MaterialButton15
+        ' SectAddBtn
         ' 
-        MaterialButton15.AutoSize = False
-        MaterialButton15.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton15.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton15.Depth = 0
-        MaterialButton15.HighEmphasis = True
-        MaterialButton15.Icon = Nothing
-        MaterialButton15.Location = New Point(1640, 794)
-        MaterialButton15.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton15.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton15.Name = "MaterialButton15"
-        MaterialButton15.NoAccentTextColor = Color.Empty
-        MaterialButton15.Size = New Size(120, 45)
-        MaterialButton15.TabIndex = 16
-        MaterialButton15.Text = "Add"
-        MaterialButton15.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton15.UseAccentColor = False
-        MaterialButton15.UseVisualStyleBackColor = True
+        SectAddBtn.AutoSize = False
+        SectAddBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        SectAddBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        SectAddBtn.Depth = 0
+        SectAddBtn.HighEmphasis = True
+        SectAddBtn.Icon = Nothing
+        SectAddBtn.Location = New Point(1640, 794)
+        SectAddBtn.Margin = New Padding(4, 6, 4, 6)
+        SectAddBtn.MouseState = MaterialSkin.MouseState.HOVER
+        SectAddBtn.Name = "SectAddBtn"
+        SectAddBtn.NoAccentTextColor = Color.Empty
+        SectAddBtn.Size = New Size(120, 45)
+        SectAddBtn.TabIndex = 16
+        SectAddBtn.Text = "Add"
+        SectAddBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        SectAddBtn.UseAccentColor = False
+        SectAddBtn.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton16
+        ' SectUpdBtn
         ' 
-        MaterialButton16.AutoSize = False
-        MaterialButton16.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton16.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton16.Depth = 0
-        MaterialButton16.HighEmphasis = True
-        MaterialButton16.Icon = Nothing
-        MaterialButton16.Location = New Point(1493, 794)
-        MaterialButton16.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton16.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton16.Name = "MaterialButton16"
-        MaterialButton16.NoAccentTextColor = Color.Empty
-        MaterialButton16.Size = New Size(120, 45)
-        MaterialButton16.TabIndex = 15
-        MaterialButton16.Text = "Update"
-        MaterialButton16.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton16.UseAccentColor = False
-        MaterialButton16.UseVisualStyleBackColor = True
+        SectUpdBtn.AutoSize = False
+        SectUpdBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        SectUpdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        SectUpdBtn.Depth = 0
+        SectUpdBtn.HighEmphasis = True
+        SectUpdBtn.Icon = Nothing
+        SectUpdBtn.Location = New Point(1493, 794)
+        SectUpdBtn.Margin = New Padding(4, 6, 4, 6)
+        SectUpdBtn.MouseState = MaterialSkin.MouseState.HOVER
+        SectUpdBtn.Name = "SectUpdBtn"
+        SectUpdBtn.NoAccentTextColor = Color.Empty
+        SectUpdBtn.Size = New Size(120, 45)
+        SectUpdBtn.TabIndex = 15
+        SectUpdBtn.Text = "Update"
+        SectUpdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        SectUpdBtn.UseAccentColor = False
+        SectUpdBtn.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton17
+        ' SectDelBtn
         ' 
-        MaterialButton17.AutoSize = False
-        MaterialButton17.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton17.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton17.Depth = 0
-        MaterialButton17.HighEmphasis = True
-        MaterialButton17.Icon = Nothing
-        MaterialButton17.Location = New Point(1343, 794)
-        MaterialButton17.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton17.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton17.Name = "MaterialButton17"
-        MaterialButton17.NoAccentTextColor = Color.Empty
-        MaterialButton17.Size = New Size(120, 45)
-        MaterialButton17.TabIndex = 14
-        MaterialButton17.Text = "Delete"
-        MaterialButton17.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton17.UseAccentColor = True
-        MaterialButton17.UseVisualStyleBackColor = True
+        SectDelBtn.AutoSize = False
+        SectDelBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        SectDelBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        SectDelBtn.Depth = 0
+        SectDelBtn.HighEmphasis = True
+        SectDelBtn.Icon = Nothing
+        SectDelBtn.Location = New Point(1343, 794)
+        SectDelBtn.Margin = New Padding(4, 6, 4, 6)
+        SectDelBtn.MouseState = MaterialSkin.MouseState.HOVER
+        SectDelBtn.Name = "SectDelBtn"
+        SectDelBtn.NoAccentTextColor = Color.Empty
+        SectDelBtn.Size = New Size(120, 45)
+        SectDelBtn.TabIndex = 14
+        SectDelBtn.Text = "Delete"
+        SectDelBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        SectDelBtn.UseAccentColor = True
+        SectDelBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel40
         ' 
@@ -1853,24 +1943,24 @@ Partial Class ProfessorDashboard
         MaterialLabel40.TabIndex = 13
         MaterialLabel40.Text = "Add, update and delete"
         ' 
-        ' MaterialTextBox12
+        ' SectName
         ' 
-        MaterialTextBox12.AnimateReadOnly = False
-        MaterialTextBox12.BorderStyle = BorderStyle.None
-        MaterialTextBox12.Depth = 0
-        MaterialTextBox12.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox12.Hint = "Enter section name"
-        MaterialTextBox12.LeadingIcon = Nothing
-        MaterialTextBox12.Location = New Point(1343, 312)
-        MaterialTextBox12.MaxLength = 50
-        MaterialTextBox12.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox12.Multiline = False
-        MaterialTextBox12.Name = "MaterialTextBox12"
-        MaterialTextBox12.Size = New Size(417, 50)
-        MaterialTextBox12.TabIndex = 8
-        MaterialTextBox12.Text = ""
-        MaterialTextBox12.TrailingIcon = Nothing
-        MaterialTextBox12.UseAccent = False
+        SectName.AnimateReadOnly = False
+        SectName.BorderStyle = BorderStyle.None
+        SectName.Depth = 0
+        SectName.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        SectName.Hint = "Enter section name"
+        SectName.LeadingIcon = Nothing
+        SectName.Location = New Point(1343, 312)
+        SectName.MaxLength = 50
+        SectName.MouseState = MaterialSkin.MouseState.OUT
+        SectName.Multiline = False
+        SectName.Name = "SectName"
+        SectName.Size = New Size(417, 50)
+        SectName.TabIndex = 8
+        SectName.Text = ""
+        SectName.TrailingIcon = Nothing
+        SectName.UseAccent = False
         ' 
         ' MaterialLabel42
         ' 
@@ -1885,24 +1975,24 @@ Partial Class ProfessorDashboard
         MaterialLabel42.TabIndex = 7
         MaterialLabel42.Text = "Section name"
         ' 
-        ' MaterialTextBox13
+        ' SectSectID
         ' 
-        MaterialTextBox13.AnimateReadOnly = False
-        MaterialTextBox13.BorderStyle = BorderStyle.None
-        MaterialTextBox13.Depth = 0
-        MaterialTextBox13.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox13.Hint = "Enter section ID number"
-        MaterialTextBox13.LeadingIcon = Nothing
-        MaterialTextBox13.Location = New Point(1343, 186)
-        MaterialTextBox13.MaxLength = 50
-        MaterialTextBox13.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox13.Multiline = False
-        MaterialTextBox13.Name = "MaterialTextBox13"
-        MaterialTextBox13.Size = New Size(417, 50)
-        MaterialTextBox13.TabIndex = 6
-        MaterialTextBox13.Text = ""
-        MaterialTextBox13.TrailingIcon = Nothing
-        MaterialTextBox13.UseAccent = False
+        SectSectID.AnimateReadOnly = False
+        SectSectID.BorderStyle = BorderStyle.None
+        SectSectID.Depth = 0
+        SectSectID.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        SectSectID.Hint = "Enter section ID number"
+        SectSectID.LeadingIcon = Nothing
+        SectSectID.Location = New Point(1343, 186)
+        SectSectID.MaxLength = 50
+        SectSectID.MouseState = MaterialSkin.MouseState.OUT
+        SectSectID.Multiline = False
+        SectSectID.Name = "SectSectID"
+        SectSectID.Size = New Size(417, 50)
+        SectSectID.TabIndex = 6
+        SectSectID.Text = ""
+        SectSectID.TrailingIcon = Nothing
+        SectSectID.UseAccent = False
         ' 
         ' MaterialLabel43
         ' 
@@ -1917,17 +2007,17 @@ Partial Class ProfessorDashboard
         MaterialLabel43.TabIndex = 5
         MaterialLabel43.Text = "Section ID"
         ' 
-        ' DataGridView5
+        ' SectDataGrid
         ' 
-        DataGridView5.BackgroundColor = Color.White
-        DataGridView5.BorderStyle = BorderStyle.Fixed3D
-        DataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView5.Location = New Point(33, 96)
-        DataGridView5.Name = "DataGridView5"
-        DataGridView5.RowHeadersWidth = 51
-        DataGridView5.RowTemplate.Height = 29
-        DataGridView5.Size = New Size(1252, 756)
-        DataGridView5.TabIndex = 4
+        SectDataGrid.BackgroundColor = Color.White
+        SectDataGrid.BorderStyle = BorderStyle.Fixed3D
+        SectDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        SectDataGrid.Location = New Point(33, 96)
+        SectDataGrid.Name = "SectDataGrid"
+        SectDataGrid.RowHeadersWidth = 51
+        SectDataGrid.RowTemplate.Height = 29
+        SectDataGrid.Size = New Size(1252, 756)
+        SectDataGrid.TabIndex = 4
         ' 
         ' MaterialLabel44
         ' 
@@ -1938,28 +2028,28 @@ Partial Class ProfessorDashboard
         MaterialLabel44.Location = New Point(1343, 40)
         MaterialLabel44.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel44.Name = "MaterialLabel44"
-        MaterialLabel44.Size = New Size(206, 29)
+        MaterialLabel44.Size = New Size(160, 29)
         MaterialLabel44.TabIndex = 3
-        MaterialLabel44.Text = "Edit section details"
+        MaterialLabel44.Text = "Section details"
         ' 
-        ' MaterialTextBox18
+        ' SectSearchSect
         ' 
-        MaterialTextBox18.AnimateReadOnly = False
-        MaterialTextBox18.BorderStyle = BorderStyle.None
-        MaterialTextBox18.Depth = 0
-        MaterialTextBox18.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox18.Hint = "Search for section"
-        MaterialTextBox18.LeadingIcon = My.Resources.Resources.magnifying_glass
-        MaterialTextBox18.Location = New Point(34, 40)
-        MaterialTextBox18.MaxLength = 50
-        MaterialTextBox18.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox18.Multiline = False
-        MaterialTextBox18.Name = "MaterialTextBox18"
-        MaterialTextBox18.Size = New Size(1252, 50)
-        MaterialTextBox18.TabIndex = 0
-        MaterialTextBox18.Text = ""
-        MaterialTextBox18.TrailingIcon = Nothing
-        MaterialTextBox18.UseAccent = False
+        SectSearchSect.AnimateReadOnly = False
+        SectSearchSect.BorderStyle = BorderStyle.None
+        SectSearchSect.Depth = 0
+        SectSearchSect.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        SectSearchSect.Hint = "Search for section"
+        SectSearchSect.LeadingIcon = My.Resources.Resources.magnifying_glass
+        SectSearchSect.Location = New Point(34, 40)
+        SectSearchSect.MaxLength = 50
+        SectSearchSect.MouseState = MaterialSkin.MouseState.OUT
+        SectSearchSect.Multiline = False
+        SectSearchSect.Name = "SectSearchSect"
+        SectSearchSect.Size = New Size(1252, 50)
+        SectSearchSect.TabIndex = 0
+        SectSearchSect.Text = ""
+        SectSearchSect.TrailingIcon = Nothing
+        SectSearchSect.UseAccent = False
         ' 
         ' ArchiveTab
         ' 
@@ -1976,14 +2066,14 @@ Partial Class ProfessorDashboard
         ' 
         MaterialCard12.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
         MaterialCard12.Controls.Add(MaterialLabel46)
-        MaterialCard12.Controls.Add(MaterialComboBox7)
+        MaterialCard12.Controls.Add(ArchFilByYear)
         MaterialCard12.Controls.Add(MaterialLabel41)
-        MaterialCard12.Controls.Add(MaterialComboBox6)
-        MaterialCard12.Controls.Add(MaterialButton18)
+        MaterialCard12.Controls.Add(ArchFilBySect)
+        MaterialCard12.Controls.Add(ArchClrBtn)
         MaterialCard12.Controls.Add(MaterialLabel45)
-        MaterialCard12.Controls.Add(DataGridView6)
+        MaterialCard12.Controls.Add(ArchDataGrid)
         MaterialCard12.Controls.Add(MaterialLabel48)
-        MaterialCard12.Controls.Add(MaterialTextBox21)
+        MaterialCard12.Controls.Add(ArchSearchBox)
         MaterialCard12.Depth = 0
         MaterialCard12.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard12.Location = New Point(-16, -22)
@@ -2007,28 +2097,28 @@ Partial Class ProfessorDashboard
         MaterialLabel46.TabIndex = 22
         MaterialLabel46.Text = "Filter by year"
         ' 
-        ' MaterialComboBox7
+        ' ArchFilByYear
         ' 
-        MaterialComboBox7.AutoResize = False
-        MaterialComboBox7.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialComboBox7.Depth = 0
-        MaterialComboBox7.DrawMode = DrawMode.OwnerDrawVariable
-        MaterialComboBox7.DropDownHeight = 174
-        MaterialComboBox7.DropDownStyle = ComboBoxStyle.DropDownList
-        MaterialComboBox7.DropDownWidth = 121
-        MaterialComboBox7.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialComboBox7.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialComboBox7.FormattingEnabled = True
-        MaterialComboBox7.IntegralHeight = False
-        MaterialComboBox7.ItemHeight = 43
-        MaterialComboBox7.Location = New Point(1383, 35)
-        MaterialComboBox7.MaxDropDownItems = 4
-        MaterialComboBox7.MouseState = MaterialSkin.MouseState.OUT
-        MaterialComboBox7.Name = "MaterialComboBox7"
-        MaterialComboBox7.Size = New Size(151, 49)
-        MaterialComboBox7.StartIndex = 0
-        MaterialComboBox7.TabIndex = 21
-        MaterialComboBox7.UseAccent = False
+        ArchFilByYear.AutoResize = False
+        ArchFilByYear.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ArchFilByYear.Depth = 0
+        ArchFilByYear.DrawMode = DrawMode.OwnerDrawVariable
+        ArchFilByYear.DropDownHeight = 174
+        ArchFilByYear.DropDownStyle = ComboBoxStyle.DropDownList
+        ArchFilByYear.DropDownWidth = 121
+        ArchFilByYear.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        ArchFilByYear.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        ArchFilByYear.FormattingEnabled = True
+        ArchFilByYear.IntegralHeight = False
+        ArchFilByYear.ItemHeight = 43
+        ArchFilByYear.Location = New Point(1383, 35)
+        ArchFilByYear.MaxDropDownItems = 4
+        ArchFilByYear.MouseState = MaterialSkin.MouseState.OUT
+        ArchFilByYear.Name = "ArchFilByYear"
+        ArchFilByYear.Size = New Size(151, 49)
+        ArchFilByYear.StartIndex = 0
+        ArchFilByYear.TabIndex = 21
+        ArchFilByYear.UseAccent = False
         ' 
         ' MaterialLabel41
         ' 
@@ -2043,47 +2133,47 @@ Partial Class ProfessorDashboard
         MaterialLabel41.TabIndex = 20
         MaterialLabel41.Text = "Filter by section"
         ' 
-        ' MaterialComboBox6
+        ' ArchFilBySect
         ' 
-        MaterialComboBox6.AutoResize = False
-        MaterialComboBox6.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialComboBox6.Depth = 0
-        MaterialComboBox6.DrawMode = DrawMode.OwnerDrawVariable
-        MaterialComboBox6.DropDownHeight = 174
-        MaterialComboBox6.DropDownStyle = ComboBoxStyle.DropDownList
-        MaterialComboBox6.DropDownWidth = 121
-        MaterialComboBox6.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialComboBox6.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialComboBox6.FormattingEnabled = True
-        MaterialComboBox6.IntegralHeight = False
-        MaterialComboBox6.ItemHeight = 43
-        MaterialComboBox6.Location = New Point(1125, 35)
-        MaterialComboBox6.MaxDropDownItems = 4
-        MaterialComboBox6.MouseState = MaterialSkin.MouseState.OUT
-        MaterialComboBox6.Name = "MaterialComboBox6"
-        MaterialComboBox6.Size = New Size(151, 49)
-        MaterialComboBox6.StartIndex = 0
-        MaterialComboBox6.TabIndex = 19
-        MaterialComboBox6.UseAccent = False
+        ArchFilBySect.AutoResize = False
+        ArchFilBySect.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ArchFilBySect.Depth = 0
+        ArchFilBySect.DrawMode = DrawMode.OwnerDrawVariable
+        ArchFilBySect.DropDownHeight = 174
+        ArchFilBySect.DropDownStyle = ComboBoxStyle.DropDownList
+        ArchFilBySect.DropDownWidth = 121
+        ArchFilBySect.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        ArchFilBySect.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        ArchFilBySect.FormattingEnabled = True
+        ArchFilBySect.IntegralHeight = False
+        ArchFilBySect.ItemHeight = 43
+        ArchFilBySect.Location = New Point(1125, 35)
+        ArchFilBySect.MaxDropDownItems = 4
+        ArchFilBySect.MouseState = MaterialSkin.MouseState.OUT
+        ArchFilBySect.Name = "ArchFilBySect"
+        ArchFilBySect.Size = New Size(151, 49)
+        ArchFilBySect.StartIndex = 0
+        ArchFilBySect.TabIndex = 19
+        ArchFilBySect.UseAccent = False
         ' 
-        ' MaterialButton18
+        ' ArchClrBtn
         ' 
-        MaterialButton18.AutoSize = False
-        MaterialButton18.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton18.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton18.Depth = 0
-        MaterialButton18.HighEmphasis = True
-        MaterialButton18.Icon = My.Resources.Resources.clean
-        MaterialButton18.Location = New Point(1720, 35)
-        MaterialButton18.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton18.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton18.Name = "MaterialButton18"
-        MaterialButton18.NoAccentTextColor = Color.Empty
-        MaterialButton18.Size = New Size(40, 45)
-        MaterialButton18.TabIndex = 18
-        MaterialButton18.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton18.UseAccentColor = False
-        MaterialButton18.UseVisualStyleBackColor = True
+        ArchClrBtn.AutoSize = False
+        ArchClrBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ArchClrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ArchClrBtn.Depth = 0
+        ArchClrBtn.HighEmphasis = True
+        ArchClrBtn.Icon = My.Resources.Resources.clean
+        ArchClrBtn.Location = New Point(1720, 35)
+        ArchClrBtn.Margin = New Padding(4, 6, 4, 6)
+        ArchClrBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ArchClrBtn.Name = "ArchClrBtn"
+        ArchClrBtn.NoAccentTextColor = Color.Empty
+        ArchClrBtn.Size = New Size(40, 45)
+        ArchClrBtn.TabIndex = 18
+        ArchClrBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ArchClrBtn.UseAccentColor = False
+        ArchClrBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel45
         ' 
@@ -2098,17 +2188,17 @@ Partial Class ProfessorDashboard
         MaterialLabel45.TabIndex = 13
         MaterialLabel45.Text = "List of graduated students"
         ' 
-        ' DataGridView6
+        ' ArchDataGrid
         ' 
-        DataGridView6.BackgroundColor = Color.White
-        DataGridView6.BorderStyle = BorderStyle.Fixed3D
-        DataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView6.Location = New Point(33, 96)
-        DataGridView6.Name = "DataGridView6"
-        DataGridView6.RowHeadersWidth = 51
-        DataGridView6.RowTemplate.Height = 29
-        DataGridView6.Size = New Size(1727, 756)
-        DataGridView6.TabIndex = 4
+        ArchDataGrid.BackgroundColor = Color.White
+        ArchDataGrid.BorderStyle = BorderStyle.Fixed3D
+        ArchDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        ArchDataGrid.Location = New Point(33, 96)
+        ArchDataGrid.Name = "ArchDataGrid"
+        ArchDataGrid.RowHeadersWidth = 51
+        ArchDataGrid.RowTemplate.Height = 29
+        ArchDataGrid.Size = New Size(1727, 756)
+        ArchDataGrid.TabIndex = 4
         ' 
         ' MaterialLabel48
         ' 
@@ -2123,24 +2213,24 @@ Partial Class ProfessorDashboard
         MaterialLabel48.TabIndex = 3
         MaterialLabel48.Text = "Student archive"
         ' 
-        ' MaterialTextBox21
+        ' ArchSearchBox
         ' 
-        MaterialTextBox21.AnimateReadOnly = False
-        MaterialTextBox21.BorderStyle = BorderStyle.None
-        MaterialTextBox21.Depth = 0
-        MaterialTextBox21.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialTextBox21.Hint = "Search"
-        MaterialTextBox21.LeadingIcon = My.Resources.Resources.magnifying_glass
-        MaterialTextBox21.Location = New Point(307, 35)
-        MaterialTextBox21.MaxLength = 50
-        MaterialTextBox21.MouseState = MaterialSkin.MouseState.OUT
-        MaterialTextBox21.Multiline = False
-        MaterialTextBox21.Name = "MaterialTextBox21"
-        MaterialTextBox21.Size = New Size(690, 50)
-        MaterialTextBox21.TabIndex = 0
-        MaterialTextBox21.Text = ""
-        MaterialTextBox21.TrailingIcon = Nothing
-        MaterialTextBox21.UseAccent = False
+        ArchSearchBox.AnimateReadOnly = False
+        ArchSearchBox.BorderStyle = BorderStyle.None
+        ArchSearchBox.Depth = 0
+        ArchSearchBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ArchSearchBox.Hint = "Search"
+        ArchSearchBox.LeadingIcon = My.Resources.Resources.magnifying_glass
+        ArchSearchBox.Location = New Point(307, 35)
+        ArchSearchBox.MaxLength = 50
+        ArchSearchBox.MouseState = MaterialSkin.MouseState.OUT
+        ArchSearchBox.Multiline = False
+        ArchSearchBox.Name = "ArchSearchBox"
+        ArchSearchBox.Size = New Size(690, 50)
+        ArchSearchBox.TabIndex = 0
+        ArchSearchBox.Text = ""
+        ArchSearchBox.TrailingIcon = Nothing
+        ArchSearchBox.UseAccent = False
         ' 
         ' SignOutTab
         ' 
@@ -2156,7 +2246,7 @@ Partial Class ProfessorDashboard
         ' MaterialCard16
         ' 
         MaterialCard16.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard16.Controls.Add(MaterialCard14)
+        MaterialCard16.Controls.Add(SignOutCard)
         MaterialCard16.Depth = 0
         MaterialCard16.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         MaterialCard16.Location = New Point(-16, -22)
@@ -2167,61 +2257,61 @@ Partial Class ProfessorDashboard
         MaterialCard16.Size = New Size(1841, 902)
         MaterialCard16.TabIndex = 2
         ' 
-        ' MaterialCard14
+        ' SignOutCard
         ' 
-        MaterialCard14.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard14.Controls.Add(MaterialButton20)
-        MaterialCard14.Controls.Add(MaterialButton19)
-        MaterialCard14.Controls.Add(MaterialLabel47)
-        MaterialCard14.Depth = 0
-        MaterialCard14.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialCard14.Location = New Point(683, 340)
-        MaterialCard14.Margin = New Padding(14)
-        MaterialCard14.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialCard14.Name = "MaterialCard14"
-        MaterialCard14.Padding = New Padding(14)
-        MaterialCard14.Size = New Size(474, 222)
-        MaterialCard14.TabIndex = 0
+        SignOutCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        SignOutCard.Controls.Add(SignOutYes)
+        SignOutCard.Controls.Add(SignOutCancel)
+        SignOutCard.Controls.Add(MaterialLabel47)
+        SignOutCard.Depth = 0
+        SignOutCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        SignOutCard.Location = New Point(683, 340)
+        SignOutCard.Margin = New Padding(14)
+        SignOutCard.MouseState = MaterialSkin.MouseState.HOVER
+        SignOutCard.Name = "SignOutCard"
+        SignOutCard.Padding = New Padding(14)
+        SignOutCard.Size = New Size(474, 222)
+        SignOutCard.TabIndex = 0
         ' 
-        ' MaterialButton20
+        ' SignOutYes
         ' 
-        MaterialButton20.AutoSize = False
-        MaterialButton20.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton20.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton20.Depth = 0
-        MaterialButton20.HighEmphasis = True
-        MaterialButton20.Icon = Nothing
-        MaterialButton20.Location = New Point(250, 131)
-        MaterialButton20.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton20.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton20.Name = "MaterialButton20"
-        MaterialButton20.NoAccentTextColor = Color.Empty
-        MaterialButton20.Size = New Size(148, 45)
-        MaterialButton20.TabIndex = 2
-        MaterialButton20.Text = "yes"
-        MaterialButton20.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton20.UseAccentColor = False
-        MaterialButton20.UseVisualStyleBackColor = True
+        SignOutYes.AutoSize = False
+        SignOutYes.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        SignOutYes.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        SignOutYes.Depth = 0
+        SignOutYes.HighEmphasis = True
+        SignOutYes.Icon = Nothing
+        SignOutYes.Location = New Point(250, 131)
+        SignOutYes.Margin = New Padding(4, 6, 4, 6)
+        SignOutYes.MouseState = MaterialSkin.MouseState.HOVER
+        SignOutYes.Name = "SignOutYes"
+        SignOutYes.NoAccentTextColor = Color.Empty
+        SignOutYes.Size = New Size(148, 45)
+        SignOutYes.TabIndex = 2
+        SignOutYes.Text = "yes"
+        SignOutYes.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        SignOutYes.UseAccentColor = False
+        SignOutYes.UseVisualStyleBackColor = True
         ' 
-        ' MaterialButton19
+        ' SignOutCancel
         ' 
-        MaterialButton19.AutoSize = False
-        MaterialButton19.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        MaterialButton19.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        MaterialButton19.Depth = 0
-        MaterialButton19.HighEmphasis = True
-        MaterialButton19.Icon = Nothing
-        MaterialButton19.Location = New Point(76, 131)
-        MaterialButton19.Margin = New Padding(4, 6, 4, 6)
-        MaterialButton19.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialButton19.Name = "MaterialButton19"
-        MaterialButton19.NoAccentTextColor = Color.Empty
-        MaterialButton19.Size = New Size(148, 45)
-        MaterialButton19.TabIndex = 1
-        MaterialButton19.Text = "Cancel"
-        MaterialButton19.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        MaterialButton19.UseAccentColor = True
-        MaterialButton19.UseVisualStyleBackColor = True
+        SignOutCancel.AutoSize = False
+        SignOutCancel.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        SignOutCancel.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        SignOutCancel.Depth = 0
+        SignOutCancel.HighEmphasis = True
+        SignOutCancel.Icon = Nothing
+        SignOutCancel.Location = New Point(76, 131)
+        SignOutCancel.Margin = New Padding(4, 6, 4, 6)
+        SignOutCancel.MouseState = MaterialSkin.MouseState.HOVER
+        SignOutCancel.Name = "SignOutCancel"
+        SignOutCancel.NoAccentTextColor = Color.Empty
+        SignOutCancel.Size = New Size(148, 45)
+        SignOutCancel.TabIndex = 1
+        SignOutCancel.Text = "Cancel"
+        SignOutCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        SignOutCancel.UseAccentColor = True
+        SignOutCancel.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel47
         ' 
@@ -2253,10 +2343,10 @@ Partial Class ProfessorDashboard
         ' MaterialCard1
         ' 
         MaterialCard1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard1.Controls.Add(MaterialLabel4)
-        MaterialCard1.Controls.Add(MaterialLabel3)
+        MaterialCard1.Controls.Add(DateLbl)
+        MaterialCard1.Controls.Add(TimeLbl)
         MaterialCard1.Controls.Add(MaterialTabControl1)
-        MaterialCard1.Controls.Add(MaterialLabel2)
+        MaterialCard1.Controls.Add(ProfNameLbl)
         MaterialCard1.Controls.Add(MaterialLabel1)
         MaterialCard1.Depth = 0
         MaterialCard1.Dock = DockStyle.Fill
@@ -2269,29 +2359,34 @@ Partial Class ProfessorDashboard
         MaterialCard1.Size = New Size(1917, 1053)
         MaterialCard1.TabIndex = 0
         ' 
-        ' MaterialLabel4
+        ' DateLbl
         ' 
-        MaterialLabel4.AutoSize = True
-        MaterialLabel4.Depth = 0
-        MaterialLabel4.Font = New Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel4.Location = New Point(1683, 72)
-        MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel4.Name = "MaterialLabel4"
-        MaterialLabel4.Size = New Size(115, 19)
-        MaterialLabel4.TabIndex = 12
-        MaterialLabel4.Text = "January 1, 2025"
+        DateLbl.AutoSize = True
+        DateLbl.Depth = 0
+        DateLbl.Font = New Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel)
+        DateLbl.Location = New Point(1683, 72)
+        DateLbl.MouseState = MaterialSkin.MouseState.HOVER
+        DateLbl.Name = "DateLbl"
+        DateLbl.Size = New Size(115, 19)
+        DateLbl.TabIndex = 12
+        DateLbl.Text = "January 1, 2025"
         ' 
-        ' MaterialLabel3
+        ' TimeLbl
         ' 
-        MaterialLabel3.AutoSize = True
-        MaterialLabel3.Depth = 0
-        MaterialLabel3.Font = New Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel3.Location = New Point(1729, 50)
-        MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel3.Name = "MaterialLabel3"
-        MaterialLabel3.Size = New Size(69, 19)
-        MaterialLabel3.TabIndex = 11
-        MaterialLabel3.Text = "12:00 PM"
+        TimeLbl.AutoSize = True
+        TimeLbl.Depth = 0
+        TimeLbl.Font = New Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel)
+        TimeLbl.Location = New Point(1729, 50)
+        TimeLbl.MouseState = MaterialSkin.MouseState.HOVER
+        TimeLbl.Name = "TimeLbl"
+        TimeLbl.Size = New Size(69, 19)
+        TimeLbl.TabIndex = 11
+        TimeLbl.Text = "12:00 PM"
+        ' 
+        ' Timer1
+        ' 
+        Timer1.Enabled = True
+        Timer1.Interval = 1000
         ' 
         ' ProfessorDashboard
         ' 
@@ -2314,6 +2409,12 @@ Partial Class ProfessorDashboard
         MaterialTabControl1.ResumeLayout(False)
         Dashboard.ResumeLayout(False)
         MaterialCard2.ResumeLayout(False)
+        YourConsultCountCard.ResumeLayout(False)
+        YourConsultCountCard.PerformLayout()
+        ReportCountCard.ResumeLayout(False)
+        ReportCountCard.PerformLayout()
+        ConsultCategCard.ResumeLayout(False)
+        ConsultCategCard.PerformLayout()
         MaterialCard7.ResumeLayout(False)
         MaterialCard7.PerformLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
@@ -2326,55 +2427,55 @@ Partial Class ProfessorDashboard
         Professors.ResumeLayout(False)
         MaterialCard9.ResumeLayout(False)
         MaterialCard9.PerformLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(ProfDataGrid, ComponentModel.ISupportInitialize).EndInit()
         Students.ResumeLayout(False)
         MaterialCard13.ResumeLayout(False)
         MaterialCard13.PerformLayout()
-        CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
+        CType(StudDataGrid, ComponentModel.ISupportInitialize).EndInit()
         Reports.ResumeLayout(False)
         MaterialCard17.ResumeLayout(False)
         MaterialCard17.PerformLayout()
-        CType(DataGridView3, ComponentModel.ISupportInitialize).EndInit()
+        CType(RepDataGrid, ComponentModel.ISupportInitialize).EndInit()
         Reasons.ResumeLayout(False)
         MaterialCard10.ResumeLayout(False)
         MaterialCard10.PerformLayout()
-        CType(DataGridView4, ComponentModel.ISupportInitialize).EndInit()
+        CType(ReaDataGrid, ComponentModel.ISupportInitialize).EndInit()
         SectionsTab.ResumeLayout(False)
         MaterialCard11.ResumeLayout(False)
         MaterialCard11.PerformLayout()
-        CType(DataGridView5, ComponentModel.ISupportInitialize).EndInit()
+        CType(SectDataGrid, ComponentModel.ISupportInitialize).EndInit()
         ArchiveTab.ResumeLayout(False)
         MaterialCard12.ResumeLayout(False)
         MaterialCard12.PerformLayout()
-        CType(DataGridView6, ComponentModel.ISupportInitialize).EndInit()
+        CType(ArchDataGrid, ComponentModel.ISupportInitialize).EndInit()
         SignOutTab.ResumeLayout(False)
         MaterialCard16.ResumeLayout(False)
-        MaterialCard14.ResumeLayout(False)
-        MaterialCard14.PerformLayout()
+        SignOutCard.ResumeLayout(False)
+        SignOutCard.PerformLayout()
         MaterialCard1.ResumeLayout(False)
         MaterialCard1.PerformLayout()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialLabel2 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents ProfNameLbl As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialTabControl1 As MaterialSkin.Controls.MaterialTabControl
     Friend WithEvents Dashboard As TabPage
     Friend WithEvents MaterialCard2 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialCard4 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialCard5 As MaterialSkin.Controls.MaterialCard
+    Friend WithEvents ReportCountCard As MaterialSkin.Controls.MaterialCard
+    Friend WithEvents ConsultCategCard As MaterialSkin.Controls.MaterialCard
     Friend WithEvents MaterialCard7 As MaterialSkin.Controls.MaterialCard
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents MaterialLabel13 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialLabel14 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents NumOfRep As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialCard8 As MaterialSkin.Controls.MaterialCard
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents MaterialLabel10 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialLabel9 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents NumOfProf As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialCard6 As MaterialSkin.Controls.MaterialCard
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents MaterialLabel11 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialLabel12 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents NumOfStud As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents Professors As TabPage
     Friend WithEvents Students As TabPage
     Friend WithEvents Reports As TabPage
@@ -2382,109 +2483,116 @@ Partial Class ProfessorDashboard
     Friend WithEvents SectionsTab As TabPage
     Friend WithEvents ArchiveTab As TabPage
     Friend WithEvents MaterialCard1 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialCard3 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialLabel4 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialLabel3 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents YourConsultCountCard As MaterialSkin.Controls.MaterialCard
+    Friend WithEvents DateLbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents TimeLbl As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents SignOutTab As TabPage
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents MaterialCard16 As MaterialSkin.Controls.MaterialCard
     Friend WithEvents MaterialCard9 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialButton4 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ProfClrBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel17 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialButton3 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton2 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton1 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ProfAddBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ProfUpdBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ProfDelBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel16 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox5 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ProfPass As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel15 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox4 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ProfUsername As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel8 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox3 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ProfEmail As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel7 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox2 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ProfProfName As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel6 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ProfDataGrid As DataGridView
     Friend WithEvents MaterialLabel5 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox1 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ProfSearchProf As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard13 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialButton9 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents StudSaveDate As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel30 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents StudDateOfGrad As DateTimePicker
     Friend WithEvents MaterialLabel29 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialComboBox4 As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents StudStatus As MaterialSkin.Controls.MaterialComboBox
     Friend WithEvents MaterialLabel28 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialComboBox3 As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents StudYear As MaterialSkin.Controls.MaterialComboBox
     Friend WithEvents MaterialLabel27 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialComboBox2 As MaterialSkin.Controls.MaterialComboBox
-    Friend WithEvents MaterialTextBox11 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents StudSection As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents StudEmail As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel26 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel25 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialComboBox1 As MaterialSkin.Controls.MaterialComboBox
-    Friend WithEvents MaterialTextBox6 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents StudSuffix As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents StudMiddleInitial As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel20 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialButton5 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents StudClrBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel18 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialButton6 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton7 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton8 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents StudAddBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents StudUpdBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents StudDelBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel19 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox7 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents StudFirstName As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel21 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox8 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents StudLastName As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel22 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox9 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents StudNum As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel23 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents StudDataGrid As DataGridView
     Friend WithEvents MaterialLabel24 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox10 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents StudSearchStud As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard17 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialCard18 As MaterialSkin.Controls.MaterialCard
+    Friend WithEvents RepYearlyRepCard As MaterialSkin.Controls.MaterialCard
     Friend WithEvents MaterialLabel32 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents RepDataGrid As DataGridView
     Friend WithEvents MaterialLabel37 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox16 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents RepSearchBox As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard10 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialComboBox5 As MaterialSkin.Controls.MaterialComboBox
-    Friend WithEvents MaterialButton10 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ReaSpecialEvent As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents ReaClrBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel31 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialButton11 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton12 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton13 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ReaAddBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ReaUpdBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ReaDelBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel33 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel35 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox14 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ReaReasonName As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel36 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox15 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ReaReasonID As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel38 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents ReaDataGrid As DataGridView
     Friend WithEvents MaterialLabel39 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox17 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ReaSearchReason As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard11 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialButton14 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents SectClrBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel34 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialButton15 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton16 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton17 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents SectAddBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents SectUpdBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents SectDelBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel40 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox12 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents SectName As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel42 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox13 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents SectSectID As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel43 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents DataGridView5 As DataGridView
+    Friend WithEvents SectDataGrid As DataGridView
     Friend WithEvents MaterialLabel44 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox18 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents SectSearchSect As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard12 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialButton18 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ArchClrBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel45 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents DataGridView6 As DataGridView
+    Friend WithEvents ArchDataGrid As DataGridView
     Friend WithEvents MaterialLabel48 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialTextBox21 As MaterialSkin.Controls.MaterialTextBox
+    Friend WithEvents ArchSearchBox As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel46 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialComboBox7 As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents ArchFilByYear As MaterialSkin.Controls.MaterialComboBox
     Friend WithEvents MaterialLabel41 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialComboBox6 As MaterialSkin.Controls.MaterialComboBox
-    Friend WithEvents MaterialCard14 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents MaterialButton20 As MaterialSkin.Controls.MaterialButton
-    Friend WithEvents MaterialButton19 As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ArchFilBySect As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents SignOutCard As MaterialSkin.Controls.MaterialCard
+    Friend WithEvents SignOutYes As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents SignOutCancel As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel47 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents MaterialLabel2 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents MaterialLabel4 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents MaterialLabel3 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents ConsultCategPanel As Panel
+    Friend WithEvents YourConsultCountPanel As Panel
+    Friend WithEvents ReportCountPanel As Panel
 End Class

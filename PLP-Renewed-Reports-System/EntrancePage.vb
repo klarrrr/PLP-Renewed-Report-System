@@ -347,7 +347,25 @@ Public Class EntrancePage
     End Sub
 
     Private Sub ProfLogSignInBtn_Click(sender As Object, e As EventArgs) Handles ProfLogSignInBtn.Click
+        conn.Open()
 
+        Dim cmd As New MySqlCommand("SELECT * FROM profinfo where username = '" & ProfLogUsernameTxtbox.Text & "' and password = '" & ProfLogPassTxtBox.Text & "'", conn)
+        cmd.ExecuteNonQuery()
+        conn.Close()
+
+        Dim da As New MySqlDataAdapter(cmd)
+        Dim dt As New DataTable
+
+        da.Fill(dt)
+
+        If dt.Rows.Count() <= 0 Then
+            MessageBox.Show("Username or Password Are Invalid!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim ProfForm As New ProfessorDashboard(ProfLogUsernameTxtbox.Text)
+            ProfForm.Show()
+            ProfLogUsernameTxtbox.Clear()
+            Hide()
+        End If
     End Sub
 
     Private Sub StuLogStudIdTxtBox_TextChanged(sender As Object, e As EventArgs) Handles StuLogStudIdTxtBox.TextChanged

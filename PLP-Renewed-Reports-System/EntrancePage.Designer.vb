@@ -177,6 +177,8 @@ Partial Class EntrancePage
         ' MaterialCard1
         ' 
         MaterialCard1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard1.Controls.Add(ProfLogCard)
+        MaterialCard1.Controls.Add(ChooseUserCard)
         MaterialCard1.Controls.Add(StuQRCard)
         MaterialCard1.Controls.Add(ProfQRCard)
         MaterialCard1.Controls.Add(StuForgPassCard)
@@ -184,8 +186,6 @@ Partial Class EntrancePage
         MaterialCard1.Controls.Add(StuRegCard)
         MaterialCard1.Controls.Add(ProfRegCard)
         MaterialCard1.Controls.Add(StudentLoginCard)
-        MaterialCard1.Controls.Add(ProfLogCard)
-        MaterialCard1.Controls.Add(ChooseUserCard)
         MaterialCard1.Depth = 0
         MaterialCard1.Dock = DockStyle.Fill
         MaterialCard1.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))

@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("PLP-Renewed-Reports-System"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c446b616ad94dafd73282b27b22b975938487f18"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c67cc2a1b7be236311c904d91ff315addbcd1d3a"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("PLP-Renewed-Reports-System"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("PLP-Renewed-Reports-System"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

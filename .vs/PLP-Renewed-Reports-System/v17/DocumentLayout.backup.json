@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\professordashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\professordashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\professordashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\professordashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\studentdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\studentdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\plp-renewed-reports-system.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\plp-renewed-reports-system.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -17,6 +25,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\studentdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\studentdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\charts.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\charts.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|d:\\program\\cloned-repositories\\plp-renewed-report-system\\plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9028D346-ED51-4176-B8AE-CFADA90223B0}|PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj|solutionrelative:plp-renewed-reports-system\\entrancepage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 173,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,20 +54,70 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PLP-Renewed-Reports-System",
+              "DocumentMoniker": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj",
+              "ToolTip": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\PLP-Renewed-Reports-System.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
+              "WhenOpened": "2025-01-10T11:25:24.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "charts.vb",
+              "DocumentMoniker": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\charts.vb",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\charts.vb",
+              "ToolTip": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\charts.vb",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\charts.vb",
+              "ViewState": "AgIAABYBAAAAAAAAAAAAACUBAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-10T10:57:27.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProfessorDashboard.vb",
+              "DocumentMoniker": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\ProfessorDashboard.vb",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\ProfessorDashboard.vb",
+              "ToolTip": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\ProfessorDashboard.vb",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\ProfessorDashboard.vb",
+              "ViewState": "AgIAADgAAAAAAAAAAAAgwEkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-10T09:01:05.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProfessorDashboard.vb [Design]",
+              "DocumentMoniker": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\ProfessorDashboard.vb",
+              "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\ProfessorDashboard.vb",
+              "ToolTip": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\ProfessorDashboard.vb [Design]",
+              "RelativeToolTip": "PLP-Renewed-Reports-System\\ProfessorDashboard.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-10T09:00:29.664Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "StudentDashboard.vb",
               "DocumentMoniker": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\StudentDashboard.vb",
               "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\StudentDashboard.vb",
               "ToolTip": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\StudentDashboard.vb",
               "RelativeToolTip": "PLP-Renewed-Reports-System\\StudentDashboard.vb",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAAAKEAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwDQAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-06T13:24:10.17Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "StudentDashboard.vb [Design]",
               "DocumentMoniker": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\StudentDashboard.vb",
               "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\StudentDashboard.vb",
@@ -63,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "EntrancePage.vb [Design]",
               "DocumentMoniker": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\EntrancePage.vb",
               "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\EntrancePage.vb",
@@ -75,13 +141,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "EntrancePage.vb",
               "DocumentMoniker": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\EntrancePage.vb",
               "RelativeDocumentMoniker": "PLP-Renewed-Reports-System\\EntrancePage.vb",
               "ToolTip": "D:\\Program\\Cloned-Repositories\\PLP-Renewed-Report-System\\PLP-Renewed-Reports-System\\EntrancePage.vb",
               "RelativeToolTip": "PLP-Renewed-Reports-System\\EntrancePage.vb",
-              "ViewState": "AgIAAAcCAAAAAAAAAAAAACACAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAE4BAAAAAAAAAAAiwGQBAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-06T09:30:19.944Z",
               "EditorCaption": ""

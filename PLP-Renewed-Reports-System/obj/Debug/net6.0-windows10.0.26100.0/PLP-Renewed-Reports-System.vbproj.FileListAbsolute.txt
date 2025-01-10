@@ -29,3 +29,10 @@ D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-Sys
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\AForge.Video.dll
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\AForge.Video.DirectShow.dll
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\MessagingToolkit.QRCode.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\BouncyCastle.Cryptography.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\itextsharp.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\LiveCharts.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\LiveCharts.WinForms.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\LiveCharts.Wpf.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\OxyPlot.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\OxyPlot.WindowsForms.dll
