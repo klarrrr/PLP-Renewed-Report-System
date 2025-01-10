@@ -3,6 +3,9 @@ Imports System.IO
 Imports System.Net.Mail
 Imports MySql.Data.MySqlClient
 Imports QRCoder
+Imports MessagingToolkit.QRCode.Codec
+Imports AForge.Video.DirectShow
+Imports AForge.Video
 
 Public Class EntrancePage
     Dim conn As New MySqlConnection("server=localhost;username=root;password=;database=plpportal_db")
@@ -35,8 +38,10 @@ Public Class EntrancePage
     End Sub
 
     Private Sub StuQRBackBtn_Click(sender As Object, e As EventArgs) Handles StuQRBackBtn.Click
+        StopWebcam()
         StudentLoginCard.Show()
         StuQRCard.Hide()
+        Timer1.Stop()
     End Sub
 
     Private Sub StuQRForgPass_Click(sender As Object, e As EventArgs) Handles StuQRForgPass.Click
@@ -453,5 +458,96 @@ Public Class EntrancePage
             StuRegMiddleInitialBox.Text = StuRegMiddleInitialBox.Text.Substring(0, 2)
             StuRegMiddleInitialBox.SelectionStart = StuRegMiddleInitialBox.TextLength
         End If
+    End Sub
+
+    ' STUDENT QR
+
+    Private WithEvents videoSource As New VideoCaptureDevice()
+
+    Private Sub videoSource_NewFrame(sender As Object, eventArgs As NewFrameEventArgs) Handles videoSource.NewFrame
+        StuQRPicBox.Image = DirectCast(eventArgs.Frame.Clone(), System.Drawing.Image)
+    End Sub
+
+    Private Sub StartWebcam()
+        Try
+            Dim videoDevices As VideoCaptureDeviceForm = New VideoCaptureDeviceForm()
+            If videoDevices.ShowDialog() = DialogResult.OK Then
+                videoSource = videoDevices.VideoDevice
+                videoSource.Start()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error starting webcam: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub StopWebcam()
+        Try
+            If videoSource IsNot Nothing AndAlso videoSource.IsRunning Then
+                videoSource.SignalToStop()
+                videoSource.WaitForStop()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error stopping webcam: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub StuQRCard_VisibleChanged(sender As Object, e As EventArgs) Handles StuQRCard.VisibleChanged
+        If StuQRCard.Visible = True Then
+            StartWebcam()
+            Timer1.Start()
+        End If
+    End Sub
+
+    Private Sub ScanQRCode()
+        Dim Reader = New QRCodeDecoder
+        Try
+            If StuQRPicBox.Image IsNot Nothing Then
+                Dim qrResult As String = Reader.Decode(New Data.QRCodeBitmapImage(StuQRPicBox.Image))
+                Dim filterResult As String = ""
+                Dim op As Boolean = False
+                For Each letter As Char In qrResult
+                    If letter = "[" Then
+                        op = True
+                        Continue For
+                    End If
+                    If letter = "]" Then
+                        Exit For
+                    End If
+                    If op = True Then
+                        filterResult += letter
+                    End If
+                Next
+                filterResult = filterResult.Replace("[", "").Replace("-", " ")
+                conn.Open()
+                Dim cmd As New MySqlCommand("SELECT * FROM studentinfo where studentnum = '" & filterResult & "'", conn)
+                cmd.ExecuteNonQuery()
+                If op = False Then
+                    cmd.CommandText = "SELECT * FROM studentinfo where studentnum = '" & qrResult & "'"
+                    cmd.ExecuteNonQuery()
+                End If
+                conn.Close()
+
+                Dim da As New MySqlDataAdapter(cmd)
+                Dim dt As New DataTable
+
+                da.Fill(dt)
+
+                If dt.Rows.Count() > 0 Then
+                    Timer1.Stop()
+                    StopWebcam()
+                    Dim StudentForm As New StudentDashboard(qrResult)
+                    StuQRCard.Hide()
+                    StudentLoginCard.Show()
+                    StudentForm.Show()
+                    Hide()
+                End If
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Enabled = True
+        Timer1.Interval = 1000
+        ScanQRCode()
     End Sub
 End Class

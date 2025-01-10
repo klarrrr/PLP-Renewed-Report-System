@@ -177,6 +177,7 @@ Public Class StudentDashboard
         Dim result As DialogResult = MessageBox.Show("Are you sure on logging out?", "Sign Out", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             EntrancePage.Show()
+            Timer1.Stop()
             Close()
         End If
     End Sub

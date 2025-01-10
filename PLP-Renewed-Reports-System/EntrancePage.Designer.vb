@@ -22,8 +22,49 @@ Partial Class EntrancePage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EntrancePage))
         MaterialCard1 = New MaterialSkin.Controls.MaterialCard()
+        StuQRCard = New MaterialSkin.Controls.MaterialCard()
+        StuQRForgPass = New MaterialSkin.Controls.MaterialLabel()
+        StuQRPicBox = New PictureBox()
+        MaterialLabel44 = New MaterialSkin.Controls.MaterialLabel()
+        StuQRBackBtn = New MaterialSkin.Controls.MaterialButton()
+        MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel46 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel47 = New MaterialSkin.Controls.MaterialLabel()
+        ProfQRCard = New MaterialSkin.Controls.MaterialCard()
+        ProfQRForgPass = New MaterialSkin.Controls.MaterialLabel()
+        ProfQRPicBox = New PictureBox()
+        MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
+        ProfQRBackBtn = New MaterialSkin.Controls.MaterialButton()
+        MaterialLabel33 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel34 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel35 = New MaterialSkin.Controls.MaterialLabel()
+        StuForgPassCard = New MaterialSkin.Controls.MaterialCard()
+        MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel49 = New MaterialSkin.Controls.MaterialLabel()
+        StuForgPassEmailBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel50 = New MaterialSkin.Controls.MaterialLabel()
+        StuForgPassBackBtn = New MaterialSkin.Controls.MaterialButton()
+        MaterialLabel51 = New MaterialSkin.Controls.MaterialLabel()
+        StuForgPassRecovBtn = New MaterialSkin.Controls.MaterialButton()
+        StuForgPassStuNumBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel52 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel53 = New MaterialSkin.Controls.MaterialLabel()
+        ProfForgPassCard = New MaterialSkin.Controls.MaterialCard()
+        MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel19 = New MaterialSkin.Controls.MaterialLabel()
+        ProfForgPassUsernameBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel22 = New MaterialSkin.Controls.MaterialLabel()
+        ProfForgPassEmailBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel24 = New MaterialSkin.Controls.MaterialLabel()
+        ProfForgPassBackBtn = New MaterialSkin.Controls.MaterialButton()
+        MaterialLabel28 = New MaterialSkin.Controls.MaterialLabel()
+        ProfForgPassRecovBtn = New MaterialSkin.Controls.MaterialButton()
+        ProfForgPassFullNameBox = New MaterialSkin.Controls.MaterialTextBox()
+        MaterialLabel29 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel30 = New MaterialSkin.Controls.MaterialLabel()
         StuRegCard = New MaterialSkin.Controls.MaterialCard()
         MaterialLabel65 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel64 = New MaterialSkin.Controls.MaterialLabel()
@@ -109,47 +150,14 @@ Partial Class EntrancePage
         PictureBox2 = New PictureBox()
         PictureBox1 = New PictureBox()
         MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
-        StuQRCard = New MaterialSkin.Controls.MaterialCard()
-        StuQRForgPass = New MaterialSkin.Controls.MaterialLabel()
-        StuQRPicBox = New PictureBox()
-        MaterialLabel44 = New MaterialSkin.Controls.MaterialLabel()
-        StuQRBackBtn = New MaterialSkin.Controls.MaterialButton()
-        MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel46 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel47 = New MaterialSkin.Controls.MaterialLabel()
-        ProfQRCard = New MaterialSkin.Controls.MaterialCard()
-        ProfQRForgPass = New MaterialSkin.Controls.MaterialLabel()
-        ProfQRPicBox = New PictureBox()
-        MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
-        ProfQRBackBtn = New MaterialSkin.Controls.MaterialButton()
-        MaterialLabel33 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel34 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel35 = New MaterialSkin.Controls.MaterialLabel()
-        StuForgPassCard = New MaterialSkin.Controls.MaterialCard()
-        MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel49 = New MaterialSkin.Controls.MaterialLabel()
-        StuForgPassEmailBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel50 = New MaterialSkin.Controls.MaterialLabel()
-        StuForgPassBackBtn = New MaterialSkin.Controls.MaterialButton()
-        MaterialLabel51 = New MaterialSkin.Controls.MaterialLabel()
-        StuForgPassRecovBtn = New MaterialSkin.Controls.MaterialButton()
-        StuForgPassStuNumBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel52 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel53 = New MaterialSkin.Controls.MaterialLabel()
-        ProfForgPassCard = New MaterialSkin.Controls.MaterialCard()
-        MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel19 = New MaterialSkin.Controls.MaterialLabel()
-        ProfForgPassUsernameBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel22 = New MaterialSkin.Controls.MaterialLabel()
-        ProfForgPassEmailBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel24 = New MaterialSkin.Controls.MaterialLabel()
-        ProfForgPassBackBtn = New MaterialSkin.Controls.MaterialButton()
-        MaterialLabel28 = New MaterialSkin.Controls.MaterialLabel()
-        ProfForgPassRecovBtn = New MaterialSkin.Controls.MaterialButton()
-        ProfForgPassFullNameBox = New MaterialSkin.Controls.MaterialTextBox()
-        MaterialLabel29 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel30 = New MaterialSkin.Controls.MaterialLabel()
+        Timer1 = New Timer(components)
         MaterialCard1.SuspendLayout()
+        StuQRCard.SuspendLayout()
+        CType(StuQRPicBox, ComponentModel.ISupportInitialize).BeginInit()
+        ProfQRCard.SuspendLayout()
+        CType(ProfQRPicBox, ComponentModel.ISupportInitialize).BeginInit()
+        StuForgPassCard.SuspendLayout()
+        ProfForgPassCard.SuspendLayout()
         StuRegCard.SuspendLayout()
         ProfRegCard.SuspendLayout()
         StudentLoginCard.SuspendLayout()
@@ -164,26 +172,20 @@ Partial Class EntrancePage
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        StuQRCard.SuspendLayout()
-        CType(StuQRPicBox, ComponentModel.ISupportInitialize).BeginInit()
-        ProfQRCard.SuspendLayout()
-        CType(ProfQRPicBox, ComponentModel.ISupportInitialize).BeginInit()
-        StuForgPassCard.SuspendLayout()
-        ProfForgPassCard.SuspendLayout()
         SuspendLayout()
         ' 
         ' MaterialCard1
         ' 
         MaterialCard1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard1.Controls.Add(StuQRCard)
+        MaterialCard1.Controls.Add(ProfQRCard)
+        MaterialCard1.Controls.Add(StuForgPassCard)
+        MaterialCard1.Controls.Add(ProfForgPassCard)
         MaterialCard1.Controls.Add(StuRegCard)
         MaterialCard1.Controls.Add(ProfRegCard)
         MaterialCard1.Controls.Add(StudentLoginCard)
         MaterialCard1.Controls.Add(ProfLogCard)
         MaterialCard1.Controls.Add(ChooseUserCard)
-        MaterialCard1.Controls.Add(StuQRCard)
-        MaterialCard1.Controls.Add(ProfQRCard)
-        MaterialCard1.Controls.Add(StuForgPassCard)
-        MaterialCard1.Controls.Add(ProfForgPassCard)
         MaterialCard1.Depth = 0
         MaterialCard1.Dock = DockStyle.Fill
         MaterialCard1.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
@@ -194,6 +196,639 @@ Partial Class EntrancePage
         MaterialCard1.Padding = New Padding(14)
         MaterialCard1.Size = New Size(1917, 1056)
         MaterialCard1.TabIndex = 0
+        ' 
+        ' StuQRCard
+        ' 
+        StuQRCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuQRCard.Controls.Add(StuQRForgPass)
+        StuQRCard.Controls.Add(StuQRPicBox)
+        StuQRCard.Controls.Add(MaterialLabel44)
+        StuQRCard.Controls.Add(StuQRBackBtn)
+        StuQRCard.Controls.Add(MaterialLabel45)
+        StuQRCard.Controls.Add(MaterialLabel46)
+        StuQRCard.Controls.Add(MaterialLabel47)
+        StuQRCard.Depth = 0
+        StuQRCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StuQRCard.Location = New Point(448, 110)
+        StuQRCard.Margin = New Padding(14)
+        StuQRCard.MouseState = MaterialSkin.MouseState.HOVER
+        StuQRCard.Name = "StuQRCard"
+        StuQRCard.Padding = New Padding(14)
+        StuQRCard.Size = New Size(1021, 836)
+        StuQRCard.TabIndex = 8
+        StuQRCard.Visible = False
+        ' 
+        ' StuQRForgPass
+        ' 
+        StuQRForgPass.AutoSize = True
+        StuQRForgPass.Cursor = Cursors.Hand
+        StuQRForgPass.Depth = 0
+        StuQRForgPass.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuQRForgPass.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        StuQRForgPass.HighEmphasis = True
+        StuQRForgPass.Location = New Point(457, 688)
+        StuQRForgPass.MouseState = MaterialSkin.MouseState.HOVER
+        StuQRForgPass.Name = "StuQRForgPass"
+        StuQRForgPass.Size = New Size(107, 17)
+        StuQRForgPass.TabIndex = 20
+        StuQRForgPass.Text = "Forgot QR Code?"
+        ' 
+        ' StuQRPicBox
+        ' 
+        StuQRPicBox.BorderStyle = BorderStyle.FixedSingle
+        StuQRPicBox.Location = New Point(331, 318)
+        StuQRPicBox.Name = "StuQRPicBox"
+        StuQRPicBox.Size = New Size(358, 358)
+        StuQRPicBox.SizeMode = PictureBoxSizeMode.CenterImage
+        StuQRPicBox.TabIndex = 19
+        StuQRPicBox.TabStop = False
+        ' 
+        ' MaterialLabel44
+        ' 
+        MaterialLabel44.AutoSize = True
+        MaterialLabel44.Depth = 0
+        MaterialLabel44.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel44.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
+        MaterialLabel44.Location = New Point(428, 133)
+        MaterialLabel44.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel44.Name = "MaterialLabel44"
+        MaterialLabel44.RightToLeft = RightToLeft.No
+        MaterialLabel44.Size = New Size(164, 17)
+        MaterialLabel44.TabIndex = 18
+        MaterialLabel44.Text = "Scan QR Code from Gmail"
+        ' 
+        ' StuQRBackBtn
+        ' 
+        StuQRBackBtn.AutoSize = False
+        StuQRBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StuQRBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StuQRBackBtn.Depth = 0
+        StuQRBackBtn.DrawShadows = False
+        StuQRBackBtn.HighEmphasis = True
+        StuQRBackBtn.Icon = My.Resources.Resources.back__1_
+        StuQRBackBtn.Location = New Point(18, 20)
+        StuQRBackBtn.Margin = New Padding(4, 6, 4, 6)
+        StuQRBackBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StuQRBackBtn.Name = "StuQRBackBtn"
+        StuQRBackBtn.NoAccentTextColor = Color.Empty
+        StuQRBackBtn.Size = New Size(42, 36)
+        StuQRBackBtn.TabIndex = 16
+        StuQRBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
+        StuQRBackBtn.UseAccentColor = False
+        StuQRBackBtn.UseVisualStyleBackColor = True
+        ' 
+        ' MaterialLabel45
+        ' 
+        MaterialLabel45.Depth = 0
+        MaterialLabel45.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel45.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel45.Location = New Point(347, 180)
+        MaterialLabel45.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel45.Name = "MaterialLabel45"
+        MaterialLabel45.Size = New Size(326, 86)
+        MaterialLabel45.TabIndex = 12
+        MaterialLabel45.Text = "1. Open Gmail on your phone" & vbCrLf & "2. Go to inbox > Download QR Code" & vbCrLf & "3. Scan QR Code to Login"
+        ' 
+        ' MaterialLabel46
+        ' 
+        MaterialLabel46.AutoSize = True
+        MaterialLabel46.Depth = 0
+        MaterialLabel46.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel46.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
+        MaterialLabel46.Location = New Point(400, 761)
+        MaterialLabel46.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel46.Name = "MaterialLabel46"
+        MaterialLabel46.Size = New Size(221, 14)
+        MaterialLabel46.TabIndex = 7
+        MaterialLabel46.Text = "Powered by College of Computer Studies"
+        MaterialLabel46.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel47
+        ' 
+        MaterialLabel47.AutoSize = True
+        MaterialLabel47.Depth = 0
+        MaterialLabel47.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel47.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
+        MaterialLabel47.Location = New Point(332, 59)
+        MaterialLabel47.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel47.Name = "MaterialLabel47"
+        MaterialLabel47.Size = New Size(357, 58)
+        MaterialLabel47.TabIndex = 0
+        MaterialLabel47.Text = "Student QR Scan"
+        ' 
+        ' ProfQRCard
+        ' 
+        ProfQRCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ProfQRCard.Controls.Add(ProfQRForgPass)
+        ProfQRCard.Controls.Add(ProfQRPicBox)
+        ProfQRCard.Controls.Add(MaterialLabel32)
+        ProfQRCard.Controls.Add(ProfQRBackBtn)
+        ProfQRCard.Controls.Add(MaterialLabel33)
+        ProfQRCard.Controls.Add(MaterialLabel34)
+        ProfQRCard.Controls.Add(MaterialLabel35)
+        ProfQRCard.Depth = 0
+        ProfQRCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        ProfQRCard.Location = New Point(448, 110)
+        ProfQRCard.Margin = New Padding(14)
+        ProfQRCard.MouseState = MaterialSkin.MouseState.HOVER
+        ProfQRCard.Name = "ProfQRCard"
+        ProfQRCard.Padding = New Padding(14)
+        ProfQRCard.Size = New Size(1021, 836)
+        ProfQRCard.TabIndex = 6
+        ProfQRCard.Visible = False
+        ' 
+        ' ProfQRForgPass
+        ' 
+        ProfQRForgPass.AutoSize = True
+        ProfQRForgPass.Cursor = Cursors.Hand
+        ProfQRForgPass.Depth = 0
+        ProfQRForgPass.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfQRForgPass.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        ProfQRForgPass.HighEmphasis = True
+        ProfQRForgPass.Location = New Point(457, 688)
+        ProfQRForgPass.MouseState = MaterialSkin.MouseState.HOVER
+        ProfQRForgPass.Name = "ProfQRForgPass"
+        ProfQRForgPass.Size = New Size(107, 17)
+        ProfQRForgPass.TabIndex = 20
+        ProfQRForgPass.Text = "Forgot QR Code?"
+        ' 
+        ' ProfQRPicBox
+        ' 
+        ProfQRPicBox.BorderStyle = BorderStyle.FixedSingle
+        ProfQRPicBox.Location = New Point(331, 318)
+        ProfQRPicBox.Name = "ProfQRPicBox"
+        ProfQRPicBox.Size = New Size(358, 358)
+        ProfQRPicBox.TabIndex = 19
+        ProfQRPicBox.TabStop = False
+        ' 
+        ' MaterialLabel32
+        ' 
+        MaterialLabel32.AutoSize = True
+        MaterialLabel32.Depth = 0
+        MaterialLabel32.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel32.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
+        MaterialLabel32.Location = New Point(428, 133)
+        MaterialLabel32.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel32.Name = "MaterialLabel32"
+        MaterialLabel32.RightToLeft = RightToLeft.No
+        MaterialLabel32.Size = New Size(164, 17)
+        MaterialLabel32.TabIndex = 18
+        MaterialLabel32.Text = "Scan QR Code from Gmail"
+        ' 
+        ' ProfQRBackBtn
+        ' 
+        ProfQRBackBtn.AutoSize = False
+        ProfQRBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfQRBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfQRBackBtn.Depth = 0
+        ProfQRBackBtn.DrawShadows = False
+        ProfQRBackBtn.HighEmphasis = True
+        ProfQRBackBtn.Icon = My.Resources.Resources.back__1_
+        ProfQRBackBtn.Location = New Point(18, 20)
+        ProfQRBackBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfQRBackBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfQRBackBtn.Name = "ProfQRBackBtn"
+        ProfQRBackBtn.NoAccentTextColor = Color.Empty
+        ProfQRBackBtn.Size = New Size(42, 36)
+        ProfQRBackBtn.TabIndex = 16
+        ProfQRBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
+        ProfQRBackBtn.UseAccentColor = False
+        ProfQRBackBtn.UseVisualStyleBackColor = True
+        ' 
+        ' MaterialLabel33
+        ' 
+        MaterialLabel33.Depth = 0
+        MaterialLabel33.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel33.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel33.Location = New Point(347, 180)
+        MaterialLabel33.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel33.Name = "MaterialLabel33"
+        MaterialLabel33.Size = New Size(326, 86)
+        MaterialLabel33.TabIndex = 12
+        MaterialLabel33.Text = "1. Open Gmail on your phone" & vbCrLf & "2. Go to inbox > Download QR Code" & vbCrLf & "3. Scan QR Code to Login"
+        ' 
+        ' MaterialLabel34
+        ' 
+        MaterialLabel34.AutoSize = True
+        MaterialLabel34.Depth = 0
+        MaterialLabel34.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel34.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
+        MaterialLabel34.Location = New Point(400, 761)
+        MaterialLabel34.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel34.Name = "MaterialLabel34"
+        MaterialLabel34.Size = New Size(221, 14)
+        MaterialLabel34.TabIndex = 7
+        MaterialLabel34.Text = "Powered by College of Computer Studies"
+        MaterialLabel34.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel35
+        ' 
+        MaterialLabel35.AutoSize = True
+        MaterialLabel35.Depth = 0
+        MaterialLabel35.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel35.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
+        MaterialLabel35.Location = New Point(310, 59)
+        MaterialLabel35.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel35.Name = "MaterialLabel35"
+        MaterialLabel35.Size = New Size(401, 58)
+        MaterialLabel35.TabIndex = 0
+        MaterialLabel35.Text = "Professor QR Scan"
+        ' 
+        ' StuForgPassCard
+        ' 
+        StuForgPassCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuForgPassCard.Controls.Add(MaterialLabel4)
+        StuForgPassCard.Controls.Add(MaterialLabel49)
+        StuForgPassCard.Controls.Add(StuForgPassEmailBox)
+        StuForgPassCard.Controls.Add(MaterialLabel50)
+        StuForgPassCard.Controls.Add(StuForgPassBackBtn)
+        StuForgPassCard.Controls.Add(MaterialLabel51)
+        StuForgPassCard.Controls.Add(StuForgPassRecovBtn)
+        StuForgPassCard.Controls.Add(StuForgPassStuNumBox)
+        StuForgPassCard.Controls.Add(MaterialLabel52)
+        StuForgPassCard.Controls.Add(MaterialLabel53)
+        StuForgPassCard.Depth = 0
+        StuForgPassCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StuForgPassCard.Location = New Point(448, 110)
+        StuForgPassCard.Margin = New Padding(14)
+        StuForgPassCard.MouseState = MaterialSkin.MouseState.HOVER
+        StuForgPassCard.Name = "StuForgPassCard"
+        StuForgPassCard.Padding = New Padding(14)
+        StuForgPassCard.Size = New Size(1021, 836)
+        StuForgPassCard.TabIndex = 9
+        StuForgPassCard.Visible = False
+        ' 
+        ' MaterialLabel4
+        ' 
+        MaterialLabel4.Depth = 0
+        MaterialLabel4.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        MaterialLabel4.Location = New Point(193, 547)
+        MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel4.Name = "MaterialLabel4"
+        MaterialLabel4.Size = New Size(634, 38)
+        MaterialLabel4.TabIndex = 21
+        MaterialLabel4.Text = "A QR Code will be sent to your provided valid school email, you can use it to login or scan the QR Code from your device to reveal your old password."
+        ' 
+        ' MaterialLabel49
+        ' 
+        MaterialLabel49.AutoSize = True
+        MaterialLabel49.Depth = 0
+        MaterialLabel49.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel49.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel49.Location = New Point(193, 385)
+        MaterialLabel49.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel49.Name = "MaterialLabel49"
+        MaterialLabel49.Size = New Size(126, 24)
+        MaterialLabel49.TabIndex = 20
+        MaterialLabel49.Text = "Email address"
+        ' 
+        ' StuForgPassEmailBox
+        ' 
+        StuForgPassEmailBox.AnimateReadOnly = False
+        StuForgPassEmailBox.BorderStyle = BorderStyle.None
+        StuForgPassEmailBox.Depth = 0
+        StuForgPassEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuForgPassEmailBox.Hint = "Enter email address"
+        StuForgPassEmailBox.LeadingIcon = Nothing
+        StuForgPassEmailBox.Location = New Point(193, 422)
+        StuForgPassEmailBox.MaxLength = 50
+        StuForgPassEmailBox.MouseState = MaterialSkin.MouseState.OUT
+        StuForgPassEmailBox.Multiline = False
+        StuForgPassEmailBox.Name = "StuForgPassEmailBox"
+        StuForgPassEmailBox.Size = New Size(634, 50)
+        StuForgPassEmailBox.TabIndex = 19
+        StuForgPassEmailBox.Text = ""
+        StuForgPassEmailBox.TrailingIcon = Nothing
+        StuForgPassEmailBox.UseAccent = False
+        ' 
+        ' MaterialLabel50
+        ' 
+        MaterialLabel50.AutoSize = True
+        MaterialLabel50.Depth = 0
+        MaterialLabel50.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel50.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
+        MaterialLabel50.Location = New Point(316, 133)
+        MaterialLabel50.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel50.Name = "MaterialLabel50"
+        MaterialLabel50.RightToLeft = RightToLeft.No
+        MaterialLabel50.Size = New Size(388, 17)
+        MaterialLabel50.TabIndex = 18
+        MaterialLabel50.Text = "Please enter you student number and your valid school email"
+        ' 
+        ' StuForgPassBackBtn
+        ' 
+        StuForgPassBackBtn.AutoSize = False
+        StuForgPassBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StuForgPassBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StuForgPassBackBtn.Depth = 0
+        StuForgPassBackBtn.DrawShadows = False
+        StuForgPassBackBtn.HighEmphasis = True
+        StuForgPassBackBtn.Icon = My.Resources.Resources.back__1_
+        StuForgPassBackBtn.Location = New Point(18, 20)
+        StuForgPassBackBtn.Margin = New Padding(4, 6, 4, 6)
+        StuForgPassBackBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StuForgPassBackBtn.Name = "StuForgPassBackBtn"
+        StuForgPassBackBtn.NoAccentTextColor = Color.Empty
+        StuForgPassBackBtn.Size = New Size(42, 36)
+        StuForgPassBackBtn.TabIndex = 16
+        StuForgPassBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
+        StuForgPassBackBtn.UseAccentColor = False
+        StuForgPassBackBtn.UseVisualStyleBackColor = True
+        ' 
+        ' MaterialLabel51
+        ' 
+        MaterialLabel51.AutoSize = True
+        MaterialLabel51.Depth = 0
+        MaterialLabel51.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel51.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel51.Location = New Point(193, 269)
+        MaterialLabel51.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel51.Name = "MaterialLabel51"
+        MaterialLabel51.Size = New Size(144, 24)
+        MaterialLabel51.TabIndex = 12
+        MaterialLabel51.Text = "Student number"
+        ' 
+        ' StuForgPassRecovBtn
+        ' 
+        StuForgPassRecovBtn.AutoSize = False
+        StuForgPassRecovBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StuForgPassRecovBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StuForgPassRecovBtn.Depth = 0
+        StuForgPassRecovBtn.HighEmphasis = True
+        StuForgPassRecovBtn.Icon = Nothing
+        StuForgPassRecovBtn.Location = New Point(193, 684)
+        StuForgPassRecovBtn.Margin = New Padding(4, 6, 4, 6)
+        StuForgPassRecovBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StuForgPassRecovBtn.Name = "StuForgPassRecovBtn"
+        StuForgPassRecovBtn.NoAccentTextColor = Color.Empty
+        StuForgPassRecovBtn.Size = New Size(634, 45)
+        StuForgPassRecovBtn.TabIndex = 10
+        StuForgPassRecovBtn.Text = "Recover"
+        StuForgPassRecovBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StuForgPassRecovBtn.UseAccentColor = False
+        StuForgPassRecovBtn.UseVisualStyleBackColor = True
+        ' 
+        ' StuForgPassStuNumBox
+        ' 
+        StuForgPassStuNumBox.AnimateReadOnly = False
+        StuForgPassStuNumBox.BorderStyle = BorderStyle.None
+        StuForgPassStuNumBox.Depth = 0
+        StuForgPassStuNumBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuForgPassStuNumBox.Hint = "Enter student number"
+        StuForgPassStuNumBox.LeadingIcon = Nothing
+        StuForgPassStuNumBox.Location = New Point(193, 306)
+        StuForgPassStuNumBox.MaxLength = 50
+        StuForgPassStuNumBox.MouseState = MaterialSkin.MouseState.OUT
+        StuForgPassStuNumBox.Multiline = False
+        StuForgPassStuNumBox.Name = "StuForgPassStuNumBox"
+        StuForgPassStuNumBox.Size = New Size(634, 50)
+        StuForgPassStuNumBox.TabIndex = 8
+        StuForgPassStuNumBox.Text = ""
+        StuForgPassStuNumBox.TrailingIcon = Nothing
+        StuForgPassStuNumBox.UseAccent = False
+        ' 
+        ' MaterialLabel52
+        ' 
+        MaterialLabel52.AutoSize = True
+        MaterialLabel52.Depth = 0
+        MaterialLabel52.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel52.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
+        MaterialLabel52.Location = New Point(400, 761)
+        MaterialLabel52.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel52.Name = "MaterialLabel52"
+        MaterialLabel52.Size = New Size(221, 14)
+        MaterialLabel52.TabIndex = 7
+        MaterialLabel52.Text = "Powered by College of Computer Studies"
+        MaterialLabel52.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel53
+        ' 
+        MaterialLabel53.AutoSize = True
+        MaterialLabel53.Depth = 0
+        MaterialLabel53.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel53.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
+        MaterialLabel53.Location = New Point(240, 59)
+        MaterialLabel53.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel53.Name = "MaterialLabel53"
+        MaterialLabel53.Size = New Size(541, 58)
+        MaterialLabel53.TabIndex = 0
+        MaterialLabel53.Text = "Student Forgot Password"
+        ' 
+        ' ProfForgPassCard
+        ' 
+        ProfForgPassCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        ProfForgPassCard.Controls.Add(MaterialLabel5)
+        ProfForgPassCard.Controls.Add(MaterialLabel19)
+        ProfForgPassCard.Controls.Add(ProfForgPassUsernameBox)
+        ProfForgPassCard.Controls.Add(MaterialLabel22)
+        ProfForgPassCard.Controls.Add(ProfForgPassEmailBox)
+        ProfForgPassCard.Controls.Add(MaterialLabel24)
+        ProfForgPassCard.Controls.Add(ProfForgPassBackBtn)
+        ProfForgPassCard.Controls.Add(MaterialLabel28)
+        ProfForgPassCard.Controls.Add(ProfForgPassRecovBtn)
+        ProfForgPassCard.Controls.Add(ProfForgPassFullNameBox)
+        ProfForgPassCard.Controls.Add(MaterialLabel29)
+        ProfForgPassCard.Controls.Add(MaterialLabel30)
+        ProfForgPassCard.Depth = 0
+        ProfForgPassCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        ProfForgPassCard.Location = New Point(448, 110)
+        ProfForgPassCard.Margin = New Padding(14)
+        ProfForgPassCard.MouseState = MaterialSkin.MouseState.HOVER
+        ProfForgPassCard.Name = "ProfForgPassCard"
+        ProfForgPassCard.Padding = New Padding(14)
+        ProfForgPassCard.Size = New Size(1021, 836)
+        ProfForgPassCard.TabIndex = 5
+        ProfForgPassCard.Visible = False
+        ' 
+        ' MaterialLabel5
+        ' 
+        MaterialLabel5.Depth = 0
+        MaterialLabel5.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        MaterialLabel5.Location = New Point(193, 588)
+        MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel5.Name = "MaterialLabel5"
+        MaterialLabel5.Size = New Size(634, 38)
+        MaterialLabel5.TabIndex = 23
+        MaterialLabel5.Text = "A QR Code will be sent to your provided valid school email, you can use it to login or scan the QR Code from your device to reveal your old password."
+        ' 
+        ' MaterialLabel19
+        ' 
+        MaterialLabel19.AutoSize = True
+        MaterialLabel19.Depth = 0
+        MaterialLabel19.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel19.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel19.Location = New Point(193, 446)
+        MaterialLabel19.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel19.Name = "MaterialLabel19"
+        MaterialLabel19.Size = New Size(92, 24)
+        MaterialLabel19.TabIndex = 22
+        MaterialLabel19.Text = "Username"
+        ' 
+        ' ProfForgPassUsernameBox
+        ' 
+        ProfForgPassUsernameBox.AnimateReadOnly = False
+        ProfForgPassUsernameBox.BorderStyle = BorderStyle.None
+        ProfForgPassUsernameBox.Depth = 0
+        ProfForgPassUsernameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfForgPassUsernameBox.Hint = "Enter username"
+        ProfForgPassUsernameBox.LeadingIcon = Nothing
+        ProfForgPassUsernameBox.Location = New Point(193, 483)
+        ProfForgPassUsernameBox.MaxLength = 50
+        ProfForgPassUsernameBox.MouseState = MaterialSkin.MouseState.OUT
+        ProfForgPassUsernameBox.Multiline = False
+        ProfForgPassUsernameBox.Name = "ProfForgPassUsernameBox"
+        ProfForgPassUsernameBox.Size = New Size(634, 50)
+        ProfForgPassUsernameBox.TabIndex = 21
+        ProfForgPassUsernameBox.Text = ""
+        ProfForgPassUsernameBox.TrailingIcon = Nothing
+        ProfForgPassUsernameBox.UseAccent = False
+        ' 
+        ' MaterialLabel22
+        ' 
+        MaterialLabel22.AutoSize = True
+        MaterialLabel22.Depth = 0
+        MaterialLabel22.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel22.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel22.Location = New Point(193, 330)
+        MaterialLabel22.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel22.Name = "MaterialLabel22"
+        MaterialLabel22.Size = New Size(126, 24)
+        MaterialLabel22.TabIndex = 20
+        MaterialLabel22.Text = "Email address"
+        ' 
+        ' ProfForgPassEmailBox
+        ' 
+        ProfForgPassEmailBox.AnimateReadOnly = False
+        ProfForgPassEmailBox.BorderStyle = BorderStyle.None
+        ProfForgPassEmailBox.Depth = 0
+        ProfForgPassEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfForgPassEmailBox.Hint = "Enter valid email - Eg. delacruz_juan@plpasig.edu.ph"
+        ProfForgPassEmailBox.LeadingIcon = Nothing
+        ProfForgPassEmailBox.Location = New Point(193, 367)
+        ProfForgPassEmailBox.MaxLength = 50
+        ProfForgPassEmailBox.MouseState = MaterialSkin.MouseState.OUT
+        ProfForgPassEmailBox.Multiline = False
+        ProfForgPassEmailBox.Name = "ProfForgPassEmailBox"
+        ProfForgPassEmailBox.Size = New Size(634, 50)
+        ProfForgPassEmailBox.TabIndex = 19
+        ProfForgPassEmailBox.Text = ""
+        ProfForgPassEmailBox.TrailingIcon = Nothing
+        ProfForgPassEmailBox.UseAccent = False
+        ' 
+        ' MaterialLabel24
+        ' 
+        MaterialLabel24.AutoSize = True
+        MaterialLabel24.Depth = 0
+        MaterialLabel24.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel24.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
+        MaterialLabel24.Location = New Point(315, 133)
+        MaterialLabel24.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel24.Name = "MaterialLabel24"
+        MaterialLabel24.RightToLeft = RightToLeft.No
+        MaterialLabel24.Size = New Size(391, 17)
+        MaterialLabel24.TabIndex = 18
+        MaterialLabel24.Text = "Please enter your full name, valid school email and username"
+        ' 
+        ' ProfForgPassBackBtn
+        ' 
+        ProfForgPassBackBtn.AutoSize = False
+        ProfForgPassBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfForgPassBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfForgPassBackBtn.Depth = 0
+        ProfForgPassBackBtn.DrawShadows = False
+        ProfForgPassBackBtn.HighEmphasis = True
+        ProfForgPassBackBtn.Icon = My.Resources.Resources.back__1_
+        ProfForgPassBackBtn.Location = New Point(18, 20)
+        ProfForgPassBackBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfForgPassBackBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfForgPassBackBtn.Name = "ProfForgPassBackBtn"
+        ProfForgPassBackBtn.NoAccentTextColor = Color.Empty
+        ProfForgPassBackBtn.Size = New Size(42, 36)
+        ProfForgPassBackBtn.TabIndex = 16
+        ProfForgPassBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
+        ProfForgPassBackBtn.UseAccentColor = False
+        ProfForgPassBackBtn.UseVisualStyleBackColor = True
+        ' 
+        ' MaterialLabel28
+        ' 
+        MaterialLabel28.AutoSize = True
+        MaterialLabel28.Depth = 0
+        MaterialLabel28.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel28.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel28.Location = New Point(193, 214)
+        MaterialLabel28.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel28.Name = "MaterialLabel28"
+        MaterialLabel28.Size = New Size(88, 24)
+        MaterialLabel28.TabIndex = 12
+        MaterialLabel28.Text = "Full name"
+        ' 
+        ' ProfForgPassRecovBtn
+        ' 
+        ProfForgPassRecovBtn.AutoSize = False
+        ProfForgPassRecovBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ProfForgPassRecovBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ProfForgPassRecovBtn.Depth = 0
+        ProfForgPassRecovBtn.HighEmphasis = True
+        ProfForgPassRecovBtn.Icon = Nothing
+        ProfForgPassRecovBtn.Location = New Point(193, 684)
+        ProfForgPassRecovBtn.Margin = New Padding(4, 6, 4, 6)
+        ProfForgPassRecovBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ProfForgPassRecovBtn.Name = "ProfForgPassRecovBtn"
+        ProfForgPassRecovBtn.NoAccentTextColor = Color.Empty
+        ProfForgPassRecovBtn.Size = New Size(634, 45)
+        ProfForgPassRecovBtn.TabIndex = 10
+        ProfForgPassRecovBtn.Text = "Recover"
+        ProfForgPassRecovBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ProfForgPassRecovBtn.UseAccentColor = False
+        ProfForgPassRecovBtn.UseVisualStyleBackColor = True
+        ' 
+        ' ProfForgPassFullNameBox
+        ' 
+        ProfForgPassFullNameBox.AnimateReadOnly = False
+        ProfForgPassFullNameBox.BorderStyle = BorderStyle.None
+        ProfForgPassFullNameBox.Depth = 0
+        ProfForgPassFullNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        ProfForgPassFullNameBox.Hint = "Enter full name - Eg. Juan B. Dela Cruz"
+        ProfForgPassFullNameBox.LeadingIcon = Nothing
+        ProfForgPassFullNameBox.Location = New Point(193, 251)
+        ProfForgPassFullNameBox.MaxLength = 50
+        ProfForgPassFullNameBox.MouseState = MaterialSkin.MouseState.OUT
+        ProfForgPassFullNameBox.Multiline = False
+        ProfForgPassFullNameBox.Name = "ProfForgPassFullNameBox"
+        ProfForgPassFullNameBox.Size = New Size(634, 50)
+        ProfForgPassFullNameBox.TabIndex = 8
+        ProfForgPassFullNameBox.Text = ""
+        ProfForgPassFullNameBox.TrailingIcon = Nothing
+        ProfForgPassFullNameBox.UseAccent = False
+        ' 
+        ' MaterialLabel29
+        ' 
+        MaterialLabel29.AutoSize = True
+        MaterialLabel29.Depth = 0
+        MaterialLabel29.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel29.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
+        MaterialLabel29.Location = New Point(400, 761)
+        MaterialLabel29.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel29.Name = "MaterialLabel29"
+        MaterialLabel29.Size = New Size(221, 14)
+        MaterialLabel29.TabIndex = 7
+        MaterialLabel29.Text = "Powered by College of Computer Studies"
+        MaterialLabel29.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel30
+        ' 
+        MaterialLabel30.AutoSize = True
+        MaterialLabel30.Depth = 0
+        MaterialLabel30.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel30.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
+        MaterialLabel30.Location = New Point(218, 59)
+        MaterialLabel30.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel30.Name = "MaterialLabel30"
+        MaterialLabel30.Size = New Size(585, 58)
+        MaterialLabel30.TabIndex = 0
+        MaterialLabel30.Text = "Professor Forgot Password"
         ' 
         ' StuRegCard
         ' 
@@ -1580,637 +2215,9 @@ Partial Class EntrancePage
         MaterialLabel1.TabIndex = 0
         MaterialLabel1.Text = "Online Registration System"
         ' 
-        ' StuQRCard
+        ' Timer1
         ' 
-        StuQRCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StuQRCard.Controls.Add(StuQRForgPass)
-        StuQRCard.Controls.Add(StuQRPicBox)
-        StuQRCard.Controls.Add(MaterialLabel44)
-        StuQRCard.Controls.Add(StuQRBackBtn)
-        StuQRCard.Controls.Add(MaterialLabel45)
-        StuQRCard.Controls.Add(MaterialLabel46)
-        StuQRCard.Controls.Add(MaterialLabel47)
-        StuQRCard.Depth = 0
-        StuQRCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StuQRCard.Location = New Point(448, 110)
-        StuQRCard.Margin = New Padding(14)
-        StuQRCard.MouseState = MaterialSkin.MouseState.HOVER
-        StuQRCard.Name = "StuQRCard"
-        StuQRCard.Padding = New Padding(14)
-        StuQRCard.Size = New Size(1021, 836)
-        StuQRCard.TabIndex = 8
-        StuQRCard.Visible = False
-        ' 
-        ' StuQRForgPass
-        ' 
-        StuQRForgPass.AutoSize = True
-        StuQRForgPass.Cursor = Cursors.Hand
-        StuQRForgPass.Depth = 0
-        StuQRForgPass.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuQRForgPass.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        StuQRForgPass.HighEmphasis = True
-        StuQRForgPass.Location = New Point(457, 688)
-        StuQRForgPass.MouseState = MaterialSkin.MouseState.HOVER
-        StuQRForgPass.Name = "StuQRForgPass"
-        StuQRForgPass.Size = New Size(107, 17)
-        StuQRForgPass.TabIndex = 20
-        StuQRForgPass.Text = "Forgot QR Code?"
-        ' 
-        ' StuQRPicBox
-        ' 
-        StuQRPicBox.BorderStyle = BorderStyle.FixedSingle
-        StuQRPicBox.Location = New Point(331, 318)
-        StuQRPicBox.Name = "StuQRPicBox"
-        StuQRPicBox.Size = New Size(358, 358)
-        StuQRPicBox.TabIndex = 19
-        StuQRPicBox.TabStop = False
-        ' 
-        ' MaterialLabel44
-        ' 
-        MaterialLabel44.AutoSize = True
-        MaterialLabel44.Depth = 0
-        MaterialLabel44.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel44.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
-        MaterialLabel44.Location = New Point(428, 133)
-        MaterialLabel44.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel44.Name = "MaterialLabel44"
-        MaterialLabel44.RightToLeft = RightToLeft.No
-        MaterialLabel44.Size = New Size(164, 17)
-        MaterialLabel44.TabIndex = 18
-        MaterialLabel44.Text = "Scan QR Code from Gmail"
-        ' 
-        ' StuQRBackBtn
-        ' 
-        StuQRBackBtn.AutoSize = False
-        StuQRBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        StuQRBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        StuQRBackBtn.Depth = 0
-        StuQRBackBtn.DrawShadows = False
-        StuQRBackBtn.HighEmphasis = True
-        StuQRBackBtn.Icon = My.Resources.Resources.back__1_
-        StuQRBackBtn.Location = New Point(18, 20)
-        StuQRBackBtn.Margin = New Padding(4, 6, 4, 6)
-        StuQRBackBtn.MouseState = MaterialSkin.MouseState.HOVER
-        StuQRBackBtn.Name = "StuQRBackBtn"
-        StuQRBackBtn.NoAccentTextColor = Color.Empty
-        StuQRBackBtn.Size = New Size(42, 36)
-        StuQRBackBtn.TabIndex = 16
-        StuQRBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
-        StuQRBackBtn.UseAccentColor = False
-        StuQRBackBtn.UseVisualStyleBackColor = True
-        ' 
-        ' MaterialLabel45
-        ' 
-        MaterialLabel45.Depth = 0
-        MaterialLabel45.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel45.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel45.Location = New Point(347, 180)
-        MaterialLabel45.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel45.Name = "MaterialLabel45"
-        MaterialLabel45.Size = New Size(326, 86)
-        MaterialLabel45.TabIndex = 12
-        MaterialLabel45.Text = "1. Open Gmail on your phone" & vbCrLf & "2. Go to inbox > Download QR Code" & vbCrLf & "3. Scan QR Code to Login"
-        ' 
-        ' MaterialLabel46
-        ' 
-        MaterialLabel46.AutoSize = True
-        MaterialLabel46.Depth = 0
-        MaterialLabel46.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel46.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel46.Location = New Point(400, 761)
-        MaterialLabel46.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel46.Name = "MaterialLabel46"
-        MaterialLabel46.Size = New Size(221, 14)
-        MaterialLabel46.TabIndex = 7
-        MaterialLabel46.Text = "Powered by College of Computer Studies"
-        MaterialLabel46.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel47
-        ' 
-        MaterialLabel47.AutoSize = True
-        MaterialLabel47.Depth = 0
-        MaterialLabel47.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel47.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
-        MaterialLabel47.Location = New Point(332, 59)
-        MaterialLabel47.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel47.Name = "MaterialLabel47"
-        MaterialLabel47.Size = New Size(357, 58)
-        MaterialLabel47.TabIndex = 0
-        MaterialLabel47.Text = "Student QR Scan"
-        ' 
-        ' ProfQRCard
-        ' 
-        ProfQRCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        ProfQRCard.Controls.Add(ProfQRForgPass)
-        ProfQRCard.Controls.Add(ProfQRPicBox)
-        ProfQRCard.Controls.Add(MaterialLabel32)
-        ProfQRCard.Controls.Add(ProfQRBackBtn)
-        ProfQRCard.Controls.Add(MaterialLabel33)
-        ProfQRCard.Controls.Add(MaterialLabel34)
-        ProfQRCard.Controls.Add(MaterialLabel35)
-        ProfQRCard.Depth = 0
-        ProfQRCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        ProfQRCard.Location = New Point(448, 110)
-        ProfQRCard.Margin = New Padding(14)
-        ProfQRCard.MouseState = MaterialSkin.MouseState.HOVER
-        ProfQRCard.Name = "ProfQRCard"
-        ProfQRCard.Padding = New Padding(14)
-        ProfQRCard.Size = New Size(1021, 836)
-        ProfQRCard.TabIndex = 6
-        ProfQRCard.Visible = False
-        ' 
-        ' ProfQRForgPass
-        ' 
-        ProfQRForgPass.AutoSize = True
-        ProfQRForgPass.Cursor = Cursors.Hand
-        ProfQRForgPass.Depth = 0
-        ProfQRForgPass.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        ProfQRForgPass.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        ProfQRForgPass.HighEmphasis = True
-        ProfQRForgPass.Location = New Point(457, 688)
-        ProfQRForgPass.MouseState = MaterialSkin.MouseState.HOVER
-        ProfQRForgPass.Name = "ProfQRForgPass"
-        ProfQRForgPass.Size = New Size(107, 17)
-        ProfQRForgPass.TabIndex = 20
-        ProfQRForgPass.Text = "Forgot QR Code?"
-        ' 
-        ' ProfQRPicBox
-        ' 
-        ProfQRPicBox.BorderStyle = BorderStyle.FixedSingle
-        ProfQRPicBox.Location = New Point(331, 318)
-        ProfQRPicBox.Name = "ProfQRPicBox"
-        ProfQRPicBox.Size = New Size(358, 358)
-        ProfQRPicBox.TabIndex = 19
-        ProfQRPicBox.TabStop = False
-        ' 
-        ' MaterialLabel32
-        ' 
-        MaterialLabel32.AutoSize = True
-        MaterialLabel32.Depth = 0
-        MaterialLabel32.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel32.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
-        MaterialLabel32.Location = New Point(428, 133)
-        MaterialLabel32.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel32.Name = "MaterialLabel32"
-        MaterialLabel32.RightToLeft = RightToLeft.No
-        MaterialLabel32.Size = New Size(164, 17)
-        MaterialLabel32.TabIndex = 18
-        MaterialLabel32.Text = "Scan QR Code from Gmail"
-        ' 
-        ' ProfQRBackBtn
-        ' 
-        ProfQRBackBtn.AutoSize = False
-        ProfQRBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ProfQRBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        ProfQRBackBtn.Depth = 0
-        ProfQRBackBtn.DrawShadows = False
-        ProfQRBackBtn.HighEmphasis = True
-        ProfQRBackBtn.Icon = My.Resources.Resources.back__1_
-        ProfQRBackBtn.Location = New Point(18, 20)
-        ProfQRBackBtn.Margin = New Padding(4, 6, 4, 6)
-        ProfQRBackBtn.MouseState = MaterialSkin.MouseState.HOVER
-        ProfQRBackBtn.Name = "ProfQRBackBtn"
-        ProfQRBackBtn.NoAccentTextColor = Color.Empty
-        ProfQRBackBtn.Size = New Size(42, 36)
-        ProfQRBackBtn.TabIndex = 16
-        ProfQRBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
-        ProfQRBackBtn.UseAccentColor = False
-        ProfQRBackBtn.UseVisualStyleBackColor = True
-        ' 
-        ' MaterialLabel33
-        ' 
-        MaterialLabel33.Depth = 0
-        MaterialLabel33.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel33.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel33.Location = New Point(347, 180)
-        MaterialLabel33.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel33.Name = "MaterialLabel33"
-        MaterialLabel33.Size = New Size(326, 86)
-        MaterialLabel33.TabIndex = 12
-        MaterialLabel33.Text = "1. Open Gmail on your phone" & vbCrLf & "2. Go to inbox > Download QR Code" & vbCrLf & "3. Scan QR Code to Login"
-        ' 
-        ' MaterialLabel34
-        ' 
-        MaterialLabel34.AutoSize = True
-        MaterialLabel34.Depth = 0
-        MaterialLabel34.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel34.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel34.Location = New Point(400, 761)
-        MaterialLabel34.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel34.Name = "MaterialLabel34"
-        MaterialLabel34.Size = New Size(221, 14)
-        MaterialLabel34.TabIndex = 7
-        MaterialLabel34.Text = "Powered by College of Computer Studies"
-        MaterialLabel34.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel35
-        ' 
-        MaterialLabel35.AutoSize = True
-        MaterialLabel35.Depth = 0
-        MaterialLabel35.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel35.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
-        MaterialLabel35.Location = New Point(310, 59)
-        MaterialLabel35.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel35.Name = "MaterialLabel35"
-        MaterialLabel35.Size = New Size(401, 58)
-        MaterialLabel35.TabIndex = 0
-        MaterialLabel35.Text = "Professor QR Scan"
-        ' 
-        ' StuForgPassCard
-        ' 
-        StuForgPassCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StuForgPassCard.Controls.Add(MaterialLabel4)
-        StuForgPassCard.Controls.Add(MaterialLabel49)
-        StuForgPassCard.Controls.Add(StuForgPassEmailBox)
-        StuForgPassCard.Controls.Add(MaterialLabel50)
-        StuForgPassCard.Controls.Add(StuForgPassBackBtn)
-        StuForgPassCard.Controls.Add(MaterialLabel51)
-        StuForgPassCard.Controls.Add(StuForgPassRecovBtn)
-        StuForgPassCard.Controls.Add(StuForgPassStuNumBox)
-        StuForgPassCard.Controls.Add(MaterialLabel52)
-        StuForgPassCard.Controls.Add(MaterialLabel53)
-        StuForgPassCard.Depth = 0
-        StuForgPassCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StuForgPassCard.Location = New Point(448, 110)
-        StuForgPassCard.Margin = New Padding(14)
-        StuForgPassCard.MouseState = MaterialSkin.MouseState.HOVER
-        StuForgPassCard.Name = "StuForgPassCard"
-        StuForgPassCard.Padding = New Padding(14)
-        StuForgPassCard.Size = New Size(1021, 836)
-        StuForgPassCard.TabIndex = 9
-        StuForgPassCard.Visible = False
-        ' 
-        ' MaterialLabel4
-        ' 
-        MaterialLabel4.Depth = 0
-        MaterialLabel4.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        MaterialLabel4.Location = New Point(193, 547)
-        MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel4.Name = "MaterialLabel4"
-        MaterialLabel4.Size = New Size(634, 38)
-        MaterialLabel4.TabIndex = 21
-        MaterialLabel4.Text = "A QR Code will be sent to your provided valid school email, you can use it to login or scan the QR Code from your device to reveal your old password."
-        ' 
-        ' MaterialLabel49
-        ' 
-        MaterialLabel49.AutoSize = True
-        MaterialLabel49.Depth = 0
-        MaterialLabel49.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel49.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel49.Location = New Point(193, 385)
-        MaterialLabel49.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel49.Name = "MaterialLabel49"
-        MaterialLabel49.Size = New Size(126, 24)
-        MaterialLabel49.TabIndex = 20
-        MaterialLabel49.Text = "Email address"
-        ' 
-        ' StuForgPassEmailBox
-        ' 
-        StuForgPassEmailBox.AnimateReadOnly = False
-        StuForgPassEmailBox.BorderStyle = BorderStyle.None
-        StuForgPassEmailBox.Depth = 0
-        StuForgPassEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuForgPassEmailBox.Hint = "Enter email address"
-        StuForgPassEmailBox.LeadingIcon = Nothing
-        StuForgPassEmailBox.Location = New Point(193, 422)
-        StuForgPassEmailBox.MaxLength = 50
-        StuForgPassEmailBox.MouseState = MaterialSkin.MouseState.OUT
-        StuForgPassEmailBox.Multiline = False
-        StuForgPassEmailBox.Name = "StuForgPassEmailBox"
-        StuForgPassEmailBox.Size = New Size(634, 50)
-        StuForgPassEmailBox.TabIndex = 19
-        StuForgPassEmailBox.Text = ""
-        StuForgPassEmailBox.TrailingIcon = Nothing
-        StuForgPassEmailBox.UseAccent = False
-        ' 
-        ' MaterialLabel50
-        ' 
-        MaterialLabel50.AutoSize = True
-        MaterialLabel50.Depth = 0
-        MaterialLabel50.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel50.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
-        MaterialLabel50.Location = New Point(316, 133)
-        MaterialLabel50.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel50.Name = "MaterialLabel50"
-        MaterialLabel50.RightToLeft = RightToLeft.No
-        MaterialLabel50.Size = New Size(388, 17)
-        MaterialLabel50.TabIndex = 18
-        MaterialLabel50.Text = "Please enter you student number and your valid school email"
-        ' 
-        ' StuForgPassBackBtn
-        ' 
-        StuForgPassBackBtn.AutoSize = False
-        StuForgPassBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        StuForgPassBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        StuForgPassBackBtn.Depth = 0
-        StuForgPassBackBtn.DrawShadows = False
-        StuForgPassBackBtn.HighEmphasis = True
-        StuForgPassBackBtn.Icon = My.Resources.Resources.back__1_
-        StuForgPassBackBtn.Location = New Point(18, 20)
-        StuForgPassBackBtn.Margin = New Padding(4, 6, 4, 6)
-        StuForgPassBackBtn.MouseState = MaterialSkin.MouseState.HOVER
-        StuForgPassBackBtn.Name = "StuForgPassBackBtn"
-        StuForgPassBackBtn.NoAccentTextColor = Color.Empty
-        StuForgPassBackBtn.Size = New Size(42, 36)
-        StuForgPassBackBtn.TabIndex = 16
-        StuForgPassBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
-        StuForgPassBackBtn.UseAccentColor = False
-        StuForgPassBackBtn.UseVisualStyleBackColor = True
-        ' 
-        ' MaterialLabel51
-        ' 
-        MaterialLabel51.AutoSize = True
-        MaterialLabel51.Depth = 0
-        MaterialLabel51.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel51.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel51.Location = New Point(193, 269)
-        MaterialLabel51.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel51.Name = "MaterialLabel51"
-        MaterialLabel51.Size = New Size(144, 24)
-        MaterialLabel51.TabIndex = 12
-        MaterialLabel51.Text = "Student number"
-        ' 
-        ' StuForgPassRecovBtn
-        ' 
-        StuForgPassRecovBtn.AutoSize = False
-        StuForgPassRecovBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        StuForgPassRecovBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        StuForgPassRecovBtn.Depth = 0
-        StuForgPassRecovBtn.HighEmphasis = True
-        StuForgPassRecovBtn.Icon = Nothing
-        StuForgPassRecovBtn.Location = New Point(193, 684)
-        StuForgPassRecovBtn.Margin = New Padding(4, 6, 4, 6)
-        StuForgPassRecovBtn.MouseState = MaterialSkin.MouseState.HOVER
-        StuForgPassRecovBtn.Name = "StuForgPassRecovBtn"
-        StuForgPassRecovBtn.NoAccentTextColor = Color.Empty
-        StuForgPassRecovBtn.Size = New Size(634, 45)
-        StuForgPassRecovBtn.TabIndex = 10
-        StuForgPassRecovBtn.Text = "Recover"
-        StuForgPassRecovBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        StuForgPassRecovBtn.UseAccentColor = False
-        StuForgPassRecovBtn.UseVisualStyleBackColor = True
-        ' 
-        ' StuForgPassStuNumBox
-        ' 
-        StuForgPassStuNumBox.AnimateReadOnly = False
-        StuForgPassStuNumBox.BorderStyle = BorderStyle.None
-        StuForgPassStuNumBox.Depth = 0
-        StuForgPassStuNumBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuForgPassStuNumBox.Hint = "Enter student number"
-        StuForgPassStuNumBox.LeadingIcon = Nothing
-        StuForgPassStuNumBox.Location = New Point(193, 306)
-        StuForgPassStuNumBox.MaxLength = 50
-        StuForgPassStuNumBox.MouseState = MaterialSkin.MouseState.OUT
-        StuForgPassStuNumBox.Multiline = False
-        StuForgPassStuNumBox.Name = "StuForgPassStuNumBox"
-        StuForgPassStuNumBox.Size = New Size(634, 50)
-        StuForgPassStuNumBox.TabIndex = 8
-        StuForgPassStuNumBox.Text = ""
-        StuForgPassStuNumBox.TrailingIcon = Nothing
-        StuForgPassStuNumBox.UseAccent = False
-        ' 
-        ' MaterialLabel52
-        ' 
-        MaterialLabel52.AutoSize = True
-        MaterialLabel52.Depth = 0
-        MaterialLabel52.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel52.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel52.Location = New Point(400, 761)
-        MaterialLabel52.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel52.Name = "MaterialLabel52"
-        MaterialLabel52.Size = New Size(221, 14)
-        MaterialLabel52.TabIndex = 7
-        MaterialLabel52.Text = "Powered by College of Computer Studies"
-        MaterialLabel52.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel53
-        ' 
-        MaterialLabel53.AutoSize = True
-        MaterialLabel53.Depth = 0
-        MaterialLabel53.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel53.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
-        MaterialLabel53.Location = New Point(240, 59)
-        MaterialLabel53.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel53.Name = "MaterialLabel53"
-        MaterialLabel53.Size = New Size(541, 58)
-        MaterialLabel53.TabIndex = 0
-        MaterialLabel53.Text = "Student Forgot Password"
-        ' 
-        ' ProfForgPassCard
-        ' 
-        ProfForgPassCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        ProfForgPassCard.Controls.Add(MaterialLabel5)
-        ProfForgPassCard.Controls.Add(MaterialLabel19)
-        ProfForgPassCard.Controls.Add(ProfForgPassUsernameBox)
-        ProfForgPassCard.Controls.Add(MaterialLabel22)
-        ProfForgPassCard.Controls.Add(ProfForgPassEmailBox)
-        ProfForgPassCard.Controls.Add(MaterialLabel24)
-        ProfForgPassCard.Controls.Add(ProfForgPassBackBtn)
-        ProfForgPassCard.Controls.Add(MaterialLabel28)
-        ProfForgPassCard.Controls.Add(ProfForgPassRecovBtn)
-        ProfForgPassCard.Controls.Add(ProfForgPassFullNameBox)
-        ProfForgPassCard.Controls.Add(MaterialLabel29)
-        ProfForgPassCard.Controls.Add(MaterialLabel30)
-        ProfForgPassCard.Depth = 0
-        ProfForgPassCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        ProfForgPassCard.Location = New Point(448, 110)
-        ProfForgPassCard.Margin = New Padding(14)
-        ProfForgPassCard.MouseState = MaterialSkin.MouseState.HOVER
-        ProfForgPassCard.Name = "ProfForgPassCard"
-        ProfForgPassCard.Padding = New Padding(14)
-        ProfForgPassCard.Size = New Size(1021, 836)
-        ProfForgPassCard.TabIndex = 5
-        ProfForgPassCard.Visible = False
-        ' 
-        ' MaterialLabel5
-        ' 
-        MaterialLabel5.Depth = 0
-        MaterialLabel5.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        MaterialLabel5.Location = New Point(193, 588)
-        MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel5.Name = "MaterialLabel5"
-        MaterialLabel5.Size = New Size(634, 38)
-        MaterialLabel5.TabIndex = 23
-        MaterialLabel5.Text = "A QR Code will be sent to your provided valid school email, you can use it to login or scan the QR Code from your device to reveal your old password."
-        ' 
-        ' MaterialLabel19
-        ' 
-        MaterialLabel19.AutoSize = True
-        MaterialLabel19.Depth = 0
-        MaterialLabel19.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel19.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel19.Location = New Point(193, 446)
-        MaterialLabel19.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel19.Name = "MaterialLabel19"
-        MaterialLabel19.Size = New Size(92, 24)
-        MaterialLabel19.TabIndex = 22
-        MaterialLabel19.Text = "Username"
-        ' 
-        ' ProfForgPassUsernameBox
-        ' 
-        ProfForgPassUsernameBox.AnimateReadOnly = False
-        ProfForgPassUsernameBox.BorderStyle = BorderStyle.None
-        ProfForgPassUsernameBox.Depth = 0
-        ProfForgPassUsernameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        ProfForgPassUsernameBox.Hint = "Enter username"
-        ProfForgPassUsernameBox.LeadingIcon = Nothing
-        ProfForgPassUsernameBox.Location = New Point(193, 483)
-        ProfForgPassUsernameBox.MaxLength = 50
-        ProfForgPassUsernameBox.MouseState = MaterialSkin.MouseState.OUT
-        ProfForgPassUsernameBox.Multiline = False
-        ProfForgPassUsernameBox.Name = "ProfForgPassUsernameBox"
-        ProfForgPassUsernameBox.Size = New Size(634, 50)
-        ProfForgPassUsernameBox.TabIndex = 21
-        ProfForgPassUsernameBox.Text = ""
-        ProfForgPassUsernameBox.TrailingIcon = Nothing
-        ProfForgPassUsernameBox.UseAccent = False
-        ' 
-        ' MaterialLabel22
-        ' 
-        MaterialLabel22.AutoSize = True
-        MaterialLabel22.Depth = 0
-        MaterialLabel22.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel22.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel22.Location = New Point(193, 330)
-        MaterialLabel22.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel22.Name = "MaterialLabel22"
-        MaterialLabel22.Size = New Size(126, 24)
-        MaterialLabel22.TabIndex = 20
-        MaterialLabel22.Text = "Email address"
-        ' 
-        ' ProfForgPassEmailBox
-        ' 
-        ProfForgPassEmailBox.AnimateReadOnly = False
-        ProfForgPassEmailBox.BorderStyle = BorderStyle.None
-        ProfForgPassEmailBox.Depth = 0
-        ProfForgPassEmailBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        ProfForgPassEmailBox.Hint = "Enter valid email - Eg. delacruz_juan@plpasig.edu.ph"
-        ProfForgPassEmailBox.LeadingIcon = Nothing
-        ProfForgPassEmailBox.Location = New Point(193, 367)
-        ProfForgPassEmailBox.MaxLength = 50
-        ProfForgPassEmailBox.MouseState = MaterialSkin.MouseState.OUT
-        ProfForgPassEmailBox.Multiline = False
-        ProfForgPassEmailBox.Name = "ProfForgPassEmailBox"
-        ProfForgPassEmailBox.Size = New Size(634, 50)
-        ProfForgPassEmailBox.TabIndex = 19
-        ProfForgPassEmailBox.Text = ""
-        ProfForgPassEmailBox.TrailingIcon = Nothing
-        ProfForgPassEmailBox.UseAccent = False
-        ' 
-        ' MaterialLabel24
-        ' 
-        MaterialLabel24.AutoSize = True
-        MaterialLabel24.Depth = 0
-        MaterialLabel24.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel24.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
-        MaterialLabel24.Location = New Point(315, 133)
-        MaterialLabel24.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel24.Name = "MaterialLabel24"
-        MaterialLabel24.RightToLeft = RightToLeft.No
-        MaterialLabel24.Size = New Size(391, 17)
-        MaterialLabel24.TabIndex = 18
-        MaterialLabel24.Text = "Please enter your full name, valid school email and username"
-        ' 
-        ' ProfForgPassBackBtn
-        ' 
-        ProfForgPassBackBtn.AutoSize = False
-        ProfForgPassBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ProfForgPassBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        ProfForgPassBackBtn.Depth = 0
-        ProfForgPassBackBtn.DrawShadows = False
-        ProfForgPassBackBtn.HighEmphasis = True
-        ProfForgPassBackBtn.Icon = My.Resources.Resources.back__1_
-        ProfForgPassBackBtn.Location = New Point(18, 20)
-        ProfForgPassBackBtn.Margin = New Padding(4, 6, 4, 6)
-        ProfForgPassBackBtn.MouseState = MaterialSkin.MouseState.HOVER
-        ProfForgPassBackBtn.Name = "ProfForgPassBackBtn"
-        ProfForgPassBackBtn.NoAccentTextColor = Color.Empty
-        ProfForgPassBackBtn.Size = New Size(42, 36)
-        ProfForgPassBackBtn.TabIndex = 16
-        ProfForgPassBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
-        ProfForgPassBackBtn.UseAccentColor = False
-        ProfForgPassBackBtn.UseVisualStyleBackColor = True
-        ' 
-        ' MaterialLabel28
-        ' 
-        MaterialLabel28.AutoSize = True
-        MaterialLabel28.Depth = 0
-        MaterialLabel28.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel28.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel28.Location = New Point(193, 214)
-        MaterialLabel28.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel28.Name = "MaterialLabel28"
-        MaterialLabel28.Size = New Size(88, 24)
-        MaterialLabel28.TabIndex = 12
-        MaterialLabel28.Text = "Full name"
-        ' 
-        ' ProfForgPassRecovBtn
-        ' 
-        ProfForgPassRecovBtn.AutoSize = False
-        ProfForgPassRecovBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ProfForgPassRecovBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        ProfForgPassRecovBtn.Depth = 0
-        ProfForgPassRecovBtn.HighEmphasis = True
-        ProfForgPassRecovBtn.Icon = Nothing
-        ProfForgPassRecovBtn.Location = New Point(193, 684)
-        ProfForgPassRecovBtn.Margin = New Padding(4, 6, 4, 6)
-        ProfForgPassRecovBtn.MouseState = MaterialSkin.MouseState.HOVER
-        ProfForgPassRecovBtn.Name = "ProfForgPassRecovBtn"
-        ProfForgPassRecovBtn.NoAccentTextColor = Color.Empty
-        ProfForgPassRecovBtn.Size = New Size(634, 45)
-        ProfForgPassRecovBtn.TabIndex = 10
-        ProfForgPassRecovBtn.Text = "Recover"
-        ProfForgPassRecovBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        ProfForgPassRecovBtn.UseAccentColor = False
-        ProfForgPassRecovBtn.UseVisualStyleBackColor = True
-        ' 
-        ' ProfForgPassFullNameBox
-        ' 
-        ProfForgPassFullNameBox.AnimateReadOnly = False
-        ProfForgPassFullNameBox.BorderStyle = BorderStyle.None
-        ProfForgPassFullNameBox.Depth = 0
-        ProfForgPassFullNameBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
-        ProfForgPassFullNameBox.Hint = "Enter full name - Eg. Juan B. Dela Cruz"
-        ProfForgPassFullNameBox.LeadingIcon = Nothing
-        ProfForgPassFullNameBox.Location = New Point(193, 251)
-        ProfForgPassFullNameBox.MaxLength = 50
-        ProfForgPassFullNameBox.MouseState = MaterialSkin.MouseState.OUT
-        ProfForgPassFullNameBox.Multiline = False
-        ProfForgPassFullNameBox.Name = "ProfForgPassFullNameBox"
-        ProfForgPassFullNameBox.Size = New Size(634, 50)
-        ProfForgPassFullNameBox.TabIndex = 8
-        ProfForgPassFullNameBox.Text = ""
-        ProfForgPassFullNameBox.TrailingIcon = Nothing
-        ProfForgPassFullNameBox.UseAccent = False
-        ' 
-        ' MaterialLabel29
-        ' 
-        MaterialLabel29.AutoSize = True
-        MaterialLabel29.Depth = 0
-        MaterialLabel29.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel29.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel29.Location = New Point(400, 761)
-        MaterialLabel29.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel29.Name = "MaterialLabel29"
-        MaterialLabel29.Size = New Size(221, 14)
-        MaterialLabel29.TabIndex = 7
-        MaterialLabel29.Text = "Powered by College of Computer Studies"
-        MaterialLabel29.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel30
-        ' 
-        MaterialLabel30.AutoSize = True
-        MaterialLabel30.Depth = 0
-        MaterialLabel30.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel30.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
-        MaterialLabel30.Location = New Point(218, 59)
-        MaterialLabel30.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel30.Name = "MaterialLabel30"
-        MaterialLabel30.Size = New Size(585, 58)
-        MaterialLabel30.TabIndex = 0
-        MaterialLabel30.Text = "Professor Forgot Password"
+        Timer1.Interval = 1000
         ' 
         ' EntrancePage
         ' 
@@ -2229,6 +2236,16 @@ Partial Class EntrancePage
         Text = "Pamantasan ng Lungsod ng Pasig"
         WindowState = FormWindowState.Maximized
         MaterialCard1.ResumeLayout(False)
+        StuQRCard.ResumeLayout(False)
+        StuQRCard.PerformLayout()
+        CType(StuQRPicBox, ComponentModel.ISupportInitialize).EndInit()
+        ProfQRCard.ResumeLayout(False)
+        ProfQRCard.PerformLayout()
+        CType(ProfQRPicBox, ComponentModel.ISupportInitialize).EndInit()
+        StuForgPassCard.ResumeLayout(False)
+        StuForgPassCard.PerformLayout()
+        ProfForgPassCard.ResumeLayout(False)
+        ProfForgPassCard.PerformLayout()
         StuRegCard.ResumeLayout(False)
         StuRegCard.PerformLayout()
         ProfRegCard.ResumeLayout(False)
@@ -2250,16 +2267,6 @@ Partial Class EntrancePage
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        StuQRCard.ResumeLayout(False)
-        StuQRCard.PerformLayout()
-        CType(StuQRPicBox, ComponentModel.ISupportInitialize).EndInit()
-        ProfQRCard.ResumeLayout(False)
-        ProfQRCard.PerformLayout()
-        CType(ProfQRPicBox, ComponentModel.ISupportInitialize).EndInit()
-        StuForgPassCard.ResumeLayout(False)
-        StuForgPassCard.PerformLayout()
-        ProfForgPassCard.ResumeLayout(False)
-        ProfForgPassCard.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -2389,5 +2396,6 @@ Partial Class EntrancePage
     Friend WithEvents MaterialLabel4 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel5 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel6 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents Timer1 As Timer
 
 End Class
