@@ -85,4 +85,102 @@ Public Class ProfessorDashboard
         ProfDataGrid.DataSource = dt
     End Sub
 
+    Private Sub ProfSearchProf_TextChanged(sender As Object, e As EventArgs) Handles ProfSearchProf.TextChanged
+        If ProfSearchProf.Text = "" Then
+            ProfLoadData()
+        Else
+            conn.Open()
+            Dim cmd As New MySqlCommand("SELECT * FROM profinfo WHERE CONCAT(name, email, username, password) like '%" & ProfSearchProf.Text & "%'", conn)
+
+            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim table As New DataTable
+
+            adapter.Fill(table)
+
+            cmd.ExecuteNonQuery()
+
+            ProfDataGrid.DataSource = table
+            conn.Close()
+        End If
+    End Sub
+
+    Private Sub ProfClrBtn_Click(sender As Object, e As EventArgs) Handles ProfClrBtn.Click
+        ProfProfName.Clear()
+        ProfEmail.Clear()
+        ProfUsername.Clear()
+        ProfPass.Clear()
+    End Sub
+
+    Private Sub ProfDelBtn_Click(sender As Object, e As EventArgs) Handles ProfDelBtn.Click
+        If ProfUsername.Text Or ProfPass.Text = "" Then
+            MessageBox.Show("Unable to Delete a Professor, Select a Username first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim ask As MsgBoxResult
+            ask = MsgBox("Do you really want to Delete this Professor?", MsgBoxStyle.YesNo, "Online Registration System")
+            If ask = MsgBoxResult.Yes Then
+                conn.Open()
+                Dim cmd As New MySqlCommand("DELETE FROM profinfo WHERE username = '" & ProfUsername.Text & "'", conn)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Successfully Deleted!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ProfClrBtn.PerformClick()
+                conn.Close()
+                ProfLoadData()
+            End If
+        End If
+    End Sub
+
+    Private Sub ProfUpdBtn_Click(sender As Object, e As EventArgs) Handles ProfUpdBtn.Click
+        If ProfProfName.Text = "" Or ProfEmail.Text = "" Or ProfUsername.Text = "" Or ProfPass.Text = "" Then
+            MessageBox.Show("Unable to Update a Team, Fill up all the fields first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            conn.Open()
+            Dim cmd As New MySqlCommand("UPDATE profinfo SET name = '" & ProfProfName.Text & "', email = '" & ProfEmail.Text & "', password = '" & ProfPass.Text & "'  WHERE username = '" & ProfUsername.Text & "'", conn)
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Successfully Updated!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ProfClrBtn.PerformClick()
+            conn.Close()
+            ProfLoadData()
+        End If
+    End Sub
+
+    Private Sub ProfAddBtn_Click(sender As Object, e As EventArgs) Handles ProfAddBtn.Click
+        Try
+            If ProfProfName.Text = "" Or ProfEmail.Text = "" Or ProfUsername.Text = "" Or ProfPass.Text = "" Then
+                MessageBox.Show("Unable to Insert a Professor, Fill up all the fields first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                conn.Open()
+                Dim cmd As New MySqlCommand("INSERT INTO profinfo VALUES ('" & ProfProfName.Text & "', '" & ProfEmail.Text & "', '" & ProfUsername.Text & "', '" & ProfPass.Text & "')", conn)
+
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Successfully Added!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ProfClrBtn.PerformClick()
+                conn.Close()
+                ProfLoadData()
+
+                ' Update the ProfComboBox in the Student Dashboard
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Unable to Insert a Professor, Username is already taken!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            conn.Close()
+            ProfLoadData()
+        End Try
+    End Sub
+
+    Private Sub ProfDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProfDataGrid.CellContentClick
+        Try
+            Dim index As Integer
+            index = e.RowIndex
+
+            Dim row As DataGridViewRow
+            row = ProfDataGrid.Rows(index)
+
+            ProfProfName.Text = row.Cells(0).Value.ToString
+            ProfEmail.Text = row.Cells(1).Value.ToString
+            ProfUsername.Text = row.Cells(2).Value.ToString
+            ProfPass.Text = row.Cells(3).Value.ToString
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class

@@ -25,14 +25,6 @@ Partial Class EntrancePage
         components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EntrancePage))
         MaterialCard1 = New MaterialSkin.Controls.MaterialCard()
-        StuQRCard = New MaterialSkin.Controls.MaterialCard()
-        StuQRForgPass = New MaterialSkin.Controls.MaterialLabel()
-        StuQRPicBox = New PictureBox()
-        MaterialLabel44 = New MaterialSkin.Controls.MaterialLabel()
-        StuQRBackBtn = New MaterialSkin.Controls.MaterialButton()
-        MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel46 = New MaterialSkin.Controls.MaterialLabel()
-        MaterialLabel47 = New MaterialSkin.Controls.MaterialLabel()
         ProfQRCard = New MaterialSkin.Controls.MaterialCard()
         ProfQRForgPass = New MaterialSkin.Controls.MaterialLabel()
         ProfQRPicBox = New PictureBox()
@@ -150,10 +142,17 @@ Partial Class EntrancePage
         PictureBox2 = New PictureBox()
         PictureBox1 = New PictureBox()
         MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
+        StuQRCard = New MaterialSkin.Controls.MaterialCard()
+        StuQRForgPass = New MaterialSkin.Controls.MaterialLabel()
+        StuQRPicBox = New PictureBox()
+        MaterialLabel44 = New MaterialSkin.Controls.MaterialLabel()
+        StuQRBackBtn = New MaterialSkin.Controls.MaterialButton()
+        MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel46 = New MaterialSkin.Controls.MaterialLabel()
+        MaterialLabel47 = New MaterialSkin.Controls.MaterialLabel()
         Timer1 = New Timer(components)
+        Timer2 = New Timer(components)
         MaterialCard1.SuspendLayout()
-        StuQRCard.SuspendLayout()
-        CType(StuQRPicBox, ComponentModel.ISupportInitialize).BeginInit()
         ProfQRCard.SuspendLayout()
         CType(ProfQRPicBox, ComponentModel.ISupportInitialize).BeginInit()
         StuForgPassCard.SuspendLayout()
@@ -172,20 +171,22 @@ Partial Class EntrancePage
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        StuQRCard.SuspendLayout()
+        CType(StuQRPicBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MaterialCard1
         ' 
         MaterialCard1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        MaterialCard1.Controls.Add(ProfLogCard)
-        MaterialCard1.Controls.Add(ChooseUserCard)
-        MaterialCard1.Controls.Add(StuQRCard)
         MaterialCard1.Controls.Add(ProfQRCard)
         MaterialCard1.Controls.Add(StuForgPassCard)
         MaterialCard1.Controls.Add(ProfForgPassCard)
         MaterialCard1.Controls.Add(StuRegCard)
         MaterialCard1.Controls.Add(ProfRegCard)
         MaterialCard1.Controls.Add(StudentLoginCard)
+        MaterialCard1.Controls.Add(ProfLogCard)
+        MaterialCard1.Controls.Add(ChooseUserCard)
+        MaterialCard1.Controls.Add(StuQRCard)
         MaterialCard1.Depth = 0
         MaterialCard1.Dock = DockStyle.Fill
         MaterialCard1.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
@@ -196,125 +197,6 @@ Partial Class EntrancePage
         MaterialCard1.Padding = New Padding(14)
         MaterialCard1.Size = New Size(1917, 1056)
         MaterialCard1.TabIndex = 0
-        ' 
-        ' StuQRCard
-        ' 
-        StuQRCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
-        StuQRCard.Controls.Add(StuQRForgPass)
-        StuQRCard.Controls.Add(StuQRPicBox)
-        StuQRCard.Controls.Add(MaterialLabel44)
-        StuQRCard.Controls.Add(StuQRBackBtn)
-        StuQRCard.Controls.Add(MaterialLabel45)
-        StuQRCard.Controls.Add(MaterialLabel46)
-        StuQRCard.Controls.Add(MaterialLabel47)
-        StuQRCard.Depth = 0
-        StuQRCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        StuQRCard.Location = New Point(448, 110)
-        StuQRCard.Margin = New Padding(14)
-        StuQRCard.MouseState = MaterialSkin.MouseState.HOVER
-        StuQRCard.Name = "StuQRCard"
-        StuQRCard.Padding = New Padding(14)
-        StuQRCard.Size = New Size(1021, 836)
-        StuQRCard.TabIndex = 8
-        StuQRCard.Visible = False
-        ' 
-        ' StuQRForgPass
-        ' 
-        StuQRForgPass.AutoSize = True
-        StuQRForgPass.Cursor = Cursors.Hand
-        StuQRForgPass.Depth = 0
-        StuQRForgPass.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        StuQRForgPass.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        StuQRForgPass.HighEmphasis = True
-        StuQRForgPass.Location = New Point(457, 688)
-        StuQRForgPass.MouseState = MaterialSkin.MouseState.HOVER
-        StuQRForgPass.Name = "StuQRForgPass"
-        StuQRForgPass.Size = New Size(107, 17)
-        StuQRForgPass.TabIndex = 20
-        StuQRForgPass.Text = "Forgot QR Code?"
-        ' 
-        ' StuQRPicBox
-        ' 
-        StuQRPicBox.BorderStyle = BorderStyle.FixedSingle
-        StuQRPicBox.Location = New Point(331, 318)
-        StuQRPicBox.Name = "StuQRPicBox"
-        StuQRPicBox.Size = New Size(358, 358)
-        StuQRPicBox.SizeMode = PictureBoxSizeMode.CenterImage
-        StuQRPicBox.TabIndex = 19
-        StuQRPicBox.TabStop = False
-        ' 
-        ' MaterialLabel44
-        ' 
-        MaterialLabel44.AutoSize = True
-        MaterialLabel44.Depth = 0
-        MaterialLabel44.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel44.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
-        MaterialLabel44.Location = New Point(428, 133)
-        MaterialLabel44.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel44.Name = "MaterialLabel44"
-        MaterialLabel44.RightToLeft = RightToLeft.No
-        MaterialLabel44.Size = New Size(164, 17)
-        MaterialLabel44.TabIndex = 18
-        MaterialLabel44.Text = "Scan QR Code from Gmail"
-        ' 
-        ' StuQRBackBtn
-        ' 
-        StuQRBackBtn.AutoSize = False
-        StuQRBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        StuQRBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        StuQRBackBtn.Depth = 0
-        StuQRBackBtn.DrawShadows = False
-        StuQRBackBtn.HighEmphasis = True
-        StuQRBackBtn.Icon = My.Resources.Resources.back__1_
-        StuQRBackBtn.Location = New Point(18, 20)
-        StuQRBackBtn.Margin = New Padding(4, 6, 4, 6)
-        StuQRBackBtn.MouseState = MaterialSkin.MouseState.HOVER
-        StuQRBackBtn.Name = "StuQRBackBtn"
-        StuQRBackBtn.NoAccentTextColor = Color.Empty
-        StuQRBackBtn.Size = New Size(42, 36)
-        StuQRBackBtn.TabIndex = 16
-        StuQRBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
-        StuQRBackBtn.UseAccentColor = False
-        StuQRBackBtn.UseVisualStyleBackColor = True
-        ' 
-        ' MaterialLabel45
-        ' 
-        MaterialLabel45.Depth = 0
-        MaterialLabel45.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel45.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel45.Location = New Point(347, 180)
-        MaterialLabel45.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel45.Name = "MaterialLabel45"
-        MaterialLabel45.Size = New Size(326, 86)
-        MaterialLabel45.TabIndex = 12
-        MaterialLabel45.Text = "1. Open Gmail on your phone" & vbCrLf & "2. Go to inbox > Download QR Code" & vbCrLf & "3. Scan QR Code to Login"
-        ' 
-        ' MaterialLabel46
-        ' 
-        MaterialLabel46.AutoSize = True
-        MaterialLabel46.Depth = 0
-        MaterialLabel46.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel46.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel46.Location = New Point(400, 761)
-        MaterialLabel46.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel46.Name = "MaterialLabel46"
-        MaterialLabel46.Size = New Size(221, 14)
-        MaterialLabel46.TabIndex = 7
-        MaterialLabel46.Text = "Powered by College of Computer Studies"
-        MaterialLabel46.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MaterialLabel47
-        ' 
-        MaterialLabel47.AutoSize = True
-        MaterialLabel47.Depth = 0
-        MaterialLabel47.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel47.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
-        MaterialLabel47.Location = New Point(332, 59)
-        MaterialLabel47.MouseState = MaterialSkin.MouseState.HOVER
-        MaterialLabel47.Name = "MaterialLabel47"
-        MaterialLabel47.Size = New Size(357, 58)
-        MaterialLabel47.TabIndex = 0
-        MaterialLabel47.Text = "Student QR Scan"
         ' 
         ' ProfQRCard
         ' 
@@ -358,6 +240,7 @@ Partial Class EntrancePage
         ProfQRPicBox.Location = New Point(331, 318)
         ProfQRPicBox.Name = "ProfQRPicBox"
         ProfQRPicBox.Size = New Size(358, 358)
+        ProfQRPicBox.SizeMode = PictureBoxSizeMode.CenterImage
         ProfQRPicBox.TabIndex = 19
         ProfQRPicBox.TabStop = False
         ' 
@@ -2016,12 +1899,12 @@ Partial Class EntrancePage
         ChooseStudentCard.Cursor = Cursors.Hand
         ChooseStudentCard.Depth = 0
         ChooseStudentCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        ChooseStudentCard.Location = New Point(524, 397)
+        ChooseStudentCard.Location = New Point(536, 397)
         ChooseStudentCard.Margin = New Padding(14)
         ChooseStudentCard.MouseState = MaterialSkin.MouseState.HOVER
         ChooseStudentCard.Name = "ChooseStudentCard"
         ChooseStudentCard.Padding = New Padding(14)
-        ChooseStudentCard.Size = New Size(348, 332)
+        ChooseStudentCard.Size = New Size(260, 332)
         ChooseStudentCard.TabIndex = 6
         ' 
         ' BigStudentLbl1
@@ -2030,7 +1913,7 @@ Partial Class EntrancePage
         BigStudentLbl1.Depth = 0
         BigStudentLbl1.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
         BigStudentLbl1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        BigStudentLbl1.Location = New Point(145, 203)
+        BigStudentLbl1.Location = New Point(101, 203)
         BigStudentLbl1.MouseState = MaterialSkin.MouseState.HOVER
         BigStudentLbl1.Name = "BigStudentLbl1"
         BigStudentLbl1.Size = New Size(71, 24)
@@ -2043,7 +1926,7 @@ Partial Class EntrancePage
         SmolStudentLbl2.Depth = 0
         SmolStudentLbl2.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
         SmolStudentLbl2.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        SmolStudentLbl2.Location = New Point(84, 243)
+        SmolStudentLbl2.Location = New Point(40, 243)
         SmolStudentLbl2.MouseState = MaterialSkin.MouseState.HOVER
         SmolStudentLbl2.Name = "SmolStudentLbl2"
         SmolStudentLbl2.Size = New Size(181, 17)
@@ -2059,7 +1942,7 @@ Partial Class EntrancePage
         EnterStudentBtn.Depth = 0
         EnterStudentBtn.HighEmphasis = True
         EnterStudentBtn.Icon = Nothing
-        EnterStudentBtn.Location = New Point(-9, 279)
+        EnterStudentBtn.Location = New Point(-53, 279)
         EnterStudentBtn.Margin = New Padding(4, 6, 4, 6)
         EnterStudentBtn.MouseState = MaterialSkin.MouseState.HOVER
         EnterStudentBtn.Name = "EnterStudentBtn"
@@ -2075,7 +1958,7 @@ Partial Class EntrancePage
         ' 
         StudentPicturebox.BackgroundImage = My.Resources.Resources.student_with_graduation_cap__1_
         StudentPicturebox.BackgroundImageLayout = ImageLayout.Zoom
-        StudentPicturebox.Location = New Point(70, 26)
+        StudentPicturebox.Location = New Point(26, 26)
         StudentPicturebox.Name = "StudentPicturebox"
         StudentPicturebox.Size = New Size(208, 158)
         StudentPicturebox.SizeMode = PictureBoxSizeMode.Zoom
@@ -2092,12 +1975,12 @@ Partial Class EntrancePage
         ChooseAdminCard.Cursor = Cursors.Hand
         ChooseAdminCard.Depth = 0
         ChooseAdminCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        ChooseAdminCard.Location = New Point(148, 397)
+        ChooseAdminCard.Location = New Point(224, 397)
         ChooseAdminCard.Margin = New Padding(14)
         ChooseAdminCard.MouseState = MaterialSkin.MouseState.HOVER
         ChooseAdminCard.Name = "ChooseAdminCard"
         ChooseAdminCard.Padding = New Padding(14)
-        ChooseAdminCard.Size = New Size(348, 332)
+        ChooseAdminCard.Size = New Size(260, 332)
         ChooseAdminCard.TabIndex = 5
         ' 
         ' BigAdminLbl1
@@ -2106,7 +1989,7 @@ Partial Class EntrancePage
         BigAdminLbl1.Depth = 0
         BigAdminLbl1.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
         BigAdminLbl1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        BigAdminLbl1.Location = New Point(145, 203)
+        BigAdminLbl1.Location = New Point(101, 203)
         BigAdminLbl1.MouseState = MaterialSkin.MouseState.HOVER
         BigAdminLbl1.Name = "BigAdminLbl1"
         BigAdminLbl1.Size = New Size(58, 24)
@@ -2119,7 +2002,7 @@ Partial Class EntrancePage
         SmolAdminLbl2.Depth = 0
         SmolAdminLbl2.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
         SmolAdminLbl2.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
-        SmolAdminLbl2.Location = New Point(88, 243)
+        SmolAdminLbl2.Location = New Point(44, 243)
         SmolAdminLbl2.MouseState = MaterialSkin.MouseState.HOVER
         SmolAdminLbl2.Name = "SmolAdminLbl2"
         SmolAdminLbl2.Size = New Size(172, 17)
@@ -2135,7 +2018,7 @@ Partial Class EntrancePage
         EnterAdminBtn.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         EnterAdminBtn.HighEmphasis = True
         EnterAdminBtn.Icon = Nothing
-        EnterAdminBtn.Location = New Point(-9, 279)
+        EnterAdminBtn.Location = New Point(-53, 279)
         EnterAdminBtn.Margin = New Padding(4, 6, 4, 6)
         EnterAdminBtn.MouseState = MaterialSkin.MouseState.HOVER
         EnterAdminBtn.Name = "EnterAdminBtn"
@@ -2152,7 +2035,7 @@ Partial Class EntrancePage
         AdminPictureBox.BackgroundImage = My.Resources.Resources.manager
         AdminPictureBox.BackgroundImageLayout = ImageLayout.Zoom
         AdminPictureBox.Cursor = Cursors.Hand
-        AdminPictureBox.Location = New Point(70, 26)
+        AdminPictureBox.Location = New Point(26, 26)
         AdminPictureBox.Name = "AdminPictureBox"
         AdminPictureBox.Size = New Size(208, 158)
         AdminPictureBox.SizeMode = PictureBoxSizeMode.Zoom
@@ -2215,9 +2098,132 @@ Partial Class EntrancePage
         MaterialLabel1.TabIndex = 0
         MaterialLabel1.Text = "Online Registration System"
         ' 
+        ' StuQRCard
+        ' 
+        StuQRCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        StuQRCard.Controls.Add(StuQRForgPass)
+        StuQRCard.Controls.Add(StuQRPicBox)
+        StuQRCard.Controls.Add(MaterialLabel44)
+        StuQRCard.Controls.Add(StuQRBackBtn)
+        StuQRCard.Controls.Add(MaterialLabel45)
+        StuQRCard.Controls.Add(MaterialLabel46)
+        StuQRCard.Controls.Add(MaterialLabel47)
+        StuQRCard.Depth = 0
+        StuQRCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        StuQRCard.Location = New Point(448, 110)
+        StuQRCard.Margin = New Padding(14)
+        StuQRCard.MouseState = MaterialSkin.MouseState.HOVER
+        StuQRCard.Name = "StuQRCard"
+        StuQRCard.Padding = New Padding(14)
+        StuQRCard.Size = New Size(1021, 836)
+        StuQRCard.TabIndex = 8
+        StuQRCard.Visible = False
+        ' 
+        ' StuQRForgPass
+        ' 
+        StuQRForgPass.AutoSize = True
+        StuQRForgPass.Cursor = Cursors.Hand
+        StuQRForgPass.Depth = 0
+        StuQRForgPass.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        StuQRForgPass.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2
+        StuQRForgPass.HighEmphasis = True
+        StuQRForgPass.Location = New Point(457, 688)
+        StuQRForgPass.MouseState = MaterialSkin.MouseState.HOVER
+        StuQRForgPass.Name = "StuQRForgPass"
+        StuQRForgPass.Size = New Size(107, 17)
+        StuQRForgPass.TabIndex = 20
+        StuQRForgPass.Text = "Forgot QR Code?"
+        ' 
+        ' StuQRPicBox
+        ' 
+        StuQRPicBox.BorderStyle = BorderStyle.FixedSingle
+        StuQRPicBox.Location = New Point(331, 318)
+        StuQRPicBox.Name = "StuQRPicBox"
+        StuQRPicBox.Size = New Size(358, 358)
+        StuQRPicBox.SizeMode = PictureBoxSizeMode.CenterImage
+        StuQRPicBox.TabIndex = 19
+        StuQRPicBox.TabStop = False
+        ' 
+        ' MaterialLabel44
+        ' 
+        MaterialLabel44.AutoSize = True
+        MaterialLabel44.Depth = 0
+        MaterialLabel44.Font = New Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel44.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2
+        MaterialLabel44.Location = New Point(428, 133)
+        MaterialLabel44.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel44.Name = "MaterialLabel44"
+        MaterialLabel44.RightToLeft = RightToLeft.No
+        MaterialLabel44.Size = New Size(164, 17)
+        MaterialLabel44.TabIndex = 18
+        MaterialLabel44.Text = "Scan QR Code from Gmail"
+        ' 
+        ' StuQRBackBtn
+        ' 
+        StuQRBackBtn.AutoSize = False
+        StuQRBackBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StuQRBackBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StuQRBackBtn.Depth = 0
+        StuQRBackBtn.DrawShadows = False
+        StuQRBackBtn.HighEmphasis = True
+        StuQRBackBtn.Icon = My.Resources.Resources.back__1_
+        StuQRBackBtn.Location = New Point(18, 20)
+        StuQRBackBtn.Margin = New Padding(4, 6, 4, 6)
+        StuQRBackBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StuQRBackBtn.Name = "StuQRBackBtn"
+        StuQRBackBtn.NoAccentTextColor = Color.Empty
+        StuQRBackBtn.Size = New Size(42, 36)
+        StuQRBackBtn.TabIndex = 16
+        StuQRBackBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text
+        StuQRBackBtn.UseAccentColor = False
+        StuQRBackBtn.UseVisualStyleBackColor = True
+        ' 
+        ' MaterialLabel45
+        ' 
+        MaterialLabel45.Depth = 0
+        MaterialLabel45.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel45.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel45.Location = New Point(347, 180)
+        MaterialLabel45.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel45.Name = "MaterialLabel45"
+        MaterialLabel45.Size = New Size(326, 86)
+        MaterialLabel45.TabIndex = 12
+        MaterialLabel45.Text = "1. Open Gmail on your phone" & vbCrLf & "2. Go to inbox > Download QR Code" & vbCrLf & "3. Scan QR Code to Login"
+        ' 
+        ' MaterialLabel46
+        ' 
+        MaterialLabel46.AutoSize = True
+        MaterialLabel46.Depth = 0
+        MaterialLabel46.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
+        MaterialLabel46.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
+        MaterialLabel46.Location = New Point(400, 761)
+        MaterialLabel46.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel46.Name = "MaterialLabel46"
+        MaterialLabel46.Size = New Size(221, 14)
+        MaterialLabel46.TabIndex = 7
+        MaterialLabel46.Text = "Powered by College of Computer Studies"
+        MaterialLabel46.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' MaterialLabel47
+        ' 
+        MaterialLabel47.AutoSize = True
+        MaterialLabel47.Depth = 0
+        MaterialLabel47.Font = New Font("Roboto", 48F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel47.FontType = MaterialSkin.MaterialSkinManager.fontType.H3
+        MaterialLabel47.Location = New Point(332, 59)
+        MaterialLabel47.MouseState = MaterialSkin.MouseState.HOVER
+        MaterialLabel47.Name = "MaterialLabel47"
+        MaterialLabel47.Size = New Size(357, 58)
+        MaterialLabel47.TabIndex = 0
+        MaterialLabel47.Text = "Student QR Scan"
+        ' 
         ' Timer1
         ' 
         Timer1.Interval = 1000
+        ' 
+        ' Timer2
+        ' 
+        Timer2.Interval = 1000
         ' 
         ' EntrancePage
         ' 
@@ -2236,9 +2242,6 @@ Partial Class EntrancePage
         Text = "Pamantasan ng Lungsod ng Pasig"
         WindowState = FormWindowState.Maximized
         MaterialCard1.ResumeLayout(False)
-        StuQRCard.ResumeLayout(False)
-        StuQRCard.PerformLayout()
-        CType(StuQRPicBox, ComponentModel.ISupportInitialize).EndInit()
         ProfQRCard.ResumeLayout(False)
         ProfQRCard.PerformLayout()
         CType(ProfQRPicBox, ComponentModel.ISupportInitialize).EndInit()
@@ -2267,6 +2270,9 @@ Partial Class EntrancePage
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        StuQRCard.ResumeLayout(False)
+        StuQRCard.PerformLayout()
+        CType(StuQRPicBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -2397,5 +2403,6 @@ Partial Class EntrancePage
     Friend WithEvents MaterialLabel5 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel6 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Timer2 As Timer
 
 End Class

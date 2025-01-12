@@ -53,6 +53,7 @@ Partial Class ProfessorDashboard
         NumOfStud = New MaterialSkin.Controls.MaterialLabel()
         Professors = New TabPage()
         MaterialCard9 = New MaterialSkin.Controls.MaterialCard()
+        ProfDataGrid = New DataGridView()
         ProfClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel17 = New MaterialSkin.Controls.MaterialLabel()
         ProfAddBtn = New MaterialSkin.Controls.MaterialButton()
@@ -69,7 +70,6 @@ Partial Class ProfessorDashboard
         MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
         ProfSearchProf = New MaterialSkin.Controls.MaterialTextBox()
-        ProfDataGrid = New DataGridView()
         Students = New TabPage()
         MaterialCard13 = New MaterialSkin.Controls.MaterialCard()
         StudSaveDate = New MaterialSkin.Controls.MaterialButton()
@@ -579,6 +579,28 @@ Partial Class ProfessorDashboard
         MaterialCard9.Size = New Size(1841, 902)
         MaterialCard9.TabIndex = 1
         ' 
+        ' ProfDataGrid
+        ' 
+        ProfDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        ProfDataGrid.BackgroundColor = Color.White
+        ProfDataGrid.BorderStyle = BorderStyle.Fixed3D
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.Padding = New Padding(15)
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        ProfDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        ProfDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        ProfDataGrid.Location = New Point(33, 96)
+        ProfDataGrid.Name = "ProfDataGrid"
+        ProfDataGrid.RowHeadersWidth = 51
+        ProfDataGrid.RowTemplate.Height = 29
+        ProfDataGrid.Size = New Size(1252, 756)
+        ProfDataGrid.TabIndex = 4
+        ' 
         ' ProfClrBtn
         ' 
         ProfClrBtn.AutoSize = False
@@ -844,28 +866,6 @@ Partial Class ProfessorDashboard
         ProfSearchProf.Text = ""
         ProfSearchProf.TrailingIcon = Nothing
         ProfSearchProf.UseAccent = False
-        ' 
-        ' ProfDataGrid
-        ' 
-        ProfDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        ProfDataGrid.BackgroundColor = Color.White
-        ProfDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = SystemColors.Control
-        DataGridViewCellStyle1.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.Padding = New Padding(15)
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        ProfDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        ProfDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        ProfDataGrid.Location = New Point(33, 96)
-        ProfDataGrid.Name = "ProfDataGrid"
-        ProfDataGrid.RowHeadersWidth = 51
-        ProfDataGrid.RowTemplate.Height = 29
-        ProfDataGrid.Size = New Size(1252, 756)
-        ProfDataGrid.TabIndex = 4
         ' 
         ' Students
         ' 

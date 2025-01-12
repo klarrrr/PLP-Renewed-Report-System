@@ -38,7 +38,7 @@ Public Class EntrancePage
     End Sub
 
     Private Sub StuQRBackBtn_Click(sender As Object, e As EventArgs) Handles StuQRBackBtn.Click
-        StopWebcam()
+        StopWebcamForStudent()
         StudentLoginCard.Show()
         StuQRCard.Hide()
         Timer1.Stop()
@@ -50,8 +50,10 @@ Public Class EntrancePage
     End Sub
 
     Private Sub ProfQRBackBtn_Click(sender As Object, e As EventArgs) Handles ProfQRBackBtn.Click
+        StopWebcamForProfessor()
         ProfLogCard.Show()
         ProfQRCard.Hide()
+        Timer2.Stop()
     End Sub
 
     Private Sub ProfQRForgPass_Click(sender As Object, e As EventArgs) Handles ProfQRForgPass.Click
@@ -185,7 +187,88 @@ Public Class EntrancePage
     End Sub
 
     Private Sub ProfForgPassRecovBtn_Click(sender As Object, e As EventArgs) Handles ProfForgPassRecovBtn.Click
+        If ProfForgPassFullNameBox.Text = "" Or ProfForgPassEmailBox.Text = "" Or ProfForgPassUsernameBox.Text = "" Then
+            MessageBox.Show("One or more field is empty!", "Please Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        ElseIf Not ProfForgPassEmailBox.Text.EndsWith("@plpasig.edu.ph") Then
+            MessageBox.Show("Invalid email address. Please use an email address from @plpasig.edu.ph.", "Please Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Try
+                conn.Open()
 
+                Dim cmd As New MySqlCommand("SELECT * FROM profinfo where name = '" & ProfForgPassFullNameBox.Text & "' and email = '" & ProfForgPassEmailBox.Text & "' and username = '" & ProfForgPassUsernameBox.Text & "'", conn)
+                cmd.ExecuteNonQuery()
+                conn.Close()
+
+                Dim da As New MySqlDataAdapter(cmd)
+                Dim dt As New DataTable
+
+                da.Fill(dt)
+
+                If dt.Rows.Count() <= 0 Then
+                    MessageBox.Show("Account is invalid! Please check your inputs.", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Else
+
+                    Dim pass As String
+
+                    pass = ""
+
+                    conn.Open()
+                    Dim pcmd As New MySqlCommand("SELECT password FROM profinfo where username = '" & ProfForgPassFullNameBox.Text & "'", conn)
+                    pcmd.ExecuteNonQuery()
+                    Dim pdr As MySqlDataReader
+
+                    pdr = pcmd.ExecuteReader
+                    If pdr.Read Then
+                        pass = pdr("password")
+
+                    End If
+
+                    conn.Close()
+
+                    Dim qrGenerator As New QRCodeGenerator
+                    Dim qrCodeData As QRCodeData = qrGenerator.CreateQrCode(ProfForgPassFullNameBox.Text, QRCodeGenerator.ECCLevel.L)
+                    Dim qrCode As New QRCode(qrCodeData)
+
+                    Dim codeimage As Bitmap = qrCode.GetGraphic(20)
+
+                    Dim stream As New MemoryStream()
+                    codeimage.Save(stream, ImageFormat.Jpeg)
+                    stream.Position = 0
+
+                    Dim attachment As New Attachment(stream, "QRCode.png")
+
+                    Dim smtp As New SmtpClient
+                    Dim mail As New MailMessage
+                    smtp.UseDefaultCredentials = False
+                    smtp.Credentials = New Net.NetworkCredential("alvarez_juanito@plpasig.edu.ph", "eauz vtwn tjty jpna")
+                    smtp.Port = 587
+                    smtp.EnableSsl = True
+                    smtp.Host = "smtp.gmail.com"
+
+                    mail.From = New MailAddress("alvarez_juanito@plpasig.edu.ph")
+                    mail.To.Add(ProfForgPassEmailBox.Text)
+                    mail.Subject = "PLP TEACHER PORTAL ACCOUNT RETRIEVE"
+                    mail.IsBodyHtml = True
+                    mail.Body = "Hello Prof. " & ProfForgPassFullNameBox.Text & ", your password is " & pass & " and you can use this QR Code to Log in to PLP Admin Portal."
+                    mail.Attachments.Add(attachment)
+                    smtp.Send(mail)
+                    MessageBox.Show("Account Successfully Retrieved! Please Check your gmail account.", "Admin Portal", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    codeimage.Dispose()
+                    stream.Dispose()
+                    attachment.Dispose()
+
+                    ProfForgPassBackBtn.PerformClick()
+
+                    ProfForgPassFullNameBox.Clear()
+                    ProfForgPassEmailBox.Clear()
+                    ProfForgPassUsernameBox.Clear()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                conn.Close()
+            End Try
+        End If
     End Sub
 
     Private Sub StuRegBackBtn_Click(sender As Object, e As EventArgs) Handles StuRegBackBtn.Click
@@ -281,7 +364,62 @@ Public Class EntrancePage
     End Sub
 
     Private Sub ProfRegSignUpBtn_Click(sender As Object, e As EventArgs) Handles ProfRegSignUpBtn.Click
+        If ProfRegFullNameBox.Text = "" Or ProfRegEmailBox.Text = "" Or ProfRegUsernameBox.Text = "" Or ProfRegPasswordBox.Text = "" Then
+            MessageBox.Show("One or more field is empty!", "Please Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        ElseIf Not ProfRegEmailBox.Text.EndsWith("@plpasig.edu.ph") Then
+            MessageBox.Show("Invalid email address. Please use an email address from @plpasig.edu.ph.", "Please Check", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Try
 
+                conn.Open()
+                Dim cmd As New MySqlCommand("INSERT INTO profinfo VALUES ('" & ProfRegFullNameBox.Text & "', '" & ProfRegEmailBox.Text & "', '" & ProfRegUsernameBox.Text & "', '" & ProfRegPasswordBox.Text & "')", conn)
+
+                cmd.ExecuteNonQuery()
+
+                conn.Close()
+
+                Dim qrGenerator As New QRCodeGenerator
+                Dim qrCodeData As QRCodeData = qrGenerator.CreateQrCode(ProfRegUsernameBox.Text, QRCodeGenerator.ECCLevel.L)
+                Dim qrCode As New QRCode(qrCodeData)
+
+                Dim codeimage As Bitmap = qrCode.GetGraphic(10)
+                Dim stream As New MemoryStream()
+                codeimage.Save(stream, ImageFormat.Png)
+                stream.Position = 0
+
+                Dim attachment As New Attachment(stream, "QRCode.png")
+
+                Dim smtp As New SmtpClient
+                Dim mail As New MailMessage
+                smtp.UseDefaultCredentials = False
+                smtp.Credentials = New Net.NetworkCredential("alvarez_juanito@plpasig.edu.ph", "eauz vtwn tjty jpna")
+                smtp.Port = 587
+                smtp.EnableSsl = True
+                smtp.Host = "smtp.gmail.com"
+
+                mail.From = New MailAddress("alvarez_juanito@plpasig.edu.ph")
+                mail.To.Add(ProfRegEmailBox.Text)
+                mail.Subject = "QR CODE"
+                mail.IsBodyHtml = True
+                mail.Body = "Hello Professor " & ProfRegFullNameBox.Text & ", you can use this QR Code to Log in to Admin Portal."
+                mail.Attachments.Add(attachment)
+                smtp.Send(mail)
+                MessageBox.Show("Account Successfully Saved!", "Admin Portal", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                codeimage.Dispose()
+                stream.Dispose()
+                attachment.Dispose()
+
+                ProfRegBackBtn.PerformClick()
+                ProfRegFullNameBox.Clear()
+                ProfRegEmailBox.Clear()
+                ProfRegUsernameBox.Clear()
+                ProfRegPasswordBox.Clear()
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub StuLogBackBtn_Click(sender As Object, e As EventArgs) Handles StuLogBackBtn.Click
@@ -480,28 +618,55 @@ Public Class EntrancePage
 
     ' STUDENT QR
 
-    Private WithEvents videoSource As New VideoCaptureDevice()
+    Private WithEvents VideoSourceOfStudentQR As New VideoCaptureDevice()
+    Private WithEvents VideoSourceOfProfessorQR As New VideoCaptureDevice()
 
-    Private Sub videoSource_NewFrame(sender As Object, eventArgs As NewFrameEventArgs) Handles videoSource.NewFrame
+    Private Sub VideoSourceOfStudentQR_NewFrame(sender As Object, eventArgs As NewFrameEventArgs) Handles VideoSourceOfStudentQR.NewFrame
         StuQRPicBox.Image = DirectCast(eventArgs.Frame.Clone(), System.Drawing.Image)
     End Sub
 
-    Private Sub StartWebcam()
+    Private Sub VideoSourceOfProfessorQR_NewFrame(sender As Object, eventArgs As NewFrameEventArgs) Handles VideoSourceOfProfessorQR.NewFrame
+        ProfQRPicBox.Image = DirectCast(eventArgs.Frame.Clone(), System.Drawing.Image)
+    End Sub
+
+    Private Sub StartWebcamForStudent()
         Try
             Dim videoDevices As VideoCaptureDeviceForm = New VideoCaptureDeviceForm()
             If videoDevices.ShowDialog() = DialogResult.OK Then
-                videoSource = videoDevices.VideoDevice
-                videoSource.Start()
+                VideoSourceOfStudentQR = videoDevices.VideoDevice
+                VideoSourceOfStudentQR.Start()
             End If
         Catch ex As Exception
             MessageBox.Show("Error starting webcam: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Private Sub StopWebcam()
+    Private Sub StopWebcamForStudent()
         Try
-            If videoSource IsNot Nothing AndAlso videoSource.IsRunning Then
-                videoSource.SignalToStop()
-                videoSource.WaitForStop()
+            If VideoSourceOfStudentQR IsNot Nothing AndAlso VideoSourceOfStudentQR.IsRunning Then
+                VideoSourceOfStudentQR.SignalToStop()
+                VideoSourceOfStudentQR.WaitForStop()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error stopping webcam: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub StartWebcamForProfessor()
+        Try
+            Dim videoDevices As VideoCaptureDeviceForm = New VideoCaptureDeviceForm()
+            If videoDevices.ShowDialog() = DialogResult.OK Then
+                VideoSourceOfProfessorQR = videoDevices.VideoDevice
+                VideoSourceOfProfessorQR.Start()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error starting webcam: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub StopWebcamForProfessor()
+        Try
+            If VideoSourceOfProfessorQR IsNot Nothing AndAlso VideoSourceOfProfessorQR.IsRunning Then
+                VideoSourceOfProfessorQR.SignalToStop()
+                VideoSourceOfProfessorQR.WaitForStop()
             End If
         Catch ex As Exception
             MessageBox.Show("Error stopping webcam: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -510,12 +675,12 @@ Public Class EntrancePage
 
     Private Sub StuQRCard_VisibleChanged(sender As Object, e As EventArgs) Handles StuQRCard.VisibleChanged
         If StuQRCard.Visible = True Then
-            StartWebcam()
+            StartWebcamForStudent()
             Timer1.Start()
         End If
     End Sub
 
-    Private Sub ScanQRCode()
+    Private Sub ScanQRCodeStudent()
         Dim Reader = New QRCodeDecoder
         Try
             If StuQRPicBox.Image IsNot Nothing Then
@@ -551,7 +716,7 @@ Public Class EntrancePage
 
                 If dt.Rows.Count() > 0 Then
                     Timer1.Stop()
-                    StopWebcam()
+                    StopWebcamForStudent()
                     Dim StudentForm As New StudentDashboard(qrResult)
                     StuQRCard.Hide()
                     StudentLoginCard.Show()
@@ -563,9 +728,83 @@ Public Class EntrancePage
         End Try
     End Sub
 
+    Private Sub ScanQRCodeProfessor()
+        Dim Reader = New QRCodeDecoder
+        Try
+            If ProfQRPicBox.Image IsNot Nothing Then
+                Dim result As String = Reader.Decode(New Data.QRCodeBitmapImage(ProfQRPicBox.Image))
+                conn.Open()
+                Dim cmd As New MySqlCommand("SELECT * FROM profinfo where username = '" & result & "'", conn)
+                cmd.ExecuteNonQuery()
+                conn.Close()
+
+                Dim da As New MySqlDataAdapter(cmd)
+                Dim dt As New DataTable
+
+                da.Fill(dt)
+
+                If dt.Rows.Count() > 0 Then
+                    Timer2.Stop()
+                    StopWebcamForProfessor()
+                    Dim ProfessorForm As New ProfessorDashboard(result)
+                    ProfQRCard.Hide()
+                    ProfLogCard.Show()
+                    ProfessorForm.Show()
+                    Hide()
+                End If
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    ' Timer delay between QR Scans in Student QR
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Enabled = True
-        Timer1.Interval = 1000
-        ScanQRCode()
+        Timer1.Interval = 1
+        ScanQRCodeStudent()
+    End Sub
+
+    ' Timer delay between QR Scans in Professor QR
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Timer2.Enabled = True
+        Timer2.Interval = 1
+        ScanQRCodeProfessor()
+    End Sub
+
+    Private Sub ProfLogUsernameTxtbox_KeyDown(sender As Object, e As KeyEventArgs) Handles ProfLogUsernameTxtbox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ProfLogPassTxtBox.Focus()
+        End If
+    End Sub
+
+    Private Sub ProfLogPassTxtBox_KeyDown(sender As Object, e As KeyEventArgs) Handles ProfLogPassTxtBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ProfLogSignInBtn.PerformClick()
+        End If
+    End Sub
+
+    Private Sub ProfForgPassFullNameBox_KeyDown(sender As Object, e As KeyEventArgs) Handles ProfForgPassFullNameBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ProfForgPassEmailBox.Focus()
+        End If
+    End Sub
+
+    Private Sub ProfForgPassEmailBox_KeyDown(sender As Object, e As KeyEventArgs) Handles ProfForgPassEmailBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ProfForgPassUsernameBox.Focus()
+        End If
+    End Sub
+
+    Private Sub ProfForgPassUsernameBox_KeyDown(sender As Object, e As KeyEventArgs) Handles ProfForgPassUsernameBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ProfForgPassRecovBtn.PerformClick()
+        End If
+    End Sub
+
+    Private Sub ProfQRCard_VisibleChanged(sender As Object, e As EventArgs) Handles ProfQRCard.VisibleChanged
+        If ProfQRCard.Visible = True Then
+            StartWebcamForProfessor()
+            Timer2.Start()
+        End If
     End Sub
 End Class
