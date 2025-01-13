@@ -24,11 +24,15 @@ Partial Class ProfessorDashboard
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfessorDashboard))
         MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         ProfNameLbl = New MaterialSkin.Controls.MaterialLabel()
         MaterialTabControl1 = New MaterialSkin.Controls.MaterialTabControl()
-        Dashboard = New TabPage()
+        DashboardTab = New TabPage()
         MaterialCard2 = New MaterialSkin.Controls.MaterialCard()
         YourConsultCountCard = New MaterialSkin.Controls.MaterialCard()
         YourConsultCountPanel = New Panel()
@@ -51,7 +55,7 @@ Partial Class ProfessorDashboard
         PictureBox2 = New PictureBox()
         MaterialLabel11 = New MaterialSkin.Controls.MaterialLabel()
         NumOfStud = New MaterialSkin.Controls.MaterialLabel()
-        Professors = New TabPage()
+        ProfessorsTab = New TabPage()
         MaterialCard9 = New MaterialSkin.Controls.MaterialCard()
         ProfDataGrid = New DataGridView()
         ProfClrBtn = New MaterialSkin.Controls.MaterialButton()
@@ -70,8 +74,10 @@ Partial Class ProfessorDashboard
         MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
         ProfSearchProf = New MaterialSkin.Controls.MaterialTextBox()
-        Students = New TabPage()
+        StudentsTab = New TabPage()
         MaterialCard13 = New MaterialSkin.Controls.MaterialCard()
+        StudUploadBtn = New MaterialSkin.Controls.MaterialButton()
+        StuDataGrid = New DataGridView()
         StudSaveDate = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel30 = New MaterialSkin.Controls.MaterialLabel()
         StudDateOfGrad = New DateTimePicker()
@@ -99,18 +105,18 @@ Partial Class ProfessorDashboard
         MaterialLabel22 = New MaterialSkin.Controls.MaterialLabel()
         StudNum = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel23 = New MaterialSkin.Controls.MaterialLabel()
-        StudDataGrid = New DataGridView()
         MaterialLabel24 = New MaterialSkin.Controls.MaterialLabel()
         StudSearchStud = New MaterialSkin.Controls.MaterialTextBox()
-        Reports = New TabPage()
+        ReportsTab = New TabPage()
         MaterialCard17 = New MaterialSkin.Controls.MaterialCard()
         RepYearlyRepCard = New MaterialSkin.Controls.MaterialCard()
         MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
         RepDataGrid = New DataGridView()
         MaterialLabel37 = New MaterialSkin.Controls.MaterialLabel()
         RepSearchBox = New MaterialSkin.Controls.MaterialTextBox()
-        Reasons = New TabPage()
+        ReasonsTab = New TabPage()
         MaterialCard10 = New MaterialSkin.Controls.MaterialCard()
+        ReaDataGrid = New DataGridView()
         ReaSpecialEvent = New MaterialSkin.Controls.MaterialComboBox()
         ReaClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel31 = New MaterialSkin.Controls.MaterialLabel()
@@ -123,11 +129,11 @@ Partial Class ProfessorDashboard
         MaterialLabel36 = New MaterialSkin.Controls.MaterialLabel()
         ReaReasonID = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel38 = New MaterialSkin.Controls.MaterialLabel()
-        ReaDataGrid = New DataGridView()
         MaterialLabel39 = New MaterialSkin.Controls.MaterialLabel()
         ReaSearchReason = New MaterialSkin.Controls.MaterialTextBox()
         SectionsTab = New TabPage()
         MaterialCard11 = New MaterialSkin.Controls.MaterialCard()
+        SectDataGrid = New DataGridView()
         SectClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel34 = New MaterialSkin.Controls.MaterialLabel()
         SectAddBtn = New MaterialSkin.Controls.MaterialButton()
@@ -138,18 +144,17 @@ Partial Class ProfessorDashboard
         MaterialLabel42 = New MaterialSkin.Controls.MaterialLabel()
         SectSectID = New MaterialSkin.Controls.MaterialTextBox()
         MaterialLabel43 = New MaterialSkin.Controls.MaterialLabel()
-        SectDataGrid = New DataGridView()
         MaterialLabel44 = New MaterialSkin.Controls.MaterialLabel()
         SectSearchSect = New MaterialSkin.Controls.MaterialTextBox()
         ArchiveTab = New TabPage()
         MaterialCard12 = New MaterialSkin.Controls.MaterialCard()
+        ArchDataGrid = New DataGridView()
         MaterialLabel46 = New MaterialSkin.Controls.MaterialLabel()
         ArchFilByYear = New MaterialSkin.Controls.MaterialComboBox()
         MaterialLabel41 = New MaterialSkin.Controls.MaterialLabel()
         ArchFilBySect = New MaterialSkin.Controls.MaterialComboBox()
         ArchClrBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
-        ArchDataGrid = New DataGridView()
         MaterialLabel48 = New MaterialSkin.Controls.MaterialLabel()
         ArchSearchBox = New MaterialSkin.Controls.MaterialTextBox()
         SignOutTab = New TabPage()
@@ -164,7 +169,7 @@ Partial Class ProfessorDashboard
         TimeLbl = New MaterialSkin.Controls.MaterialLabel()
         Timer1 = New Timer(components)
         MaterialTabControl1.SuspendLayout()
-        Dashboard.SuspendLayout()
+        DashboardTab.SuspendLayout()
         MaterialCard2.SuspendLayout()
         YourConsultCountCard.SuspendLayout()
         ReportCountCard.SuspendLayout()
@@ -175,16 +180,16 @@ Partial Class ProfessorDashboard
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         MaterialCard6.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        Professors.SuspendLayout()
+        ProfessorsTab.SuspendLayout()
         MaterialCard9.SuspendLayout()
         CType(ProfDataGrid, ComponentModel.ISupportInitialize).BeginInit()
-        Students.SuspendLayout()
+        StudentsTab.SuspendLayout()
         MaterialCard13.SuspendLayout()
-        CType(StudDataGrid, ComponentModel.ISupportInitialize).BeginInit()
-        Reports.SuspendLayout()
+        CType(StuDataGrid, ComponentModel.ISupportInitialize).BeginInit()
+        ReportsTab.SuspendLayout()
         MaterialCard17.SuspendLayout()
         CType(RepDataGrid, ComponentModel.ISupportInitialize).BeginInit()
-        Reasons.SuspendLayout()
+        ReasonsTab.SuspendLayout()
         MaterialCard10.SuspendLayout()
         CType(ReaDataGrid, ComponentModel.ISupportInitialize).BeginInit()
         SectionsTab.SuspendLayout()
@@ -226,11 +231,11 @@ Partial Class ProfessorDashboard
         ' 
         ' MaterialTabControl1
         ' 
-        MaterialTabControl1.Controls.Add(Dashboard)
-        MaterialTabControl1.Controls.Add(Professors)
-        MaterialTabControl1.Controls.Add(Students)
-        MaterialTabControl1.Controls.Add(Reports)
-        MaterialTabControl1.Controls.Add(Reasons)
+        MaterialTabControl1.Controls.Add(DashboardTab)
+        MaterialTabControl1.Controls.Add(ProfessorsTab)
+        MaterialTabControl1.Controls.Add(StudentsTab)
+        MaterialTabControl1.Controls.Add(ReportsTab)
+        MaterialTabControl1.Controls.Add(ReasonsTab)
         MaterialTabControl1.Controls.Add(SectionsTab)
         MaterialTabControl1.Controls.Add(ArchiveTab)
         MaterialTabControl1.Controls.Add(SignOutTab)
@@ -244,18 +249,18 @@ Partial Class ProfessorDashboard
         MaterialTabControl1.Size = New Size(1817, 869)
         MaterialTabControl1.TabIndex = 1
         ' 
-        ' Dashboard
+        ' DashboardTab
         ' 
-        Dashboard.BackColor = Color.White
-        Dashboard.Controls.Add(MaterialCard2)
-        Dashboard.ImageKey = "home-4-fill.png"
-        Dashboard.Location = New Point(4, 39)
-        Dashboard.Name = "Dashboard"
-        Dashboard.Padding = New Padding(3)
-        Dashboard.Size = New Size(1809, 826)
-        Dashboard.TabIndex = 0
-        Dashboard.Text = "Dashboard"
-        Dashboard.ToolTipText = "Dashboard"
+        DashboardTab.BackColor = Color.White
+        DashboardTab.Controls.Add(MaterialCard2)
+        DashboardTab.ImageKey = "home-4-fill.png"
+        DashboardTab.Location = New Point(4, 39)
+        DashboardTab.Name = "DashboardTab"
+        DashboardTab.Padding = New Padding(3)
+        DashboardTab.Size = New Size(1809, 826)
+        DashboardTab.TabIndex = 0
+        DashboardTab.Text = "Dashboard"
+        DashboardTab.ToolTipText = "Dashboard"
         ' 
         ' MaterialCard2
         ' 
@@ -537,17 +542,17 @@ Partial Class ProfessorDashboard
         NumOfStud.TabIndex = 5
         NumOfStud.Text = "217"
         ' 
-        ' Professors
+        ' ProfessorsTab
         ' 
-        Professors.Controls.Add(MaterialCard9)
-        Professors.ImageKey = "user-2-fill.png"
-        Professors.Location = New Point(4, 39)
-        Professors.Name = "Professors"
-        Professors.Padding = New Padding(3)
-        Professors.Size = New Size(1809, 826)
-        Professors.TabIndex = 1
-        Professors.Text = "Professors"
-        Professors.UseVisualStyleBackColor = True
+        ProfessorsTab.Controls.Add(MaterialCard9)
+        ProfessorsTab.ImageKey = "user-2-fill.png"
+        ProfessorsTab.Location = New Point(4, 39)
+        ProfessorsTab.Name = "ProfessorsTab"
+        ProfessorsTab.Padding = New Padding(3)
+        ProfessorsTab.Size = New Size(1809, 826)
+        ProfessorsTab.TabIndex = 1
+        ProfessorsTab.Text = "Professors"
+        ProfessorsTab.UseVisualStyleBackColor = True
         ' 
         ' MaterialCard9
         ' 
@@ -867,20 +872,22 @@ Partial Class ProfessorDashboard
         ProfSearchProf.TrailingIcon = Nothing
         ProfSearchProf.UseAccent = False
         ' 
-        ' Students
+        ' StudentsTab
         ' 
-        Students.Controls.Add(MaterialCard13)
-        Students.ImageKey = "group-fill.png"
-        Students.Location = New Point(4, 39)
-        Students.Name = "Students"
-        Students.Size = New Size(1809, 826)
-        Students.TabIndex = 2
-        Students.Text = "Students"
-        Students.UseVisualStyleBackColor = True
+        StudentsTab.Controls.Add(MaterialCard13)
+        StudentsTab.ImageKey = "group-fill.png"
+        StudentsTab.Location = New Point(4, 39)
+        StudentsTab.Name = "StudentsTab"
+        StudentsTab.Size = New Size(1809, 826)
+        StudentsTab.TabIndex = 2
+        StudentsTab.Text = "Students"
+        StudentsTab.UseVisualStyleBackColor = True
         ' 
         ' MaterialCard13
         ' 
         MaterialCard13.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard13.Controls.Add(StudUploadBtn)
+        MaterialCard13.Controls.Add(StuDataGrid)
         MaterialCard13.Controls.Add(StudSaveDate)
         MaterialCard13.Controls.Add(MaterialLabel30)
         MaterialCard13.Controls.Add(StudDateOfGrad)
@@ -908,7 +915,6 @@ Partial Class ProfessorDashboard
         MaterialCard13.Controls.Add(MaterialLabel22)
         MaterialCard13.Controls.Add(StudNum)
         MaterialCard13.Controls.Add(MaterialLabel23)
-        MaterialCard13.Controls.Add(StudDataGrid)
         MaterialCard13.Controls.Add(MaterialLabel24)
         MaterialCard13.Controls.Add(StudSearchStud)
         MaterialCard13.Depth = 0
@@ -920,6 +926,48 @@ Partial Class ProfessorDashboard
         MaterialCard13.Padding = New Padding(14)
         MaterialCard13.Size = New Size(1841, 902)
         MaterialCard13.TabIndex = 3
+        ' 
+        ' StudUploadBtn
+        ' 
+        StudUploadBtn.AutoSize = False
+        StudUploadBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        StudUploadBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        StudUploadBtn.Depth = 0
+        StudUploadBtn.HighEmphasis = True
+        StudUploadBtn.Icon = My.Resources.Resources.upload_big_arrow
+        StudUploadBtn.Location = New Point(1672, 35)
+        StudUploadBtn.Margin = New Padding(4, 6, 4, 6)
+        StudUploadBtn.MouseState = MaterialSkin.MouseState.HOVER
+        StudUploadBtn.Name = "StudUploadBtn"
+        StudUploadBtn.NoAccentTextColor = Color.Empty
+        StudUploadBtn.Size = New Size(40, 45)
+        StudUploadBtn.TabIndex = 35
+        StudUploadBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        StudUploadBtn.UseAccentColor = False
+        StudUploadBtn.UseVisualStyleBackColor = True
+        ' 
+        ' StuDataGrid
+        ' 
+        StuDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        StuDataGrid.BackgroundColor = Color.White
+        StuDataGrid.BorderStyle = BorderStyle.Fixed3D
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Control
+        DataGridViewCellStyle2.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle2.Padding = New Padding(15)
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        StuDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        StuDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        StuDataGrid.Location = New Point(33, 96)
+        StuDataGrid.Name = "StuDataGrid"
+        StuDataGrid.RowHeadersWidth = 51
+        StuDataGrid.RowTemplate.Height = 29
+        StuDataGrid.Size = New Size(1252, 756)
+        StuDataGrid.TabIndex = 34
+        StuDataGrid.VirtualMode = True
         ' 
         ' StudSaveDate
         ' 
@@ -988,6 +1036,7 @@ Partial Class ProfessorDashboard
         StudStatus.FormattingEnabled = True
         StudStatus.IntegralHeight = False
         StudStatus.ItemHeight = 43
+        StudStatus.Items.AddRange(New Object() {"Regular", "Irregular"})
         StudStatus.Location = New Point(1596, 607)
         StudStatus.MaxDropDownItems = 4
         StudStatus.MouseState = MaterialSkin.MouseState.OUT
@@ -1024,6 +1073,7 @@ Partial Class ProfessorDashboard
         StudYear.FormattingEnabled = True
         StudYear.IntegralHeight = False
         StudYear.ItemHeight = 43
+        StudYear.Items.AddRange(New Object() {"1", "2", "3", "4"})
         StudYear.Location = New Point(1469, 607)
         StudYear.MaxDropDownItems = 4
         StudYear.MouseState = MaterialSkin.MouseState.OUT
@@ -1128,6 +1178,7 @@ Partial Class ProfessorDashboard
         StudSuffix.FormattingEnabled = True
         StudSuffix.IntegralHeight = False
         StudSuffix.ItemHeight = 43
+        StudSuffix.Items.AddRange(New Object() {"Jr.", "Sr.", "II.", "III.", "IV."})
         StudSuffix.Location = New Point(1557, 429)
         StudSuffix.MaxDropDownItems = 4
         StudSuffix.MouseState = MaterialSkin.MouseState.OUT
@@ -1370,18 +1421,6 @@ Partial Class ProfessorDashboard
         MaterialLabel23.TabIndex = 5
         MaterialLabel23.Text = "Student number"
         ' 
-        ' StudDataGrid
-        ' 
-        StudDataGrid.BackgroundColor = Color.White
-        StudDataGrid.BorderStyle = BorderStyle.Fixed3D
-        StudDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        StudDataGrid.Location = New Point(33, 96)
-        StudDataGrid.Name = "StudDataGrid"
-        StudDataGrid.RowHeadersWidth = 51
-        StudDataGrid.RowTemplate.Height = 29
-        StudDataGrid.Size = New Size(1252, 756)
-        StudDataGrid.TabIndex = 4
-        ' 
         ' MaterialLabel24
         ' 
         MaterialLabel24.AutoSize = True
@@ -1414,16 +1453,16 @@ Partial Class ProfessorDashboard
         StudSearchStud.TrailingIcon = Nothing
         StudSearchStud.UseAccent = False
         ' 
-        ' Reports
+        ' ReportsTab
         ' 
-        Reports.Controls.Add(MaterialCard17)
-        Reports.ImageKey = "folder-chart-fill.png"
-        Reports.Location = New Point(4, 39)
-        Reports.Name = "Reports"
-        Reports.Size = New Size(1809, 826)
-        Reports.TabIndex = 3
-        Reports.Text = "Reports"
-        Reports.UseVisualStyleBackColor = True
+        ReportsTab.Controls.Add(MaterialCard17)
+        ReportsTab.ImageKey = "folder-chart-fill.png"
+        ReportsTab.Location = New Point(4, 39)
+        ReportsTab.Name = "ReportsTab"
+        ReportsTab.Size = New Size(1809, 826)
+        ReportsTab.TabIndex = 3
+        ReportsTab.Text = "Reports"
+        ReportsTab.UseVisualStyleBackColor = True
         ' 
         ' MaterialCard17
         ' 
@@ -1513,20 +1552,21 @@ Partial Class ProfessorDashboard
         RepSearchBox.TrailingIcon = Nothing
         RepSearchBox.UseAccent = False
         ' 
-        ' Reasons
+        ' ReasonsTab
         ' 
-        Reasons.Controls.Add(MaterialCard10)
-        Reasons.ImageKey = "file-list-2-fill.png"
-        Reasons.Location = New Point(4, 39)
-        Reasons.Name = "Reasons"
-        Reasons.Size = New Size(1809, 826)
-        Reasons.TabIndex = 4
-        Reasons.Text = "Reasons"
-        Reasons.UseVisualStyleBackColor = True
+        ReasonsTab.Controls.Add(MaterialCard10)
+        ReasonsTab.ImageKey = "file-list-2-fill.png"
+        ReasonsTab.Location = New Point(4, 39)
+        ReasonsTab.Name = "ReasonsTab"
+        ReasonsTab.Size = New Size(1809, 826)
+        ReasonsTab.TabIndex = 4
+        ReasonsTab.Text = "Reasons"
+        ReasonsTab.UseVisualStyleBackColor = True
         ' 
         ' MaterialCard10
         ' 
         MaterialCard10.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard10.Controls.Add(ReaDataGrid)
         MaterialCard10.Controls.Add(ReaSpecialEvent)
         MaterialCard10.Controls.Add(ReaClrBtn)
         MaterialCard10.Controls.Add(MaterialLabel31)
@@ -1539,7 +1579,6 @@ Partial Class ProfessorDashboard
         MaterialCard10.Controls.Add(MaterialLabel36)
         MaterialCard10.Controls.Add(ReaReasonID)
         MaterialCard10.Controls.Add(MaterialLabel38)
-        MaterialCard10.Controls.Add(ReaDataGrid)
         MaterialCard10.Controls.Add(MaterialLabel39)
         MaterialCard10.Controls.Add(ReaSearchReason)
         MaterialCard10.Depth = 0
@@ -1551,6 +1590,29 @@ Partial Class ProfessorDashboard
         MaterialCard10.Padding = New Padding(14)
         MaterialCard10.Size = New Size(1841, 902)
         MaterialCard10.TabIndex = 2
+        ' 
+        ' ReaDataGrid
+        ' 
+        ReaDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        ReaDataGrid.BackgroundColor = Color.White
+        ReaDataGrid.BorderStyle = BorderStyle.Fixed3D
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Control
+        DataGridViewCellStyle3.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle3.Padding = New Padding(15)
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        ReaDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        ReaDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        ReaDataGrid.Location = New Point(33, 96)
+        ReaDataGrid.Name = "ReaDataGrid"
+        ReaDataGrid.RowHeadersWidth = 51
+        ReaDataGrid.RowTemplate.Height = 29
+        ReaDataGrid.Size = New Size(1252, 756)
+        ReaDataGrid.TabIndex = 35
+        ReaDataGrid.VirtualMode = True
         ' 
         ' ReaSpecialEvent
         ' 
@@ -1757,18 +1819,6 @@ Partial Class ProfessorDashboard
         MaterialLabel38.TabIndex = 5
         MaterialLabel38.Text = "Reason ID"
         ' 
-        ' ReaDataGrid
-        ' 
-        ReaDataGrid.BackgroundColor = Color.White
-        ReaDataGrid.BorderStyle = BorderStyle.Fixed3D
-        ReaDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        ReaDataGrid.Location = New Point(33, 96)
-        ReaDataGrid.Name = "ReaDataGrid"
-        ReaDataGrid.RowHeadersWidth = 51
-        ReaDataGrid.RowTemplate.Height = 29
-        ReaDataGrid.Size = New Size(1252, 756)
-        ReaDataGrid.TabIndex = 4
-        ' 
         ' MaterialLabel39
         ' 
         MaterialLabel39.AutoSize = True
@@ -1815,6 +1865,7 @@ Partial Class ProfessorDashboard
         ' MaterialCard11
         ' 
         MaterialCard11.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard11.Controls.Add(SectDataGrid)
         MaterialCard11.Controls.Add(SectClrBtn)
         MaterialCard11.Controls.Add(MaterialLabel34)
         MaterialCard11.Controls.Add(SectAddBtn)
@@ -1825,7 +1876,6 @@ Partial Class ProfessorDashboard
         MaterialCard11.Controls.Add(MaterialLabel42)
         MaterialCard11.Controls.Add(SectSectID)
         MaterialCard11.Controls.Add(MaterialLabel43)
-        MaterialCard11.Controls.Add(SectDataGrid)
         MaterialCard11.Controls.Add(MaterialLabel44)
         MaterialCard11.Controls.Add(SectSearchSect)
         MaterialCard11.Depth = 0
@@ -1837,6 +1887,29 @@ Partial Class ProfessorDashboard
         MaterialCard11.Padding = New Padding(14)
         MaterialCard11.Size = New Size(1841, 902)
         MaterialCard11.TabIndex = 3
+        ' 
+        ' SectDataGrid
+        ' 
+        SectDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        SectDataGrid.BackgroundColor = Color.White
+        SectDataGrid.BorderStyle = BorderStyle.Fixed3D
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = SystemColors.Control
+        DataGridViewCellStyle4.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle4.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle4.Padding = New Padding(15)
+        DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
+        SectDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        SectDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        SectDataGrid.Location = New Point(33, 96)
+        SectDataGrid.Name = "SectDataGrid"
+        SectDataGrid.RowHeadersWidth = 51
+        SectDataGrid.RowTemplate.Height = 29
+        SectDataGrid.Size = New Size(1252, 756)
+        SectDataGrid.TabIndex = 35
+        SectDataGrid.VirtualMode = True
         ' 
         ' SectClrBtn
         ' 
@@ -2007,18 +2080,6 @@ Partial Class ProfessorDashboard
         MaterialLabel43.TabIndex = 5
         MaterialLabel43.Text = "Section ID"
         ' 
-        ' SectDataGrid
-        ' 
-        SectDataGrid.BackgroundColor = Color.White
-        SectDataGrid.BorderStyle = BorderStyle.Fixed3D
-        SectDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        SectDataGrid.Location = New Point(33, 96)
-        SectDataGrid.Name = "SectDataGrid"
-        SectDataGrid.RowHeadersWidth = 51
-        SectDataGrid.RowTemplate.Height = 29
-        SectDataGrid.Size = New Size(1252, 756)
-        SectDataGrid.TabIndex = 4
-        ' 
         ' MaterialLabel44
         ' 
         MaterialLabel44.AutoSize = True
@@ -2065,13 +2126,13 @@ Partial Class ProfessorDashboard
         ' MaterialCard12
         ' 
         MaterialCard12.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard12.Controls.Add(ArchDataGrid)
         MaterialCard12.Controls.Add(MaterialLabel46)
         MaterialCard12.Controls.Add(ArchFilByYear)
         MaterialCard12.Controls.Add(MaterialLabel41)
         MaterialCard12.Controls.Add(ArchFilBySect)
         MaterialCard12.Controls.Add(ArchClrBtn)
         MaterialCard12.Controls.Add(MaterialLabel45)
-        MaterialCard12.Controls.Add(ArchDataGrid)
         MaterialCard12.Controls.Add(MaterialLabel48)
         MaterialCard12.Controls.Add(ArchSearchBox)
         MaterialCard12.Depth = 0
@@ -2083,6 +2144,29 @@ Partial Class ProfessorDashboard
         MaterialCard12.Padding = New Padding(14)
         MaterialCard12.Size = New Size(1841, 902)
         MaterialCard12.TabIndex = 4
+        ' 
+        ' ArchDataGrid
+        ' 
+        ArchDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        ArchDataGrid.BackgroundColor = Color.White
+        ArchDataGrid.BorderStyle = BorderStyle.Fixed3D
+        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = SystemColors.Control
+        DataGridViewCellStyle5.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle5.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle5.Padding = New Padding(15)
+        DataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
+        ArchDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        ArchDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        ArchDataGrid.Location = New Point(33, 96)
+        ArchDataGrid.Name = "ArchDataGrid"
+        ArchDataGrid.RowHeadersWidth = 51
+        ArchDataGrid.RowTemplate.Height = 29
+        ArchDataGrid.Size = New Size(1727, 756)
+        ArchDataGrid.TabIndex = 35
+        ArchDataGrid.VirtualMode = True
         ' 
         ' MaterialLabel46
         ' 
@@ -2187,18 +2271,6 @@ Partial Class ProfessorDashboard
         MaterialLabel45.Size = New Size(187, 19)
         MaterialLabel45.TabIndex = 13
         MaterialLabel45.Text = "List of graduated students"
-        ' 
-        ' ArchDataGrid
-        ' 
-        ArchDataGrid.BackgroundColor = Color.White
-        ArchDataGrid.BorderStyle = BorderStyle.Fixed3D
-        ArchDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        ArchDataGrid.Location = New Point(33, 96)
-        ArchDataGrid.Name = "ArchDataGrid"
-        ArchDataGrid.RowHeadersWidth = 51
-        ArchDataGrid.RowTemplate.Height = 29
-        ArchDataGrid.Size = New Size(1727, 756)
-        ArchDataGrid.TabIndex = 4
         ' 
         ' MaterialLabel48
         ' 
@@ -2407,7 +2479,7 @@ Partial Class ProfessorDashboard
         Text = "ProfessorDashboard"
         WindowState = FormWindowState.Maximized
         MaterialTabControl1.ResumeLayout(False)
-        Dashboard.ResumeLayout(False)
+        DashboardTab.ResumeLayout(False)
         MaterialCard2.ResumeLayout(False)
         YourConsultCountCard.ResumeLayout(False)
         YourConsultCountCard.PerformLayout()
@@ -2424,19 +2496,19 @@ Partial Class ProfessorDashboard
         MaterialCard6.ResumeLayout(False)
         MaterialCard6.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        Professors.ResumeLayout(False)
+        ProfessorsTab.ResumeLayout(False)
         MaterialCard9.ResumeLayout(False)
         MaterialCard9.PerformLayout()
         CType(ProfDataGrid, ComponentModel.ISupportInitialize).EndInit()
-        Students.ResumeLayout(False)
+        StudentsTab.ResumeLayout(False)
         MaterialCard13.ResumeLayout(False)
         MaterialCard13.PerformLayout()
-        CType(StudDataGrid, ComponentModel.ISupportInitialize).EndInit()
-        Reports.ResumeLayout(False)
+        CType(StuDataGrid, ComponentModel.ISupportInitialize).EndInit()
+        ReportsTab.ResumeLayout(False)
         MaterialCard17.ResumeLayout(False)
         MaterialCard17.PerformLayout()
         CType(RepDataGrid, ComponentModel.ISupportInitialize).EndInit()
-        Reasons.ResumeLayout(False)
+        ReasonsTab.ResumeLayout(False)
         MaterialCard10.ResumeLayout(False)
         MaterialCard10.PerformLayout()
         CType(ReaDataGrid, ComponentModel.ISupportInitialize).EndInit()
@@ -2460,7 +2532,7 @@ Partial Class ProfessorDashboard
     Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents ProfNameLbl As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialTabControl1 As MaterialSkin.Controls.MaterialTabControl
-    Friend WithEvents Dashboard As TabPage
+    Friend WithEvents DashboardTab As TabPage
     Friend WithEvents MaterialCard2 As MaterialSkin.Controls.MaterialCard
     Friend WithEvents ReportCountCard As MaterialSkin.Controls.MaterialCard
     Friend WithEvents ConsultCategCard As MaterialSkin.Controls.MaterialCard
@@ -2476,10 +2548,10 @@ Partial Class ProfessorDashboard
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents MaterialLabel11 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents NumOfStud As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents Professors As TabPage
-    Friend WithEvents Students As TabPage
-    Friend WithEvents Reports As TabPage
-    Friend WithEvents Reasons As TabPage
+    Friend WithEvents ProfessorsTab As TabPage
+    Friend WithEvents StudentsTab As TabPage
+    Friend WithEvents ReportsTab As TabPage
+    Friend WithEvents ReasonsTab As TabPage
     Friend WithEvents SectionsTab As TabPage
     Friend WithEvents ArchiveTab As TabPage
     Friend WithEvents MaterialCard1 As MaterialSkin.Controls.MaterialCard
@@ -2535,7 +2607,6 @@ Partial Class ProfessorDashboard
     Friend WithEvents MaterialLabel22 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents StudNum As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel23 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents StudDataGrid As DataGridView
     Friend WithEvents MaterialLabel24 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents StudSearchStud As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard17 As MaterialSkin.Controls.MaterialCard
@@ -2557,7 +2628,6 @@ Partial Class ProfessorDashboard
     Friend WithEvents MaterialLabel36 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents ReaReasonID As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel38 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents ReaDataGrid As DataGridView
     Friend WithEvents MaterialLabel39 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents ReaSearchReason As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard11 As MaterialSkin.Controls.MaterialCard
@@ -2571,13 +2641,11 @@ Partial Class ProfessorDashboard
     Friend WithEvents MaterialLabel42 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents SectSectID As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel43 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents SectDataGrid As DataGridView
     Friend WithEvents MaterialLabel44 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents SectSearchSect As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard12 As MaterialSkin.Controls.MaterialCard
     Friend WithEvents ArchClrBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel45 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents ArchDataGrid As DataGridView
     Friend WithEvents MaterialLabel48 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents ArchSearchBox As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialLabel46 As MaterialSkin.Controls.MaterialLabel
@@ -2595,4 +2663,9 @@ Partial Class ProfessorDashboard
     Friend WithEvents ConsultCategPanel As Panel
     Friend WithEvents YourConsultCountPanel As Panel
     Friend WithEvents ReportCountPanel As Panel
+    Friend WithEvents StuDataGrid As DataGridView
+    Friend WithEvents StudUploadBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ReaDataGrid As DataGridView
+    Friend WithEvents SectDataGrid As DataGridView
+    Friend WithEvents ArchDataGrid As DataGridView
 End Class

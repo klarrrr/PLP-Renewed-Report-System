@@ -194,7 +194,7 @@ Public Class StudentDashboard
         If result = DialogResult.Yes Then
             Dim TimeOut As String = Date.Now.ToString("hh:mm tt").ToUpper
             Dim special As String = ""
-            Dim DateNow As String = CDate(DateTime.Now).ToString("yyyy-dd-MM")
+            Dim DateNow As String = CDate(DateTime.Now).ToString("yyyy-MM-dd")
 
             conn.Open()
             Dim tcmd As New MySqlCommand("SELECT special FROM reasons WHERE reason = @SelectedReason", conn)

@@ -29,6 +29,7 @@ Public Class EntrancePage
     Private Sub ChooseAdmin(sender As Object, e As EventArgs) Handles EnterAdminBtn.Click, ChooseAdminCard.Click, AdminPictureBox.Click, BigAdminLbl1.Click, SmolAdminLbl2.Click
         ProfLogCard.Show()
         ChooseUserCard.Hide()
+        ProfLogUsernameTxtbox.Focus()
     End Sub
 
     Private Sub ChooseStudent(sender As Object, e As EventArgs) Handles EnterStudentBtn.Click, ChooseStudentCard.Click, StudentPicturebox.Click, BigStudentLbl1.Click, SmolStudentLbl2.Click
@@ -502,6 +503,7 @@ Public Class EntrancePage
             Dim ProfForm As New ProfessorDashboard(ProfLogUsernameTxtbox.Text)
             ProfForm.Show()
             ProfLogUsernameTxtbox.Clear()
+            ProfLogPassTxtBox.Clear()
             Hide()
         End If
     End Sub
