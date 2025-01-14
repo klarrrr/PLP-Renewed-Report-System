@@ -28,6 +28,7 @@ Partial Class ProfessorDashboard
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfessorDashboard))
         MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         ProfNameLbl = New MaterialSkin.Controls.MaterialLabel()
@@ -109,9 +110,27 @@ Partial Class ProfessorDashboard
         StudSearchStud = New MaterialSkin.Controls.MaterialTextBox()
         ReportsTab = New TabPage()
         MaterialCard17 = New MaterialSkin.Controls.MaterialCard()
-        RepYearlyRepCard = New MaterialSkin.Controls.MaterialCard()
-        MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
         RepDataGrid = New DataGridView()
+        ArchPrintBtn = New MaterialSkin.Controls.MaterialButton()
+        RepProf2Lbl = New MaterialSkin.Controls.MaterialLabel()
+        RepProf2Box = New MaterialSkin.Controls.MaterialComboBox()
+        RepToDayBox = New MaterialSkin.Controls.MaterialComboBox()
+        RepDayToLbl = New MaterialSkin.Controls.MaterialLabel()
+        RepDayLbl = New MaterialSkin.Controls.MaterialLabel()
+        RepFromDayBox = New MaterialSkin.Controls.MaterialComboBox()
+        RepToMonthBox = New MaterialSkin.Controls.MaterialComboBox()
+        RepMonthToLbl = New MaterialSkin.Controls.MaterialLabel()
+        RepMonthLbl = New MaterialSkin.Controls.MaterialLabel()
+        RepFromMonthBox = New MaterialSkin.Controls.MaterialComboBox()
+        RepYearLbl = New MaterialSkin.Controls.MaterialLabel()
+        RepYearBox = New MaterialSkin.Controls.MaterialComboBox()
+        RepProf1Lbl = New MaterialSkin.Controls.MaterialLabel()
+        RepProf1Box = New MaterialSkin.Controls.MaterialComboBox()
+        RepSortByLbl = New MaterialSkin.Controls.MaterialLabel()
+        RepSortBy = New MaterialSkin.Controls.MaterialComboBox()
+        RepYearlyRepCard = New MaterialSkin.Controls.MaterialCard()
+        YearlyRepPanel = New Panel()
+        MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel37 = New MaterialSkin.Controls.MaterialLabel()
         RepSearchBox = New MaterialSkin.Controls.MaterialTextBox()
         ReasonsTab = New TabPage()
@@ -168,6 +187,7 @@ Partial Class ProfessorDashboard
         DateLbl = New MaterialSkin.Controls.MaterialLabel()
         TimeLbl = New MaterialSkin.Controls.MaterialLabel()
         Timer1 = New Timer(components)
+        SaveFileDialog1 = New SaveFileDialog()
         MaterialTabControl1.SuspendLayout()
         DashboardTab.SuspendLayout()
         MaterialCard2.SuspendLayout()
@@ -189,6 +209,7 @@ Partial Class ProfessorDashboard
         ReportsTab.SuspendLayout()
         MaterialCard17.SuspendLayout()
         CType(RepDataGrid, ComponentModel.ISupportInitialize).BeginInit()
+        RepYearlyRepCard.SuspendLayout()
         ReasonsTab.SuspendLayout()
         MaterialCard10.SuspendLayout()
         CType(ReaDataGrid, ComponentModel.ISupportInitialize).BeginInit()
@@ -995,7 +1016,7 @@ Partial Class ProfessorDashboard
         MaterialLabel30.Depth = 0
         MaterialLabel30.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
         MaterialLabel30.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
-        MaterialLabel30.Location = New Point(1341, 695)
+        MaterialLabel30.Location = New Point(1341, 684)
         MaterialLabel30.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel30.Name = "MaterialLabel30"
         MaterialLabel30.Size = New Size(167, 24)
@@ -1467,9 +1488,26 @@ Partial Class ProfessorDashboard
         ' MaterialCard17
         ' 
         MaterialCard17.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard17.Controls.Add(RepDataGrid)
+        MaterialCard17.Controls.Add(ArchPrintBtn)
+        MaterialCard17.Controls.Add(RepProf2Lbl)
+        MaterialCard17.Controls.Add(RepProf2Box)
+        MaterialCard17.Controls.Add(RepToDayBox)
+        MaterialCard17.Controls.Add(RepDayToLbl)
+        MaterialCard17.Controls.Add(RepDayLbl)
+        MaterialCard17.Controls.Add(RepFromDayBox)
+        MaterialCard17.Controls.Add(RepToMonthBox)
+        MaterialCard17.Controls.Add(RepMonthToLbl)
+        MaterialCard17.Controls.Add(RepMonthLbl)
+        MaterialCard17.Controls.Add(RepFromMonthBox)
+        MaterialCard17.Controls.Add(RepYearLbl)
+        MaterialCard17.Controls.Add(RepYearBox)
+        MaterialCard17.Controls.Add(RepProf1Lbl)
+        MaterialCard17.Controls.Add(RepProf1Box)
+        MaterialCard17.Controls.Add(RepSortByLbl)
+        MaterialCard17.Controls.Add(RepSortBy)
         MaterialCard17.Controls.Add(RepYearlyRepCard)
         MaterialCard17.Controls.Add(MaterialLabel32)
-        MaterialCard17.Controls.Add(RepDataGrid)
         MaterialCard17.Controls.Add(MaterialLabel37)
         MaterialCard17.Controls.Add(RepSearchBox)
         MaterialCard17.Depth = 0
@@ -1482,18 +1520,374 @@ Partial Class ProfessorDashboard
         MaterialCard17.Size = New Size(1841, 902)
         MaterialCard17.TabIndex = 3
         ' 
+        ' RepDataGrid
+        ' 
+        RepDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        RepDataGrid.BackgroundColor = Color.White
+        RepDataGrid.BorderStyle = BorderStyle.Fixed3D
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Control
+        DataGridViewCellStyle3.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle3.Padding = New Padding(15)
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        RepDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        RepDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        RepDataGrid.Location = New Point(33, 312)
+        RepDataGrid.Name = "RepDataGrid"
+        RepDataGrid.RowHeadersWidth = 51
+        RepDataGrid.RowTemplate.Height = 29
+        RepDataGrid.Size = New Size(1252, 540)
+        RepDataGrid.TabIndex = 43
+        RepDataGrid.VirtualMode = True
+        ' 
+        ' ArchPrintBtn
+        ' 
+        ArchPrintBtn.AutoSize = False
+        ArchPrintBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ArchPrintBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ArchPrintBtn.Depth = 0
+        ArchPrintBtn.HighEmphasis = True
+        ArchPrintBtn.Icon = My.Resources.Resources.printing__2_
+        ArchPrintBtn.Location = New Point(1712, 381)
+        ArchPrintBtn.Margin = New Padding(4, 6, 4, 6)
+        ArchPrintBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ArchPrintBtn.Name = "ArchPrintBtn"
+        ArchPrintBtn.NoAccentTextColor = Color.Empty
+        ArchPrintBtn.Size = New Size(40, 45)
+        ArchPrintBtn.TabIndex = 42
+        ArchPrintBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ArchPrintBtn.UseAccentColor = False
+        ArchPrintBtn.UseVisualStyleBackColor = True
+        ' 
+        ' RepProf2Lbl
+        ' 
+        RepProf2Lbl.AutoSize = True
+        RepProf2Lbl.Depth = 0
+        RepProf2Lbl.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepProf2Lbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        RepProf2Lbl.Location = New Point(1553, 560)
+        RepProf2Lbl.MouseState = MaterialSkin.MouseState.HOVER
+        RepProf2Lbl.Name = "RepProf2Lbl"
+        RepProf2Lbl.Size = New Size(88, 24)
+        RepProf2Lbl.TabIndex = 41
+        RepProf2Lbl.Text = "Professor"
+        RepProf2Lbl.Visible = False
+        ' 
+        ' RepProf2Box
+        ' 
+        RepProf2Box.AutoResize = False
+        RepProf2Box.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepProf2Box.Depth = 0
+        RepProf2Box.DrawMode = DrawMode.OwnerDrawVariable
+        RepProf2Box.DropDownHeight = 174
+        RepProf2Box.DropDownStyle = ComboBoxStyle.DropDownList
+        RepProf2Box.DropDownWidth = 121
+        RepProf2Box.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepProf2Box.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepProf2Box.FormattingEnabled = True
+        RepProf2Box.IntegralHeight = False
+        RepProf2Box.ItemHeight = 43
+        RepProf2Box.Location = New Point(1553, 597)
+        RepProf2Box.MaxDropDownItems = 4
+        RepProf2Box.MouseState = MaterialSkin.MouseState.OUT
+        RepProf2Box.Name = "RepProf2Box"
+        RepProf2Box.Size = New Size(199, 49)
+        RepProf2Box.StartIndex = 0
+        RepProf2Box.TabIndex = 40
+        RepProf2Box.UseAccent = False
+        RepProf2Box.Visible = False
+        ' 
+        ' RepToDayBox
+        ' 
+        RepToDayBox.AutoResize = False
+        RepToDayBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepToDayBox.Depth = 0
+        RepToDayBox.DrawMode = DrawMode.OwnerDrawVariable
+        RepToDayBox.DropDownHeight = 174
+        RepToDayBox.DropDownStyle = ComboBoxStyle.DropDownList
+        RepToDayBox.DropDownWidth = 121
+        RepToDayBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepToDayBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepToDayBox.FormattingEnabled = True
+        RepToDayBox.IntegralHeight = False
+        RepToDayBox.ItemHeight = 43
+        RepToDayBox.Location = New Point(1558, 814)
+        RepToDayBox.MaxDropDownItems = 4
+        RepToDayBox.MouseState = MaterialSkin.MouseState.OUT
+        RepToDayBox.Name = "RepToDayBox"
+        RepToDayBox.Size = New Size(199, 49)
+        RepToDayBox.StartIndex = 0
+        RepToDayBox.TabIndex = 39
+        RepToDayBox.UseAccent = False
+        RepToDayBox.Visible = False
+        ' 
+        ' RepDayToLbl
+        ' 
+        RepDayToLbl.AutoSize = True
+        RepDayToLbl.Depth = 0
+        RepDayToLbl.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        RepDayToLbl.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1
+        RepDayToLbl.Location = New Point(1532, 834)
+        RepDayToLbl.MouseState = MaterialSkin.MouseState.HOVER
+        RepDayToLbl.Name = "RepDayToLbl"
+        RepDayToLbl.Size = New Size(20, 19)
+        RepDayToLbl.TabIndex = 38
+        RepDayToLbl.Text = "To"
+        RepDayToLbl.Visible = False
+        ' 
+        ' RepDayLbl
+        ' 
+        RepDayLbl.AutoSize = True
+        RepDayLbl.Depth = 0
+        RepDayLbl.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepDayLbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        RepDayLbl.Location = New Point(1348, 777)
+        RepDayLbl.MouseState = MaterialSkin.MouseState.HOVER
+        RepDayLbl.Name = "RepDayLbl"
+        RepDayLbl.Size = New Size(35, 24)
+        RepDayLbl.TabIndex = 37
+        RepDayLbl.Text = "Day"
+        RepDayLbl.Visible = False
+        ' 
+        ' RepFromDayBox
+        ' 
+        RepFromDayBox.AutoResize = False
+        RepFromDayBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepFromDayBox.Depth = 0
+        RepFromDayBox.DrawMode = DrawMode.OwnerDrawVariable
+        RepFromDayBox.DropDownHeight = 174
+        RepFromDayBox.DropDownStyle = ComboBoxStyle.DropDownList
+        RepFromDayBox.DropDownWidth = 121
+        RepFromDayBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepFromDayBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepFromDayBox.FormattingEnabled = True
+        RepFromDayBox.IntegralHeight = False
+        RepFromDayBox.ItemHeight = 43
+        RepFromDayBox.Location = New Point(1348, 814)
+        RepFromDayBox.MaxDropDownItems = 4
+        RepFromDayBox.MouseState = MaterialSkin.MouseState.OUT
+        RepFromDayBox.Name = "RepFromDayBox"
+        RepFromDayBox.Size = New Size(178, 49)
+        RepFromDayBox.StartIndex = 0
+        RepFromDayBox.TabIndex = 36
+        RepFromDayBox.UseAccent = False
+        RepFromDayBox.Visible = False
+        ' 
+        ' RepToMonthBox
+        ' 
+        RepToMonthBox.AutoResize = False
+        RepToMonthBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepToMonthBox.Depth = 0
+        RepToMonthBox.DrawMode = DrawMode.OwnerDrawVariable
+        RepToMonthBox.DropDownHeight = 174
+        RepToMonthBox.DropDownStyle = ComboBoxStyle.DropDownList
+        RepToMonthBox.DropDownWidth = 121
+        RepToMonthBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepToMonthBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepToMonthBox.FormattingEnabled = True
+        RepToMonthBox.IntegralHeight = False
+        RepToMonthBox.ItemHeight = 43
+        RepToMonthBox.Items.AddRange(New Object() {"January", "February", "March", "April", "June", "July", "August", "September", "October", "November", "December"})
+        RepToMonthBox.Location = New Point(1553, 700)
+        RepToMonthBox.MaxDropDownItems = 4
+        RepToMonthBox.MouseState = MaterialSkin.MouseState.OUT
+        RepToMonthBox.Name = "RepToMonthBox"
+        RepToMonthBox.Size = New Size(199, 49)
+        RepToMonthBox.StartIndex = 0
+        RepToMonthBox.TabIndex = 35
+        RepToMonthBox.UseAccent = False
+        RepToMonthBox.Visible = False
+        ' 
+        ' RepMonthToLbl
+        ' 
+        RepMonthToLbl.AutoSize = True
+        RepMonthToLbl.Depth = 0
+        RepMonthToLbl.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
+        RepMonthToLbl.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1
+        RepMonthToLbl.Location = New Point(1527, 720)
+        RepMonthToLbl.MouseState = MaterialSkin.MouseState.HOVER
+        RepMonthToLbl.Name = "RepMonthToLbl"
+        RepMonthToLbl.Size = New Size(20, 19)
+        RepMonthToLbl.TabIndex = 34
+        RepMonthToLbl.Text = "To"
+        RepMonthToLbl.Visible = False
+        ' 
+        ' RepMonthLbl
+        ' 
+        RepMonthLbl.AutoSize = True
+        RepMonthLbl.Depth = 0
+        RepMonthLbl.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepMonthLbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        RepMonthLbl.Location = New Point(1343, 663)
+        RepMonthLbl.MouseState = MaterialSkin.MouseState.HOVER
+        RepMonthLbl.Name = "RepMonthLbl"
+        RepMonthLbl.Size = New Size(59, 24)
+        RepMonthLbl.TabIndex = 33
+        RepMonthLbl.Text = "Month"
+        RepMonthLbl.Visible = False
+        ' 
+        ' RepFromMonthBox
+        ' 
+        RepFromMonthBox.AutoResize = False
+        RepFromMonthBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepFromMonthBox.Depth = 0
+        RepFromMonthBox.DrawMode = DrawMode.OwnerDrawVariable
+        RepFromMonthBox.DropDownHeight = 174
+        RepFromMonthBox.DropDownStyle = ComboBoxStyle.DropDownList
+        RepFromMonthBox.DropDownWidth = 121
+        RepFromMonthBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepFromMonthBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepFromMonthBox.FormattingEnabled = True
+        RepFromMonthBox.IntegralHeight = False
+        RepFromMonthBox.ItemHeight = 43
+        RepFromMonthBox.Items.AddRange(New Object() {"January", "February", "March", "April", "June", "July", "August", "September", "October", "November", "December"})
+        RepFromMonthBox.Location = New Point(1343, 700)
+        RepFromMonthBox.MaxDropDownItems = 4
+        RepFromMonthBox.MouseState = MaterialSkin.MouseState.OUT
+        RepFromMonthBox.Name = "RepFromMonthBox"
+        RepFromMonthBox.Size = New Size(178, 49)
+        RepFromMonthBox.StartIndex = 0
+        RepFromMonthBox.TabIndex = 32
+        RepFromMonthBox.UseAccent = False
+        RepFromMonthBox.Visible = False
+        ' 
+        ' RepYearLbl
+        ' 
+        RepYearLbl.AutoSize = True
+        RepYearLbl.Depth = 0
+        RepYearLbl.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepYearLbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        RepYearLbl.Location = New Point(1343, 560)
+        RepYearLbl.MouseState = MaterialSkin.MouseState.HOVER
+        RepYearLbl.Name = "RepYearLbl"
+        RepYearLbl.Size = New Size(42, 24)
+        RepYearLbl.TabIndex = 31
+        RepYearLbl.Text = "Year"
+        RepYearLbl.Visible = False
+        ' 
+        ' RepYearBox
+        ' 
+        RepYearBox.AutoResize = False
+        RepYearBox.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepYearBox.Depth = 0
+        RepYearBox.DrawMode = DrawMode.OwnerDrawVariable
+        RepYearBox.DropDownHeight = 174
+        RepYearBox.DropDownStyle = ComboBoxStyle.DropDownList
+        RepYearBox.DropDownWidth = 121
+        RepYearBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepYearBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepYearBox.FormattingEnabled = True
+        RepYearBox.IntegralHeight = False
+        RepYearBox.ItemHeight = 43
+        RepYearBox.Location = New Point(1343, 597)
+        RepYearBox.MaxDropDownItems = 4
+        RepYearBox.MouseState = MaterialSkin.MouseState.OUT
+        RepYearBox.Name = "RepYearBox"
+        RepYearBox.Size = New Size(204, 49)
+        RepYearBox.StartIndex = 0
+        RepYearBox.TabIndex = 30
+        RepYearBox.UseAccent = False
+        RepYearBox.Visible = False
+        ' 
+        ' RepProf1Lbl
+        ' 
+        RepProf1Lbl.AutoSize = True
+        RepProf1Lbl.Depth = 0
+        RepProf1Lbl.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepProf1Lbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        RepProf1Lbl.Location = New Point(1553, 458)
+        RepProf1Lbl.MouseState = MaterialSkin.MouseState.HOVER
+        RepProf1Lbl.Name = "RepProf1Lbl"
+        RepProf1Lbl.Size = New Size(88, 24)
+        RepProf1Lbl.TabIndex = 29
+        RepProf1Lbl.Text = "Professor"
+        RepProf1Lbl.Visible = False
+        ' 
+        ' RepProf1Box
+        ' 
+        RepProf1Box.AutoResize = False
+        RepProf1Box.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepProf1Box.Depth = 0
+        RepProf1Box.DrawMode = DrawMode.OwnerDrawVariable
+        RepProf1Box.DropDownHeight = 174
+        RepProf1Box.DropDownStyle = ComboBoxStyle.DropDownList
+        RepProf1Box.DropDownWidth = 121
+        RepProf1Box.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepProf1Box.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepProf1Box.FormattingEnabled = True
+        RepProf1Box.IntegralHeight = False
+        RepProf1Box.ItemHeight = 43
+        RepProf1Box.Location = New Point(1553, 495)
+        RepProf1Box.MaxDropDownItems = 4
+        RepProf1Box.MouseState = MaterialSkin.MouseState.OUT
+        RepProf1Box.Name = "RepProf1Box"
+        RepProf1Box.Size = New Size(199, 49)
+        RepProf1Box.StartIndex = 0
+        RepProf1Box.TabIndex = 28
+        RepProf1Box.UseAccent = False
+        RepProf1Box.Visible = False
+        ' 
+        ' RepSortByLbl
+        ' 
+        RepSortByLbl.AutoSize = True
+        RepSortByLbl.Depth = 0
+        RepSortByLbl.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepSortByLbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        RepSortByLbl.Location = New Point(1343, 458)
+        RepSortByLbl.MouseState = MaterialSkin.MouseState.HOVER
+        RepSortByLbl.Name = "RepSortByLbl"
+        RepSortByLbl.Size = New Size(64, 24)
+        RepSortByLbl.TabIndex = 27
+        RepSortByLbl.Text = "Sort by"
+        ' 
+        ' RepSortBy
+        ' 
+        RepSortBy.AutoResize = False
+        RepSortBy.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepSortBy.Depth = 0
+        RepSortBy.DrawMode = DrawMode.OwnerDrawVariable
+        RepSortBy.DropDownHeight = 174
+        RepSortBy.DropDownStyle = ComboBoxStyle.DropDownList
+        RepSortBy.DropDownWidth = 121
+        RepSortBy.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
+        RepSortBy.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
+        RepSortBy.FormattingEnabled = True
+        RepSortBy.IntegralHeight = False
+        RepSortBy.ItemHeight = 43
+        RepSortBy.Items.AddRange(New Object() {"Student Number", "Student Last Name", "Section", "Professor Name", "Date", " "})
+        RepSortBy.Location = New Point(1343, 495)
+        RepSortBy.MaxDropDownItems = 4
+        RepSortBy.MouseState = MaterialSkin.MouseState.OUT
+        RepSortBy.Name = "RepSortBy"
+        RepSortBy.Size = New Size(204, 49)
+        RepSortBy.StartIndex = 0
+        RepSortBy.TabIndex = 26
+        RepSortBy.UseAccent = False
+        ' 
         ' RepYearlyRepCard
         ' 
         RepYearlyRepCard.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        RepYearlyRepCard.Controls.Add(YearlyRepPanel)
         RepYearlyRepCard.Depth = 0
         RepYearlyRepCard.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         RepYearlyRepCard.Location = New Point(33, 40)
         RepYearlyRepCard.Margin = New Padding(14)
         RepYearlyRepCard.MouseState = MaterialSkin.MouseState.HOVER
         RepYearlyRepCard.Name = "RepYearlyRepCard"
-        RepYearlyRepCard.Padding = New Padding(14)
         RepYearlyRepCard.Size = New Size(1719, 255)
         RepYearlyRepCard.TabIndex = 19
+        ' 
+        ' YearlyRepPanel
+        ' 
+        YearlyRepPanel.Dock = DockStyle.Fill
+        YearlyRepPanel.Location = New Point(0, 0)
+        YearlyRepPanel.Margin = New Padding(0)
+        YearlyRepPanel.Name = "YearlyRepPanel"
+        YearlyRepPanel.Size = New Size(1719, 255)
+        YearlyRepPanel.TabIndex = 3
         ' 
         ' MaterialLabel32
         ' 
@@ -1507,18 +1901,6 @@ Partial Class ProfessorDashboard
         MaterialLabel32.Size = New Size(97, 19)
         MaterialLabel32.TabIndex = 13
         MaterialLabel32.Text = "Listed reports"
-        ' 
-        ' RepDataGrid
-        ' 
-        RepDataGrid.BackgroundColor = Color.White
-        RepDataGrid.BorderStyle = BorderStyle.Fixed3D
-        RepDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        RepDataGrid.Location = New Point(33, 312)
-        RepDataGrid.Name = "RepDataGrid"
-        RepDataGrid.RowHeadersWidth = 51
-        RepDataGrid.RowTemplate.Height = 29
-        RepDataGrid.Size = New Size(1252, 540)
-        RepDataGrid.TabIndex = 4
         ' 
         ' MaterialLabel37
         ' 
@@ -1596,15 +1978,15 @@ Partial Class ProfessorDashboard
         ReaDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ReaDataGrid.BackgroundColor = Color.White
         ReaDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = SystemColors.Control
-        DataGridViewCellStyle3.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle3.Padding = New Padding(15)
-        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
-        ReaDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = SystemColors.Control
+        DataGridViewCellStyle4.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle4.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle4.Padding = New Padding(15)
+        DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
+        ReaDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         ReaDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ReaDataGrid.Location = New Point(33, 96)
         ReaDataGrid.Name = "ReaDataGrid"
@@ -1628,6 +2010,7 @@ Partial Class ProfessorDashboard
         ReaSpecialEvent.FormattingEnabled = True
         ReaSpecialEvent.IntegralHeight = False
         ReaSpecialEvent.ItemHeight = 43
+        ReaSpecialEvent.Items.AddRange(New Object() {"False", "True"})
         ReaSpecialEvent.Location = New Point(1344, 442)
         ReaSpecialEvent.MaxDropDownItems = 4
         ReaSpecialEvent.MouseState = MaterialSkin.MouseState.OUT
@@ -1893,15 +2276,15 @@ Partial Class ProfessorDashboard
         SectDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         SectDataGrid.BackgroundColor = Color.White
         SectDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = SystemColors.Control
-        DataGridViewCellStyle4.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle4.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle4.Padding = New Padding(15)
-        DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
-        SectDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = SystemColors.Control
+        DataGridViewCellStyle5.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle5.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle5.Padding = New Padding(15)
+        DataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
+        SectDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         SectDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         SectDataGrid.Location = New Point(33, 96)
         SectDataGrid.Name = "SectDataGrid"
@@ -2150,15 +2533,15 @@ Partial Class ProfessorDashboard
         ArchDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ArchDataGrid.BackgroundColor = Color.White
         ArchDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = SystemColors.Control
-        DataGridViewCellStyle5.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle5.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle5.Padding = New Padding(15)
-        DataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
-        ArchDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = SystemColors.Control
+        DataGridViewCellStyle6.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle6.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle6.Padding = New Padding(15)
+        DataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = DataGridViewTriState.True
+        ArchDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         ArchDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ArchDataGrid.Location = New Point(33, 96)
         ArchDataGrid.Name = "ArchDataGrid"
@@ -2247,7 +2630,7 @@ Partial Class ProfessorDashboard
         ArchClrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
         ArchClrBtn.Depth = 0
         ArchClrBtn.HighEmphasis = True
-        ArchClrBtn.Icon = My.Resources.Resources.clean
+        ArchClrBtn.Icon = My.Resources.Resources.printing__2_
         ArchClrBtn.Location = New Point(1720, 35)
         ArchClrBtn.Margin = New Padding(4, 6, 4, 6)
         ArchClrBtn.MouseState = MaterialSkin.MouseState.HOVER
@@ -2508,6 +2891,7 @@ Partial Class ProfessorDashboard
         MaterialCard17.ResumeLayout(False)
         MaterialCard17.PerformLayout()
         CType(RepDataGrid, ComponentModel.ISupportInitialize).EndInit()
+        RepYearlyRepCard.ResumeLayout(False)
         ReasonsTab.ResumeLayout(False)
         MaterialCard10.ResumeLayout(False)
         MaterialCard10.PerformLayout()
@@ -2612,7 +2996,6 @@ Partial Class ProfessorDashboard
     Friend WithEvents MaterialCard17 As MaterialSkin.Controls.MaterialCard
     Friend WithEvents RepYearlyRepCard As MaterialSkin.Controls.MaterialCard
     Friend WithEvents MaterialLabel32 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents RepDataGrid As DataGridView
     Friend WithEvents MaterialLabel37 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents RepSearchBox As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard10 As MaterialSkin.Controls.MaterialCard
@@ -2668,4 +3051,24 @@ Partial Class ProfessorDashboard
     Friend WithEvents ReaDataGrid As DataGridView
     Friend WithEvents SectDataGrid As DataGridView
     Friend WithEvents ArchDataGrid As DataGridView
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents RepSortBy As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents RepSortByLbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents RepProf1Lbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents RepProf1Box As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents RepToMonthBox As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents RepMonthToLbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents RepMonthLbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents RepFromMonthBox As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents RepYearLbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents RepYearBox As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents ArchPrintBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents RepProf2Lbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents RepProf2Box As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents RepToDayBox As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents RepDayToLbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents RepDayLbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents RepFromDayBox As MaterialSkin.Controls.MaterialComboBox
+    Friend WithEvents YearlyRepPanel As Panel
+    Friend WithEvents RepDataGrid As DataGridView
 End Class

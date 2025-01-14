@@ -196,8 +196,8 @@ Module charts
         Dim monthlyReportCounts As New Dictionary(Of Integer, Integer)()
 
         For Each row As DataGridViewRow In DataGrid.Rows
-            If row.Cells("ConsultationDate").Value IsNot Nothing Then
-                Dim reportDate As DateTime = Convert.ToDateTime(row.Cells("ConsultationDate").Value)
+            If row.Cells("Consultation Date").Value IsNot Nothing Then
+                Dim reportDate As DateTime = Convert.ToDateTime(row.Cells("Consultation Date").Value)
 
                 If reportDate.Year = Date.Today.Year Then
                     Dim month As Integer = reportDate.Month

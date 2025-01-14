@@ -9,19 +9,37 @@ Public Class ProfessorDashboard
     Private Sub ProfessorDashboard_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         ' THEME
         SetFormThemeLight(Me)
+
         ' LAST VISITED TAB FOR SIGN OUT
         LastVisitedTab = 0
+
         ' DASHBOARD
         RowBarChart(ConsultCategPanel)
         ColumnBarChart(ReportCountPanel)
         PieChart(YourConsultCountPanel, ProfNameLbl.Text)
         PopulateCardsInDashboard()
+
         ' PROFESSORS
         ProfLoadData()
+
         ' STUDENTS
         StuLoadData()
         LoadSectionInStudents()
         LoadPromotionDate()
+
+        ' REPORTS
+        RepLoadData()
+        ReportsChart(YearlyRepPanel, RepDataGrid)
+
+        ' REASONS
+        ReaLoadData()
+
+        ' SECTIONS
+        SectLoadData()
+
+        'ARCHIVE
+        ArchLoadData()
+        ArchLoadFilter()
 
     End Sub
 
@@ -124,11 +142,20 @@ Public Class ProfessorDashboard
     End Sub
     ' clear button in professor tab
     Private Sub ProfClrBtn_Click(sender As Object, e As EventArgs) Handles ProfClrBtn.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure on clearing text boxes?", "Clear Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.No Then
+            Return
+        End If
+        ProfClear()
+    End Sub
+
+    Private Sub ProfClear()
         ProfProfName.Clear()
         ProfEmail.Clear()
         ProfUsername.Clear()
         ProfPass.Clear()
     End Sub
+
     ' click delete button in professor tab
     Private Sub ProfDelBtn_Click(sender As Object, e As EventArgs) Handles ProfDelBtn.Click
         If ProfUsername.Text Or ProfPass.Text = "" Then
@@ -141,7 +168,7 @@ Public Class ProfessorDashboard
                 Dim cmd As New MySqlCommand("DELETE FROM profinfo WHERE username = '" & ProfUsername.Text & "'", conn)
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("Successfully Deleted!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ProfClrBtn.PerformClick()
+                ProfClear()
                 conn.Close()
                 ProfLoadData()
             End If
@@ -157,7 +184,7 @@ Public Class ProfessorDashboard
             Dim cmd As New MySqlCommand("UPDATE profinfo SET name = '" & ProfProfName.Text & "', email = '" & ProfEmail.Text & "', password = '" & ProfPass.Text & "'  WHERE username = '" & ProfUsername.Text & "'", conn)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Successfully Updated!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            ProfClrBtn.PerformClick()
+            ProfClear()
             conn.Close()
             ProfLoadData()
         End If
@@ -175,7 +202,7 @@ Public Class ProfessorDashboard
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("Successfully Added!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                ProfClrBtn.PerformClick()
+                ProfClear()
                 conn.Close()
                 ProfLoadData()
 
@@ -211,7 +238,7 @@ Public Class ProfessorDashboard
     Private Sub StuLoadData()
         conn.Open()
 
-        Dim cmd As New MySqlCommand("SELECT * FROM studentinfo", conn)
+        Dim cmd As New MySqlCommand("SELECT studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, email as Email, section as Section, year_level as 'Year Level', status as Status FROM studentinfo", conn)
         cmd.ExecuteNonQuery()
         conn.Close()
 
@@ -227,7 +254,7 @@ Public Class ProfessorDashboard
             StuLoadData()
         Else
             conn.Open()
-            Dim cmd As New MySqlCommand("SELECT * FROM studentinfo WHERE CONCAT(studentnum, last_name, first_name, middle_initial, suffix, email, section) like '%" & StudSearchStud.Text & "%'", conn)
+            Dim cmd As New MySqlCommand("SELECT studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, email as Email, section as Section, year_level as 'Year Level', status as Status FROM studentinfo WHERE CONCAT(studentnum, last_name, first_name, middle_initial, suffix, email, section) like '%" & StudSearchStud.Text & "%'", conn)
 
             Dim adapter As New MySqlDataAdapter(cmd)
             Dim table As New DataTable
@@ -290,9 +317,20 @@ Public Class ProfessorDashboard
         StudLastName.Text = ""
         StudFirstName.Text = ""
         StudMiddleInitial.Text = ""
+
         StudSuffix.SelectedIndex = -1
+        StudSuffix.Text = ""
+        StudSuffix.Refresh()
+
         StudEmail.Text = ""
+
+        StudYear.SelectedIndex = -1
+        StudYear.Text = ""
+        StudYear.Refresh()
+
         StudSection.SelectedIndex = -1
+        StudSection.Text = ""
+        StudSection.Refresh()
     End Sub
 
     ' delete button from db
@@ -450,7 +488,7 @@ Public Class ProfessorDashboard
 
             'If Application.OpenForms().OfType(Of AdminArchive).Any Then
             '    AdminArchive.ApplyFilters()
-            '    AdminArchive.ArchiveDataGrid.Refresh()
+            '    AdminArchive.archdatagrid.Refresh()
             'End If
             'If Application.OpenForms().OfType(Of StudentDashboard).Any Then
             '    StudentDashboard.LoadAll()
@@ -609,22 +647,24 @@ Public Class ProfessorDashboard
 
     Private Sub StudSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles StudSection.SelectedIndexChanged
         Dim ChosenItem As String = StudSection.SelectedItem
-        If ChosenItem.Contains("4"c) Then
-            StudYear.SelectedItem = 4
-            StudYear.Text = 4
-            StudYear.Refresh()
-        ElseIf ChosenItem.Contains("3"c) Then
-            StudYear.SelectedItem = 3
-            StudYear.Text = 3
-            StudYear.Refresh()
-        ElseIf ChosenItem.Contains("2"c) Then
-            StudYear.SelectedItem = 2
-            StudYear.Text = 2
-            StudYear.Refresh()
-        ElseIf ChosenItem.Contains("1"c) Then
-            StudYear.SelectedItem = 1
-            StudYear.Text = 1
-            StudYear.Refresh()
+        If StudSection.SelectedIndex <> -1 Then
+            If ChosenItem.Contains("4"c) Then
+                StudYear.SelectedItem = 4
+                StudYear.Text = 4
+                StudYear.Refresh()
+            ElseIf ChosenItem.Contains("3"c) Then
+                StudYear.SelectedItem = 3
+                StudYear.Text = 3
+                StudYear.Refresh()
+            ElseIf ChosenItem.Contains("2"c) Then
+                StudYear.SelectedItem = 2
+                StudYear.Text = 2
+                StudYear.Refresh()
+            ElseIf ChosenItem.Contains("1"c) Then
+                StudYear.SelectedItem = 1
+                StudYear.Text = 1
+                StudYear.Refresh()
+            End If
         End If
     End Sub
 
@@ -668,10 +708,14 @@ Public Class ProfessorDashboard
 
     ' REPORTS TAB
 
+
+
+    ' REASONS TAB
+
     Private Sub ReaLoadData()
         conn.Open()
 
-        Dim cmd As New MySqlCommand("SELECT * FROM reasons", conn)
+        Dim cmd As New MySqlCommand("SELECT reason_ID as 'Reason ID', reason as 'Reason Name', special as 'Special Event' FROM reasons", conn)
         cmd.ExecuteNonQuery()
         conn.Close()
 
@@ -687,7 +731,7 @@ Public Class ProfessorDashboard
             ReaLoadData()
         Else
             conn.Open()
-            Dim cmd As New MySqlCommand("SELECT * FROM reasons WHERE CONCAT(reason_ID, reason, special) like '%" & ReaSearchReason.Text & "%'", conn)
+            Dim cmd As New MySqlCommand("SELECT reason_ID as 'Reason ID', reason as 'Reason Name', special as 'Special Event' FROM reasons WHERE CONCAT(reason_ID, reason, special) like '%" & ReaSearchReason.Text & "%'", conn)
 
             Dim adapter As New MySqlDataAdapter(cmd)
             Dim table As New DataTable()
@@ -700,6 +744,535 @@ Public Class ProfessorDashboard
             conn.Close()
         End If
     End Sub
+
+    ' Clear Reason boxes
+    Private Sub ReaClear()
+        ReaReasonID.Text = ""
+        ReaReasonName.Text = ""
+        ReaSpecialEvent.Text = ""
+        ReaSpecialEvent.SelectedItem = -1
+        ReaSpecialEvent.Refresh()
+    End Sub
+
+    Private Sub ReaDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ReaDataGrid.CellContentClick
+        Try
+            Dim index As Integer
+            index = e.RowIndex
+
+            Dim row As DataGridViewRow
+            row = ReaDataGrid.Rows(index)
+
+            ReaReasonID.Text = row.Cells(0).Value.ToString
+            ReaReasonName.Text = row.Cells(1).Value.ToString
+            ReaSpecialEvent.Text = row.Cells(2).Value.ToString
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    ' Delete button in reason
+    Private Sub ReaDelBtn_Click(sender As Object, e As EventArgs) Handles ReaDelBtn.Click
+        If ReaReasonID.Text = "" Then
+            MessageBox.Show("Unable to Delete a Reason, Select an ID first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim ask As MsgBoxResult
+            ask = MsgBox("Do you really want to Delete this Reason?", MsgBoxStyle.YesNo, "Online Registration System")
+            If ask = MsgBoxResult.Yes Then
+                conn.Open()
+
+                Dim cmd As New MySqlCommand("DELETE FROM reasons WHERE reason_ID = '" & ReaReasonID.Text & "'", conn)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Successfully Deleted!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ReaClear()
+                conn.Close()
+
+                ReaLoadData()
+            End If
+        End If
+    End Sub
+
+    ' Update Button in Reason
+    Private Sub ReaUpdBtn_Click(sender As Object, e As EventArgs) Handles ReaUpdBtn.Click
+        If ReaReasonName.Text = "" Or ReaReasonID.Text = "" Then
+            MessageBox.Show("Unable to Update a Reason, Fill up all the fields first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            conn.Open()
+            Dim cmd As New MySqlCommand("UPDATE reasons SET reason = '" & ReaReasonName.Text & "', special = '" & ReaSpecialEvent.Text & "' WHERE reason_ID = '" & ReaReasonID.Text & "'", conn)
+
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Successfully Updated!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ReaClear()
+            conn.Close()
+
+            ReaLoadData()
+        End If
+    End Sub
+
+    ' Add Button on Reason
+    Private Sub ReaAddBtn_Click(sender As Object, e As EventArgs) Handles ReaAddBtn.Click
+        Try
+            If ReaReasonName.Text = "" Or ReaReasonID.Text = "" Or ReaSpecialEvent.Text = "" Then
+                MessageBox.Show("Unable to Insert a Reason, Fill up the field first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                conn.Open()
+                Dim cmd As New MySqlCommand("INSERT INTO reasons VALUES (" & ReaReasonID.Text & ", '" & ReaReasonName.Text & "' , '" & ReaSpecialEvent.Text & "')", conn)
+
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Successfully Added!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ReaClear()
+                conn.Close()
+
+                ReaLoadData()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Unable to Insert a Reason, ID is already taken!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            conn.Close()
+
+            ReaLoadData()
+        End Try
+    End Sub
+
+    Private Sub ReaReasonID_KeyDown(sender As Object, e As KeyEventArgs) Handles ReaReasonID.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ReaReasonName.Focus()
+        End If
+    End Sub
+
+    Private Sub ReaReasonName_KeyDown(sender As Object, e As KeyEventArgs) Handles ReaReasonName.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ReaSpecialEvent.Focus()
+        End If
+    End Sub
+
+    Private Sub ReaClrBtn_Click(sender As Object, e As EventArgs) Handles ReaClrBtn.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure on clearing text boxes?", "Clear Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.No Then
+            Return
+        End If
+        ReaClear()
+    End Sub
+
+    ' SECTIONS TAB
+
+    Private Sub SectLoadData()
+        conn.Open()
+
+        Dim cmd As New MySqlCommand("SELECT id as 'Section ID', section as 'Section Name' FROM sections", conn)
+        cmd.ExecuteNonQuery()
+        conn.Close()
+
+        Dim da As New MySqlDataAdapter(cmd)
+        Dim dt As New DataTable
+
+        da.Fill(dt)
+        SectDataGrid.DataSource = dt
+    End Sub
+
+    Private Sub SectClrBtn_Click(sender As Object, e As EventArgs) Handles SectClrBtn.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure on clearing text boxes?", "Clear Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.No Then
+            Return
+        End If
+        SectClear()
+    End Sub
+
+    Private Sub SectClear()
+        SectSectID.Clear()
+        SectName.Clear()
+    End Sub
+
+    Private Sub SectSearchSect_TextChanged(sender As Object, e As EventArgs) Handles SectSearchSect.TextChanged
+        If SectSearchSect.Text = "" Then
+            SectLoadData()
+        Else
+            conn.Open()
+            Dim cmd As New MySqlCommand("SELECT id as 'Section ID', section as 'Section Name' FROM sections WHERE CONCAT(id, section) like '%" & SectSearchSect.Text & "%'", conn)
+
+            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+
+            cmd.ExecuteNonQuery()
+
+            SectDataGrid.DataSource = table
+            conn.Close()
+        End If
+    End Sub
+
+    Private Sub SectAddBtn_Click(sender As Object, e As EventArgs) Handles SectAddBtn.Click
+        Try
+            If SectName.Text = "" Or SectSectID.Text = "" Then
+                MessageBox.Show("Unable to Insert a Section, Fill up the field first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                conn.Open()
+                Dim cmd As New MySqlCommand("INSERT INTO sections VALUES (" & SectSectID.Text & ", '" & SectSectID.Text & "')", conn)
+
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Successfully Added!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                SectClear()
+                conn.Close()
+
+                SectLoadData()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Unable to Insert a Section, ID is already taken!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            conn.Close()
+            SectLoadData()
+        End Try
+    End Sub
+
+    Private Sub SectUpdBtn_Click(sender As Object, e As EventArgs) Handles SectUpdBtn.Click
+        If SectSearchSect.Text = "" Or SectSectID.Text = "" Then
+            MessageBox.Show("Unable to Update a Section, Fill up all the fields first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            conn.Open()
+            Dim cmd As New MySqlCommand("UPDATE sections SET section = '" & SectName.Text & "' WHERE id = '" & SectSectID.Text & "'", conn)
+
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Successfully Updated!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            SectClear()
+            conn.Close()
+
+            SectLoadData()
+        End If
+    End Sub
+
+    Private Sub SectDelBtn_Click(sender As Object, e As EventArgs) Handles SectDelBtn.Click
+        If SectSectID.Text = "" Then
+            MessageBox.Show("Unable to Delete a Section, Select an ID first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim ask As MsgBoxResult
+            ask = MsgBox("Do you really want to Delete this Section?", MsgBoxStyle.YesNo, "Online Registration System")
+            If ask = MsgBoxResult.Yes Then
+                conn.Open()
+
+                Dim cmd As New MySqlCommand("DELETE FROM sections WHERE id = '" & SectSectID.Text & "'", conn)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Successfully Deleted!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                SectClear()
+                conn.Close()
+
+                SectLoadData()
+            End If
+        End If
+    End Sub
+
+    Private Sub SectDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles SectDataGrid.CellContentClick
+        Try
+            If SectDataGrid.SelectedCells IsNot Nothing Then
+                Dim index As Integer
+                index = e.RowIndex
+
+                Dim row As DataGridViewRow
+                row = SectDataGrid.Rows(index)
+
+                SectSectID.Text = row.Cells(0).Value.ToString
+                SectName.Text = row.Cells(1).Value.ToString
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SectSectID_KeyDown(sender As Object, e As KeyEventArgs) Handles SectSectID.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SectName.Focus()
+        End If
+    End Sub
+
+    Private Sub SectName_KeyDown(sender As Object, e As KeyEventArgs) Handles SectName.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SectAddBtn.PerformClick()
+        End If
+    End Sub
+
+    ' ARCHIVES TAB
+
+    Private Sub ArchFilBySect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ArchFilBySect.SelectedIndexChanged
+        ArchLoadData()
+    End Sub
+
+    Private Sub ArchFilByYear_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ArchFilByYear.SelectedIndexChanged
+        ArchLoadData()
+    End Sub
+
+    Private Sub ArchClrBtn_Click(sender As Object, e As EventArgs) Handles ArchClrBtn.Click
+        SaveFileDialog1.ShowDialog()
+        If SaveFileDialog1.FileName = "" Then
+            MsgBox("Enter filename to create PDF!", vbExclamation)
+        Else
+            Dim pdfTable As New PdfPTable(ArchDataGrid.ColumnCount)
+            pdfTable.DefaultCell.Padding = 3
+            pdfTable.WidthPercentage = 85
+            pdfTable.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER
+            pdfTable.DefaultCell.BorderWidth = 1
+
+            Dim nameParagraph As New Paragraph("" & ProfNameLbl.Text & " / " & DateLbl.Text & " / " & TimeLbl.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12))
+            nameParagraph.Alignment = iTextSharp.text.Element.ALIGN_LEFT
+
+            ' Load the first image
+            Dim imagePath1 As String = "plp_logo\plplogo.jpg" ' Replace with the actual path to your first image
+            Dim img1 As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(imagePath1)
+            img1.ScaleAbsoluteWidth(20.0F) ' Adjust the size as needed
+
+            ' Load the second image
+            Dim imagePath2 As String = "plp_logo\ccslogo.png" ' Replace with the actual path to your second image
+            Dim img2 As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(imagePath2)
+            img2.ScaleAbsoluteWidth(20.0F) ' Adjust the size as needed
+
+            ' Create a PdfPTable with two cells
+            Dim imageTable As New PdfPTable(7)
+            imageTable.TotalWidth = 900.0F ' Set total width of the table
+            imageTable.LockedWidth = True ' Lock the width
+            imageTable.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER
+            imageTable.DefaultCell.Border = 0 ' No border for the cells
+            imageTable.DefaultCell.PaddingTop = 50 ' No padding for the cells
+            imageTable.DefaultCell.FixedHeight = 150.0F ' Set fixed height for the cells
+
+            ' Add the first image to the first cell
+            imageTable.AddCell(img1)
+
+            Dim emptyCell1 As New PdfPCell()
+            emptyCell1.Border = 0 ' No border for the em    pty cell
+            imageTable.AddCell(emptyCell1)
+
+            Dim PLPBold As New Paragraph("Pamantasan ng Lungsod ng Pasig" & vbCrLf, New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD)) With {.SpacingAfter = 10}
+            Dim PLPAddress As New Paragraph("Alkalde Jose St. Kapasigan, Pasig City" & vbCrLf, New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14)) With {.SpacingAfter = 10}
+            Dim CCS As New Paragraph(vbCrLf & "College of Computer Studies", New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14)) With {.SpacingAfter = 10}
+            Dim space As New Chunk(" " & vbCrLf, New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8))
+
+            Dim combinedText As New Phrase From {
+                PLPBold,
+                space,
+                PLPAddress,
+                space,
+                CCS
+            }
+
+            Dim PLPTItle As New PdfPCell(combinedText) With {
+                .Border = 0, ' No border for the paragraph cell
+                .HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER,
+                .PaddingTop = 70,
+                .Colspan = 3
+            }
+            imageTable.AddCell(PLPTItle)
+
+            Dim emptyCell As New PdfPCell With {
+                .Border = 0
+            }
+            imageTable.AddCell(emptyCell)
+
+            ' Add the second image to the second cell
+            imageTable.AddCell(img2)
+
+            ' Set Font Size
+            Const FontSize As Integer = 14 ' Adjust the font size as needed
+
+            Dim heading As Paragraph
+
+            If ArchFilBySect.Text IsNot "" AndAlso ArchFilByYear.Text IsNot "" AndAlso ArchSearchBox.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf &
+                            "Archived Students (Section: " & ArchFilBySect.Text &
+                            ", Year: " & ArchFilByYear.Text &
+                            ", Search: " & ArchSearchBox.Text & ")",
+                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf ArchFilBySect.Text IsNot "" AndAlso ArchFilByYear.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf &
+                            "Archived Students (Section: " & ArchFilBySect.Text &
+                            ", Year: " & ArchFilByYear.Text & ")",
+                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf ArchFilBySect.Text IsNot "" AndAlso ArchSearchBox.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf &
+                            "Archived Students (Section: " & ArchFilBySect.Text &
+                            ", Search: " & ArchSearchBox.Text & ")",
+                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf ArchFilByYear.Text IsNot "" AndAlso ArchSearchBox.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf &
+                            "Archived Students (Year: " & ArchFilByYear.Text &
+                            ", Search: " & ArchSearchBox.Text & ")",
+                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf ArchFilBySect.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf &
+                            "Archived Students (Section: " & ArchFilBySect.Text & ")",
+                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf ArchFilByYear.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf &
+                            "Archived Students (Year: " & ArchFilByYear.Text & ")",
+                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf ArchSearchBox.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf &
+                            "Archived Students (Search: " & ArchSearchBox.Text & ")",
+                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            Else
+                heading = New Paragraph("Online Registration System" & vbCrLf &
+                            "Archived Students",
+                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            End If
+
+
+            heading.Alignment = iTextSharp.text.Element.ALIGN_CENTER
+            heading.SpacingBefore = 40
+            pdfTable.SpacingBefore = 20
+
+            ' Adding Header row
+            For Each column As DataGridViewColumn In ArchDataGrid.Columns
+                Dim cell As New PdfPCell(New Phrase(column.HeaderText, New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, FontSize))) With {
+                    .BackgroundColor = New iTextSharp.text.BaseColor(76, 175, 80)
+                }
+                pdfTable.AddCell(cell)
+            Next
+
+            ' Adding DataRow
+            Dim cellvalue As String = ""
+            For Each row As DataGridViewRow In ArchDataGrid.Rows
+                For Each cell As DataGridViewCell In row.Cells
+                    cellvalue = cell.FormattedValue
+                    pdfTable.AddCell(New Phrase(Convert.ToString(cellvalue), New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, FontSize)))
+                Next
+            Next
+
+            Dim tableTitle As New Paragraph("Graduate Students", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD)) With {
+                .SpacingBefore = 40,
+                .SpacingAfter = 20,
+                .Alignment = iTextSharp.text.Element.ALIGN_CENTER
+            }
+
+            Dim pdfDoc As New Document(iTextSharp.text.PageSize.A2, 10.0F, 10.0F, 10.0F, 0.0F)
+            Dim writer As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(SaveFileDialog1.FileName + ".pdf", FileMode.Create))
+
+            Dim eventHandler As New PageNumberEventHandler()
+            writer.PageEvent = New PageNumberEventHandler()
+
+            pdfDoc.Open()
+            pdfDoc.Add(nameParagraph)
+            pdfDoc.Add(imageTable)
+            pdfDoc.Add(heading)
+            pdfDoc.Add(tableTitle)
+            pdfDoc.Add(pdfTable)
+            pdfDoc.Close()
+
+            MessageBox.Show("Successfully Saved!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ShellExecute(IntPtr.Zero, "open", SaveFileDialog1.FileName + ".pdf", Nothing, Nothing, 1)
+        End If
+    End Sub
+
+    Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (
+ByVal hwnd As IntPtr,
+ByVal lpOperation As String,
+ByVal lpFile As String,
+ByVal lpParameters As String,
+ByVal lpDirectory As String,
+ByVal nShowCmd As Integer
+) As IntPtr
+
+    Public Class PageNumberEventHandler
+        Inherits PdfPageEventHelper
+
+        Public Overrides Sub OnEndPage(writer As PdfWriter, document As Document)
+            MyBase.OnEndPage(writer, document)
+
+            Dim pageNumber As Integer = writer.PageNumber
+            Dim contentByte As PdfContentByte = writer.DirectContent
+            Dim font As BaseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+            Dim fontSize As Single = 12
+            Dim color As BaseColor = BaseColor.BLACK
+            Dim alignment As Integer = iTextSharp.text.Element.ALIGN_RIGHT
+            Dim offsetX As Single = 40
+            Dim offsetY As Single = 30
+
+            contentByte.BeginText()
+            contentByte.SetFontAndSize(font, fontSize)
+            contentByte.SetColorFill(color)
+            contentByte.ShowTextAligned(alignment, "Page " & pageNumber, document.PageSize.Width - offsetX, offsetY, 0)
+            contentByte.EndText()
+        End Sub
+    End Class
+
+    Private Sub ArchLoadData()
+        Dim DtArchive As New DataTable
+        Dim MySqlString As String = "server=localhost;username=root;password=;database=plpportal_db"
+
+        Dim FilteredSection As String = If(ArchFilBySect.SelectedItem IsNot Nothing, ArchFilBySect.SelectedItem.ToString(), "")
+        Dim FilteredYear As String = If(ArchFilByYear.SelectedItem IsNot Nothing, ArchFilByYear.SelectedItem.ToString(), "")
+        Dim SearchBox As String = If(ArchSearchBox.Text <> "", ArchSearchBox.Text, "")
+        SearchBox = "%" & SearchBox & "%"
+        FilteredSection = "%" & FilteredSection & "%"
+
+        ' Initialize the query
+        Dim baseQuery As String = " SELECT studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, email as Email, section as Section, graduation_date as 'Graduation Date' FROM archive WHERE YEAR(graduation_date) = '" & Date.Today.Year & "'"
+
+        ' Add filters dynamically
+        If Not String.IsNullOrEmpty(FilteredSection) Then
+            baseQuery &= " AND section like '" & FilteredSection & "'"
+        End If
+
+        If Not String.IsNullOrEmpty(FilteredYear) Then
+            baseQuery &= " AND YEAR(graduation_date) = @year"
+        End If
+
+        If Not String.IsNullOrEmpty(SearchBox) Then
+            baseQuery &= " AND section like @search"
+        End If
+
+        ' Clear previous data
+        DtArchive.Clear()
+
+        ' Execute the query
+        Using con As New MySqlConnection(MySqlString)
+            con.Open()
+            Using cmd As New MySqlCommand(baseQuery, con)
+                cmd.Parameters.Clear()
+                ' Add parameters dynamically
+                If Not String.IsNullOrEmpty(FilteredSection) Then
+                    cmd.Parameters.AddWithValue("@section", FilteredSection)
+                End If
+
+                If Not String.IsNullOrEmpty(FilteredYear) Then
+                    cmd.Parameters.AddWithValue("@year", FilteredYear)
+                End If
+
+                If Not String.IsNullOrEmpty(SearchBox) Then
+                    cmd.Parameters.AddWithValue("@search", SearchBox)
+                End If
+                ' Load data
+                cmd.ExecuteNonQuery()
+                Dim adapter As New MySqlDataAdapter(cmd)
+                adapter.Fill(DtArchive)
+            End Using
+
+        End Using
+
+        ' Populate the ListView
+        ArchDataGrid.DataSource = DtArchive
+    End Sub
+
+    Private Sub ArchLoadFilter()
+        ArchFilByYear.Items.Clear()
+        ArchFilBySect.Items.Clear()
+        ArchFilByYear.Items.Add("")
+        ArchFilBySect.Items.Add("")
+        conn.Open()
+        Dim ycmd As New MySqlCommand("SELECT DISTINCT YEAR(graduation_date) AS Year FROM archive", conn)
+        Dim yreader = ycmd.ExecuteReader()
+        While yreader.Read
+            ArchFilByYear.Items.Add(yreader("Year").ToString())
+        End While
+        conn.Close()
+        conn.Open()
+        Dim scmd As New MySqlCommand("SELECT section FROM sections", conn)
+        Dim sreader = scmd.ExecuteReader()
+        While sreader.Read
+            Dim ssection = sreader.GetString("section")
+            ArchFilBySect.Items.Add(ssection)
+        End While
+        conn.Close()
+    End Sub
+
+
 
     ' SIGN OUT TAB
 
@@ -745,5 +1318,64 @@ Public Class ProfessorDashboard
         EntrancePage.Show()
         Timer1.Stop()
         Hide()
+    End Sub
+
+    ' REPORTS TAB
+
+    Private Sub RepLoadData()
+        conn.Open()
+
+        Dim cmd As New MySqlCommand("SELECT report_ID as 'Report ID', studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, section as Section, teacher as Professor, consultation_date as 'Consultation Date', reason as Reason, message as Message, time_in as 'Time In', time_out as 'Time Out' FROM reports", conn)
+        cmd.ExecuteNonQuery()
+        conn.Close()
+
+        Dim da As New MySqlDataAdapter(cmd)
+        Dim dt As New DataTable
+
+        da.Fill(dt)
+        RepDataGrid.DataSource = dt
+    End Sub
+
+    Private Sub RepSearchBox_TextChanged(sender As Object, e As EventArgs) Handles RepSearchBox.TextChanged
+        RepSortBy.SelectedIndex = -1
+        RepProf1Box.SelectedIndex = -1
+        RepYearBox.SelectedIndex = -1
+        RepProf2Box.SelectedIndex = -1
+        RepFromMonthBox.SelectedIndex = -1
+        RepToMonthBox.SelectedIndex = -1
+
+        RepFromDayBox.SelectedIndex = -1
+        RepToDayBox.SelectedIndex = -1
+
+        RepProf1Box.Visible = False
+        RepYearBox.Visible = False
+
+        RepFromMonthBox.Visible = False
+        RepMonthToLbl.Visible = False
+        RepToMonthBox.Visible = False
+
+        RepFromDayBox.Visible = False
+        RepDayToLbl.Visible = False
+        RepDayToLbl.Visible = False
+
+        RepSortBy.Visible = False
+
+        If RepSearchBox.Text = "" Then
+            RepLoadData()
+        Else
+            conn.Open()
+            Dim cmd As New MySqlCommand("SELECT report_ID as 'Report ID', studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, section as Section, teacher as Professor, consultation_date as 'Consultation Date', reason as Reason, message as Message, time_in as 'Time In', time_out as 'Time Out' FROM reports WHERE CONCAT(report_ID, studentnum, last_name, first_name, middle_initial, suffix, section, teacher, consultation_date, reason, message, time_in, time_out) like '%" & RepSearchBox.Text & "%'", conn)
+
+            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+
+            cmd.ExecuteNonQuery()
+
+            ArchDataGrid.DataSource = table
+            conn.Close()
+        End If
+        ReportsChart(YearlyRepPanel, RepDataGrid)
     End Sub
 End Class
