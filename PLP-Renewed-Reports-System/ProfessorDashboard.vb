@@ -4,6 +4,7 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 Imports OxyPlot.WindowsForms
 Imports System.Windows.Controls
+Imports System.ComponentModel
 
 Public Class ProfessorDashboard
     Private Sub ProfessorDashboard_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -30,6 +31,11 @@ Public Class ProfessorDashboard
         ' REPORTS
         RepLoadData()
         ReportsChart(YearlyRepPanel, RepDataGrid)
+        RepSortBy.SelectedIndex = -1
+        RepProf1BoxLoadData()
+        RepProf2BoxLoadData()
+        RepYearBoxLoadData()
+        RepYearBox.SelectedIndex = 0
 
         ' REASONS
         ReaLoadData()
@@ -1376,6 +1382,624 @@ ByVal nShowCmd As Integer
             ArchDataGrid.DataSource = table
             conn.Close()
         End If
+        ReportsChart(YearlyRepPanel, RepDataGrid)
+    End Sub
+
+    Dim sortVal As String
+    Dim profActive As Boolean
+    Dim minNum As Integer = 0
+    Dim maxNum As Integer = 10
+
+    Private Sub RepSortBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepSortBy.SelectedIndexChanged
+        'RepSortBy.SelectedIndex = -1
+        RepProf1Box.SelectedIndex = -1
+        RepYearBox.SelectedIndex = -1
+        RepFromMonthBox.SelectedIndex = -1
+        RepToMonthBox.SelectedIndex = -1
+
+        RepFromDayBox.SelectedIndex = -1
+        RepToDayBox.SelectedIndex = -1
+
+        'RepSortBy.Visible = False
+        'RepSortByLbl.Visible = false
+
+        ' Labels
+
+        RepProf1Lbl.Visible = False
+        RepMonthLbl.Visible = False
+        RepDayLbl.Visible = False
+        RepYearLbl.Visible = False
+        RepProf2Lbl.Visible = False
+
+        ' Labels end of
+
+        RepProf1Box.Visible = False
+        RepYearBox.Visible = False
+
+        RepFromMonthBox.Visible = False
+        RepMonthToLbl.Visible = False
+        RepToMonthBox.Visible = False
+
+        RepFromDayBox.Visible = False
+        RepDayToLbl.Visible = False
+        RepDayToLbl.Visible = False
+
+        'RepSortBy.Visible = False
+
+        If RepSortBy.SelectedIndex = 3 Then
+            RepProf1Lbl.Visible = True
+            RepProf1Box.Visible = True
+            profActive = True
+        Else
+            RepProf1Lbl.Visible = False
+            RepProf1Box.Visible = False
+            profActive = False
+            RepProf1Box.SelectedIndex = -1
+            RepLoadData()
+        End If
+
+        If RepSortBy.SelectedIndex = 4 Then
+            RepYearBox.Visible = True
+            RepYearLbl.Visible = True
+        Else
+            RepMonthLbl.Visible = False
+            RepDayLbl.Visible = False
+            RepFromMonthBox.Visible = False
+            RepToMonthBox.Visible = False
+            RepFromMonthBox.SelectedIndex = -1
+            RepToMonthBox.SelectedIndex = -1
+            RepYearLbl.Visible = False
+            RepYearBox.Visible = False
+            RepYearBox.SelectedIndex = -1
+            RepLoadData()
+        End If
+
+        If RepDataGrid.CurrentCell IsNot Nothing Then
+            If RepSortBy.SelectedIndex = 0 Then
+                RepDataGrid.Sort(RepDataGrid.Columns(1), ListSortDirection.Ascending)
+                sortVal = "Student Num"
+            ElseIf RepSortBy.SelectedIndex = 1 Then
+                RepDataGrid.Sort(RepDataGrid.Columns(2), ListSortDirection.Ascending)
+                sortVal = "Student Last Name"
+            ElseIf RepSortBy.SelectedIndex = 2 Then
+                RepDataGrid.Sort(RepDataGrid.Columns(6), ListSortDirection.Ascending)
+                sortVal = "Section"
+            ElseIf RepSortBy.SelectedIndex = 3 Then
+                RepDataGrid.Sort(RepDataGrid.Columns(7), ListSortDirection.Ascending)
+                sortVal = "Professor Name"
+            ElseIf RepSortBy.SelectedIndex = 4 Then
+                RepDataGrid.Sort(RepDataGrid.Columns(8), ListSortDirection.Ascending)
+                sortVal = "Date"
+            End If
+        End If
+
+        minNum = 0
+        maxNum = 10
+        ReportsChart(YearlyRepPanel, RepDataGrid)
+    End Sub
+
+    Private Sub RepProf1BoxLoadData()
+        conn.Open()
+        Dim cmd As New MySqlCommand("SELECT name FROM profinfo", conn)
+        Dim reader = cmd.ExecuteReader()
+        While reader.Read
+            Dim prof = reader.GetString("name")
+            RepProf1Box.Items.Add(prof)
+        End While
+        conn.Close()
+    End Sub
+
+    Private Sub RepProf2BoxLoadData()
+        conn.Open()
+        Dim pcmd As New MySqlCommand("SELECT name FROM profinfo", conn)
+        Dim preader = pcmd.ExecuteReader()
+        While preader.Read
+            Dim prof = preader.GetString("name")
+            RepProf2Box.Items.Add(prof)
+        End While
+        conn.Close()
+    End Sub
+
+    Private Sub RepYearBoxLoadData()
+        conn.Open()
+        Dim ycmd As New MySqlCommand("SELECT DISTINCT YEAR(consultation_date) AS Year FROM reports", conn)
+        Dim yreader = ycmd.ExecuteReader()
+        While yreader.Read
+            RepYearBox.Items.Add(yreader("Year").ToString())
+        End While
+        conn.Close()
+    End Sub
+
+
+
+    Private Sub RepProf1Box_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepProf1Box.SelectedIndexChanged
+        conn.Open()
+
+        Dim cmd As New MySqlCommand("SELECT report_ID as 'Report ID', studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, section as Section, teacher as Professor, consultation_date as 'Consultation Date', reason as Reason, message as Message, time_in as 'Time In', time_out as 'Time Out' FROM reports where teacher = '" & RepProf1Box.Text & "'", conn)
+        cmd.ExecuteNonQuery()
+        conn.Close()
+
+        Dim adapter As New MySqlDataAdapter(cmd)
+        Dim table As New DataTable()
+
+        adapter.Fill(table)
+        RepDataGrid.DataSource = table
+        minNum = 0
+        maxNum = 10
+        ReportsChart(YearlyRepPanel, RepDataGrid)
+    End Sub
+
+    Private Sub RepYearBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepYearBox.SelectedIndexChanged
+        RepFromMonthBox.SelectedIndex = -1
+        RepToMonthBox.SelectedIndex = -1
+        RepFromDayBox.SelectedIndex = -1
+        RepToDayBox.SelectedIndex = -1
+        RepProf2Box.SelectedIndex = -1
+
+        If RepSortBy.SelectedIndex = -1 Then
+            ' Labels
+
+            RepProf1Lbl.Visible = False
+            RepMonthLbl.Visible = False
+            RepDayLbl.Visible = False
+            RepProf2Lbl.Visible = False
+
+            ' Labels end of
+
+            RepProf1Box.Visible = False
+
+            RepFromMonthBox.Visible = False
+            RepMonthToLbl.Visible = False
+            RepToMonthBox.Visible = False
+
+            RepFromDayBox.Visible = False
+            RepDayToLbl.Visible = False
+            RepDayToLbl.Visible = False
+
+            Return
+        End If
+
+        If RepYearBox.SelectedIndex <> -1 Then
+            RepMonthLbl.Visible = True
+            RepDayLbl.Visible = True
+            RepFromMonthBox.Visible = True
+            RepToMonthBox.Visible = True
+            RepFromDayBox.Visible = True
+            RepToDayBox.Visible = True
+            RepDayToLbl.Visible = True
+            RepMonthToLbl.Visible = True
+            RepProf2Box.Visible = True
+            RepProf2Lbl.Visible = True
+            conn.Open()
+
+            Dim cmd As New MySqlCommand("SELECT report_ID as 'Report ID', studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, section as Section, teacher as Professor, consultation_date as 'Consultation Date', reason as Reason, message as Message, time_in as 'Time In', time_out as 'Time Out' FROM reports WHERE YEAR(consultation_date) = " & RepYearBox.Text & "", conn)
+            cmd.ExecuteNonQuery()
+
+            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim table As New DataTable
+
+            adapter.Fill(table)
+
+            RepDataGrid.DataSource = table
+            conn.Close()
+        End If
+        minNum = 0
+        maxNum = 10
+        ReportsChart(YearlyRepPanel, RepDataGrid)
+    End Sub
+
+    Private Sub MonthBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepFromMonthBox.SelectedIndexChanged, RepToMonthBox.SelectedIndexChanged
+        RepProf2Box.SelectedIndex = -1
+
+        If RepYearBox.SelectedIndex = -1 Then
+            ' Labels
+
+            RepProf1Lbl.Visible = False
+            RepMonthLbl.Visible = False
+            RepDayLbl.Visible = False
+            RepYearLbl.Visible = False
+            RepProf2Lbl.Visible = False
+
+            ' Labels end of
+
+            RepProf1Box.Visible = False
+            RepYearBox.Visible = False
+
+            RepFromMonthBox.Visible = False
+            RepMonthToLbl.Visible = False
+            RepToMonthBox.Visible = False
+
+            RepFromDayBox.Visible = False
+            RepDayToLbl.Visible = False
+            RepDayToLbl.Visible = False
+
+            Return
+        End If
+
+        If RepFromMonthBox.SelectedIndex <> -1 AndAlso RepToMonthBox.SelectedIndex <> -1 AndAlso RepYearBox.Text IsNot "" Then
+            Dim monthNames As New Dictionary(Of String, Integer) From {
+            {"January", 1}, {"February", 2}, {"March", 3}, {"April", 4},
+            {"May", 5}, {"June", 6}, {"July", 7}, {"August", 8},
+            {"September", 9}, {"October", 10}, {"November", 11}, {"December", 12}
+        }
+
+            Dim selectedFromMonth = RepFromMonthBox.Text
+            Dim selectedToMonth = RepToMonthBox.Text
+            Dim selectedYear = RepYearBox.Text
+
+            Dim fromMonthNumber = monthNames(selectedFromMonth)
+            Dim toMonthNumber = monthNames(selectedToMonth)
+
+            ' Calculate the start and end dates
+            Dim startDate = selectedYear & "-" & fromMonthNumber.ToString("00") & "-01"
+            Dim endDate As String
+
+            If toMonthNumber = 12 Then
+                endDate = selectedYear & "-" & toMonthNumber.ToString("00") & "-31"
+            Else
+                endDate = selectedYear & "-" & (toMonthNumber + 1).ToString("00") & "-01"
+            End If
+            If RepFromMonthBox.SelectedIndex <> -1 AndAlso RepProf2Box.SelectedIndex <> -1 Then
+                DayHelperSub(startDate, endDate)
+            ElseIf RepFromMonthBox.SelectedIndex <> -1 AndAlso RepProf2Box.SelectedIndex = -1 Then
+                DayNoProfHelperSub(startDate, endDate)
+            Else
+                conn.Open()
+                Dim cmd As New MySqlCommand("SELECT report_ID as 'Report ID', studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, section as Section, teacher as Professor, consultation_date as 'Consultation Date', reason as Reason, message as Message, time_in as 'Time In', time_out as 'Time Out' FROM reports WHERE consultation_date >= @startDate AND consultation_date <= @endDate", conn)
+                cmd.Parameters.AddWithValue("@startDate", startDate)
+                cmd.Parameters.AddWithValue("@endDate", endDate)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim table As New DataTable
+                adapter.Fill(table)
+                RepDataGrid.DataSource = table
+                conn.Close()
+            End If
+        End If
+        minNum = 0
+        maxNum = 10
+        ReportsChart(YearlyRepPanel, RepDataGrid)
+    End Sub
+
+    Private Sub DayComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepFromDayBox.SelectedIndexChanged, RepToDayBox.SelectedIndexChanged
+        RepProf2Box.SelectedIndex = -1
+
+        If RepYearBox.SelectedIndex = -1 Then
+            ' Labels
+
+            RepProf1Lbl.Visible = False
+            RepMonthLbl.Visible = False
+            RepDayLbl.Visible = False
+            RepYearLbl.Visible = False
+            RepProf2Lbl.Visible = False
+
+            ' Labels end of
+
+            RepProf1Box.Visible = False
+            RepYearBox.Visible = False
+
+            RepFromMonthBox.Visible = False
+            RepMonthToLbl.Visible = False
+            RepToMonthBox.Visible = False
+
+            RepFromDayBox.Visible = False
+            RepDayToLbl.Visible = False
+            RepDayToLbl.Visible = False
+
+            Return
+        End If
+
+        If RepFromDayBox.SelectedIndex <> -1 AndAlso RepToDayBox.SelectedIndex <> -1 AndAlso RepProf2Box.SelectedIndex = -1 Then
+            Dim selectedYear = RepYearBox.Text
+            Dim selectedFromDay As Integer = Convert.ToInt32(RepFromDayBox.Text)
+            Dim selectedToDay As Integer = Convert.ToInt32(RepToDayBox.Text)
+
+            If selectedFromDay > selectedToDay Then
+                MessageBox.Show("Start day cannot be greater than end day.")
+                Return
+            End If
+
+            Dim selectedMonth = RepFromMonthBox.Text
+            Dim monthNames As New Dictionary(Of String, Integer) From {
+            {"January", 1}, {"February", 2}, {"March", 3}, {"April", 4},
+            {"May", 5}, {"June", 6}, {"July", 7}, {"August", 8},
+            {"September", 9}, {"October", 10}, {"November", 11}, {"December", 12}
+        }
+
+            Dim selectedMonthNumber As Integer
+            If RepFromMonthBox.SelectedIndex = -1 Then
+                selectedMonthNumber = 1
+            Else
+                selectedMonthNumber = monthNames(selectedMonth)
+            End If
+
+            Dim startDate As String = selectedYear & "-" & selectedMonthNumber.ToString("00") & "-" & selectedFromDay.ToString("00")
+            Dim endDate As String = selectedYear & "-" & selectedMonthNumber.ToString("00") & "-" & selectedToDay.ToString("00")
+
+            DayNoProfHelperSub(startDate, endDate)
+
+        ElseIf RepFromDayBox.SelectedIndex <> -1 AndAlso RepToDayBox.SelectedIndex <> -1 AndAlso RepProf2Box.SelectedIndex <> -1 Then
+            Dim selectedYear = RepYearBox.Text
+            Dim selectedFromDay As Integer = Convert.ToInt32(RepFromDayBox.Text)
+            Dim selectedToDay As Integer = Convert.ToInt32(RepToDayBox.Text)
+
+            If selectedFromDay > selectedToDay Then
+                MessageBox.Show("Start day cannot be greater than end day.")
+                Return
+            End If
+
+            Dim selectedMonth = RepFromMonthBox.Text
+            Dim monthNames As New Dictionary(Of String, Integer) From {
+            {"Jan", 1}, {"Feb", 2}, {"Mar", 3}, {"Apr", 4},
+            {"May", 5}, {"Jun", 6}, {"Jul", 7}, {"Aug", 8},
+            {"Sep", 9}, {"Oct", 10}, {"Nov", 11}, {"Dec", 12}
+        }
+
+            Dim selectedMonthNumber As Integer
+            If RepFromMonthBox.SelectedIndex = -1 Then
+                selectedMonthNumber = 1
+            Else
+                selectedMonthNumber = monthNames(selectedMonth)
+            End If
+
+            Dim startDate As String = selectedYear & "-" & selectedMonthNumber.ToString("00") & "-" & selectedFromDay.ToString("00")
+            Dim endDate As String = selectedYear & "-" & selectedMonthNumber.ToString("00") & "-" & selectedToDay.ToString("00")
+
+            DayHelperSub(startDate, endDate)
+        End If
+
+        minNum = 0
+        maxNum = 10
+        ReportsChart(YearlyRepPanel, RepDataGrid)
+    End Sub
+
+    Sub DayHelperSub(startDate As Date, endDate As Date)
+        startDate = startDate.ToString("yyyy-MM-dd")
+        endDate = endDate.ToString("yyyy-MM-dd")
+        conn.Open()
+        Dim cmd As New MySqlCommand("SELECT report_ID as 'Report ID', studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, section as Section, teacher as Professor, consultation_date as 'Consultation Date', reason as Reason, message as Message, time_in as 'Time In', time_out as 'Time Out' FROM reports WHERE teacher = @teacher AND consultation_date >= @startDate AND consultation_date <= @endDate", conn)
+        cmd.Parameters.AddWithValue("@teacher", RepProf2Box.Text)
+        cmd.Parameters.AddWithValue("@startDate", startDate)
+        cmd.Parameters.AddWithValue("@endDate", endDate)
+
+        Dim adapter As New MySqlDataAdapter(cmd)
+        Dim table As New DataTable()
+        adapter.Fill(table)
+        RepDataGrid.DataSource = table
+        conn.Close()
+    End Sub
+
+    Sub DayNoProfHelperSub(startDate As Date, endDate As Date)
+        startDate = startDate.ToString("yyyy-MM-dd")
+        endDate = endDate.ToString("yyyy-MM-dd")
+        conn.Open()
+        Dim cmd As New MySqlCommand("SELECT report_ID as 'Report ID', studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, section as Section, teacher as Professor, consultation_date as 'Consultation Date', reason as Reason, message as Message, time_in as 'Time In', time_out as 'Time Out' FROM reports WHERE consultation_date >= @startDate AND consultation_date <= @endDate", conn)
+        cmd.Parameters.AddWithValue("@startDate", startDate)
+        cmd.Parameters.AddWithValue("@endDate", endDate)
+
+        Dim adapter As New MySqlDataAdapter(cmd)
+        Dim table As New DataTable
+        adapter.Fill(table)
+        RepDataGrid.DataSource = table
+        conn.Close()
+    End Sub
+
+    Private Sub ArchPrintBtn_Click(sender As Object, e As EventArgs) Handles ArchPrintBtn.Click
+        SaveFileDialog1.ShowDialog()
+        If SaveFileDialog1.FileName = "" Then
+            MsgBox("Enter filename to create PDF!", vbExclamation)
+        Else
+            Dim pdfTable As New PdfPTable(RepDataGrid.ColumnCount)
+            pdfTable.DefaultCell.Padding = 3
+            pdfTable.WidthPercentage = 85
+            pdfTable.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER
+            pdfTable.DefaultCell.BorderWidth = 1
+
+            Dim nameParagraph As New Paragraph("" & ProfNameLbl.Text & " / " & DateLbl.Text & " / " & TimeLbl.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12))
+            nameParagraph.Alignment = iTextSharp.text.Element.ALIGN_LEFT
+
+            ' Load the first image
+            Dim imagePath1 As String = "plp_logo\plplogo.jpg" ' Replace with the actual path to your first image
+            Dim img1 As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(imagePath1)
+            img1.ScaleAbsoluteWidth(20.0F) ' Adjust the size as needed
+
+            ' Load the second image
+            Dim imagePath2 As String = "plp_logo\ccslogo.png" ' Replace with the actual path to your second image
+            Dim img2 As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(imagePath2)
+            img2.ScaleAbsoluteWidth(20.0F) ' Adjust the size as needed
+
+            ' Create a PdfPTable with two cells
+            Dim imageTable As New PdfPTable(7)
+            imageTable.TotalWidth = 900.0F ' Set total width of the table
+            imageTable.LockedWidth = True ' Lock the width
+            imageTable.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER
+            imageTable.DefaultCell.Border = 0 ' No border for the cells
+            imageTable.DefaultCell.PaddingTop = 50 ' No padding for the cells
+            imageTable.DefaultCell.FixedHeight = 150.0F ' Set fixed height for the cells
+
+            ' Add the first image to the first cell
+            imageTable.AddCell(img1)
+
+            Dim emptyCell1 As New PdfPCell()
+            emptyCell1.Border = 0 ' No border for the em    pty cell
+            imageTable.AddCell(emptyCell1)
+
+            Dim PLPBold As New Paragraph("Pamantasan ng Lungsod ng Pasig" & vbCrLf, New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD)) With {.SpacingAfter = 10}
+            Dim PLPAddress As New Paragraph("Alkalde Jose St. Kapasigan, Pasig City" & vbCrLf, New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14)) With {.SpacingAfter = 10}
+            Dim CCS As New Paragraph(vbCrLf & "College of Computer Studies", New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14)) With {.SpacingAfter = 10}
+            Dim space As New Chunk(" " & vbCrLf, New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8))
+
+            Dim combinedText As New Phrase From {
+                PLPBold,
+                space,
+                PLPAddress,
+                space,
+                CCS
+            }
+
+            Dim PLPTItle As New PdfPCell(combinedText) With {
+                .Border = 0, ' No border for the paragraph cell
+                .HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER,
+                .PaddingTop = 70,
+                .Colspan = 3
+            }
+            imageTable.AddCell(PLPTItle)
+
+            Dim emptyCell As New PdfPCell With {
+                .Border = 0
+            }
+            imageTable.AddCell(emptyCell)
+
+            ' Add the second image to the second cell
+            imageTable.AddCell(img2)
+
+            ' Set Font Size
+            Const FontSize As Integer = 14 ' Adjust the font size as needed
+
+            YearlyRepPanel.Enabled = True
+            Dim chartTable As New PdfPTable(1) With {
+                .HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER,
+                .SpacingBefore = 40,
+                .SpacingAfter = 20
+            }
+
+            'Dim chartsImage As Image = ConvertPanelToITextSharpImage(DailyReportChartPanel)
+            Dim chartsImage As iTextSharp.text.Image = ConvertPanelToITextSharpImage(YearlyRepPanel)
+            chartTable.AddCell(chartsImage)
+
+            Dim heading As Paragraph
+
+            If RepProf1Box.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf & "Reports by Professor " & RepProf1Box.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf RepSortBy.Text = "Date" And RepYearBox.Text IsNot "" And RepFromMonthBox.Text = "" And RepFromDayBox.Text IsNot "" And RepToDayBox.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf & "Reports from " & RepFromDayBox.Text & " to " & RepToDayBox.Text & " of " & RepYearBox.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf RepSortBy.Text = "Date" And RepYearBox.Text IsNot "" And RepFromMonthBox.Text IsNot "" And RepFromDayBox.Text IsNot "" And RepToDayBox.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf & "Reports from " & RepFromMonthBox.Text & " " & RepFromDayBox.Text & " to " & RepToMonthBox.Text & " " & RepToDayBox.Text & " of Year " & RepYearBox.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf RepSortBy.Text = "Date" And RepYearBox.Text IsNot "" And RepFromMonthBox.Text IsNot "" And RepFromDayBox.Text IsNot "" And RepProf2Box.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf & "Reports by Professor " & RepProf2Box.Text & " Year " & RepYearBox.Text & " of " & RepFromMonthBox.Text & " " & RepFromDayBox.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf RepSortBy.Text = "Date" And RepYearBox.Text IsNot "" And RepFromMonthBox.Text = "" And RepFromDayBox.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf & "Reports for " & RepFromDayBox.Text & " of Year " & RepYearBox.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            ElseIf RepSortBy.Text = "Date" And RepYearBox.Text IsNot "" And RepFromMonthBox.Text IsNot "" And RepFromDayBox.Text IsNot "" Then
+                heading = New Paragraph("Online Registration System" & vbCrLf & "Reports by " & RepFromMonthBox.Text & " " & RepFromDayBox.Text & " " & RepYearBox.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            Else
+                heading = New Paragraph("Online Registration System" & vbCrLf & "Reports sorted by " & sortVal & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+            End If
+
+            heading.Alignment = iTextSharp.text.Element.ALIGN_CENTER
+            heading.SpacingBefore = 40
+            pdfTable.SpacingBefore = 20
+
+            ' Adding Header row
+            For Each column As DataGridViewColumn In RepDataGrid.Columns
+                Dim cell As New PdfPCell(New Phrase(column.HeaderText, New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, FontSize))) With {
+                    .BackgroundColor = New iTextSharp.text.BaseColor(76, 175, 80)
+                }
+                pdfTable.AddCell(cell)
+            Next
+
+            ' Adding DataRow
+            Dim cellvalue As String = ""
+            For Each row As DataGridViewRow In RepDataGrid.Rows
+                For Each cell As DataGridViewCell In row.Cells
+                    cellvalue = cell.FormattedValue
+                    pdfTable.AddCell(New Phrase(Convert.ToString(cellvalue), New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, FontSize)))
+                Next
+            Next
+
+            Dim tableTitle As New Paragraph("Data Table", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD)) With {
+                .SpacingBefore = 40,
+                .SpacingAfter = 20,
+                .Alignment = iTextSharp.text.Element.ALIGN_CENTER
+            }
+
+            Dim pdfDoc As New Document(iTextSharp.text.PageSize.A2, 10.0F, 10.0F, 10.0F, 0.0F)
+            Dim writer As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(SaveFileDialog1.FileName + ".pdf", FileMode.Create))
+
+            Dim eventHandler As New PageNumberEventHandler()
+            writer.PageEvent = New PageNumberEventHandler()
+
+            pdfDoc.Open()
+            pdfDoc.Add(nameParagraph)
+            pdfDoc.Add(imageTable)
+            pdfDoc.Add(heading)
+            pdfDoc.Add(chartTable)
+            pdfDoc.Add(tableTitle)
+            pdfDoc.Add(pdfTable)
+            pdfDoc.Close()
+
+            MessageBox.Show("Successfully Saved!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ShellExecute(IntPtr.Zero, "open", SaveFileDialog1.FileName + ".pdf", Nothing, Nothing, 1)
+        End If
+    End Sub
+
+    Private Sub RepProf2Box_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepProf2Box.SelectedIndexChanged
+        Try
+            If RepYearBox.Text IsNot "" And RepFromMonthBox.Text = "" Then
+                conn.Open()
+                Dim cmd As New MySqlCommand("SELECT report_ID as 'Report ID', studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, section as Section, teacher as Professor, consultation_date as 'Consultation Date', reason as Reason, message as Message, time_in as 'Time In', time_out as 'Time Out' FROM reports WHERE teacher = @teacher AND YEAR(consultation_date) = @year", conn)
+                cmd.Parameters.AddWithValue("@teacher", RepProf2Box.Text)
+                cmd.Parameters.AddWithValue("@year", RepYearBox.Text)
+                cmd.ExecuteNonQuery()
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+                RepDataGrid.DataSource = table
+                conn.Close()
+            Else
+                Dim monthNames As New Dictionary(Of String, Integer) From {
+                    {"Jan", 1}, {"Feb", 2}, {"Mar", 3}, {"Apr", 4},
+                    {"May", 5}, {"Jun", 6}, {"Jul", 7}, {"Aug", 8},
+                    {"Sep", 9}, {"Oct", 10}, {"Nov", 11}, {"Dec", 12}
+                }
+
+                Dim selectedFromMonth As String = RepFromMonthBox.Text
+                Dim selectedToMonth As String = RepToMonthBox.Text
+                Dim selectedYear As String = RepYearBox.Text
+
+                Dim fromMonthNumber As Integer = monthNames(selectedFromMonth)
+                Dim toMonthNumber As Integer
+                If RepToMonthBox.SelectedIndex = -1 Then
+                    toMonthNumber = 12
+                Else
+                    toMonthNumber = monthNames(selectedToMonth)
+                End If
+
+                Dim selectedFromDay As Integer = If(RepFromDayBox.SelectedIndex = -1, 1, Convert.ToInt32(RepFromDayBox.Text))
+                Dim selectedToDay As Integer = If(RepToDayBox.SelectedIndex = -1, 31, Convert.ToInt32(RepToDayBox.Text))
+
+                Dim startDate As String = selectedYear & "-" & fromMonthNumber.ToString("00") & "-" & selectedFromDay.ToString("00")
+                Dim endDate As String = selectedYear & "-" & toMonthNumber.ToString("00") & "-" & selectedToDay.ToString("00")
+
+                If RepFromMonthBox.SelectedIndex <> -1 AndAlso RepToMonthBox.SelectedIndex <> -1 Then
+                    If fromMonthNumber = toMonthNumber Then
+                        endDate = selectedYear & "-" & fromMonthNumber.ToString("00") & "-" & selectedToDay.ToString("00")
+                        If RepProf2Box.SelectedIndex <> -1 Then
+                            DayHelperSub(startDate, endDate)
+                        Else
+                            DayNoProfHelperSub(startDate, endDate)
+                        End If
+                    Else
+                        If toMonthNumber = 12 Then
+                            endDate = selectedYear & "-" & toMonthNumber.ToString("00") & "-31"
+                        Else
+                            endDate = selectedYear & "-" & toMonthNumber.ToString("00") & "-01"
+                        End If
+
+                        If RepProf2Box.SelectedIndex <> -1 Then
+                            DayHelperSub(startDate, endDate)
+                        Else
+                            DayNoProfHelperSub(startDate, endDate)
+                        End If
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        minNum = 0
+        maxNum = 10
         ReportsChart(YearlyRepPanel, RepDataGrid)
     End Sub
 End Class
