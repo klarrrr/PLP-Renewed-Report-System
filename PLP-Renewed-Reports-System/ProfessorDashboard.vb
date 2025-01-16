@@ -30,7 +30,7 @@ Public Class ProfessorDashboard
 
         ' REPORTS
         RepLoadData()
-        ReportsChart(YearlyRepPanel, RepDataGrid)
+        ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
         RepSortBy.SelectedIndex = -1
         RepProf1BoxLoadData()
         RepProf2BoxLoadData()
@@ -1386,7 +1386,13 @@ ByVal nShowCmd As Integer
             ArchDataGrid.DataSource = table
             conn.Close()
         End If
-        ReportsChart(YearlyRepPanel, RepDataGrid)
+
+        If RepYearBox.SelectedIndex = -1 Then
+            ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+        Else
+            ReportsChart(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+        End If
+
     End Sub
 
     Dim sortVal As String
@@ -1479,7 +1485,11 @@ ByVal nShowCmd As Integer
 
         minNum = 0
         maxNum = 10
-        ReportsChart(YearlyRepPanel, RepDataGrid)
+        If RepYearBox.SelectedIndex = -1 Then
+            ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+        Else
+            ReportsChart(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+        End If
     End Sub
 
     Private Sub RepProf1BoxLoadData()
@@ -1530,7 +1540,11 @@ ByVal nShowCmd As Integer
         RepDataGrid.DataSource = table
         minNum = 0
         maxNum = 10
-        ReportsChart(YearlyRepPanel, RepDataGrid)
+        If RepYearBox.SelectedIndex = -1 Then
+            ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+        Else
+            ReportsChart(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+        End If
     End Sub
 
     Private Sub RepYearBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepYearBox.SelectedIndexChanged
@@ -1589,7 +1603,11 @@ ByVal nShowCmd As Integer
         End If
         minNum = 0
         maxNum = 10
-        ReportsChart(YearlyRepPanel, RepDataGrid)
+        If RepYearBox.SelectedIndex = -1 Then
+            ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+        Else
+            ReportsChart(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+        End If
     End Sub
 
     Private Sub MonthBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepFromMonthBox.SelectedIndexChanged, RepToMonthBox.SelectedIndexChanged
@@ -1662,7 +1680,11 @@ ByVal nShowCmd As Integer
         End If
         minNum = 0
         maxNum = 10
-        ReportsChart(YearlyRepPanel, RepDataGrid)
+        If RepYearBox.SelectedIndex = -1 Then
+            ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+        Else
+            ReportsChart(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+        End If
     End Sub
 
     Private Sub DayComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepFromDayBox.SelectedIndexChanged, RepToDayBox.SelectedIndexChanged
@@ -1754,7 +1776,11 @@ ByVal nShowCmd As Integer
 
         minNum = 0
         maxNum = 10
-        ReportsChart(YearlyRepPanel, RepDataGrid)
+        If RepYearBox.SelectedIndex = -1 Then
+            ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+        Else
+            ReportsChart(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+        End If
     End Sub
 
     Sub DayHelperSub(startDate As Date, endDate As Date)
@@ -1867,6 +1893,13 @@ ByVal nShowCmd As Integer
                 .SpacingAfter = 20
             }
 
+            ' Before converting chart to image, remove the yearly rep title first
+            If RepYearBox.SelectedIndex = -1 Then
+                ReportsChartNoTitle(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+            Else
+                ReportsChartNoTitle(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+            End If
+
             'Dim chartsImage As Image = ConvertPanelToITextSharpImage(DailyReportChartPanel)
             Dim chartsImage As iTextSharp.text.Image = ConvertPanelToITextSharpImage(YearlyRepPanel)
             chartTable.AddCell(chartsImage)
@@ -1932,6 +1965,13 @@ ByVal nShowCmd As Integer
             pdfDoc.Close()
 
             MessageBox.Show("Successfully Saved!", "Online Registration System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' After everything return the chart back to normal with the title
+            If RepYearBox.SelectedIndex = -1 Then
+                ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+            Else
+                ReportsChart(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+            End If
 
             ShellExecute(IntPtr.Zero, "open", SaveFileDialog1.FileName + ".pdf", Nothing, Nothing, 1)
         End If
@@ -2004,7 +2044,11 @@ ByVal nShowCmd As Integer
         End Try
         minNum = 0
         maxNum = 10
-        ReportsChart(YearlyRepPanel, RepDataGrid)
+        If RepYearBox.SelectedIndex = -1 Then
+            ReportsChart(YearlyRepPanel, RepDataGrid, Date.Today.Year)
+        Else
+            ReportsChart(YearlyRepPanel, RepDataGrid, RepYearBox.SelectedItem)
+        End If
     End Sub
 
     Private Sub StudUploadBtn_Click(sender As Object, e As EventArgs) Handles StudUploadBtn.Click

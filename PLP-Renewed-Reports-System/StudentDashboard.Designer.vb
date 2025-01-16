@@ -232,6 +232,7 @@ Partial Class StudentDashboard
         YearComboBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
         YearComboBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         YearComboBox.FormattingEnabled = True
+        YearComboBox.Hint = "Select your year and section"
         YearComboBox.IntegralHeight = False
         YearComboBox.ItemHeight = 43
         YearComboBox.Location = New Point(1272, 610)
@@ -255,6 +256,7 @@ Partial Class StudentDashboard
         ReasonComboBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
         ReasonComboBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         ReasonComboBox.FormattingEnabled = True
+        ReasonComboBox.Hint = "Select a reason"
         ReasonComboBox.IntegralHeight = False
         ReasonComboBox.ItemHeight = 43
         ReasonComboBox.Location = New Point(669, 608)
@@ -278,6 +280,7 @@ Partial Class StudentDashboard
         ProfComboBox.Font = New Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel)
         ProfComboBox.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
         ProfComboBox.FormattingEnabled = True
+        ProfComboBox.Hint = "Select a professor"
         ProfComboBox.IntegralHeight = False
         ProfComboBox.ItemHeight = 43
         ProfComboBox.Location = New Point(67, 666)
@@ -312,12 +315,12 @@ Partial Class StudentDashboard
         ' 
         MaterialLabel6.AutoSize = True
         MaterialLabel6.Depth = 0
-        MaterialLabel6.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel6.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel6.Font = New Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel6.FontType = MaterialSkin.MaterialSkinManager.fontType.H5
         MaterialLabel6.Location = New Point(67, 758)
         MaterialLabel6.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel6.Name = "MaterialLabel6"
-        MaterialLabel6.Size = New Size(98, 24)
+        MaterialLabel6.Size = New Size(119, 29)
         MaterialLabel6.TabIndex = 10
         MaterialLabel6.Text = "Comments"
         ' 
@@ -504,12 +507,12 @@ Partial Class StudentDashboard
         ' 
         MaterialLabel5.AutoSize = True
         MaterialLabel5.Depth = 0
-        MaterialLabel5.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel5.Font = New Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H5
         MaterialLabel5.Location = New Point(1272, 557)
         MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel5.Name = "MaterialLabel5"
-        MaterialLabel5.Size = New Size(150, 24)
+        MaterialLabel5.Size = New Size(180, 29)
         MaterialLabel5.TabIndex = 5
         MaterialLabel5.Text = "Year and section"
         ' 
@@ -517,12 +520,12 @@ Partial Class StudentDashboard
         ' 
         MaterialLabel4.AutoSize = True
         MaterialLabel4.Depth = 0
-        MaterialLabel4.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel4.Font = New Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H5
         MaterialLabel4.Location = New Point(669, 557)
         MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel4.Name = "MaterialLabel4"
-        MaterialLabel4.Size = New Size(77, 24)
+        MaterialLabel4.Size = New Size(93, 29)
         MaterialLabel4.TabIndex = 4
         MaterialLabel4.Text = "Reasons"
         ' 
@@ -530,12 +533,12 @@ Partial Class StudentDashboard
         ' 
         MaterialLabel3.AutoSize = True
         MaterialLabel3.Depth = 0
-        MaterialLabel3.Font = New Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel)
-        MaterialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H6
+        MaterialLabel3.Font = New Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel)
+        MaterialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H5
         MaterialLabel3.Location = New Point(67, 557)
         MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel3.Name = "MaterialLabel3"
-        MaterialLabel3.Size = New Size(98, 24)
+        MaterialLabel3.Size = New Size(117, 29)
         MaterialLabel3.TabIndex = 2
         MaterialLabel3.Text = "Professors"
         ' 

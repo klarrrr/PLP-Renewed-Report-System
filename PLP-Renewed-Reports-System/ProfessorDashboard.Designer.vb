@@ -23,18 +23,18 @@ Partial Class ProfessorDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfessorDashboard))
         MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         ProfNameLbl = New MaterialSkin.Controls.MaterialLabel()
@@ -135,7 +135,6 @@ Partial Class ProfessorDashboard
         RepSortByLbl = New MaterialSkin.Controls.MaterialLabel()
         RepSortBy = New MaterialSkin.Controls.MaterialComboBox()
         RepYearlyRepCard = New MaterialSkin.Controls.MaterialCard()
-        YearlyRepPanel = New Panel()
         MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel37 = New MaterialSkin.Controls.MaterialLabel()
         RepSearchBox = New MaterialSkin.Controls.MaterialTextBox()
@@ -194,6 +193,7 @@ Partial Class ProfessorDashboard
         TimeLbl = New MaterialSkin.Controls.MaterialLabel()
         Timer1 = New Timer(components)
         SaveFileDialog1 = New SaveFileDialog()
+        YearlyRepPanel = New Panel()
         MaterialTabControl1.SuspendLayout()
         DashboardTab.SuspendLayout()
         MaterialCard2.SuspendLayout()
@@ -616,22 +616,22 @@ Partial Class ProfessorDashboard
         ProfDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ProfDataGrid.BackgroundColor = Color.White
         ProfDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = SystemColors.Control
-        DataGridViewCellStyle1.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.Padding = New Padding(15)
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        ProfDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = SystemColors.Control
+        DataGridViewCellStyle15.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle15.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle15.Padding = New Padding(15)
+        DataGridViewCellStyle15.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = DataGridViewTriState.True
+        ProfDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
         ProfDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ProfDataGrid.Location = New Point(33, 96)
         ProfDataGrid.Name = "ProfDataGrid"
         ProfDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle2.Padding = New Padding(5)
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
-        ProfDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle16.Padding = New Padding(5)
+        DataGridViewCellStyle16.WrapMode = DataGridViewTriState.True
+        ProfDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle16
         ProfDataGrid.RowTemplate.Height = 29
         ProfDataGrid.Size = New Size(1252, 756)
         ProfDataGrid.TabIndex = 4
@@ -981,22 +981,22 @@ Partial Class ProfessorDashboard
         StuDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         StuDataGrid.BackgroundColor = Color.White
         StuDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = SystemColors.Control
-        DataGridViewCellStyle3.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle3.Padding = New Padding(15)
-        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
-        StuDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = SystemColors.Control
+        DataGridViewCellStyle17.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle17.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle17.Padding = New Padding(15)
+        DataGridViewCellStyle17.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = DataGridViewTriState.True
+        StuDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         StuDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         StuDataGrid.Location = New Point(33, 96)
         StuDataGrid.Name = "StuDataGrid"
         StuDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle4.Padding = New Padding(5)
-        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
-        StuDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle18.Padding = New Padding(5)
+        DataGridViewCellStyle18.WrapMode = DataGridViewTriState.True
+        StuDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle18
         StuDataGrid.RowTemplate.Height = 29
         StuDataGrid.Size = New Size(1252, 756)
         StuDataGrid.TabIndex = 34
@@ -1539,23 +1539,23 @@ Partial Class ProfessorDashboard
         RepDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         RepDataGrid.BackgroundColor = Color.White
         RepDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = SystemColors.Control
-        DataGridViewCellStyle5.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle5.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle5.Padding = New Padding(15)
-        DataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
-        RepDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = SystemColors.Control
+        DataGridViewCellStyle13.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle13.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle13.Padding = New Padding(15)
+        DataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = DataGridViewTriState.True
+        RepDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         RepDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         RepDataGrid.Location = New Point(33, 312)
         RepDataGrid.Name = "RepDataGrid"
         RepDataGrid.ReadOnly = True
         RepDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle6.Padding = New Padding(5)
-        DataGridViewCellStyle6.WrapMode = DataGridViewTriState.True
-        RepDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle14.Padding = New Padding(5)
+        DataGridViewCellStyle14.WrapMode = DataGridViewTriState.True
+        RepDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle14
         RepDataGrid.RowTemplate.Height = 29
         RepDataGrid.Size = New Size(1252, 540)
         RepDataGrid.TabIndex = 43
@@ -1710,7 +1710,7 @@ Partial Class ProfessorDashboard
         RepToMonthBox.FormattingEnabled = True
         RepToMonthBox.IntegralHeight = False
         RepToMonthBox.ItemHeight = 43
-        RepToMonthBox.Items.AddRange(New Object() {"January", "February", "March", "April", "June", "July", "August", "September", "October", "November", "December"})
+        RepToMonthBox.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
         RepToMonthBox.Location = New Point(1553, 700)
         RepToMonthBox.MaxDropDownItems = 4
         RepToMonthBox.MouseState = MaterialSkin.MouseState.OUT
@@ -1763,7 +1763,7 @@ Partial Class ProfessorDashboard
         RepFromMonthBox.FormattingEnabled = True
         RepFromMonthBox.IntegralHeight = False
         RepFromMonthBox.ItemHeight = 43
-        RepFromMonthBox.Items.AddRange(New Object() {"January", "February", "March", "April", "June", "July", "August", "September", "October", "November", "December"})
+        RepFromMonthBox.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
         RepFromMonthBox.Location = New Point(1343, 700)
         RepFromMonthBox.MaxDropDownItems = 4
         RepFromMonthBox.MouseState = MaterialSkin.MouseState.OUT
@@ -1901,15 +1901,6 @@ Partial Class ProfessorDashboard
         RepYearlyRepCard.Size = New Size(1719, 255)
         RepYearlyRepCard.TabIndex = 19
         ' 
-        ' YearlyRepPanel
-        ' 
-        YearlyRepPanel.Dock = DockStyle.Fill
-        YearlyRepPanel.Location = New Point(14, 14)
-        YearlyRepPanel.Margin = New Padding(0)
-        YearlyRepPanel.Name = "YearlyRepPanel"
-        YearlyRepPanel.Size = New Size(1691, 227)
-        YearlyRepPanel.TabIndex = 3
-        ' 
         ' MaterialLabel32
         ' 
         MaterialLabel32.AutoSize = True
@@ -1999,22 +1990,22 @@ Partial Class ProfessorDashboard
         ReaDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ReaDataGrid.BackgroundColor = Color.White
         ReaDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = SystemColors.Control
-        DataGridViewCellStyle7.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle7.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle7.Padding = New Padding(15)
-        DataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = DataGridViewTriState.True
-        ReaDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = SystemColors.Control
+        DataGridViewCellStyle19.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle19.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle19.Padding = New Padding(15)
+        DataGridViewCellStyle19.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = DataGridViewTriState.True
+        ReaDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         ReaDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ReaDataGrid.Location = New Point(33, 96)
         ReaDataGrid.Name = "ReaDataGrid"
         ReaDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle8.Padding = New Padding(5)
-        DataGridViewCellStyle8.WrapMode = DataGridViewTriState.True
-        ReaDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle20.Padding = New Padding(5)
+        DataGridViewCellStyle20.WrapMode = DataGridViewTriState.True
+        ReaDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle20
         ReaDataGrid.RowTemplate.Height = 29
         ReaDataGrid.Size = New Size(1252, 756)
         ReaDataGrid.TabIndex = 35
@@ -2300,22 +2291,22 @@ Partial Class ProfessorDashboard
         SectDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         SectDataGrid.BackgroundColor = Color.White
         SectDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = SystemColors.Control
-        DataGridViewCellStyle9.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle9.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle9.Padding = New Padding(15)
-        DataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = DataGridViewTriState.True
-        SectDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = SystemColors.Control
+        DataGridViewCellStyle21.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle21.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle21.Padding = New Padding(15)
+        DataGridViewCellStyle21.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle21.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle21.WrapMode = DataGridViewTriState.True
+        SectDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle21
         SectDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         SectDataGrid.Location = New Point(33, 96)
         SectDataGrid.Name = "SectDataGrid"
         SectDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle10.Padding = New Padding(5)
-        DataGridViewCellStyle10.WrapMode = DataGridViewTriState.True
-        SectDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle22.Padding = New Padding(5)
+        DataGridViewCellStyle22.WrapMode = DataGridViewTriState.True
+        SectDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle22
         SectDataGrid.RowTemplate.Height = 29
         SectDataGrid.Size = New Size(1252, 756)
         SectDataGrid.TabIndex = 35
@@ -2560,22 +2551,22 @@ Partial Class ProfessorDashboard
         ArchDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ArchDataGrid.BackgroundColor = Color.White
         ArchDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = SystemColors.Control
-        DataGridViewCellStyle11.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle11.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle11.Padding = New Padding(15)
-        DataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = DataGridViewTriState.True
-        ArchDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = SystemColors.Control
+        DataGridViewCellStyle23.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle23.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle23.Padding = New Padding(15)
+        DataGridViewCellStyle23.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = DataGridViewTriState.True
+        ArchDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
         ArchDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ArchDataGrid.Location = New Point(33, 96)
         ArchDataGrid.Name = "ArchDataGrid"
         ArchDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle12.Padding = New Padding(5)
-        DataGridViewCellStyle12.WrapMode = DataGridViewTriState.True
-        ArchDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle24.Padding = New Padding(5)
+        DataGridViewCellStyle24.WrapMode = DataGridViewTriState.True
+        ArchDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle24
         ArchDataGrid.RowTemplate.Height = 29
         ArchDataGrid.Size = New Size(1727, 756)
         ArchDataGrid.TabIndex = 35
@@ -2873,6 +2864,14 @@ Partial Class ProfessorDashboard
         Timer1.Enabled = True
         Timer1.Interval = 1000
         ' 
+        ' YearlyRepPanel
+        ' 
+        YearlyRepPanel.Location = New Point(0, 0)
+        YearlyRepPanel.Margin = New Padding(0)
+        YearlyRepPanel.Name = "YearlyRepPanel"
+        YearlyRepPanel.Size = New Size(1719, 269)
+        YearlyRepPanel.TabIndex = 3
+        ' 
         ' ProfessorDashboard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -3099,6 +3098,6 @@ Partial Class ProfessorDashboard
     Friend WithEvents RepDayToLbl As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents RepDayLbl As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents RepFromDayBox As MaterialSkin.Controls.MaterialComboBox
-    Friend WithEvents YearlyRepPanel As Panel
     Friend WithEvents RepDataGrid As DataGridView
+    Friend WithEvents YearlyRepPanel As Panel
 End Class

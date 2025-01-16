@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Windows.Media
+Imports DocumentFormat.OpenXml.Bibliography
 Imports LiveCharts
 Imports LiveCharts.Wpf
 Imports MySql.Data.MySqlClient
@@ -186,7 +187,7 @@ Module charts
         BarChartPanel.Controls.Add(BarChart)
     End Sub
 
-    Sub ReportsChart(ByRef LinePanel As Panel, ByRef DataGrid As DataGridView)
+    Sub ReportsChart(ByRef LinePanel As Panel, ByRef DataGrid As DataGridView, YearChosen As Integer)
         LinePanel.Controls.Clear()
 
         Dim plotModel As New OxyPlot.PlotModel() With {
@@ -196,10 +197,101 @@ Module charts
         Dim monthlyReportCounts As New Dictionary(Of Integer, Integer)()
 
         For Each row As DataGridViewRow In DataGrid.Rows
+            ' Row Cells 8 refers to the Consultation Date
             If row.Cells(8).Value IsNot Nothing Then
                 Dim reportDate As DateTime = Convert.ToDateTime(row.Cells(8).Value)
+                If reportDate.Year = YearChosen Then
+                    Dim month As Integer = reportDate.Month
 
-                If reportDate.Year = Date.Today.Year Then
+                    If monthlyReportCounts.ContainsKey(month) Then
+                        monthlyReportCounts(month) += 1
+                    Else
+                        monthlyReportCounts.Add(month, 1)
+                    End If
+                End If
+            End If
+        Next
+
+        Dim months As New List(Of String)() From {
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        }
+
+        Dim counts As New List(Of Integer)()
+
+        For month As Integer = 1 To 12
+            If monthlyReportCounts.ContainsKey(month) Then
+                counts.Add(monthlyReportCounts(month))
+            Else
+                counts.Add(0)
+            End If
+        Next
+
+        Dim lineSeries As New OxyPlot.Series.LineSeries With {
+            .Title = "Monthly Report Count",
+            .MarkerType = OxyPlot.MarkerType.Circle,
+            .MarkerSize = 4,
+            .LineStyle = OxyPlot.LineStyle.Solid,
+            .Color = OxyPlot.OxyColor.FromRgb(0, 64, 0),
+            .TextColor = OxyColor.FromRgb(46, 46, 46),
+            .LabelFormatString = "{1}",
+            .StrokeThickness = 2
+        }
+
+        For month As Integer = 0 To 11
+            lineSeries.Points.Add(New DataPoint(month, counts(month)))
+        Next
+
+        plotModel.Series.Add(lineSeries)
+
+        Dim xAxis As New OxyPlot.Axes.CategoryAxis With {
+            .Position = OxyPlot.Axes.AxisPosition.Bottom,
+            .Title = "Month",
+            .TickStyle = OxyPlot.Axes.TickStyle.Inside
+        }
+
+        For Each buwan In months
+            xAxis.Labels.Add(buwan)
+        Next
+
+        plotModel.Axes.Add(xAxis)
+
+        Dim MaxReport As Integer = monthlyReportCounts.Values.DefaultIfEmpty(0).Max()
+
+        Dim numberOfIntervals As Integer = 5
+        Dim interval = Math.Ceiling(MaxReport / (numberOfIntervals - 1))
+        If interval = 0 Then interval = 1
+
+        Dim yAxis As New OxyPlot.Axes.LinearAxis With {
+            .Position = OxyPlot.Axes.AxisPosition.Left,
+            .Title = "Report Count",
+            .Minimum = 0,
+            .TickStyle = TickStyle.Inside,
+            .Maximum = Math.Ceiling((MaxReport + interval) / interval) * interval
+        }
+
+        plotModel.Axes.Add(yAxis)
+
+        Dim plotView As New WindowsForms.PlotView() With {
+            .Model = plotModel,
+            .Dock = DockStyle.Fill
+        }
+
+        LinePanel.Controls.Add(plotView)
+    End Sub
+
+    Sub ReportsChartNoTitle(ByRef LinePanel As Panel, ByRef DataGrid As DataGridView, YearChosen As Integer)
+        LinePanel.Controls.Clear()
+
+        Dim plotModel As New OxyPlot.PlotModel()
+
+        Dim monthlyReportCounts As New Dictionary(Of Integer, Integer)()
+
+        For Each row As DataGridViewRow In DataGrid.Rows
+            ' Row Cells 8 refers to the Consultation Date
+            If row.Cells(8).Value IsNot Nothing Then
+                Dim reportDate As DateTime = Convert.ToDateTime(row.Cells(8).Value)
+                If reportDate.Year = YearChosen Then
                     Dim month As Integer = reportDate.Month
 
                     If monthlyReportCounts.ContainsKey(month) Then
