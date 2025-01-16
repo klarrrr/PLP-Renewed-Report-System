@@ -36,3 +36,12 @@ D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-Sys
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\LiveCharts.Wpf.dll
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\OxyPlot.dll
 D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\OxyPlot.WindowsForms.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\ClosedXML.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\ClosedXML.Parser.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\DocumentFormat.OpenXml.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\DocumentFormat.OpenXml.Framework.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\ExcelNumberFormat.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\RBush.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\SixLabors.Fonts.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\bin\Debug\net6.0-windows10.0.26100.0\System.IO.Packaging.dll
+D:\Program\Cloned-Repositories\PLP-Renewed-Report-System\PLP-Renewed-Reports-System\obj\Debug\net6.0-windows10.0.26100.0\PLP_Renewed_Reports_System.BulkRegisterForm.resources

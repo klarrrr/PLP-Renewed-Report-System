@@ -47,6 +47,11 @@ Public Class ProfessorDashboard
         ArchLoadData()
         ArchLoadFilter()
 
+        ' DATE LABEL READJUSTMENT
+        If Date.Now.Day >= 10 Then
+            DateLbl.Left = DateLbl.Left - 8
+        End If
+
     End Sub
 
     Dim ProfUser As String
@@ -240,8 +245,7 @@ Public Class ProfessorDashboard
     End Sub
 
     ' STUDENTS TAB
-
-    Private Sub StuLoadData()
+    Public Sub StuLoadData()
         conn.Open()
 
         Dim cmd As New MySqlCommand("SELECT studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, email as Email, section as Section, year_level as 'Year Level', status as Status FROM studentinfo", conn)
@@ -2001,5 +2005,10 @@ ByVal nShowCmd As Integer
         minNum = 0
         maxNum = 10
         ReportsChart(YearlyRepPanel, RepDataGrid)
+    End Sub
+
+    Private Sub StudUploadBtn_Click(sender As Object, e As EventArgs) Handles StudUploadBtn.Click
+        Dim BulkForm As New BulkRegisterForm(ProfUser)
+        BulkForm.Show()
     End Sub
 End Class
