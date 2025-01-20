@@ -174,7 +174,7 @@ Partial Class StudentDashboard
         SignOutBtn.Depth = 0
         SignOutBtn.HighEmphasis = True
         SignOutBtn.Icon = My.Resources.Resources.log_out
-        SignOutBtn.Location = New Point(67, 971)
+        SignOutBtn.Location = New Point(67, 938)
         SignOutBtn.Margin = New Padding(4, 6, 4, 6)
         SignOutBtn.MouseState = MaterialSkin.MouseState.HOVER
         SignOutBtn.Name = "SignOutBtn"
@@ -194,7 +194,7 @@ Partial Class StudentDashboard
         SubmitBtn.Depth = 0
         SubmitBtn.HighEmphasis = True
         SubmitBtn.Icon = My.Resources.Resources.application
-        SubmitBtn.Location = New Point(1665, 971)
+        SubmitBtn.Location = New Point(1665, 938)
         SubmitBtn.Margin = New Padding(4, 6, 4, 6)
         SubmitBtn.MouseState = MaterialSkin.MouseState.HOVER
         SubmitBtn.Name = "SubmitBtn"
@@ -212,7 +212,7 @@ Partial Class StudentDashboard
         MaterialLabel41.Depth = 0
         MaterialLabel41.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel)
         MaterialLabel41.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption
-        MaterialLabel41.Location = New Point(847, 1002)
+        MaterialLabel41.Location = New Point(847, 969)
         MaterialLabel41.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel41.Name = "MaterialLabel41"
         MaterialLabel41.Size = New Size(221, 14)
@@ -235,7 +235,7 @@ Partial Class StudentDashboard
         YearComboBox.Hint = "Select your year and section"
         YearComboBox.IntegralHeight = False
         YearComboBox.ItemHeight = 43
-        YearComboBox.Location = New Point(1272, 610)
+        YearComboBox.Location = New Point(1272, 577)
         YearComboBox.MaxDropDownItems = 4
         YearComboBox.MouseState = MaterialSkin.MouseState.OUT
         YearComboBox.Name = "YearComboBox"
@@ -259,7 +259,7 @@ Partial Class StudentDashboard
         ReasonComboBox.Hint = "Select a reason"
         ReasonComboBox.IntegralHeight = False
         ReasonComboBox.ItemHeight = 43
-        ReasonComboBox.Location = New Point(669, 608)
+        ReasonComboBox.Location = New Point(669, 575)
         ReasonComboBox.MaxDropDownItems = 4
         ReasonComboBox.MouseState = MaterialSkin.MouseState.OUT
         ReasonComboBox.Name = "ReasonComboBox"
@@ -283,7 +283,7 @@ Partial Class StudentDashboard
         ProfComboBox.Hint = "Select a professor"
         ProfComboBox.IntegralHeight = False
         ProfComboBox.ItemHeight = 43
-        ProfComboBox.Location = New Point(67, 666)
+        ProfComboBox.Location = New Point(67, 633)
         ProfComboBox.MaxDropDownItems = 4
         ProfComboBox.MouseState = MaterialSkin.MouseState.OUT
         ProfComboBox.Name = "ProfComboBox"
@@ -300,7 +300,7 @@ Partial Class StudentDashboard
         SearchProfBox.Font = New Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel)
         SearchProfBox.Hint = "Search for a professor (You can type prof. Name here)"
         SearchProfBox.LeadingIcon = Nothing
-        SearchProfBox.Location = New Point(67, 610)
+        SearchProfBox.Location = New Point(67, 577)
         SearchProfBox.MaxLength = 50
         SearchProfBox.MouseState = MaterialSkin.MouseState.OUT
         SearchProfBox.Multiline = False
@@ -317,7 +317,7 @@ Partial Class StudentDashboard
         MaterialLabel6.Depth = 0
         MaterialLabel6.Font = New Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel)
         MaterialLabel6.FontType = MaterialSkin.MaterialSkinManager.fontType.H5
-        MaterialLabel6.Location = New Point(67, 758)
+        MaterialLabel6.Location = New Point(67, 725)
         MaterialLabel6.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel6.Name = "MaterialLabel6"
         MaterialLabel6.Size = New Size(119, 29)
@@ -332,7 +332,7 @@ Partial Class StudentDashboard
         CommentsBox.Depth = 0
         CommentsBox.HideSelection = True
         CommentsBox.Hint = "Enter your comments, remarks or messages here (optional)"
-        CommentsBox.Location = New Point(67, 813)
+        CommentsBox.Location = New Point(67, 780)
         CommentsBox.MaxLength = 32767
         CommentsBox.MouseState = MaterialSkin.MouseState.OUT
         CommentsBox.Name = "CommentsBox"
@@ -358,7 +358,7 @@ Partial Class StudentDashboard
         MaterialCard7.Controls.Add(LoggedStudentSection)
         MaterialCard7.Depth = 0
         MaterialCard7.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialCard7.Location = New Point(1272, 315)
+        MaterialCard7.Location = New Point(1272, 282)
         MaterialCard7.Margin = New Padding(14)
         MaterialCard7.MouseState = MaterialSkin.MouseState.HOVER
         MaterialCard7.Name = "MaterialCard7"
@@ -409,7 +409,7 @@ Partial Class StudentDashboard
         MaterialCard6.Controls.Add(NumOfStudent)
         MaterialCard6.Depth = 0
         MaterialCard6.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialCard6.Location = New Point(669, 315)
+        MaterialCard6.Location = New Point(669, 282)
         MaterialCard6.Margin = New Padding(14)
         MaterialCard6.MouseState = MaterialSkin.MouseState.HOVER
         MaterialCard6.Name = "MaterialCard6"
@@ -460,7 +460,7 @@ Partial Class StudentDashboard
         MaterialCard5.Controls.Add(NumOfProf)
         MaterialCard5.Depth = 0
         MaterialCard5.ForeColor = Color.FromArgb(CByte(222), CByte(0), CByte(0), CByte(0))
-        MaterialCard5.Location = New Point(67, 315)
+        MaterialCard5.Location = New Point(67, 282)
         MaterialCard5.Margin = New Padding(14)
         MaterialCard5.MouseState = MaterialSkin.MouseState.HOVER
         MaterialCard5.Name = "MaterialCard5"
@@ -509,7 +509,7 @@ Partial Class StudentDashboard
         MaterialLabel5.Depth = 0
         MaterialLabel5.Font = New Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel)
         MaterialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H5
-        MaterialLabel5.Location = New Point(1272, 557)
+        MaterialLabel5.Location = New Point(1272, 524)
         MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel5.Name = "MaterialLabel5"
         MaterialLabel5.Size = New Size(180, 29)
@@ -522,7 +522,7 @@ Partial Class StudentDashboard
         MaterialLabel4.Depth = 0
         MaterialLabel4.Font = New Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel)
         MaterialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H5
-        MaterialLabel4.Location = New Point(669, 557)
+        MaterialLabel4.Location = New Point(669, 524)
         MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel4.Name = "MaterialLabel4"
         MaterialLabel4.Size = New Size(93, 29)
@@ -535,7 +535,7 @@ Partial Class StudentDashboard
         MaterialLabel3.Depth = 0
         MaterialLabel3.Font = New Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel)
         MaterialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H5
-        MaterialLabel3.Location = New Point(67, 557)
+        MaterialLabel3.Location = New Point(67, 524)
         MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel3.Name = "MaterialLabel3"
         MaterialLabel3.Size = New Size(117, 29)
@@ -548,7 +548,7 @@ Partial Class StudentDashboard
         StudentNameLbl.Depth = 0
         StudentNameLbl.Font = New Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel)
         StudentNameLbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H4
-        StudentNameLbl.Location = New Point(67, 209)
+        StudentNameLbl.Location = New Point(67, 190)
         StudentNameLbl.MouseState = MaterialSkin.MouseState.HOVER
         StudentNameLbl.Name = "StudentNameLbl"
         StudentNameLbl.Size = New Size(338, 41)
@@ -560,7 +560,7 @@ Partial Class StudentDashboard
         MaterialLabel1.AutoSize = True
         MaterialLabel1.Depth = 0
         MaterialLabel1.Font = New Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel)
-        MaterialLabel1.Location = New Point(67, 250)
+        MaterialLabel1.Location = New Point(67, 231)
         MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
         MaterialLabel1.Name = "MaterialLabel1"
         MaterialLabel1.Size = New Size(279, 19)
@@ -582,6 +582,7 @@ Partial Class StudentDashboard
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "StudentDashboard"
         Padding = New Padding(3, 24, 3, 3)
+        Sizable = False
         StartPosition = FormStartPosition.CenterScreen
         Text = "StudentDashboard"
         WindowState = FormWindowState.Maximized
