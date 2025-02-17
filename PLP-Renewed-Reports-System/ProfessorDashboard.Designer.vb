@@ -23,18 +23,18 @@ Partial Class ProfessorDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim DataGridViewCellStyle15 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfessorDashboard))
         MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         ProfNameLbl = New MaterialSkin.Controls.MaterialLabel()
@@ -135,6 +135,7 @@ Partial Class ProfessorDashboard
         RepSortByLbl = New MaterialSkin.Controls.MaterialLabel()
         RepSortBy = New MaterialSkin.Controls.MaterialComboBox()
         RepYearlyRepCard = New MaterialSkin.Controls.MaterialCard()
+        YearlyRepPanel = New Panel()
         MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel37 = New MaterialSkin.Controls.MaterialLabel()
         RepSearchBox = New MaterialSkin.Controls.MaterialTextBox()
@@ -172,12 +173,13 @@ Partial Class ProfessorDashboard
         SectSearchSect = New MaterialSkin.Controls.MaterialTextBox()
         ArchiveTab = New TabPage()
         MaterialCard12 = New MaterialSkin.Controls.MaterialCard()
+        ArchRestoreBtn = New MaterialSkin.Controls.MaterialButton()
         ArchDataGrid = New DataGridView()
         MaterialLabel46 = New MaterialSkin.Controls.MaterialLabel()
         ArchFilByYear = New MaterialSkin.Controls.MaterialComboBox()
         MaterialLabel41 = New MaterialSkin.Controls.MaterialLabel()
         ArchFilBySect = New MaterialSkin.Controls.MaterialComboBox()
-        ArchClrBtn = New MaterialSkin.Controls.MaterialButton()
+        ArchExportBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
         MaterialLabel48 = New MaterialSkin.Controls.MaterialLabel()
         ArchSearchBox = New MaterialSkin.Controls.MaterialTextBox()
@@ -193,7 +195,7 @@ Partial Class ProfessorDashboard
         TimeLbl = New MaterialSkin.Controls.MaterialLabel()
         Timer1 = New Timer(components)
         SaveFileDialog1 = New SaveFileDialog()
-        YearlyRepPanel = New Panel()
+        ArchDelBtn = New MaterialSkin.Controls.MaterialButton()
         MaterialTabControl1.SuspendLayout()
         DashboardTab.SuspendLayout()
         MaterialCard2.SuspendLayout()
@@ -616,22 +618,22 @@ Partial Class ProfessorDashboard
         ProfDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ProfDataGrid.BackgroundColor = Color.White
         ProfDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = SystemColors.Control
-        DataGridViewCellStyle15.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle15.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle15.Padding = New Padding(15)
-        DataGridViewCellStyle15.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = DataGridViewTriState.True
-        ProfDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.Padding = New Padding(15)
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        ProfDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         ProfDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ProfDataGrid.Location = New Point(33, 96)
         ProfDataGrid.Name = "ProfDataGrid"
         ProfDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle16.Padding = New Padding(5)
-        DataGridViewCellStyle16.WrapMode = DataGridViewTriState.True
-        ProfDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle2.Padding = New Padding(5)
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        ProfDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle2
         ProfDataGrid.RowTemplate.Height = 29
         ProfDataGrid.Size = New Size(1252, 756)
         ProfDataGrid.TabIndex = 4
@@ -981,22 +983,22 @@ Partial Class ProfessorDashboard
         StuDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         StuDataGrid.BackgroundColor = Color.White
         StuDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = SystemColors.Control
-        DataGridViewCellStyle17.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle17.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle17.Padding = New Padding(15)
-        DataGridViewCellStyle17.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = DataGridViewTriState.True
-        StuDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Control
+        DataGridViewCellStyle3.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle3.Padding = New Padding(15)
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        StuDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         StuDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         StuDataGrid.Location = New Point(33, 96)
         StuDataGrid.Name = "StuDataGrid"
         StuDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle18.Padding = New Padding(5)
-        DataGridViewCellStyle18.WrapMode = DataGridViewTriState.True
-        StuDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle4.Padding = New Padding(5)
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
+        StuDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle4
         StuDataGrid.RowTemplate.Height = 29
         StuDataGrid.Size = New Size(1252, 756)
         StuDataGrid.TabIndex = 34
@@ -1539,23 +1541,23 @@ Partial Class ProfessorDashboard
         RepDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         RepDataGrid.BackgroundColor = Color.White
         RepDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = SystemColors.Control
-        DataGridViewCellStyle13.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle13.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle13.Padding = New Padding(15)
-        DataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = DataGridViewTriState.True
-        RepDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = SystemColors.Control
+        DataGridViewCellStyle5.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle5.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle5.Padding = New Padding(15)
+        DataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
+        RepDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         RepDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         RepDataGrid.Location = New Point(33, 312)
         RepDataGrid.Name = "RepDataGrid"
         RepDataGrid.ReadOnly = True
         RepDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle14.Padding = New Padding(5)
-        DataGridViewCellStyle14.WrapMode = DataGridViewTriState.True
-        RepDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle6.Padding = New Padding(5)
+        DataGridViewCellStyle6.WrapMode = DataGridViewTriState.True
+        RepDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle6
         RepDataGrid.RowTemplate.Height = 29
         RepDataGrid.Size = New Size(1252, 540)
         RepDataGrid.TabIndex = 43
@@ -1901,6 +1903,14 @@ Partial Class ProfessorDashboard
         RepYearlyRepCard.Size = New Size(1719, 255)
         RepYearlyRepCard.TabIndex = 19
         ' 
+        ' YearlyRepPanel
+        ' 
+        YearlyRepPanel.Location = New Point(0, 0)
+        YearlyRepPanel.Margin = New Padding(0)
+        YearlyRepPanel.Name = "YearlyRepPanel"
+        YearlyRepPanel.Size = New Size(1719, 269)
+        YearlyRepPanel.TabIndex = 3
+        ' 
         ' MaterialLabel32
         ' 
         MaterialLabel32.AutoSize = True
@@ -1990,22 +2000,22 @@ Partial Class ProfessorDashboard
         ReaDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ReaDataGrid.BackgroundColor = Color.White
         ReaDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = SystemColors.Control
-        DataGridViewCellStyle19.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle19.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle19.Padding = New Padding(15)
-        DataGridViewCellStyle19.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle19.WrapMode = DataGridViewTriState.True
-        ReaDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = SystemColors.Control
+        DataGridViewCellStyle7.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle7.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle7.Padding = New Padding(15)
+        DataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = DataGridViewTriState.True
+        ReaDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         ReaDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ReaDataGrid.Location = New Point(33, 96)
         ReaDataGrid.Name = "ReaDataGrid"
         ReaDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle20.Padding = New Padding(5)
-        DataGridViewCellStyle20.WrapMode = DataGridViewTriState.True
-        ReaDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle8.Padding = New Padding(5)
+        DataGridViewCellStyle8.WrapMode = DataGridViewTriState.True
+        ReaDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle8
         ReaDataGrid.RowTemplate.Height = 29
         ReaDataGrid.Size = New Size(1252, 756)
         ReaDataGrid.TabIndex = 35
@@ -2291,22 +2301,22 @@ Partial Class ProfessorDashboard
         SectDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         SectDataGrid.BackgroundColor = Color.White
         SectDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle21.BackColor = SystemColors.Control
-        DataGridViewCellStyle21.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle21.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle21.Padding = New Padding(15)
-        DataGridViewCellStyle21.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle21.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle21.WrapMode = DataGridViewTriState.True
-        SectDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = SystemColors.Control
+        DataGridViewCellStyle9.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle9.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle9.Padding = New Padding(15)
+        DataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = DataGridViewTriState.True
+        SectDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         SectDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         SectDataGrid.Location = New Point(33, 96)
         SectDataGrid.Name = "SectDataGrid"
         SectDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle22.Padding = New Padding(5)
-        DataGridViewCellStyle22.WrapMode = DataGridViewTriState.True
-        SectDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle10.Padding = New Padding(5)
+        DataGridViewCellStyle10.WrapMode = DataGridViewTriState.True
+        SectDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle10
         SectDataGrid.RowTemplate.Height = 29
         SectDataGrid.Size = New Size(1252, 756)
         SectDataGrid.TabIndex = 35
@@ -2527,12 +2537,14 @@ Partial Class ProfessorDashboard
         ' MaterialCard12
         ' 
         MaterialCard12.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        MaterialCard12.Controls.Add(ArchDelBtn)
+        MaterialCard12.Controls.Add(ArchRestoreBtn)
         MaterialCard12.Controls.Add(ArchDataGrid)
         MaterialCard12.Controls.Add(MaterialLabel46)
         MaterialCard12.Controls.Add(ArchFilByYear)
         MaterialCard12.Controls.Add(MaterialLabel41)
         MaterialCard12.Controls.Add(ArchFilBySect)
-        MaterialCard12.Controls.Add(ArchClrBtn)
+        MaterialCard12.Controls.Add(ArchExportBtn)
         MaterialCard12.Controls.Add(MaterialLabel45)
         MaterialCard12.Controls.Add(MaterialLabel48)
         MaterialCard12.Controls.Add(ArchSearchBox)
@@ -2546,27 +2558,46 @@ Partial Class ProfessorDashboard
         MaterialCard12.Size = New Size(1841, 902)
         MaterialCard12.TabIndex = 4
         ' 
+        ' ArchRestoreBtn
+        ' 
+        ArchRestoreBtn.AutoSize = False
+        ArchRestoreBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ArchRestoreBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ArchRestoreBtn.Depth = 0
+        ArchRestoreBtn.HighEmphasis = True
+        ArchRestoreBtn.Icon = My.Resources.Resources.replay
+        ArchRestoreBtn.Location = New Point(1672, 35)
+        ArchRestoreBtn.Margin = New Padding(4, 6, 4, 6)
+        ArchRestoreBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ArchRestoreBtn.Name = "ArchRestoreBtn"
+        ArchRestoreBtn.NoAccentTextColor = Color.Empty
+        ArchRestoreBtn.Size = New Size(40, 45)
+        ArchRestoreBtn.TabIndex = 36
+        ArchRestoreBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ArchRestoreBtn.UseAccentColor = True
+        ArchRestoreBtn.UseVisualStyleBackColor = True
+        ' 
         ' ArchDataGrid
         ' 
         ArchDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ArchDataGrid.BackgroundColor = Color.White
         ArchDataGrid.BorderStyle = BorderStyle.Fixed3D
-        DataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = SystemColors.Control
-        DataGridViewCellStyle23.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle23.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle23.Padding = New Padding(15)
-        DataGridViewCellStyle23.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = DataGridViewTriState.True
-        ArchDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = SystemColors.Control
+        DataGridViewCellStyle11.Font = New Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle11.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle11.Padding = New Padding(15)
+        DataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = DataGridViewTriState.True
+        ArchDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         ArchDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ArchDataGrid.Location = New Point(33, 96)
         ArchDataGrid.Name = "ArchDataGrid"
         ArchDataGrid.RowHeadersWidth = 51
-        DataGridViewCellStyle24.Padding = New Padding(5)
-        DataGridViewCellStyle24.WrapMode = DataGridViewTriState.True
-        ArchDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle12.Padding = New Padding(5)
+        DataGridViewCellStyle12.WrapMode = DataGridViewTriState.True
+        ArchDataGrid.RowsDefaultCellStyle = DataGridViewCellStyle12
         ArchDataGrid.RowTemplate.Height = 29
         ArchDataGrid.Size = New Size(1727, 756)
         ArchDataGrid.TabIndex = 35
@@ -2644,24 +2675,24 @@ Partial Class ProfessorDashboard
         ArchFilBySect.TabIndex = 19
         ArchFilBySect.UseAccent = False
         ' 
-        ' ArchClrBtn
+        ' ArchExportBtn
         ' 
-        ArchClrBtn.AutoSize = False
-        ArchClrBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ArchClrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
-        ArchClrBtn.Depth = 0
-        ArchClrBtn.HighEmphasis = True
-        ArchClrBtn.Icon = My.Resources.Resources.printing__2_
-        ArchClrBtn.Location = New Point(1720, 35)
-        ArchClrBtn.Margin = New Padding(4, 6, 4, 6)
-        ArchClrBtn.MouseState = MaterialSkin.MouseState.HOVER
-        ArchClrBtn.Name = "ArchClrBtn"
-        ArchClrBtn.NoAccentTextColor = Color.Empty
-        ArchClrBtn.Size = New Size(40, 45)
-        ArchClrBtn.TabIndex = 18
-        ArchClrBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        ArchClrBtn.UseAccentColor = False
-        ArchClrBtn.UseVisualStyleBackColor = True
+        ArchExportBtn.AutoSize = False
+        ArchExportBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ArchExportBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ArchExportBtn.Depth = 0
+        ArchExportBtn.HighEmphasis = True
+        ArchExportBtn.Icon = My.Resources.Resources.printing__2_
+        ArchExportBtn.Location = New Point(1720, 35)
+        ArchExportBtn.Margin = New Padding(4, 6, 4, 6)
+        ArchExportBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ArchExportBtn.Name = "ArchExportBtn"
+        ArchExportBtn.NoAccentTextColor = Color.Empty
+        ArchExportBtn.Size = New Size(40, 45)
+        ArchExportBtn.TabIndex = 18
+        ArchExportBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ArchExportBtn.UseAccentColor = False
+        ArchExportBtn.UseVisualStyleBackColor = True
         ' 
         ' MaterialLabel45
         ' 
@@ -2864,13 +2895,24 @@ Partial Class ProfessorDashboard
         Timer1.Enabled = True
         Timer1.Interval = 1000
         ' 
-        ' YearlyRepPanel
+        ' ArchDelBtn
         ' 
-        YearlyRepPanel.Location = New Point(0, 0)
-        YearlyRepPanel.Margin = New Padding(0)
-        YearlyRepPanel.Name = "YearlyRepPanel"
-        YearlyRepPanel.Size = New Size(1719, 269)
-        YearlyRepPanel.TabIndex = 3
+        ArchDelBtn.AutoSize = False
+        ArchDelBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        ArchDelBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default
+        ArchDelBtn.Depth = 0
+        ArchDelBtn.HighEmphasis = True
+        ArchDelBtn.Icon = My.Resources.Resources.trash_can
+        ArchDelBtn.Location = New Point(1624, 35)
+        ArchDelBtn.Margin = New Padding(4, 6, 4, 6)
+        ArchDelBtn.MouseState = MaterialSkin.MouseState.HOVER
+        ArchDelBtn.Name = "ArchDelBtn"
+        ArchDelBtn.NoAccentTextColor = Color.Empty
+        ArchDelBtn.Size = New Size(40, 45)
+        ArchDelBtn.TabIndex = 37
+        ArchDelBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        ArchDelBtn.UseAccentColor = False
+        ArchDelBtn.UseVisualStyleBackColor = True
         ' 
         ' ProfessorDashboard
         ' 
@@ -3056,7 +3098,7 @@ Partial Class ProfessorDashboard
     Friend WithEvents MaterialLabel44 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents SectSearchSect As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents MaterialCard12 As MaterialSkin.Controls.MaterialCard
-    Friend WithEvents ArchClrBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ArchExportBtn As MaterialSkin.Controls.MaterialButton
     Friend WithEvents MaterialLabel45 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel48 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents ArchSearchBox As MaterialSkin.Controls.MaterialTextBox
@@ -3100,4 +3142,6 @@ Partial Class ProfessorDashboard
     Friend WithEvents RepFromDayBox As MaterialSkin.Controls.MaterialComboBox
     Friend WithEvents RepDataGrid As DataGridView
     Friend WithEvents YearlyRepPanel As Panel
+    Friend WithEvents ArchRestoreBtn As MaterialSkin.Controls.MaterialButton
+    Friend WithEvents ArchDelBtn As MaterialSkin.Controls.MaterialButton
 End Class

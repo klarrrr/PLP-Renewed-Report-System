@@ -6,6 +6,7 @@ Imports QRCoder
 Imports MessagingToolkit.QRCode.Codec
 Imports AForge.Video.DirectShow
 Imports AForge.Video
+Imports MaterialSkin.Controls
 
 Public Class EntrancePage
     Dim conn As New MySqlConnection("server=localhost;username=root;password=;database=plpportal_db")
@@ -13,6 +14,19 @@ Public Class EntrancePage
         SetFormThemeLight(Me)
         LoadSectionBoxOnRegisterStudents()
     End Sub
+
+    ' For Testing
+    ' The material skin library limits developers from customizing the card background
+    ' That's why i am testing to see if I can override the functions so that I can cuztomize it myself
+
+    'Public Class CustomMaterialCard
+    '    Inherits MaterialCard
+
+    '    Protected Overrides Sub OnPaint(e As PaintEventArgs)
+    '        e.Graphics.Clear(Color.Red)
+    '        MyBase.OnPaint(e)
+    '    End Sub
+    'End Class
 
     ' Also call this after adding a section in professor side
     Private Sub LoadSectionBoxOnRegisterStudents()

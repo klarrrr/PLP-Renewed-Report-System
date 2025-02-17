@@ -3,7 +3,6 @@ Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
 Imports OxyPlot.WindowsForms
-Imports System.Windows.Controls
 Imports System.ComponentModel
 
 Public Class ProfessorDashboard
@@ -58,6 +57,7 @@ Public Class ProfessorDashboard
     Dim ProfName As String
     Dim conn As New MySqlConnection("server=localhost;username=root;password=;database=plpportal_db")
 
+    ' Validates professor username to set the name label
     Public Sub New(ProfUsername As String)
         InitializeComponent()
         ProfUser = ProfUsername
@@ -78,7 +78,8 @@ Public Class ProfessorDashboard
         dr.Close()
         conn.Close()
     End Sub
-    ' populate the number of something in the cards in dashboard tab
+
+    ' populate the numbers of certain category (students, professor, reports, etc) in the cards in dashboard tab
     Private Sub PopulateCardsInDashboard()
         ' Sets the number of professors card
         conn.Open()
@@ -108,6 +109,7 @@ Public Class ProfessorDashboard
         conn.Close()
     End Sub
 
+    ' Ticking time bomb, jk, always active for "live time clock" purposes
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         TimeLbl.Text = Date.Now.ToString("hh:mm tt").ToUpper
         DateLbl.Text = Date.Now.ToString("MMMM dd, yyyy")
@@ -132,6 +134,7 @@ Public Class ProfessorDashboard
         da.Fill(dt)
         ProfDataGrid.DataSource = dt
     End Sub
+
     ' search bar in professor tab
     Private Sub ProfSearchProf_TextChanged(sender As Object, e As EventArgs) Handles ProfSearchProf.TextChanged
         If ProfSearchProf.Text = "" Then
@@ -151,6 +154,7 @@ Public Class ProfessorDashboard
             conn.Close()
         End If
     End Sub
+
     ' clear button in professor tab
     Private Sub ProfClrBtn_Click(sender As Object, e As EventArgs) Handles ProfClrBtn.Click
         Dim result As DialogResult = MessageBox.Show("Are you sure on clearing text boxes?", "Clear Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -160,6 +164,7 @@ Public Class ProfessorDashboard
         ProfClear()
     End Sub
 
+    ' Clears every text box in the professor tab
     Private Sub ProfClear()
         ProfProfName.Clear()
         ProfEmail.Clear()
@@ -227,6 +232,7 @@ Public Class ProfessorDashboard
     End Sub
 
     ' Click something in the professor data grid
+    ' Will set the current text value of text boxes to whatever the user clicks
     Private Sub ProfDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProfDataGrid.CellContentClick
         Try
             Dim index As Integer
@@ -245,6 +251,8 @@ Public Class ProfessorDashboard
     End Sub
 
     ' STUDENTS TAB
+
+    ' Loads the students data grid
     Public Sub StuLoadData()
         conn.Open()
 
@@ -258,6 +266,7 @@ Public Class ProfessorDashboard
         da.Fill(dt)
         StuDataGrid.DataSource = dt
     End Sub
+
     ' search bar of student tab
     Private Sub StudSearchStud_TextChanged(sender As Object, e As EventArgs) Handles StudSearchStud.TextChanged
         If StudSearchStud.Text = "" Then
@@ -277,6 +286,7 @@ Public Class ProfessorDashboard
             conn.Close()
         End If
     End Sub
+
     ' load section in the section combo box in students
     Private Sub LoadSectionInStudents()
         conn.Open()
@@ -291,6 +301,7 @@ Public Class ProfessorDashboard
 
     ' connection string just for another way of connecting to database
     Dim connectionString As String = "server=localhost;username=root;password=;database=plpportal_db"
+
     ' load the promotion or graduation date in the date picker student
     Private Sub LoadPromotionDate()
         Try
@@ -322,6 +333,7 @@ Public Class ProfessorDashboard
         ClearStudBoxes()
     End Sub
 
+    ' Clear method, to clear every text boxes in the student tab
     Private Sub ClearStudBoxes()
         StudNum.Text = ""
         StudLastName.Text = ""
@@ -343,7 +355,7 @@ Public Class ProfessorDashboard
         StudSection.Refresh()
     End Sub
 
-    ' delete button from db
+    ' this will delete the student in the database
     Private Sub StudDelBtn_Click(sender As Object, e As EventArgs) Handles StudDelBtn.Click
         If StudNum.Text = "" Then
             MessageBox.Show("Unable to Delete a Student, Select a Student Number first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -364,7 +376,8 @@ Public Class ProfessorDashboard
             End If
         End If
     End Sub
-    ' update student to db
+
+    ' will update the chosen student in the db
     Private Sub StudUpdBtn_Click(sender As Object, e As EventArgs) Handles StudUpdBtn.Click
         If StudNum.Text = "" Or StudLastName.Text = "" Or StudFirstName.Text = "" Or StudEmail.Text = "" Or StudSection.Text = "" Then
             MessageBox.Show("Unable to Update a Student, Fill up all the required fields first!", "Invalid!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -381,7 +394,8 @@ Public Class ProfessorDashboard
             StuLoadData()
         End If
     End Sub
-    ' add student to db
+
+    ' will add the student to db
     Private Sub StudAddBtn_Click(sender As Object, e As EventArgs) Handles StudAddBtn.Click
         Try
             If StudNum.Text = "" Or StudLastName.Text = "" Or StudFirstName.Text = "" Or StudEmail.Text = "" Or StudSection.Text = "" Or StudYear.SelectedItem = Nothing Or StudStatus.SelectedItem = Nothing Then
@@ -408,7 +422,9 @@ Public Class ProfessorDashboard
         End Try
     End Sub
 
-    ' Promote the students to a higher level by 1
+    ' will promote the students to a higher level by 1
+    ' used in automatic updating student credential when a year passes
+    ' will insert a graduate student to the archives
     Private Sub PromoteStudents()
         ' Get the promotion date from DateTimePicker
         Dim promotionDate As Date = StudDateOfGrad.Value.ToUniversalTime().Date ' Assume the DateTimePicker is named "PromotionDatePicker"
@@ -420,8 +436,8 @@ Public Class ProfessorDashboard
 
                 ' Move 4th year Regular students to the archive table
                 Dim archiveQuery As String = "
-            INSERT INTO archive (studentnum, last_name, first_name, middle_initial, suffix, email, section, graduation_date)
-            SELECT studentnum, last_name, first_name, middle_initial, suffix, email, section, CURDATE()
+            INSERT INTO archive (studentnum, last_name, first_name, middle_initial, suffix, email, section, year_level, status, graduation_date)
+            SELECT studentnum, last_name, first_name, middle_initial, suffix, email, section, year_level, status, CURDATE()
             FROM studentinfo
             WHERE year_level = '4' AND status = 'Regular'"
 
@@ -495,6 +511,7 @@ Public Class ProfessorDashboard
             StuLoadData()
 
             ' FIX LATER
+            ' P.S. nakalimutan ko na para san to wahahah
 
             'If Application.OpenForms().OfType(Of AdminArchive).Any Then
             '    AdminArchive.ApplyFilters()
@@ -507,7 +524,10 @@ Public Class ProfessorDashboard
             MessageBox.Show("The promotion date has not been reached yet.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-    ' save student graduation to db
+
+    ' will set the student graduation date to the config table, in the DB
+    ' the date will be used to scan if a year passes
+    ' when it does, student credential will automatically update
     Private Sub SavePromotionDate()
         Try
             Using conn As New MySqlConnection(connectionString)
@@ -530,7 +550,8 @@ Public Class ProfessorDashboard
             MessageBox.Show($"Error saving promotion date: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    ' uppercase first name student
+
+    ' will uppercase the first name of student
     Private Sub StudFirstName_TextChanged(sender As Object, e As EventArgs) Handles StudFirstName.TextChanged
         Dim currentText As String = StudFirstName.Text
         Dim upperCaseText As String = currentText.ToUpper()
@@ -538,6 +559,7 @@ Public Class ProfessorDashboard
         StudFirstName.Text = upperCaseText
         StudFirstName.SelectionStart = StudFirstName.Text.Length
     End Sub
+
     ' uppercase last name student
     Private Sub StudLastName_TextChanged(sender As Object, e As EventArgs) Handles StudLastName.TextChanged
         Dim currentText As String = StudLastName.Text
@@ -570,6 +592,7 @@ Public Class ProfessorDashboard
         SavePromotionDate()
     End Sub
 
+    ' Will update the student text boxes with the selected student's credentials
     Private Sub StuDataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles StuDataGrid.SelectionChanged
         Try
             Dim current_row = 0
@@ -625,36 +648,42 @@ Public Class ProfessorDashboard
         End Try
     End Sub
 
+    ' if enter on this text box, will go to the next
     Private Sub StudNum_KeyDown(sender As Object, e As KeyEventArgs) Handles StudNum.KeyDown
         If e.KeyCode = Keys.Enter Then
             StudLastName.Focus()
         End If
     End Sub
 
+    ' if enter on this text box, will go to the next
     Private Sub StudLastName_KeyDown(sender As Object, e As KeyEventArgs) Handles StudLastName.KeyDown
         If e.KeyCode = Keys.Enter Then
             StudFirstName.Focus()
         End If
     End Sub
 
+    ' if enter on this text box, will go to the next
     Private Sub StudFirstName_KeyDown(sender As Object, e As KeyEventArgs) Handles StudFirstName.KeyDown
         If e.KeyCode = Keys.Enter Then
             StudMiddleInitial.Focus()
         End If
     End Sub
 
+    ' if enter on this text box, will go to the next
     Private Sub StudMiddleInitial_KeyDown(sender As Object, e As KeyEventArgs) Handles StudMiddleInitial.KeyDown
         If e.KeyCode = Keys.Enter Then
             StudSuffix.Focus()
         End If
     End Sub
 
+    ' if enter on this text box, will go to the next
     Private Sub StudEmail_KeyDown(sender As Object, e As KeyEventArgs) Handles StudEmail.KeyDown
         If e.KeyCode = Keys.Enter Then
             StudSection.Focus()
         End If
     End Sub
 
+    ' will dynamically update the chosen student year if section contains the following
     Private Sub StudSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles StudSection.SelectedIndexChanged
         Dim ChosenItem As String = StudSection.SelectedItem
         If StudSection.SelectedIndex <> -1 Then
@@ -1009,35 +1038,36 @@ Public Class ProfessorDashboard
         ArchLoadData()
     End Sub
 
-    Private Sub ArchClrBtn_Click(sender As Object, e As EventArgs) Handles ArchClrBtn.Click
+    Private Sub ArchClrBtn_Click(sender As Object, e As EventArgs) Handles ArchExportBtn.Click
         SaveFileDialog1.ShowDialog()
+
         If SaveFileDialog1.FileName = "" Then
             MsgBox("Enter filename to create PDF!", vbExclamation)
         Else
             Dim pdfTable As New PdfPTable(ArchDataGrid.ColumnCount)
             pdfTable.DefaultCell.Padding = 3
             pdfTable.WidthPercentage = 85
-            pdfTable.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER
+            pdfTable.HorizontalAlignment = Element.ALIGN_CENTER
             pdfTable.DefaultCell.BorderWidth = 1
 
-            Dim nameParagraph As New Paragraph("" & ProfNameLbl.Text & " / " & DateLbl.Text & " / " & TimeLbl.Text & "", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12))
-            nameParagraph.Alignment = iTextSharp.text.Element.ALIGN_LEFT
+            Dim nameParagraph As New Paragraph("" & ProfNameLbl.Text & " / " & DateLbl.Text & " / " & TimeLbl.Text & "", New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12))
+            nameParagraph.Alignment = Element.ALIGN_LEFT
 
             ' Load the first image
-            Dim imagePath1 As String = "plp_logo\plplogo.jpg" ' Replace with the actual path to your first image
-            Dim img1 As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(imagePath1)
+            Dim imagePath1 = "plp_logo\plplogo.jpg" ' Replace with the actual path to your first image
+            Dim img1 = iTextSharp.text.Image.GetInstance(imagePath1)
             img1.ScaleAbsoluteWidth(20.0F) ' Adjust the size as needed
 
             ' Load the second image
-            Dim imagePath2 As String = "plp_logo\ccslogo.png" ' Replace with the actual path to your second image
-            Dim img2 As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(imagePath2)
+            Dim imagePath2 = "plp_logo\ccslogo.png" ' Replace with the actual path to your second image
+            Dim img2 = iTextSharp.text.Image.GetInstance(imagePath2)
             img2.ScaleAbsoluteWidth(20.0F) ' Adjust the size as needed
 
             ' Create a PdfPTable with two cells
             Dim imageTable As New PdfPTable(7)
             imageTable.TotalWidth = 900.0F ' Set total width of the table
             imageTable.LockedWidth = True ' Lock the width
-            imageTable.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER
+            imageTable.HorizontalAlignment = Element.ALIGN_CENTER
             imageTable.DefaultCell.Border = 0 ' No border for the cells
             imageTable.DefaultCell.PaddingTop = 50 ' No padding for the cells
             imageTable.DefaultCell.FixedHeight = 150.0F ' Set fixed height for the cells
@@ -1045,7 +1075,7 @@ Public Class ProfessorDashboard
             ' Add the first image to the first cell
             imageTable.AddCell(img1)
 
-            Dim emptyCell1 As New PdfPCell()
+            Dim emptyCell1 As New PdfPCell
             emptyCell1.Border = 0 ' No border for the em    pty cell
             imageTable.AddCell(emptyCell1)
 
@@ -1064,7 +1094,7 @@ Public Class ProfessorDashboard
 
             Dim PLPTItle As New PdfPCell(combinedText) With {
                 .Border = 0, ' No border for the paragraph cell
-                .HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER,
+                .HorizontalAlignment = Element.ALIGN_CENTER,
                 .PaddingTop = 70,
                 .Colspan = 3
             }
@@ -1079,7 +1109,7 @@ Public Class ProfessorDashboard
             imageTable.AddCell(img2)
 
             ' Set Font Size
-            Const FontSize As Integer = 14 ' Adjust the font size as needed
+            Const FontSize = 14 ' Adjust the font size as needed
 
             Dim heading As Paragraph
 
@@ -1088,73 +1118,73 @@ Public Class ProfessorDashboard
                             "Archived Students (Section: " & ArchFilBySect.Text &
                             ", Year: " & ArchFilByYear.Text &
                             ", Search: " & ArchSearchBox.Text & ")",
-                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+                            New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
             ElseIf ArchFilBySect.Text IsNot "" AndAlso ArchFilByYear.Text IsNot "" Then
                 heading = New Paragraph("Online Registration System" & vbCrLf &
                             "Archived Students (Section: " & ArchFilBySect.Text &
                             ", Year: " & ArchFilByYear.Text & ")",
-                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+                            New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
             ElseIf ArchFilBySect.Text IsNot "" AndAlso ArchSearchBox.Text IsNot "" Then
                 heading = New Paragraph("Online Registration System" & vbCrLf &
                             "Archived Students (Section: " & ArchFilBySect.Text &
                             ", Search: " & ArchSearchBox.Text & ")",
-                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+                            New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
             ElseIf ArchFilByYear.Text IsNot "" AndAlso ArchSearchBox.Text IsNot "" Then
                 heading = New Paragraph("Online Registration System" & vbCrLf &
                             "Archived Students (Year: " & ArchFilByYear.Text &
                             ", Search: " & ArchSearchBox.Text & ")",
-                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+                            New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
             ElseIf ArchFilBySect.Text IsNot "" Then
                 heading = New Paragraph("Online Registration System" & vbCrLf &
                             "Archived Students (Section: " & ArchFilBySect.Text & ")",
-                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+                            New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
             ElseIf ArchFilByYear.Text IsNot "" Then
                 heading = New Paragraph("Online Registration System" & vbCrLf &
                             "Archived Students (Year: " & ArchFilByYear.Text & ")",
-                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+                            New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
             ElseIf ArchSearchBox.Text IsNot "" Then
                 heading = New Paragraph("Online Registration System" & vbCrLf &
                             "Archived Students (Search: " & ArchSearchBox.Text & ")",
-                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+                            New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
             Else
                 heading = New Paragraph("Online Registration System" & vbCrLf &
                             "Archived Students",
-                            New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
+                            New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD))
             End If
 
 
-            heading.Alignment = iTextSharp.text.Element.ALIGN_CENTER
+            heading.Alignment = Element.ALIGN_CENTER
             heading.SpacingBefore = 40
             pdfTable.SpacingBefore = 20
 
             ' Adding Header row
             For Each column As DataGridViewColumn In ArchDataGrid.Columns
-                Dim cell As New PdfPCell(New Phrase(column.HeaderText, New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, FontSize))) With {
-                    .BackgroundColor = New iTextSharp.text.BaseColor(76, 175, 80)
+                Dim cell As New PdfPCell(New Phrase(column.HeaderText, New Font(iTextSharp.text.Font.FontFamily.HELVETICA, FontSize))) With {
+                    .BackgroundColor = New BaseColor(76, 175, 80)
                 }
                 pdfTable.AddCell(cell)
             Next
 
             ' Adding DataRow
-            Dim cellvalue As String = ""
+            Dim cellvalue = ""
             For Each row As DataGridViewRow In ArchDataGrid.Rows
                 For Each cell As DataGridViewCell In row.Cells
                     cellvalue = cell.FormattedValue
-                    pdfTable.AddCell(New Phrase(Convert.ToString(cellvalue), New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, FontSize)))
+                    pdfTable.AddCell(New Phrase(Convert.ToString(cellvalue), New Font(iTextSharp.text.Font.FontFamily.HELVETICA, FontSize)))
                 Next
             Next
 
-            Dim tableTitle As New Paragraph("Graduate Students", New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD)) With {
+            Dim tableTitle As New Paragraph("Graduate Students", New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD)) With {
                 .SpacingBefore = 40,
                 .SpacingAfter = 20,
-                .Alignment = iTextSharp.text.Element.ALIGN_CENTER
+                .Alignment = Element.ALIGN_CENTER
             }
 
-            Dim pdfDoc As New Document(iTextSharp.text.PageSize.A2, 10.0F, 10.0F, 10.0F, 0.0F)
-            Dim writer As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(SaveFileDialog1.FileName + ".pdf", FileMode.Create))
+            Dim pdfDoc As New Document(PageSize.A2, 10.0F, 10.0F, 10.0F, 0.0F)
+            Dim writer = PdfWriter.GetInstance(pdfDoc, New FileStream(SaveFileDialog1.FileName + ".pdf", FileMode.Create))
 
-            Dim eventHandler As New PageNumberEventHandler()
-            writer.PageEvent = New PageNumberEventHandler()
+            Dim eventHandler As New PageNumberEventHandler
+            writer.PageEvent = New PageNumberEventHandler
 
             pdfDoc.Open()
             pdfDoc.Add(nameParagraph)
@@ -1213,7 +1243,7 @@ ByVal nShowCmd As Integer
         FilteredSection = "%" & FilteredSection & "%"
 
         ' Initialize the query
-        Dim baseQuery As String = " SELECT studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, email as Email, section as Section, graduation_date as 'Graduation Date' FROM archive WHERE YEAR(graduation_date) = '" & Date.Today.Year & "'"
+        Dim baseQuery As String = " SELECT studentnum as 'Student ID', last_name as 'Last Name', first_name as 'First Name', middle_initial as 'Middle Initial', suffix as Suffix, email as Email, section as Section, year_level as Year, status as Status, graduation_date as 'Graduation Date' FROM archive WHERE YEAR(graduation_date) = '" & Date.Today.Year & "'"
 
         ' Add filters dynamically
         If Not String.IsNullOrEmpty(FilteredSection) Then
@@ -1281,8 +1311,6 @@ ByVal nShowCmd As Integer
         End While
         conn.Close()
     End Sub
-
-
 
     ' SIGN OUT TAB
 
@@ -2054,5 +2082,103 @@ ByVal nShowCmd As Integer
     Private Sub StudUploadBtn_Click(sender As Object, e As EventArgs) Handles StudUploadBtn.Click
         Dim BulkForm As New BulkRegisterForm(ProfUser)
         BulkForm.Show()
+    End Sub
+
+    Private Sub ArchRestoreBtn_Click(sender As Object, e As EventArgs) Handles ArchRestoreBtn.Click
+        ' ask message if sure, if no then cancel, if yes then
+        ' For every selected rows in the data grid
+        ' bring them back to studentinfo
+        Dim result As DialogResult = MessageBox.Show("Are you sure on RESTORING the chosen students from the archives?", "Restoration Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.No Then
+            Return
+        End If
+
+        Using conn As New MySqlConnection(connectionString)
+            conn.Open()
+
+            ' HashSet to track processed row indexes (avoid duplicates)
+            Dim processedRows As New HashSet(Of Integer)
+
+            ' Loop through selected rows
+            For Each cell As DataGridViewCell In ArchDataGrid.SelectedCells
+                Dim row As DataGridViewRow = ArchDataGrid.Rows(cell.RowIndex)
+
+                ' Process only if the row hasn't been handled yet
+                If Not processedRows.Contains(row.Index) AndAlso Not row.IsNewRow Then
+                    processedRows.Add(row.Index) ' Mark row as processed
+
+                    Try
+                        ' Get the first 9 columns (index 0-8)
+                        Dim values As New List(Of String)
+                        For i As Integer = 0 To 8
+                            values.Add("'" & row.Cells(i).Value.ToString().Replace("'", "''") & "'") ' Escape single quotes
+                        Next
+
+                        ' Construct SQL query (Adjust column names to match studentinfo table)
+                        Dim query As String = "INSERT INTO studentinfo VALUES (" & String.Join(",", values) & ")"
+
+                        ' Execute the query
+                        Using cmd As New MySqlCommand(query, conn)
+                            cmd.ExecuteNonQuery()
+                        End Using
+
+                        MessageBox.Show("Students Successfully Restored")
+                        StuLoadData() ' Refreshes the studentinfo data grid
+
+                        ' Remove the restored student from the archive table
+                        Dim deleteQuery As String = "DELETE FROM archive WHERE studentnum = @id"
+                        Using deleteCmd As New MySqlCommand(deleteQuery, conn)
+                            deleteCmd.Parameters.AddWithValue("@id", row.Cells(0).Value)
+                            deleteCmd.ExecuteNonQuery()
+                        End Using
+
+                        ' Refresh the arch data grid after removing
+                        ArchLoadData()
+                        ArchLoadFilter()
+                    Catch ex As MySqlException When ex.Number = 1062
+                        MessageBox.Show("Duplicate entry found: " & vbCrLf & row.Cells(0).Value.ToString() & vbCrLf & "These records are not going to be restored, DELETION is required.", "Cannot Restore", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    End Try
+                End If
+            Next
+        End Using
+    End Sub
+
+    Private Sub ArchDelBtn_Click(sender As Object, e As EventArgs) Handles ArchDelBtn.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure on DELETING the chosen students from the archives?", "Deletion Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.No Then
+            Return
+        End If
+
+        Using conn As New MySqlConnection(connectionString)
+            conn.Open()
+
+            ' HashSet to track processed row indexes (avoid duplicates)
+            Dim processedRows As New HashSet(Of Integer)
+
+            ' Loop through selected rows
+            For Each cell As DataGridViewCell In ArchDataGrid.SelectedCells
+                Dim row As DataGridViewRow = ArchDataGrid.Rows(cell.RowIndex)
+
+                ' Process only if the row hasn't been handled yet
+                If Not processedRows.Contains(row.Index) AndAlso Not row.IsNewRow Then
+                    processedRows.Add(row.Index) ' Mark row as processed
+
+                    ' Remove the restored student from the archive table
+                    Dim deleteQuery As String = "DELETE FROM archive WHERE studentnum = @id"
+                        Using deleteCmd As New MySqlCommand(deleteQuery, conn)
+                            deleteCmd.Parameters.AddWithValue("@id", row.Cells(0).Value)
+                            deleteCmd.ExecuteNonQuery()
+                        End Using
+
+                    MessageBox.Show("Students Successfully Deleted")
+                    StuLoadData() ' Refreshes the studentinfo data grid
+
+                        ' Refresh the arch data grid after removing
+                        ArchLoadData()
+                        ArchLoadFilter()
+
+                End If
+            Next
+        End Using
     End Sub
 End Class
